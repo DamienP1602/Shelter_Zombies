@@ -13,10 +13,105 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Manager">
+      <UniqueIdentifier>{2230f3e0-b312-426b-b122-1870144e4380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Manager\Camera">
+      <UniqueIdentifier>{c1e9a285-bbba-4277-8d74-5389a3f936f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Manager\Texture">
+      <UniqueIdentifier>{1995caa5-061d-4ab5-814b-6abc9e8749a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Manager\Font">
+      <UniqueIdentifier>{d86a4dda-b16b-4266-ae0c-7f329e39bed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Manager\Entity">
+      <UniqueIdentifier>{f7c1202e-bee7-4c5f-bf28-832dedf58727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Manager\Input">
+      <UniqueIdentifier>{b0063179-a124-41ae-b17a-05f3a526abfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Manager\Timer">
+      <UniqueIdentifier>{2719260a-b0c5-4a2f-8a73-ec0da4bc9461}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Manager\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityManager.cpp">
+      <Filter>Source Files\Manager\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="FontData.cpp">
+      <Filter>Source Files\Manager\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="FontManager.cpp">
+      <Filter>Source Files\Manager\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Source Files\Manager\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files\Manager\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerManager.cpp">
+      <Filter>Source Files\Manager\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureData.cpp">
+      <Filter>Source Files\Manager\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files\Manager\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>Source Files\Manager\Camera</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera.h">
+      <Filter>Source Files\Manager\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>Source Files\Manager\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityManager.h">
+      <Filter>Source Files\Manager\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="FontData.h">
+      <Filter>Source Files\Manager\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>Source Files\Manager\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Source Files\Manager\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Source Files\Manager\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerManager.h">
+      <Filter>Source Files\Manager\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="IManagable.h">
+      <Filter>Source Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="IManager.h">
+      <Filter>Source Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Source Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureData.h">
+      <Filter>Source Files\Manager\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Source Files\Manager\Texture</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

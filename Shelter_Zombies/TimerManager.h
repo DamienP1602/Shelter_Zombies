@@ -1,28 +1,61 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include "IManager.h"
 #include "Singleton.h"
+#include "IManager.h"
 #include "Timer.h"
 
+#include <SFML/System.hpp>
+#include <iostream>
 
 using namespace sf;
 using namespace std;
 
-class TimerManager : public Singleton<TimerManager>, public IManager<string, Timer>
+//struct Timer
+//{
+//
+//	Timer(c)
+//	Time _current = seconds(0);
+//	Time _max = milliseconds(static_cast<Int32>(_duration));
+//};
+class TimerManager : public Singleton<TimerManager>, public IManager<int, Timer>
 {
+	// Clock pour avoir accès à toutes les données de temps
 	Clock clock;
+
+
+	float current;
+
+	float max;
+	// Temps en seconde depuis le début du programme
 	float time;
+
+	// Mettre à jour les timers
 	float lastTime;
+
+	// Mettre à jour les compteurs de FPS
 	float lastFrameTime;
+
+	// Temps en seconde depuis la dernière image rendue
 	float elapsedTime;
+
+	// Vitesse à laquelle le temps s'écoule
 	float timeScale;
+
+	// Temps en seconde depuis la dernière image rendue avec le time scale
 	float deltaTime;
+
+	// Nombre d'images qui ont été rendu depuis le début
 	unsigned int framesCount;
+
+	// Maximum d'image à rendre par seconde
 	unsigned int maxFrameRate;
+
+	// Nombre d'image rendu par seconde
 	float fps;
+
+	// Méthode de rappel à éxécuter si le rendu est à jour
 	function<void()> renderCallback;
-	bool activeRenderCallback;
+
+	bool isPause;
 
 private:
 	void ComputeFPS()
@@ -31,18 +64,15 @@ private:
 	}
 	bool Render()
 	{
-		if (activeRenderCallback)
+		if (lastFrameTime == 0 || time - lastFrameTime >= 1000.0f / maxFrameRate)
 		{
-			if (lastFrameTime == 0 || time - lastFrameTime >= 1000.0f / maxFrameRate)
-			{
-				ComputeFPS();
-				lastFrameTime = time;
-				return true;
-			}
+			ComputeFPS();
+			lastFrameTime = time;
+			return true;
 		}
+
 		return false;
 	}
-
 public:
 	void SetTimeScale(const float _timeScale)
 	{
@@ -52,21 +82,22 @@ public:
 	{
 		maxFrameRate = _maxFrameRate;
 	}
-	float GetFPS() const
+	void SetRenderCallback(const function<void()>& _callback)
 	{
-		return fps;
+		renderCallback = _callback;
 	}
 	float GetDeltaTime() const
 	{
 		return deltaTime;
 	}
-	void SetRenderCallback(const function<void()>& _callback)
+	float GetFPS() const
 	{
-		renderCallback = _callback;
+		return fps;
 	}
-	void ToggleRenderCallback()
+
+	void SetPause(const bool _isPause)
 	{
-		activeRenderCallback = !activeRenderCallback;
+		isPause = _isPause;
 	}
 
 public:
@@ -77,5 +108,6 @@ private:
 
 public:
 	void Update();
-	void DeleteAllTimers();
+
+	void Pause(const float _duration);
 };

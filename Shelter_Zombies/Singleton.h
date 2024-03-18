@@ -1,16 +1,16 @@
 #pragma once
-template <typename Class>
+
+template <typename Class> 
 class Singleton
 {
 protected:
-    static Class instance;
+	static Class instance;
 
 public:
-    static Class& GetInstance()
-    {
-        return instance;
-    }
-
+	static Class& GetInstance()
+	{
+		return instance;
+	}
 };
 
 template <typename Class>

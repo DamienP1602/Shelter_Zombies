@@ -11,47 +11,39 @@ TimerManager::TimerManager()
 	deltaTime = 0.0f;
 	framesCount = 0;
 	maxFrameRate = 60;
-	fps = 0.0f;
-	activeRenderCallback = true;
+	fps = 0;
+	current = 0;
+	max = 0;
+	isPause = false;
 }
+
 
 void TimerManager::UpdateTimers()
 {
-	for (Timer* _timer : GetAllValues())
+	for (const auto& _pair : allValues)
 	{
-		_timer->Update(deltaTime);
+		_pair.second->Update(deltaTime);
 	}
+
 	GarbageValues();
 }
+
 
 void TimerManager::Update()
 {
 	lastTime = time;
-
 	time = static_cast<float>(clock.getElapsedTime().asMilliseconds());
-
 	elapsedTime = time - lastTime;
-
 	deltaTime = elapsedTime * timeScale;
-
 	framesCount++;
-
-	UpdateTimers();
-	if (Render())
+	if (Render() && renderCallback)
 	{
-		if (renderCallback)
-		{
-			renderCallback();
-		}
+		renderCallback();
 	}
+	UpdateTimers();
 }
 
-void TimerManager::DeleteAllTimers()
+void TimerManager::Pause(const float _duration)
 {
-	for (Timer* _timer : GetAllValues())
-	{
-		Remove(_timer);
-	}
-	
-	GarbageValues();
+
 }

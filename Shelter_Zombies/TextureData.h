@@ -10,9 +10,20 @@ class TextureManager;
 
 class TextureData : public Texture, public IManagable<string>
 {
+	IntRect rect;
+
 public:
-    TextureData(const string& _path);
+	void SetRect(const IntRect& _rect)
+	{
+		rect = _rect;
+	}
+	IntRect GetRect() const
+	{
+		return rect;
+	}
+public:
+	TextureData(const string& _path);
 
 private:
-    virtual void Register() override;
+	virtual void Register() override;
 };

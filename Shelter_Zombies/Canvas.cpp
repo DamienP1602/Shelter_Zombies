@@ -15,7 +15,7 @@ Canvas::~Canvas()
 	{
 		delete _widget;
 	}
-
+	
 	for (Widget* _widget : worldWidgets)
 	{
 		delete _widget;

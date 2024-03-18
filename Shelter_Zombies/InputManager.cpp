@@ -1,54 +1,34 @@
 #include "InputManager.h"
+#include "HUD.h"
 
-void Action::Register()
+bool InputManager::Update(RenderWindow& _window)
 {
-	if (ActionMap* _actionMap = InputManager::GetInstance().Get(actionMap))
+	/*if (!Joystick::isConnected(0))
 	{
-		_actionMap->Add(id, this);
-		return;
-	}
-	ActionMap* _newMap = new ActionMap(actionMap);
-	_newMap->Add(id, this);
-}
+		cerr << "manette non connecter" << endl;
+	}*/
 
-void Action::Execute()
-{
-	if (data.callback)
-	{
-		data.callback();
-	}
-}
+	const Vector2i& _mousePosition = Mouse::getPosition(_window);
+	mousePosition = Vector2f(_mousePosition);
+	worldPosition = _window.mapPixelToCoords(_mousePosition);
 
-void ActionMap::Register()
-{
-	InputManager::GetInstance().Add(id, this);
-}
-
-void ActionMap::Update(const Event& _event)
-{
-	for (const auto& _pair : allValues)
-	{
-		for (const InputData& _inputData : _pair.second->data.keys)
-		{
-			if (_event.type == _inputData.type && _event.key.code == _inputData.key)
-			{
-				_pair.second->Execute();
-			}
-		}
-	}
-	GarbageValues();
-}
-
-bool InputManager::Update(RenderWindow _window)
-{
 	Event _event;
 	while (_window.pollEvent(_event))
 	{
-		if (_event.type == Event::Closed)return false;
-
+		if (_event.type == Event::Closed) return false;
+		if (_event.type == Event::Resized)
+		{
+			//
+			const FloatRect _visibleArea(0.0f, 0.0f, _event.size.width, _event.size.height);
+			 //const FloatRect _visibleArea(0.0f, 0.0f,0.0f, 0.0f);
+			_window.setView(View(_visibleArea));
+			cout << "resized" << endl;
+		}
+		//HUD::GetInstance().Interact(worldPosition, _event.type);
+		HUD::GetInstance().Interact(worldPosition, _event);
 		UpdateInputs(_event);
 	}
-	mousePosition = Vector2f(Mouse::getPosition(_window));
+
 	GarbageValues();
 
 	return true;
@@ -58,6 +38,9 @@ void InputManager::UpdateInputs(const Event& _event)
 {
 	for (const auto& _pair : allValues)
 	{
-		_pair.second->Update(_event);
+		if (_pair.second->isActive)
+		{
+			_pair.second->Update(_event);
+		}
 	}
 }

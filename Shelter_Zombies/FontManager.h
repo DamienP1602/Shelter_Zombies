@@ -1,15 +1,24 @@
 #pragma once
-#include <iostream>
-#include "FontData.h"
 #include "Singleton.h"
 #include "IManager.h"
-#include "IManagable.h"
+#include "FontData.h"
+#include "Timer.h"
 
-using namespace std;
-
-class FontManager : public Singleton<FontManager>, public IManager<string,FontData>
+class FontManager : public Singleton<FontManager>, public IManager<string, FontData>
 {
-public:
-	void Load(Text* _text, const string& _path,const bool _isSmooth = true);
-};
+	Timer* fadeTimer;
+	int currentAlpha;
+	int alphaFactor;
 
+public:
+	FontManager();
+
+private:
+	void Fade(const vector<Text*>& _texts, const string& _path, const Color& _targetColor);
+	void ResetAlpha();
+
+public:
+	void Load(Text* _text, const string& _path, const bool _smooth = true);
+	void LoadWithFade(const vector<Text*>& _texts, const string& _path, const float _duration = 2.0f,
+					  const Color& _targetColor = Color::White);
+};

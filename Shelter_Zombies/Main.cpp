@@ -1,6 +1,4 @@
-#include <SFML/Graphics.hpp>
-
-using namespace sf;
+#include "WidgetManager.h"
 
 int main()
 {

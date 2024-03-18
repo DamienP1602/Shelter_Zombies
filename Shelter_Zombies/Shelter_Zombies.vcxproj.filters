@@ -45,9 +45,6 @@
     <ClInclude Include="UIelements.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AchievementsMenu.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Action.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -171,9 +168,6 @@
     <ClInclude Include="EnemyLifeComponent.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="EntityManager.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="ExtrasMenu.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -255,9 +249,6 @@
     <ClInclude Include="Macro.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -265,9 +256,6 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuManager.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Merchand.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Mob.h">
@@ -300,9 +288,6 @@
     <ClInclude Include="Object.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="OptionsMenu.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="PatrolComponent.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -316,9 +301,6 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="PatrolToDeath.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PauseMenu.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
@@ -351,25 +333,10 @@
     <ClInclude Include="ProgressLabel.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="PurchaseMenu.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="QuitGameMenu.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="QuitToMenu.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ScrollBar.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="ShapeObject.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="ShapeWidget.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ShopMenu.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
@@ -408,16 +375,10 @@
     <ClInclude Include="TimerManager.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="TitleMenu.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Transition.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="TriggerBox.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VideoMenu.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Widget.h">
@@ -428,9 +389,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AchievementsMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Action.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -551,9 +509,6 @@
     <ClCompile Include="EnemyLifeComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EntityManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ExtrasMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -632,9 +587,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -642,9 +594,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Merchand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Mob.cpp">
@@ -677,9 +626,6 @@
     <ClCompile Include="Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OptionsMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PatrolComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -693,9 +639,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PatrolToDeath.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PauseMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -725,25 +668,10 @@
     <ClCompile Include="ProgressLabel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PurchaseMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="QuitGameMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="QuitToMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ScrollBar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ShapeObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShapeWidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ShopMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SoundData.cpp">
@@ -779,16 +707,10 @@
     <ClCompile Include="TimerManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TitleMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Transition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TriggerBox.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="VideoMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Widget.cpp">

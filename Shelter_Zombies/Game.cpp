@@ -17,7 +17,6 @@ RenderWindow Game::window;
 Map* Game::map;
 Player* Game::player;
 Camera* Game::camera;
-Brightness* Game::brightness;
 
 #include "TriggerBox.h"
 
@@ -29,17 +28,14 @@ Brightness* Game::brightness;
 
 Game::Game()
 {
-	menu = new MainMenu();
 	player = new Player("Player", ShapeData(Vector2f(100.0f, -2000.0f), Vector2f(75.0f, 75.0f), PATH_PLAYER));
 	map = new Map();
 	camera = new Camera();
-	brightness = new Brightness();
 } 
 
 Game::~Game()
 {
 	delete map;
-	delete brightness;
 }
 
 
@@ -53,10 +49,8 @@ void Game::Start()
 
 void Game::Init()
 {
-	menu->Init();
 	map->Init();
 	camera->Init();
-	brightness->Init();
 
 	/*TriggerBox* _box = new TriggerBox(ShapeData(Vector2f(100.0f, 0.0f), Vector2f(200.0f, 200.0f), ""), [&]() {
 		cout << "coucou" << endl;
@@ -121,8 +115,7 @@ void Game::DrawWorldUIs()
 		for (Widget* _widget : _canvas->GetWorldWidgets())
 		{
 			if (!_widget->IsVisible()) continue;
-			const RenderStates& _render = _widget->CanApplyShader() ? brightness->shader : RenderStates::Default;
-			window.draw(*_widget->GetDrawable(), _render);
+			window.draw(*_widget->GetDrawable());
 		}
 	}
 }
@@ -131,7 +124,7 @@ void Game::DrawMap()
 {
 	for (ShapeObject* _drawable : map->GetAllDrawables())
 	{
-		window.draw(*_drawable->GetDrawable(), brightness->shader);
+		window.draw(*_drawable->GetDrawable());
 	}
 }
 
@@ -139,7 +132,7 @@ void Game::DrawActors()
 {
 	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 	{
-		window.draw(*_actor->GetDrawable(), brightness->shader);
+		window.draw(*_actor->GetDrawable());
 	}
 }
 
@@ -155,8 +148,7 @@ void Game::DrawUIs()
 		for (Widget* _widget : _canvas->GetUiWidgets())
 		{
 			if (!_widget->IsVisible()) continue;
-			const RenderStates& _render = _widget->CanApplyShader() ? brightness->shader : RenderStates::Default;
-			window.draw(*_widget->GetDrawable(), _render);
+			window.draw(*_widget->GetDrawable());
 		}
 	}
 }

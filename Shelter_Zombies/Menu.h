@@ -4,7 +4,6 @@
 #include "ShapeWidget.h"
 #include "Button.h"
 #include "Label.h"
-#include "ScrollBar.h"
 #include "SoundData.h"
 
 #define PATH_BACKGROUND "UIs/Menus/Background.png"

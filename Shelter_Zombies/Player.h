@@ -1,6 +1,5 @@
 #pragma once
 #include "Actor.h"
-#include "PauseMenu.h"
 #include "PlayerStat.h"
 #include "Inventory.h"
 #include "CharmsMenu.h"
@@ -15,7 +14,6 @@ using namespace std;
 
 class Player : public Actor
 {
-	PauseMenu* pauseMenu;
 	PlayerStat* stats;
 	Inventory* inventory;
 	CharmsMenu* charmsMenu;

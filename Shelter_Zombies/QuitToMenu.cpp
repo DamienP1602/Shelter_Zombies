@@ -65,7 +65,6 @@ void QuitToMenu::Init()
 		{
 			if (Button* _hoveredButton = HUD::GetInstance().GetHoveredButton(buttons))
 			{
-				MovePointers(_hoveredButton);
 			}
 		};
 		_button->GetData().pressedCallback = _allData[_index].callback;
@@ -83,7 +82,5 @@ void QuitToMenu::Init()
 	#pragma region Pointer
 
 	Menu::Init();
-	MovePointers(buttons.front());
-
 	#pragma endregion
 }

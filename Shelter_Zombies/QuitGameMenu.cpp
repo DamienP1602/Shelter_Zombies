@@ -62,7 +62,6 @@ void QuitGameMenu::Init()
 		{
 			if (Button* _hoveredButton = HUD::GetInstance().GetHoveredButton(buttons))
 			{
-				MovePointers(_hoveredButton);
 			}
 		};
 		_button->GetData().pressedCallback = _allData[_index].callback;
@@ -80,7 +79,5 @@ void QuitGameMenu::Init()
 	#pragma region Pointer
 
 	Menu::Init();
-	MovePointers(buttons.front());
-
 	#pragma endregion
 }

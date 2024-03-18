@@ -1,5 +1,4 @@
 #include "ShopMenu.h"
-#include "Merchand.h"
 #include "Game.h"
 #include "HUD.h"
 
@@ -17,7 +16,6 @@ ShopMenu::ShopMenu(Menu* _owner, Merchand* _merchand) : Menu("Shop", _owner)
 	descriptionText = nullptr;
 	timer = nullptr;
 	merchand = _merchand;
-	purchase = new PurchaseMenu(this);
 }
 
 
@@ -36,27 +34,6 @@ void ShopMenu::Init()
 	#pragma endregion
 
 	#pragma region Grid
-
-	items = {
-		{
-			PATH_LANTERN,
-			200,
-			"Lantern",
-			"This is a simple lantern."
-		},
-		{
-			PATH_ITEM,
-			300,
-			"Gathering Swarm",
-			"Do you find yourself leaving a\n"
-			"lot of Geo behind as you hurry\n"
-			"through the caverns ?\n\n"
-			"This charm will make sure that\n"
-			"any loose change finds its way\n"
-			"back to you."
-		},
-	};
-
 	const float _widgetPosX = _shopPos.x - _shopSize.x * 0.35f;
 	const Vector2f& _widgetSize = Vector2f(60.0f, 60.0f);
 	const float _geoPosX = _widgetPosX + _widgetSize.x;
@@ -67,56 +44,9 @@ void ShopMenu::Init()
 	const Vector2f& _buttonSize = Vector2f(_shopSize.x * 0.4f, _widgetSize.y + _widgetSize.y * 0.7f);
 	const float _buttonPosX = _widgetPosX + _buttonSize.x * 0.2f;
 	int _index = 0;
-
-	for (const SellItem& _item : items)
-	{
-		const float _posY = _startPosY + _index * _widgetSize.y + _gapY * _index;
-
-		Button* _button = new Button(ShapeData(Vector2f(_buttonPosX, _posY), _buttonSize));
-		_button->GetDrawable()->setFillColor(Color::Transparent);
-		_button->GetData().hoveredCallback = [&]()
-		{
-			if (Button* _hoveredButton = HUD::GetInstance().GetHoveredButton(buttons))
-			{
-				MovePointers(_hoveredButton);
-
-				if (ItemWidget* _itemWidget = dynamic_cast<ItemWidget*>(_hoveredButton->GetForeground()))
-				{
-					descriptionTitle->SetString(_itemWidget->GetTitle());
-					descriptionText->SetString(_itemWidget->GetText());
-				}
-			}
-		};
-		_button->GetData().pressedCallback = [&]() {
-			if (Button* _hoveredButton = HUD::GetInstance().GetHoveredButton(buttons))
-			{
-				const SellItem& _item = GetSellItemByButton(_hoveredButton);
-				purchase->SetItem(_item);
-			}
-			SetStatus(false);
-			purchase->SetStatus(true);
-		};
-		buttons.push_back(_button);
-		canvas->AddWidget(_button);
-
-		ItemWidget* _widget = new ItemWidget(ShapeData(Vector2f(_widgetPosX, _posY), _widgetSize, _item.path),
-											 _item.title, _item.text);
-		canvas->AddWidget(_widget);
-		_button->SetForeground(_widget);
-
-		ShapeWidget* _geo = new ShapeWidget(ShapeData(Vector2f(_geoPosX, _posY), _geoSize, PATH_GEO));
-		canvas->AddWidget(_geo);
-
-		Label* _geoText = new Label(TextData(to_string(_item.price), Vector2f(_geoTextPosX, _posY - 3.5f), FONT), AT_LEFT);
-		canvas->AddWidget(_geoText);
-
-		_index++;
-	}
-
 	#pragma region Pointer
 
 	Menu::Init();
-	MovePointers(buttons.front());
 
 	#pragma endregion
 
@@ -158,13 +88,11 @@ void ShopMenu::SetStatus(const bool _status, const bool _applyToWidgets)
 	{
 		timer = nullptr;
 		Menu::SetStatus(false);
-		purchase->SetStatus(false);
 	}
 
 	else
 	{
 		timer = new Timer([&]() {
-			merchand->CloseDiscussion();
 			Open();
 		}, seconds(timeBeforeOpenShop));
 	}

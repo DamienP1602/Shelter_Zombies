@@ -169,12 +169,6 @@ void PlayerMovementComponent::Dash()
 
 void PlayerMovementComponent::SitDown()
 {
-	if (!canMove || !isStanding || !owner->GetBounds().contains(Game::GetMap()->GetBench()->GetShapePosition()))
-	{
-		cout << "Impossible de s'assoir !" << endl;
-		return;
-	}
-
 	const Vector2f& _position = owner->GetShapePosition();
 	owner->GetDrawable()->setPosition(_position.x, _position.y - sitOffset);
 	isStanding = false;

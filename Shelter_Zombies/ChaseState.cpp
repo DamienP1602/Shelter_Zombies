@@ -10,8 +10,6 @@ ChaseState::ChaseState(Brain* _brain) : State(_brain)
 	chaseTimer = nullptr;
 
 	BlackBoard* _blackboard = _brain->GetBlackBoard();
-	chaseToPatrol = new ChaseToPatrol(_blackboard);
-	transitions.push_back(chaseToPatrol);
 	
 	chaseToAttack = new ChaseToAttack(_blackboard);
 	transitions.push_back(chaseToAttack);
@@ -22,7 +20,6 @@ ChaseState::ChaseState(Brain* _brain) : State(_brain)
 
 void ChaseState::Init()
 {
-	chaseToPatrol->Init(dynamic_cast<BossBrain*>(brain)->GetPatrolState());
 	chaseToAttack->Init(dynamic_cast<BossBrain*>(brain)->GetAttackState());
 	chaseToDeath->Init(dynamic_cast<BossBrain*>(brain)->GetDeathState());
 }

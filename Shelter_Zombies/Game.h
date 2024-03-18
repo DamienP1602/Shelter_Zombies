@@ -49,15 +49,19 @@ struct Brightness
 	}
 };
 
+/// <summary>
+/// The Game class
+/// </summary>
 class Game
 {
 	static RenderWindow window;
 	MainMenu* menu;
 	static Map* map;
+
 private:
 	static Player* player;
 	static Camera* camera;
-	static Brightness* brightness;
+
 
 public:
 	static RenderWindow& GetWindow()
@@ -80,10 +84,6 @@ public:
 	{
 		return map;
 	}
-	static Brightness* GetBrightness()
-	{
-		return brightness;
-	}
 
 public:
 	Game();
@@ -94,14 +94,13 @@ public:
 	void Init();
 	void Update();
 	void UpdateWindow();
-	#pragma region Draws
 
-	void DrawWorldUIs();
+	#pragma region Draws
 	void DrawMap();
 	void DrawActors();
 	void DrawUIs();
-
 	#pragma endregion
+
 	void Stop();
 
 public:

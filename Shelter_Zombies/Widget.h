@@ -10,7 +10,6 @@ enum WidgetType
 class Widget
 {
 	bool isVisible;
-	bool applyShader;
 	WidgetType type;
 
 public:
@@ -18,17 +17,9 @@ public:
 	{
 		isVisible = _status;
 	}
-	void SetCanApplyShader(const bool _applyShader)
-	{
-		applyShader = _applyShader;
-	}
 	bool IsVisible() const
 	{
 		return isVisible;
-	}
-	bool CanApplyShader() const
-	{
-		return applyShader;
 	}
 	WidgetType GetType() const
 	{

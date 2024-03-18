@@ -3,8 +3,6 @@
 
 PatrolState::PatrolState(Brain* _brain) : State(_brain)
 {
-	patrolToDeath = new PatrolToDeath(_brain->GetBlackBoard());
-	transitions.push_back(patrolToDeath);
 }
 
 

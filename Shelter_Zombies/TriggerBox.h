@@ -1,6 +1,9 @@
 #pragma once
 #include "Actor.h"
 
+/// <summary>
+/// A box trigger by the Player.
+/// </summary>
 class TriggerBox : public Actor
 {
 	FloatRect boxRect;

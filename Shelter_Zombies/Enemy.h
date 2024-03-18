@@ -5,12 +5,14 @@
 
 enum EnemyType
 {
-	BOSS, MOB
+	BOSS, 
+	MOB
 };
 
 enum MobType
 {
-	MOB1, MOB2
+	MOB1,
+	MOB2
 };
 
 enum BossType

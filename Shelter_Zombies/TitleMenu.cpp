@@ -10,7 +10,6 @@ TitleMenu::TitleMenu(Menu* _owner) : Menu("TitleMenu", _owner)
 	canvas = new Canvas("Title");
 	buttons = vector<Button*>();
 	options = new OptionsMenu(this);
-	achievement = new AchievementsMenu(this);
 	quitGame = new QuitGameMenu(this);
 }
 
@@ -55,7 +54,6 @@ void TitleMenu::Init()
 			new SoundData(SOUND_CONFIRM, 100, false);
 		}),
 		ButtonData("Achievements", [&]() {
-			achievement->SetStatus(true);
 			SetStatus(false);
 			new SoundData(SOUND_CONFIRM, 100, false);
 		}),
@@ -85,7 +83,6 @@ void TitleMenu::Init()
 		{
 			if (Button* _hoveredButton = HUD::GetInstance().GetHoveredButton(buttons))
 			{
-				MovePointers(_hoveredButton);
 			}
 		};
 		_button->GetData().pressedCallback = _allData[_index].callback;
@@ -100,8 +97,6 @@ void TitleMenu::Init()
 	}
 
 	Menu::Init();
-	MovePointers(buttons.front());
-	
 	#pragma endregion
 
 	#pragma region Version

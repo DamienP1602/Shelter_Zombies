@@ -3,6 +3,7 @@
 #include "ActionMap.h"
 #include "MusicManager.h"
 
+//TODO MainMenu change background's path
 #define PATH_MAIN_MENU "UIs/Menus/MainMenu/Background.png"
 
 MainMenu::MainMenu() : Menu("MainMenu")
@@ -13,8 +14,8 @@ MainMenu::MainMenu() : Menu("MainMenu")
 
 void MainMenu::OpenTitleMenu()
 {
-	if (!canvas->GetVisibilityStatus()) return;
-
+	if (!canvas->GetVisibilityStatus()) 
+		return;
 	canvas->SetVisibilityStatus(false);
 	titleMenu->Init();
 }

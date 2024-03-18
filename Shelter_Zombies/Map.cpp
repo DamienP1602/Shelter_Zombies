@@ -1,7 +1,6 @@
 #include "Map.h"
 #include "Actor.h"
 #include "CollectableActor.h"
-#include "Lift.h"
 #include "Macro.h"
 #include "FileLoader.h"
 #include "TextureManager.h"
@@ -11,7 +10,6 @@
 #include "Boss.h"
 #include "Mob.h"
 #include "InteractableActor.h"
-#include "FalseKnight.h"
 #include "Game.h"
 
 
@@ -203,9 +201,6 @@ MapData Map::LoadMapData(const string& _path)
 		// Créer avec les infos
 		if (_enemyIndexType == (int)BOSS)
 		{
-			FalseKnight* _falseKnight = new FalseKnight(ShapeData(Vector2f(_enemyPositionX, _enemyPositionY), Vector2f(_enemySizeX, _enemySizeY)));
-			_falseKnight->Init();
-			_falseKnight->GetDrawable()->setFillColor(Color::Transparent);
 			// new Boss(ShapeData(Vector2f(_enemyPositionX, _enemyPositionY), Vector2f(_enemySizeX, _enemySizeY)));
 		}
 		else if (_enemyIndexType == (int)MOB)
@@ -247,7 +242,6 @@ MapData Map::LoadMapData(const string& _path)
 
 		if (_npcType == MERCHAND)
 		{
-			new Merchand(ShapeData(Vector2f(_npcPositionX, _npcPositionY), Vector2f(_npcSizeX, _npcSizeY)));
 		}
 		else if (_npcType == NPC)
 		{

@@ -2,9 +2,6 @@
 
 BossBrain::BossBrain(Actor* _owner) : EnemyBrain(_owner)
 {
-	patrol = new BossPatrolState(this);
-	states.push_back(patrol);
-
 	chase = new ChaseState(this);
 	states.push_back(chase);
 
@@ -16,17 +13,14 @@ BossBrain::BossBrain(Actor* _owner) : EnemyBrain(_owner)
 
 BossBrain::~BossBrain()
 {
-	delete patrol;
 	delete chase;
 	delete attack;
 }
 
 void BossBrain::Init()
 {
-	patrol->Init();
 	chase->Init();
 	attack->Init();
 	
-	currentState = patrol;
 	currentState->Start();
 }

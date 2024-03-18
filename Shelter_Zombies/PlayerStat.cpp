@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include"Game.h"
-#include"DeathMob.h"
 
 #define PATH_MANA_FULL "UIs/Player/Mana/ManaBar_Full.png"
 #define PATH_MANA_EMPTY "UIs/Player/Mana/ManaBar_Empty.png"
@@ -167,12 +166,6 @@ void PlayerStat::Death()
 	//Vector2f _lastPos = _player->GetShapePosition();
 	//DeathMob* _deathMob = new DeathMob("Death" + to_string(numberOfDeath), ShapeData(_lastPos, Vector2f(100.0f, 100.0f), PATH_DEATHMOB));
 	//_deathMob->Init();
-
-	if (Bench* _bench = Game::GetMap()->GetBench())
-	{
-		const Vector2f& _benchPos = _bench->GetShapePosition();
-		Game::GetPlayer()->SetShapePosition(_benchPos);
-	}
 
 	//for (int _index = 0; _index < currentMaxLifesCount; _index++)
 	//{

@@ -8,11 +8,11 @@ using namespace std;
 
 class Actor : public ShapeObject, public IManagable<string>
 {
-
 protected:
 	vector<Component*> components;
 	CollisionComponent* collision;
 	AnimationComponent* animation;
+
 public:
 	template <typename T>
 	T* GetComponent() const
@@ -37,8 +37,6 @@ public:
 
 protected:
 	virtual void Register() override;
-	
-private:
 
 public:
 	virtual void Init();

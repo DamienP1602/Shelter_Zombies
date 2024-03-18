@@ -1,19 +1,21 @@
 #pragma once
-#include "IManagable.h"
-#include "Widget.h"
-
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "IManagable.h"
+#include "Widget.h"
 
 using namespace std;
 using namespace sf;
 
+/// <summary>
+/// The canvas to draw widgets
+/// </summary>
 class Canvas : public IManagable<string>
 {
 	bool isVisible;
 	FloatRect rect;
 	vector<Widget*> uiWidgets;
-	vector<Widget*> worldWidgets;
+	vector<Widget*> worldWidgets; //TODO what is this ?
 
 public:
 	bool GetVisibilityStatus()

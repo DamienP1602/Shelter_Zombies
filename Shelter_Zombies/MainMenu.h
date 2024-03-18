@@ -3,6 +3,9 @@
 #include "TitleMenu.h"
 #include "MusicData.h"
 
+/// <summary>
+/// The start menu of the game
+/// </summary>
 class MainMenu : public Menu
 {
 	TitleMenu* titleMenu;

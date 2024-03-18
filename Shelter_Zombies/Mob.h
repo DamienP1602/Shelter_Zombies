@@ -1,7 +1,6 @@
 #pragma once
 #include "Enemy.h"
 #include "MobMovementComponent.h"
-#include "PatrolComponent.h"
 #include "InspectComponent.h"
 #include "MobAttackComponent.h"
 
@@ -14,7 +13,6 @@ protected:
 	bool cooldownAttack;
 
 	MobMovementComponent* movement;
-	PatrolComponent* patrol;
 	InspectComponent* inspect;
 	MobAttackComponent* attack;
 

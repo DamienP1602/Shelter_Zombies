@@ -8,7 +8,6 @@ OptionsMenu::OptionsMenu(Menu* _owner) : Menu("OptionsMenu", _owner)
 {
 	buttons = vector<Button*>();
 	audio = new AudioMenu(this);
-	video = new VideoMenu(this);
 	controller = new ControllerMenu(this);
 	keyboard = new KeyboardMenu(this);
 }
@@ -64,7 +63,6 @@ void OptionsMenu::Init()
 			new SoundData(SOUND_CONFIRM, 100, false);
 		}),
 		ButtonData("VIDEO", [&]() {
-			video->SetStatus(true);
 			canvas->SetVisibilityStatus(false);
 			new SoundData(SOUND_CONFIRM, 100, false);
 		}),
@@ -99,9 +97,7 @@ void OptionsMenu::Init()
 		_button->GetData().hoveredCallback = [&]()
 		{
 			if (Button* _hoveredButton = HUD::GetInstance().GetHoveredButton(buttons))
-			{
-				MovePointers(_hoveredButton);
-				
+			{				
 			}
 		};
 		_button->GetData().pressedCallback = _allData[_index].callback;
@@ -116,7 +112,5 @@ void OptionsMenu::Init()
 	}
 
 	Menu::Init();
-	MovePointers(buttons.front());
-
 	#pragma endregion
 }

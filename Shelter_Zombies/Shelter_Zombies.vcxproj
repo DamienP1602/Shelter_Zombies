@@ -156,6 +156,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="Canvas.h" />
+    <ClInclude Include="BarrakMenu.h" />
     <ClInclude Include="ChaseState.h" />
     <ClInclude Include="ChaseToAttack.h" />
     <ClInclude Include="ChaseToDeath.h" />
@@ -253,6 +254,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="BarrakMenu.cpp" />
     <ClCompile Include="ChaseState.cpp" />
     <ClCompile Include="ChaseToAttack.cpp" />
     <ClCompile Include="ChaseToDeath.cpp" />

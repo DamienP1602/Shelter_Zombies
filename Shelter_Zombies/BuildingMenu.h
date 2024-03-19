@@ -3,8 +3,10 @@
 
 class BuildingMenu : public Menu
 {
+	//Building current;
 
-	BuildingMenu();
+public:
+	BuildingMenu(/*Building* _current*/);
 public:
 	void Init();
 };

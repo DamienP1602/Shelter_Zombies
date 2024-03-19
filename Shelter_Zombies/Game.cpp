@@ -9,6 +9,8 @@
 #include "VillageMenu.h"
 #include "AttackMenu.h"
 #include "InventoryPlayer.h"
+#include "BuildingMenu.h"
+#include "BarrakMenu.h"
 
 //TODO GAME change anim player's path
 //#define PATH_PLAYER "Animations/knighModif.png"
@@ -52,9 +54,11 @@ void Game::Init()
 	map->Init();
 	camera->Init();
 
-	new InventoryPlayer();
-	new VillageMenu();
-	new AttackMenu();
+	//new InventoryPlayer();
+	//new VillageMenu();
+	//new AttackMenu();
+	new BuildingMenu();
+	//new BarrackMenu();
 
 	/*TriggerBox* _box = new TriggerBox(ShapeData(Vector2f(100.0f, 0.0f), Vector2f(200.0f, 200.0f), ""), [&]() {
 		cout << "coucou" << endl;

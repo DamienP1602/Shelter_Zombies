@@ -160,9 +160,6 @@
     <Filter Include="Source Files\Menus\UI">
       <UniqueIdentifier>{797e8f2f-a453-4111-92f5-559656b9b0ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UIs\Projet Menu">
-      <UniqueIdentifier>{b8d9248d-1d54-4378-bcf8-2114f4554c15}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\UIs\Menu">
       <UniqueIdentifier>{dd52a99d-c067-4633-b97f-318b8c0081df}</UniqueIdentifier>
     </Filter>
@@ -175,8 +172,11 @@
     <Filter Include="Source Files\UIs\Menu\InventoryPlayer">
       <UniqueIdentifier>{213d4ad7-ff8d-4a47-b9c0-140fca560d1a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UIs\Menu\BuildingCanva">
+    <Filter Include="Source Files\UIs\Menu\BuildingMenu">
       <UniqueIdentifier>{349689a8-caf8-4ede-829a-0820c5cb2615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UIs\Menu\BarrakMenu">
+      <UniqueIdentifier>{3a80c73e-c838-489e-a98d-5eef96f288b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -466,7 +466,10 @@
       <Filter>Source Files\UIs\Menu\InventoryPlayer</Filter>
     </ClInclude>
     <ClInclude Include="BuildingMenu.h">
-      <Filter>Source Files\UIs\Menu\BuildingCanva</Filter>
+      <Filter>Source Files\UIs\Menu\BuildingMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="BarrakMenu.h">
+      <Filter>Source Files\UIs\Menu\BarrakMenu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -741,7 +744,10 @@
       <Filter>Source Files\UIs\Menu\InventoryPlayer</Filter>
     </ClCompile>
     <ClCompile Include="BuildingMenu.cpp">
-      <Filter>Source Files\UIs\Menu\BuildingCanva</Filter>
+      <Filter>Source Files\UIs\Menu\BuildingMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="BarrakMenu.cpp">
+      <Filter>Source Files\UIs\Menu\BarrakMenu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

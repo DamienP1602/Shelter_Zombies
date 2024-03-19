@@ -7,8 +7,8 @@
 class ActorManager : public Singleton<ActorManager>, public IManager<string, Actor>
 {
 	vector<InteractableActor*> interactables;
-
 	bool stop;
+
 public:
 	void AddInteractable(InteractableActor* _interactable)
 	{

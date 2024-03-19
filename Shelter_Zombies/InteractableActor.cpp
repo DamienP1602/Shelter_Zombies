@@ -4,25 +4,27 @@
 #include "Label.h"
 #include "Macro.h"
 
+//TODO InteractableActor change paths
 #define PATH_INTERACTION "UIs/Discussions/Interaction.png"
 #define PATH_DISCUSSION "UIs/Discussions/Dialog.png"
 #define FONT "Font.ttf"
 
-InteractableActor::InteractableActor(const string& _name, const ShapeData& _data) : Actor(_name, _data, CT_OVERLAP)
+InteractableActor::InteractableActor(const string& _name, const ShapeData& _data, Canvas* _canvas) :
+	Actor(_name, _data, CT_BLOCK)
 {
-	canvas = new Canvas(STRING_ID("Interactable"));
+	canvas = _canvas;
 	isOpen = false;
-
 	interactionBG = nullptr;
-	interactionText = nullptr;
-
-	discussionBG = nullptr;
-	discussionText = nullptr;
 
 	Init();
 	Register();
 }
 
+InteractableActor::~InteractableActor()
+{
+	canvas = nullptr;
+	interactionBG = nullptr;
+}
 
 void InteractableActor::Register()
 {
@@ -31,41 +33,28 @@ void InteractableActor::Register()
 
 void InteractableActor::Verify()
 {
-	if (!interactionBG || !interactionText) return;
+	if (!interactionBG) 
+		return;
 
 	Player* _player = Game::GetPlayer();
 	FloatRect _rectPNJ = shape->getGlobalBounds();
 
 	if (_rectPNJ.intersects(_player->GetBounds()))
-	{
 		if (!isOpen)
-		{
 			interactionBG->SetVisible(true);
-			interactionText->SetVisible(true);
-		}
-	}
-
 	else
-	{
-		CloseDiscussion();
-	}
+		CloseWidget();
 }
 
-void InteractableActor::CloseDiscussion()
+void InteractableActor::CloseWidget()
 {
 	isOpen = false;
-
 	interactionBG->SetVisible(false);
-	interactionText->SetVisible(false);
-
-	discussionBG->SetVisible(false);
-	discussionText->SetVisible(false);
 }
-
 
 void InteractableActor::Init()
 {
-	const Vector2f& _interactionBGPos = /*Vector2f(690.0f, 230.0f); */ GetShapePosition();
+	const Vector2f& _interactionBGPos = GetShapePosition();
 	const RenderWindow& _window = Game::GetWindow();
 	const Vector2f& _interactionBGPos2 = _window.mapPixelToCoords(static_cast<Vector2i>(_interactionBGPos));
 
@@ -73,20 +62,8 @@ void InteractableActor::Init()
 	interactionBG->SetVisible(false);
 	canvas->AddWidget(interactionBG);
 
-	interactionText = new Label(TextData("Listen", _interactionBGPos + Vector2f(0.0f, -10.0f), FONT, 32), AT_CENTER, WT_WORLD);
-	interactionText->SetVisible(false);
-	canvas->AddWidget(interactionText);
-
 	const Vector2f& _halfWindowSize = Game::GetWindowSize() / 2.0f;
 	const Vector2f& _discussionPos = Vector2f(_halfWindowSize.x, 80.0f);
-
-	discussionBG = new ShapeWidget(ShapeData(_discussionPos, Vector2f(418.0f, 150.0f), PATH_DISCUSSION), WT_WORLD);
-	discussionBG->SetVisible(false);
-	canvas->AddWidget(discussionBG);
-
-	discussionText = new ProgressLabel(TextData("", _discussionPos + Vector2f(0.0f, -20.0f), FONT, 16), 0.1f, "Bon jeu à toi dans Hollow Knight !", AT_CENTER, WT_WORLD);
-	discussionText->SetVisible(false);
-	canvas->AddWidget(discussionText);
 }
 
 void InteractableActor::Update(const float _deltaTime)
@@ -95,19 +72,14 @@ void InteractableActor::Update(const float _deltaTime)
 	Verify();
 }
 
-void InteractableActor::OpenDiscussion()
+void InteractableActor::OpenWidget()
 {
 	if (isOpen)
 	{
-		CloseDiscussion();
+		CloseWidget();
 		return;
 	}
 
 	isOpen = true;
-
 	interactionBG->SetVisible(false);
-	interactionText->SetVisible(false);
-
-	discussionBG->SetVisible(true);
-	discussionText->SetVisible(true);
 }

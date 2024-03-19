@@ -7,7 +7,6 @@ ActorManager::ActorManager()
 	stop = false;
 }
 
-
 void ActorManager::Init()
 {
 	for (Actor* _actor : GetAllValues())
@@ -24,6 +23,5 @@ void ActorManager::Update()
 	{
 		_actor->Update(stop ? 0.0f : _deltaTime);
 	}
-
 	GarbageValues();
 }

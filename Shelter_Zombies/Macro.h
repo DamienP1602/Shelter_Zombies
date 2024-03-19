@@ -28,10 +28,12 @@ float Distance(const float _first, const float _second);
 void SetOriginAtMiddle(Shape* _shape);
 string GetLevelFromIndex(const int _index);
 vector<string> GetWords(const string& _text, const bool _withSpaces = false);
+
 static inline float Randn()
 {
 	return -1 + 2 * ((float)rand()) / RAND_MAX;
 }
+
 template <typename T>
 T Random(const T _max, const T _min = T(0))
 {

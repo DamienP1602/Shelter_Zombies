@@ -22,7 +22,7 @@ void InteractionComponent::TryToInteract()
 		else if(pnj = dynamic_cast<PNJ*>(_interactable))
 		{
 			//_interactable->OpenDiscussion();
-			pnj->OpenDiscussion();
+			pnj->OpenWidget();
 			pnj->GetComponent<AnimationComponent>()->RunAnimation("Talk", 1);
 		}
 

@@ -1,6 +1,7 @@
 #include "Macro.h"
 #include <ctime>
 #include <cstdlib>
+
 int GetUniqueID()
 {
 	static int _id = 0;
@@ -31,7 +32,6 @@ float Distance(const Vector2f& _first, const Vector2f& _second)
 {
 	return sqrtf(pow(_second.x - _first.x, 2.0f) + pow(_second.y - _first.y, 2.0f));
 }
-
 
 void SetOriginAtMiddle(Shape* _shape)
 {
@@ -69,6 +69,5 @@ vector<string> GetWords(const string& _text, const bool _withSpaces)
 	}
 
 	_words.push_back(_word);
-
 	return _words;
 }

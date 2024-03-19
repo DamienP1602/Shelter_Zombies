@@ -166,6 +166,24 @@
     <Filter Include="Source Files\IAs\States">
       <UniqueIdentifier>{9e11bbeb-0715-404a-bf10-e7a57b55d825}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GPE">
+      <UniqueIdentifier>{2b701812-caf5-475b-b339-b0e256d55e8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Manager\GPE">
+      <UniqueIdentifier>{a91e4081-a246-430d-812c-ce65d1a7329d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entities">
+      <UniqueIdentifier>{5bcba9f4-5b43-41e4-8700-d152eddfb33c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GPE\Construction">
+      <UniqueIdentifier>{8d67a65f-7099-4ed6-94c9-587c3c2dcd67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GPE\Building">
+      <UniqueIdentifier>{70af045a-da37-4a43-a53f-c1ac5097e3db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GPE\Decor">
+      <UniqueIdentifier>{c2f62dba-012a-4f8d-9e97-e0f573158065}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UIelements.h">
@@ -249,7 +267,7 @@
     <ClInclude Include="Camera.h">
       <Filter>Source Files\Manager\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="EntityManager.h">
+    <ClInclude Include="AllyEntityManager.h">
       <Filter>Source Files\Manager\Entity</Filter>
     </ClInclude>
     <ClInclude Include="FontData.h">
@@ -471,6 +489,75 @@
     <ClInclude Include="QuitToMenu.h">
       <Filter>Source Files\Menus</Filter>
     </ClInclude>
+    <ClInclude Include="BuildingManager.h">
+      <Filter>Source Files\Manager\GPE</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructionManager.h">
+      <Filter>Source Files\Manager\GPE</Filter>
+    </ClInclude>
+    <ClInclude Include="DecorManager.h">
+      <Filter>Source Files\Manager\GPE</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Fighter.h">
+      <Filter>Source Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooter.h">
+      <Filter>Source Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Support.h">
+      <Filter>Source Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Construction.h">
+      <Filter>Source Files\GPE\Construction</Filter>
+    </ClInclude>
+    <ClInclude Include="Artillery.h">
+      <Filter>Source Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Source Files\GPE\Construction</Filter>
+    </ClInclude>
+    <ClInclude Include="Building.h">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="Decor.h">
+      <Filter>Source Files\GPE\Decor</Filter>
+    </ClInclude>
+    <ClInclude Include="Trap.h">
+      <Filter>Source Files\GPE\Construction</Filter>
+    </ClInclude>
+    <ClInclude Include="Turret.h">
+      <Filter>Source Files\GPE\Construction</Filter>
+    </ClInclude>
+    <ClInclude Include="Armory.h">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="Black_smith.h">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="Canteen.h">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="Engineer.h">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard.h">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="Workshop.h">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="Barrack.h">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="Nexus.h">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyEntityManager.h">
+      <Filter>Source Files\Manager\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -542,7 +629,7 @@
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files\Manager\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="EntityManager.cpp">
+    <ClCompile Include="AllyEntityManager.cpp">
       <Filter>Source Files\Manager\Entity</Filter>
     </ClCompile>
     <ClCompile Include="FontData.cpp">
@@ -757,6 +844,75 @@
     </ClCompile>
     <ClCompile Include="QuitToMenu.cpp">
       <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingManager.cpp">
+      <Filter>Source Files\Manager\GPE</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionManager.cpp">
+      <Filter>Source Files\Manager\GPE</Filter>
+    </ClCompile>
+    <ClCompile Include="DecorManager.cpp">
+      <Filter>Source Files\Manager\GPE</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Fighter.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Support.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Construction.cpp">
+      <Filter>Source Files\GPE\Construction</Filter>
+    </ClCompile>
+    <ClCompile Include="Artillery.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Source Files\GPE\Construction</Filter>
+    </ClCompile>
+    <ClCompile Include="Building.cpp">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="Decor.cpp">
+      <Filter>Source Files\GPE\Decor</Filter>
+    </ClCompile>
+    <ClCompile Include="Trap.cpp">
+      <Filter>Source Files\GPE\Construction</Filter>
+    </ClCompile>
+    <ClCompile Include="Turret.cpp">
+      <Filter>Source Files\GPE\Construction</Filter>
+    </ClCompile>
+    <ClCompile Include="Workshop.cpp">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="Wizard.cpp">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="Engineer.cpp">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="Canteen.cpp">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="Black_smith.cpp">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="Armory.cpp">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="Nexus.cpp">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="Barrack.cpp">
+      <Filter>Source Files\GPE\Building</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyEntityManager.cpp">
+      <Filter>Source Files\Manager\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

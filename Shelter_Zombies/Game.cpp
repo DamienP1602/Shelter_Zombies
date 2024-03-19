@@ -87,6 +87,8 @@ void Game::DrawMap()
 {
 	for (ShapeObject* _drawable : map->GetAllDrawables())
 	{
+		if (_drawable->IsHidden())
+			continue;
 		window.draw(*_drawable->GetDrawable());
 	}
 }
@@ -95,6 +97,8 @@ void Game::DrawActors()
 {
 	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 	{
+		if (_actor->IsHidden())
+			continue;
 		window.draw(*_actor->GetDrawable());
 	}
 }
@@ -111,7 +115,7 @@ void Game::DrawUIs()
 
 		for (Widget* _widget : _canvas->GetUiWidgets())
 		{
-			if (!_widget->IsVisible()) 
+			if (!_widget->IsVisible())
 				continue;
 			window.draw(*_widget->GetDrawable());
 		}

@@ -41,6 +41,7 @@ protected:
 	Entity* target = nullptr;
 	EntityData* data = nullptr;
 	bool isDead = false;
+	bool isActive = false;
 
 public:
 	Entity(string _name, const ShapeData& _shape);
@@ -61,6 +62,14 @@ public:
 	bool IsDead() const
 	{
 		return isDead;
+	}
+	bool IsActive() const
+	{
+		return isActive;
+	}
+	void SetActive(bool _value)
+	{
+		isActive = _value;
 	}
 
 	void TakeDamage(int _damage);

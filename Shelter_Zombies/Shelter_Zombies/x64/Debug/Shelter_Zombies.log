@@ -1,4 +1,54 @@
-﻿  Barrack.cpp
+﻿  AudioMenu.cpp
+  Barrack.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.h(40,32): warning C4805: '==': unsafe mix of type 'bool' and type 'int' in operation
+  (compiling source file 'Barrack.cpp')
+  
+  EnemyEntityManager.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:         ]
   AllyEntityManager.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.h(40,32): warning C4805: '==': unsafe mix of type 'bool' and type 'int' in operation
+  (compiling source file 'AllyEntityManager.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:         ]
+  Player.cpp
+  TitleMenu.cpp
   Generating Code...
   Shelter_Zombies.vcxproj -> D:\GitHub\Shelter_Zombies\Shelter_Zombies\x64\Debug\Shelter_Zombies.exe

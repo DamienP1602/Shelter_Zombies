@@ -18,18 +18,23 @@ Barrack::Barrack(const Vector2f& _position) :
 void Barrack::CreateEntity(int _type)
 {
 	//temp switch-case
-	Entity* _newEntity = nullptr;
 	switch (_type)
 	{
 	case 0: //Fighter
-		_newEntity = new Fighter(Vector2f(-2000, -2000));
+		if (AllyEntityManager::GetInstance().AddFighter(new Fighter(Vector2f(-2000, -2000))))
+			break;
+		break;
 	case 1: //Shooter
-		_newEntity = new Shooter(Vector2f(-2000, -2000));
+		if (AllyEntityManager::GetInstance().AddShooter(new Shooter(Vector2f(-2000, -2000))))
+			break;
+		break;
 	case 2: //Support
-		_newEntity = new Support(Vector2f(-2000, -2000));
+		if (AllyEntityManager::GetInstance().AddSupport(new Support(Vector2f(-2000, -2000))))
+			break;
+		break;
 	case 3: //Artillery
-		_newEntity = new Artillery(Vector2f(-2000, -2000));
+		if (AllyEntityManager::GetInstance().AddArtillery(new Artillery(Vector2f(-2000, -2000))))
+			break;
+		break;
 	}
-
-	AllyEntityManager::GetInstance().Add(_newEntity->GetID(), _newEntity);
 }

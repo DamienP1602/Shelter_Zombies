@@ -67,9 +67,6 @@
     <Filter Include="Source Files\Manager\Sounds">
       <UniqueIdentifier>{f19cf77f-a0a4-45fa-8872-b7778a868bdb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Manager\Camera\Actors">
-      <UniqueIdentifier>{bb69a248-c537-4c6a-abd5-240a08578226}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Maps">
       <UniqueIdentifier>{61768ff8-ce93-4716-9407-099d4b05778d}</UniqueIdentifier>
     </Filter>
@@ -184,6 +181,9 @@
     <Filter Include="Source Files\GPE\Decor">
       <UniqueIdentifier>{c2f62dba-012a-4f8d-9e97-e0f573158065}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Manager\Actors">
+      <UniqueIdentifier>{bb69a248-c537-4c6a-abd5-240a08578226}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UIelements.h">
@@ -259,7 +259,7 @@
       <Filter>Source Files\Manager\Input</Filter>
     </ClInclude>
     <ClInclude Include="ActorManager.h">
-      <Filter>Source Files\Manager\Camera\Actors</Filter>
+      <Filter>Source Files\Manager\Actors</Filter>
     </ClInclude>
     <ClInclude Include="CameraManager.h">
       <Filter>Source Files\Manager\Camera</Filter>
@@ -621,7 +621,7 @@
       <Filter>Source Files\Manager\Input</Filter>
     </ClCompile>
     <ClCompile Include="ActorManager.cpp">
-      <Filter>Source Files\Manager\Camera\Actors</Filter>
+      <Filter>Source Files\Manager\Actors</Filter>
     </ClCompile>
     <ClCompile Include="CameraManager.cpp">
       <Filter>Source Files\Manager\Camera</Filter>

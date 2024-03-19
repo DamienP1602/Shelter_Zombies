@@ -50,6 +50,10 @@ public:
 	{
 		return isInit && canvas->GetVisibilityStatus();
 	}
+	Canvas* GetCanvas() const
+	{
+		return canvas;
+	}
 
 public:
 	Menu(const string& _name, Menu* _owner = nullptr);

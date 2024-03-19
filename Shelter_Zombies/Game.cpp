@@ -57,7 +57,7 @@ void Game::Init()
 	//new InventoryPlayer();
 	//new VillageMenu();
 	//new AttackMenu();
-	new BuildingMenu();
+	//new BuildingMenu();
 	//new BarrackMenu();
 
 	/*TriggerBox* _box = new TriggerBox(ShapeData(Vector2f(100.0f, 0.0f), Vector2f(200.0f, 200.0f), ""), [&]() {

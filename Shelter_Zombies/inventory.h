@@ -91,7 +91,6 @@ public:
 	virtual void SetStatus(const bool _status, const bool _applyToWidgets = true) override
 	{
 		Menu::SetStatus(_status, _applyToWidgets);
-		pointerLeft->SetVisible(Count() > 0);
 	}
 
 public:

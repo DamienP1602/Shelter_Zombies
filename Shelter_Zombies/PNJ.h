@@ -3,9 +3,6 @@
 
 class PNJ : public InteractableActor
 {
-
 public:
 	PNJ(const ShapeData& _data);
-
-
 };

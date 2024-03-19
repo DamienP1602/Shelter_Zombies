@@ -61,7 +61,5 @@ void KeyboardMenu::Init()
 	canvas->AddWidget(_buttonText);
 
 	Menu::Init();
-	MovePointers(backButton);
-
 	#pragma endregion
 }

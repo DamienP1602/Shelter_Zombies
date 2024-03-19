@@ -1,12 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "ShapeObject.h"
-#include "Bench.h"
-#include "Merchand.h"
 #include "InteractableActor.h"
-#include "Lift.h"
-#include"Dragon.h"
-#include"Grub.h"
 #include"PNJ.h"
 #include "CollectableActor.h"
 
@@ -30,8 +25,7 @@ struct MapData
 {
 	string backgroundPath;
 	Vector2f backgroundPos;
-	Vector2f backgroundSize;
-	
+	Vector2f backgroundSize;	
 
 	Vector2f clampCamMin;
 	Vector2f clampCamMax;
@@ -61,36 +55,15 @@ struct PlatformData
 
 class Map
 {
-	Grub* grub;
-	Dragon* dragon;
-	Bench* bench;
-	Merchand* merchand;
 	PNJ* pnj;
 	vector<PlatformData> platformsData;
 	vector<ShapeObject*> drawables;
-	vector<Lift*> lifts;
 	int currentLevel;
 
 public:
-	Dragon* GetDragon()const
-	{
-		return dragon;
-	}
-	Bench* GetBench() const
-	{
-		return bench;
-	}
 	vector<ShapeObject*> GetAllDrawables() const
 	{
 		return drawables;
-	}
-	vector<Lift*> GetAllLifts() const
-	{
-		return lifts;
-	}
-	Grub* GetGrub()
-	{
-		return grub;
 	}
 
 public:

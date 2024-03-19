@@ -4,14 +4,10 @@
 #include "ActorManager.h"
 #include "HUD.h"
 #include "Widget.h"
-#include "Spawner.h"
+#include "TriggerBox.h"
 
-#define PATH_PLAYER "Animations/knighModif.png"
-
-#include "HuskBully.h"
-#include "Boofly.h"
-#include "Belfly.h"
-#include "FalseKnight.h"
+//TODO GAME change anim player's path
+//#define PATH_PLAYER "Animations/knighModif.png"
 
 RenderWindow Game::window;
 Map* Game::map;
@@ -41,7 +37,7 @@ Game::~Game()
 
 void Game::Start()
 {
-	window.create(VideoMode(1920, 1080), "HollowKnight", Style::Fullscreen);
+	window.create(VideoMode(1920, 1080), "Shelter Game", Style::Fullscreen);
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
 	new Timer([&]() { Init(); }, seconds(1.0f), true, false);
@@ -55,26 +51,14 @@ void Game::Init()
 	/*TriggerBox* _box = new TriggerBox(ShapeData(Vector2f(100.0f, 0.0f), Vector2f(200.0f, 200.0f), ""), [&]() {
 		cout << "coucou" << endl;
 	});
-
 	_box->GetComponent<CollisionComponent>()->GetBoxCollision()->GetDrawable()->setOutlineThickness(-5.0f);
 	_box->GetComponent<CollisionComponent>()->GetBoxCollision()->GetDrawable()->setFillColor(Color::Red);*/
 
-	Vector2f _sizeBoofly = Vector2f(150.0f, 180.0f);
-	Vector2f _sizeBelfly = Vector2f(50.0f, 50.0f);
-	Vector2f _sizeHuskBully = Vector2f(75.0f, 75.0f);
-	Vector2f _sizeFalseKnight = Vector2f(700.0f, 500.0f);
+	/*Vector2f _sizeBoofly = Vector2f(150.0f, 180.0f);
 
 	ShapeData _dataBoofly = ShapeData(Vector2f(200.0f, -350.0f), _sizeBoofly, PATH_BOOFLY, IntRect(0, 17, 315, 345));
 	Boofly* _boofly = new Boofly(_dataBoofly);
-	_boofly->Init();
-
-	ShapeData _dataHuskBully = ShapeData(Vector2f(300.0f, -150.0f), _sizeHuskBully, PATH_HUSK_BULLY, IntRect(5, 21, 105, 135));
-	HuskBully* _huskBully = new HuskBully(_dataHuskBully);
-	_huskBully->Init();
-
-	//ShapeData _data = ShapeData(_positionFalseKnight, _sizeFalseKnight, PATH_FALSE_KNIGHT);
-	//FalseKnight* _falseKnight = new FalseKnight(_data);
-	//_falseKnight->Init();
+	_boofly->Init();*/
 }
 
 void Game::Update()
@@ -82,8 +66,8 @@ void Game::Update()
 	while (window.isOpen())
 	{
 		TimerManager::GetInstance().Update();
-		if (!InputManager::GetInstance().Update(window)) break;
-		player->GetLight()->setPosition(player->GetShapePosition().x + 50.0f, player->GetShapePosition().y + 50.0f);
+		if (!InputManager::GetInstance().Update(window)) 
+			break;
 		ActorManager::GetInstance().Update();
 	}
 }
@@ -94,15 +78,12 @@ void Game::UpdateWindow()
 
 	const float _deltaTime = TimerManager::GetInstance().GetDeltaTime();
 	camera->Update(_deltaTime);
-
 	window.setView(camera->GetView());
-	//DrawWorldUIs();
 
 	DrawMap();
 	DrawActors();
-	//window.draw(*player->GetLight());
-
 	DrawUIs();
+
 	window.display();
 }
 
@@ -141,25 +122,25 @@ void Game::DrawUIs()
 	View _view = window.getDefaultView();
 	for (Canvas* _canvas : HUD::GetInstance().GetAllValues())
 	{
-		if (!_canvas->IsVisible()) continue;
+		if (!_canvas->IsVisible()) 
+			continue;
 		_view.setViewport(_canvas->GetRect());
 		window.setView(_view);
 
 		for (Widget* _widget : _canvas->GetUiWidgets())
 		{
-			if (!_widget->IsVisible()) continue;
+			if (!_widget->IsVisible()) 
+				continue;
 			window.draw(*_widget->GetDrawable());
 		}
 	}
 }
-
 #pragma endregion
 
 void Game::Stop()
 {
-	cout << "A bient�t !" << endl;
+	cout << "A bientot !" << endl;
 }
-
 
 void Game::Launch()
 {

@@ -7,7 +7,8 @@
 
 enum NPCType
 {
-	MERCHAND,NPC
+	MERCHAND,
+	NPC
 };
 
 

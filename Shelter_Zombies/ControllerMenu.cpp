@@ -15,14 +15,11 @@ void ControllerMenu::Init()
 	const float _halfWindowX = _windowSize.x / 2.0f;
 
 	#pragma region Background
-
 	ShapeWidget* _background = new ShapeWidget(ShapeData(_windowSize / 2.0f, _windowSize, PATH_BACKGROUND));
 	canvas->AddWidget(_background);
-
 	#pragma endregion
 
 	#pragma region Title
-
 	const float _titlePosY = _windowSize.y * 0.1f;
 	Label* _title = new Label(TextData("Controller", Vector2f(_halfWindowX, _titlePosY), FONT, 36));
 	canvas->AddWidget(_title);
@@ -32,18 +29,14 @@ void ControllerMenu::Init()
 	const float _halfTitleBarSizeX = _titleBarSize.x * 0.45f;
 	ShapeWidget* _titleBar = new ShapeWidget(ShapeData(Vector2f(_halfWindowX, _titleBarPosY), _titleBarSize, PATH_TITLE_ICON));
 	canvas->AddWidget(_titleBar);
-
 	#pragma endregion
 
 	#pragma region Image
-
 	ShapeWidget* _image = new ShapeWidget(ShapeData(_windowSize / 2.0f, Vector2f(747.0f, 334.0f), PATH_CONTROLLER));
 	canvas->AddWidget(_image);
-
 	#pragma endregion
 
 	#pragma region Back
-
 	const Vector2f& _buttonSize = Vector2f(200.0f, 50.0f);
 	const float _buttonPosY = _windowSize.y * 0.9f;
 	const Vector2f& _buttonPos = Vector2f(_halfWindowX, _buttonPosY);
@@ -61,7 +54,5 @@ void ControllerMenu::Init()
 	canvas->AddWidget(_buttonText);
 
 	Menu::Init();
-	MovePointers(backButton);
-
 	#pragma endregion
 }

@@ -7,7 +7,6 @@
 #include "Mob.h"
 #include "SoundData.h"
 #include "SoundData.h"
-#include "DeathMob.h"
 
 // System
 #include "Macro.h"
@@ -43,12 +42,7 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	interaction = new InteractionComponent(this);
 	components.push_back(interaction);
 
-	light = new CircleShape(150.0f);
-	light->setFillColor(Color(255, 255, 255, 50));
-	light->setOrigin(150.0f, 150.0f);
-
 	stats = new PlayerStat(this);
-	charmsMenu = new CharmsMenu();
 	pauseMenu = new PauseMenu();
 
 	sound = new SoundData(SOUND_CHARGE_COMPLETE, 40.0f, false);
@@ -154,18 +148,8 @@ void Player::SetupPlayerInput()
 			}
 		}, InputData({ ActionType::JoystickButtonPressed, Joystick::isButtonPressed(0, 7) })),
 		ActionData("Sit", [&]() {
-			if (!charmsMenu->IsActive())
-			{
-				movement->SitDown();
-				attack->SetCanAttack(false);
-			}
 		}, InputData({ ActionType::KeyPressed, Keyboard::Z})),
 		ActionData("Stand", [&]() {
-			if (!charmsMenu->IsActive())
-			{
-				movement->StandUp();
-				attack->SetCanAttack(true);
-			}
 		}, InputData({ ActionType::KeyPressed, Keyboard::S }))
 	});
 
@@ -203,7 +187,6 @@ void Player::SetupPlayerInput()
 		ActionData("CharmsMenu", [&]() {
 			if (!movement->IsStanding())
 			{
-				TryToOpen(charmsMenu, false);
 			}
 		}, InputData({ ActionType::KeyPressed, Keyboard::P })),
 		ActionData("Interact", [&]() { interaction->TryToInteract(); }, InputData({ ActionType::KeyPressed, Keyboard::E })),
@@ -235,7 +218,6 @@ void Player::TryToOpen(Menu* _menu, const bool _restoreActions)
 
 void Player::CloseAllMenus(const bool _restoreActions)
 {
-	charmsMenu->SetStatus(false);
 	stats->SetStatus(true);
 	inventory->SetStatus(false);
 	interaction->StopInteract();
@@ -247,13 +229,11 @@ void Player::CloseAllMenus(const bool _restoreActions)
 	}
 }
 
-
 void Player::Init()
 {
 	movement->SetCanMove(true);
 	stats->SetStatus(true);
 	inventory->SetStatus(false);
-	charmsMenu->SetStatus(false);
 
 	InitAnimations();
 	SetupPlayerInput();
@@ -262,5 +242,4 @@ void Player::Init()
 void Player::Update(const float _deltaTime)
 {
 	Actor::Update(_deltaTime);
-	light->setPosition(GetShapePosition());
 }

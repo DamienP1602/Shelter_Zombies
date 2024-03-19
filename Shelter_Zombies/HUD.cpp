@@ -5,20 +5,21 @@
 
 void HUD::Interact(const Vector2f& _worldPosition, const Event& _event)
 {
+	//If interaction with button
 	for (Button* _button : buttons)
 	{
-		if (!_button->IsVisible()) continue;
+		if (!_button->IsVisible()) 
+			continue;
 
 		if (_button->GetDrawable()->getGlobalBounds().contains(_worldPosition))
 		{
 			if (_event.type == Event::MouseButtonPressed)
 			{
-				if (_button->OnPressed()) return;
+				if (_button->OnPressed())
+					return;
 			}
-
 			_button->OnHovered();
 		}
-
 		else
 		{
 			_button->OnUnhovered();
@@ -32,6 +33,17 @@ void HUD::Interact(const Vector2f& _worldPosition, const Event& _event)
 		_button->OnHeld();
 	}
 
+	//If interaction with scrollbar
+	for (ScrollBar* _scrollBar : scrollBars)
+	{
+		if (!_scrollBar->IsVisible()) 
+			continue;
+
+		if (_event.type == Event::MouseWheelScrolled)
+		{
+			_scrollBar->UpdateScroll(_event);
+		}
+	}
 }
 
 Button* HUD::GetHoveredButton(const vector<Button*>& _buttons)

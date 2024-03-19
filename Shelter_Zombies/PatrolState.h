@@ -1,11 +1,9 @@
 #pragma once
 #include "State.h"
-#include "PatrolToDeath.h"
 #include "InspectComponent.h"
 
 class PatrolState : public State
 {
-	PatrolToDeath* patrolToDeath;
 	InspectComponent* inspect;
 
 public:

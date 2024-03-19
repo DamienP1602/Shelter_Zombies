@@ -180,7 +180,6 @@ void Inventory::Grid()
 					if (ItemWidget* _itemWidget = dynamic_cast<ItemWidget*>(_hoveredButton->GetForeground()))
 					{
 						ShapeObject* _object = _itemWidget->GetObject();
-						pointerLeft->SetShapePosition(_object->GetShapePosition());
 
 						descriptionTitle->SetString(_itemWidget->GetTitle());
 						descriptionText->SetString(_itemWidget->GetText());
@@ -193,10 +192,6 @@ void Inventory::Grid()
 		}
 	}
 
-	pointerLeft = new ShapeWidget(ShapeData(_gridPos, cellSize, PATH_INVENTORY_POINTER));
-	pointerLeft->SetVisible(false);
-	pointerRight->SetVisible(false);
-	canvas->AddWidget(pointerLeft);
 }
 
 void Inventory::Equippements()
@@ -403,7 +398,6 @@ void Inventory::AddItem(const int _count, const ItemData& _data)
 	{
 		if (Item* _item = FindItemData(_data.path))
 		{
-			pointerLeft->SetVisible(true);
 			_item->UpdateCount(1);
 			AddItem(_count - 1, _data);
 			return;
@@ -425,7 +419,6 @@ void Inventory::CreateItemData(const ItemData& _data)
 	if (!_button) return;
 
 	ShapeObject* _object = _button->GetObject();
-	pointerLeft->SetShapePosition(_object->GetShapePosition());
 	const ShapeData& _objectData = ShapeData(_button->GetObject()->GetShapePosition(),
 											 _button->GetObject()->GetShapeSize() * 70.0f / 100.0f,
 											 _data.path);

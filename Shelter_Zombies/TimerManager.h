@@ -1,59 +1,39 @@
 #pragma once
+#include <SFML/System.hpp>
+#include <iostream>
 #include "Singleton.h"
 #include "IManager.h"
 #include "Timer.h"
 
-#include <SFML/System.hpp>
-#include <iostream>
-
 using namespace sf;
 using namespace std;
 
-//struct Timer
-//{
-//
-//	Timer(c)
-//	Time _current = seconds(0);
-//	Time _max = milliseconds(static_cast<Int32>(_duration));
-//};
 class TimerManager : public Singleton<TimerManager>, public IManager<int, Timer>
 {
 	// Clock pour avoir accès à toutes les données de temps
 	Clock clock;
 
-
 	float current;
-
 	float max;
-	// Temps en seconde depuis le début du programme
-	float time;
+	float time; // Temps en seconde depuis le début du programme
 
-	// Mettre à jour les timers
-	float lastTime;
+	float lastTime; // Mettre à jour les timers
 
-	// Mettre à jour les compteurs de FPS
-	float lastFrameTime;
+	float lastFrameTime; // Mettre à jour les compteurs de FPS
 
-	// Temps en seconde depuis la dernière image rendue
-	float elapsedTime;
+	float elapsedTime; // Temps en seconde depuis la dernière image rendue
 
-	// Vitesse à laquelle le temps s'écoule
-	float timeScale;
+	float timeScale; // Vitesse à laquelle le temps s'écoule
 
-	// Temps en seconde depuis la dernière image rendue avec le time scale
-	float deltaTime;
+	float deltaTime; // Temps en seconde depuis la dernière image rendue avec le time scale
 
-	// Nombre d'images qui ont été rendu depuis le début
-	unsigned int framesCount;
+	unsigned int framesCount; // Nombre d'images qui ont été rendu depuis le début
 
-	// Maximum d'image à rendre par seconde
-	unsigned int maxFrameRate;
+	unsigned int maxFrameRate; // Maximum d'image à rendre par seconde
 
-	// Nombre d'image rendu par seconde
-	float fps;
+	float fps; // Nombre d'image rendu par seconde
 
-	// Méthode de rappel à éxécuter si le rendu est à jour
-	function<void()> renderCallback;
+	function<void()> renderCallback; // Méthode de rappel à éxécuter si le rendu est à jour
 
 	bool isPause;
 

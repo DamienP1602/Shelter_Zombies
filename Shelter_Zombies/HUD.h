@@ -4,6 +4,10 @@
 #include "Canvas.h"
 #include "Button.h"
 
+/// <summary>
+/// The manager of canvas.
+/// Handle the interaction's UI
+/// </summary>
 class HUD : public Singleton<HUD>, public IManager<string, Canvas>
 {
 	vector<Button*> buttons;

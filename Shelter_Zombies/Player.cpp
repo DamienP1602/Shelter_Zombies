@@ -24,8 +24,6 @@
 #define PATH_DEATHMOB "Animations/DeathMob.png"
 #define DEAD_ZONE 50.0f
 
-
-
 Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data, CT_BLOCK)
 {
 	animation = new PlayerAnimationComponent(this);

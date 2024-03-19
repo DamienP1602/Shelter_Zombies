@@ -9,42 +9,6 @@
 using namespace std;
 using namespace sf;
 
-struct Brightness
-{
-	Shader* shader;
-	float gamma;
-	float gammaMin;
-	float gammaMax;
-
-	Brightness()
-	{
-		shader = new Shader();
-		gamma = 1.0f;
-		gammaMin = 0.1f;
-		gammaMax = 3.5f;
-	}
-
-	void Init()
-	{
-		if (!shader->loadFromFile("Assets/Shaders/shader.frag", Shader::Fragment))
-		{
-			cerr << "Error => The shader cannot be loaded !" << endl;
-			return;
-		}
-		shader->setUniform("gamma", gamma);
-	}
-
-	void UpdateBrightness(const float _factor)
-	{
-		gamma += gammaMax * _factor / 100.0f;
-		cout << gamma << endl;
-
-		gamma = gamma < gammaMin ? gammaMin : gamma;
-		gamma = gamma > gammaMax ? gammaMax : gamma;
-		shader->setUniform("gamma", gamma);
-	}
-};
-
 /// <summary>
 /// The Game class
 /// </summary>

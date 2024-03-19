@@ -19,6 +19,7 @@ class ShapeObject : public Object
 {
 protected:
 	Shape* shape;
+	bool isHidden = false;
 
 public:
 	void SetShape(Shape* _shape)
@@ -35,6 +36,10 @@ public:
 	{
 		const Vector2i& _position = Vector2i(shape->getLocalBounds().getPosition());
 		shape->setTextureRect(IntRect(_position, Vector2i(_size)));
+	}
+	void SetIsHidden(bool _value)
+	{
+		isHidden = _value;
 	}
 	virtual Shape* GetDrawable() const override
 	{
@@ -53,6 +58,10 @@ public:
 	{
 		if (!shape) return Vector2f();
 		return shape->getGlobalBounds().getSize();
+	}
+	bool IsHidden()
+	{
+		return isHidden;
 	}
 
 public:

@@ -71,7 +71,8 @@ bool BoxCast(const FloatRect& _boxRect, HitInfo& _hitInfo, const vector<Actor*>&
 {
 	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 	{
-		if (Contains(_actor, _ignoredActors)) continue;
+		if (Contains(_actor, _ignoredActors))
+			continue;
 
 		if (_boxRect.intersects(_actor->GetDrawable()->getGlobalBounds()))
 		{

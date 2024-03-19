@@ -1,11 +1,15 @@
 #include "Menu.h"
 #include "MenuManager.h"
+#include "Game.h"
 
 #define SOUND_SELECT "Ui/ui_change_selection"
 
 Menu::Menu(const string& _name, Menu* _owner) : IManagable(_name)
 {
 	Register();
+
+	windowX = Game::GetWindowSize().x;
+	windowY = Game::GetWindowSize().y;
 
 	isInit = false;
 	canvas = new Canvas(_name);
@@ -17,6 +21,7 @@ Menu::Menu(const string& _name, Menu* _owner) : IManagable(_name)
 void Menu::Register()
 {
 	MenuManager::GetInstance().Add(id, this);
+	MenuManager::GetInstance().DisableNotCurrent();
 }
 
 void Menu::Init()

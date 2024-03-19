@@ -1,5 +1,5 @@
 #pragma once
-#include "Canvas.h"
+#include "Menu.h"
 #include "ShapeWidget.h"
 
 struct TalentTree
@@ -12,7 +12,7 @@ struct TalentTree
 	}
 };
 
-class InventoryPlayer : public Canvas
+class InventoryPlayer : public Menu
 {
 	TalentTree* talents;
 

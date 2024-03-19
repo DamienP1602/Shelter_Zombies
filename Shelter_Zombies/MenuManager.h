@@ -19,4 +19,6 @@ public:
 
 		return nullptr;
 	}
+
+	void DisableNotCurrent();
 };

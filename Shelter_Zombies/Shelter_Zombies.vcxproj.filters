@@ -58,9 +58,6 @@
     <Filter Include="Source Files\Manager\Musics">
       <UniqueIdentifier>{25bc66db-197f-4354-8e16-42b2a2621830}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Manager\UI">
-      <UniqueIdentifier>{797e8f2f-a453-4111-92f5-559656b9b0ab}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Manager\Sounds">
       <UniqueIdentifier>{f19cf77f-a0a4-45fa-8872-b7778a868bdb}</UniqueIdentifier>
     </Filter>
@@ -160,17 +157,26 @@
     <Filter Include="Source Files\IAs\States">
       <UniqueIdentifier>{9e11bbeb-0715-404a-bf10-e7a57b55d825}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UIs\Canvas\ProjetCanvas">
+    <Filter Include="Source Files\Menus\UI">
+      <UniqueIdentifier>{797e8f2f-a453-4111-92f5-559656b9b0ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UIs\Projet Menu">
+      <UniqueIdentifier>{b8d9248d-1d54-4378-bcf8-2114f4554c15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UIs\Menu">
       <UniqueIdentifier>{dd52a99d-c067-4633-b97f-318b8c0081df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UIs\Canvas\ProjetCanvas\Player Village">
+    <Filter Include="Source Files\UIs\Menu\Player Village">
       <UniqueIdentifier>{5081b78c-07f5-4591-b078-abeb284f48ad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UIs\Canvas\ProjetCanvas\Attack Village">
+    <Filter Include="Source Files\UIs\Menu\Attack Village">
       <UniqueIdentifier>{8d726c52-267d-4cf9-ae90-f55daa02168e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UIs\Canvas\ProjetCanvas\InventoryPlayer">
+    <Filter Include="Source Files\UIs\Menu\InventoryPlayer">
       <UniqueIdentifier>{213d4ad7-ff8d-4a47-b9c0-140fca560d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UIs\Menu\BuildingCanva">
+      <UniqueIdentifier>{349689a8-caf8-4ede-829a-0820c5cb2615}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -268,7 +274,7 @@
       <Filter>Source Files\Manager\FXs</Filter>
     </ClInclude>
     <ClInclude Include="HUD.h">
-      <Filter>Source Files\Manager\UI</Filter>
+      <Filter>Source Files\Menus\UI</Filter>
     </ClInclude>
     <ClInclude Include="MenuManager.h">
       <Filter>Source Files\Manager\Menus</Filter>
@@ -450,14 +456,17 @@
     <ClInclude Include="PlayerSoundData.h">
       <Filter>Source Files\Manager\Sounds</Filter>
     </ClInclude>
-    <ClInclude Include="VillageCanva.h">
-      <Filter>Source Files\UIs\Canvas\ProjetCanvas\Player Village</Filter>
+    <ClInclude Include="VillageMenu.h">
+      <Filter>Source Files\UIs\Menu\Player Village</Filter>
     </ClInclude>
-    <ClInclude Include="AttackCanva.h">
-      <Filter>Source Files\UIs\Canvas\ProjetCanvas\Attack Village</Filter>
+    <ClInclude Include="AttackMenu.h">
+      <Filter>Source Files\UIs\Menu\Attack Village</Filter>
     </ClInclude>
     <ClInclude Include="InventoryPlayer.h">
-      <Filter>Source Files\UIs\Canvas\ProjetCanvas\InventoryPlayer</Filter>
+      <Filter>Source Files\UIs\Menu\InventoryPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingMenu.h">
+      <Filter>Source Files\UIs\Menu\BuildingCanva</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -546,7 +555,7 @@
       <Filter>Source Files\Manager\FXs</Filter>
     </ClCompile>
     <ClCompile Include="HUD.cpp">
-      <Filter>Source Files\Manager\UI</Filter>
+      <Filter>Source Files\Menus\UI</Filter>
     </ClCompile>
     <ClCompile Include="MenuManager.cpp">
       <Filter>Source Files\Manager\Menus</Filter>
@@ -722,14 +731,17 @@
     <ClCompile Include="PlayerSoundData.cpp">
       <Filter>Source Files\Manager\Sounds</Filter>
     </ClCompile>
-    <ClCompile Include="VillageCanva.cpp">
-      <Filter>Source Files\UIs\Canvas\ProjetCanvas\Player Village</Filter>
+    <ClCompile Include="VillageMenu.cpp">
+      <Filter>Source Files\UIs\Menu\Player Village</Filter>
     </ClCompile>
-    <ClCompile Include="AttackCanva.cpp">
-      <Filter>Source Files\UIs\Canvas\ProjetCanvas\Attack Village</Filter>
+    <ClCompile Include="AttackMenu.cpp">
+      <Filter>Source Files\UIs\Menu\Attack Village</Filter>
     </ClCompile>
     <ClCompile Include="InventoryPlayer.cpp">
-      <Filter>Source Files\UIs\Canvas\ProjetCanvas\InventoryPlayer</Filter>
+      <Filter>Source Files\UIs\Menu\InventoryPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingMenu.cpp">
+      <Filter>Source Files\UIs\Menu\BuildingCanva</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

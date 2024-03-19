@@ -85,6 +85,10 @@ public:
 		}
 	}
 
+	void SetCurrent(Value* _value)
+	{
+		current = _value;
+	}
 	Value* GetCurrent() const
 	{
 		return current;

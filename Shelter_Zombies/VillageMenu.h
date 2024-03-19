@@ -1,5 +1,5 @@
 #pragma once
-#include "Canvas.h"
+#include "Menu.h"
 #include <vector>
 #include "ShapeWidget.h"
 #include "Game.h"
@@ -141,13 +141,13 @@ public:
 	}
 };
 
-class VillageCanva : public Canvas
+class VillageMenu : public Menu
 {
 	ConstructPanel* panel;
 
 public:
-	VillageCanva();
-	~VillageCanva();
+	VillageMenu();
+	~VillageMenu();
 
 public:
 	void Init();

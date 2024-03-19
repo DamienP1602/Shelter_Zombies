@@ -1,13 +1,9 @@
 #include "Canvas.h"
 #include "HUD.h"
-#include "Game.h"
 
 Canvas::Canvas(const string& _name, const FloatRect& _rect) : IManagable(_name)
 {
 	Register();
-
-	windowX = Game::GetWindowSize().x;
-	windowY = Game::GetWindowSize().y;
 
 	isVisible = true;
 	rect = _rect;

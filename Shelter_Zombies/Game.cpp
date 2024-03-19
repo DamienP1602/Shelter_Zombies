@@ -6,8 +6,8 @@
 #include "Widget.h"
 #include "TriggerBox.h"
 
-#include "VillageCanva.h"
-#include "AttackCanva.h"
+#include "VillageMenu.h"
+#include "AttackMenu.h"
 #include "InventoryPlayer.h"
 
 //TODO GAME change anim player's path
@@ -44,14 +44,17 @@ void Game::Start()
 	window.create(VideoMode(1920, 1080), "Shelter Game");
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
-	new Timer([&]() { Init(); }, seconds(1.0f), true, false);
+	Init();
 }
 
 void Game::Init()
 {
 	map->Init();
 	camera->Init();
+
 	new InventoryPlayer();
+	new VillageMenu();
+	new AttackMenu();
 
 	/*TriggerBox* _box = new TriggerBox(ShapeData(Vector2f(100.0f, 0.0f), Vector2f(200.0f, 200.0f), ""), [&]() {
 		cout << "coucou" << endl;

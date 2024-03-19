@@ -16,10 +16,14 @@
 /// </summary>
 class Menu : public IManagable<string>
 {
+
 	bool isInit;
 	SoundData* sound;
 
 protected:
+	float windowX;
+	float windowY;
+
 	Canvas* canvas;
 	Button* backButton;
 	Menu* owner;

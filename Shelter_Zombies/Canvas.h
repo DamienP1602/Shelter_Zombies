@@ -9,13 +9,9 @@ using namespace sf;
 
 /// <summary>
 /// The canvas to draw widgets
-/// </summary>
+/// </summary>>
 class Canvas : public IManagable<string>
 {
-protected:
-	float windowX;
-	float windowY;
-
 private:
 	bool isVisible;
 	FloatRect rect;

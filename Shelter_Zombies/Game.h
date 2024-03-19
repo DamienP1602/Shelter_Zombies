@@ -9,9 +9,6 @@
 using namespace std;
 using namespace sf;
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
-
 struct Brightness
 {
 	Shader* shader;

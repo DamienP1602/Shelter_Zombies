@@ -6,6 +6,10 @@
 #include "Widget.h"
 #include "TriggerBox.h"
 
+#include "VillageCanva.h"
+#include "AttackCanva.h"
+#include "InventoryPlayer.h"
+
 //TODO GAME change anim player's path
 //#define PATH_PLAYER "Animations/knighModif.png"
 
@@ -24,7 +28,7 @@ Camera* Game::camera;
 
 Game::Game()
 {
-	player = new Player("Player", ShapeData(Vector2f(100.0f, -2000.0f), Vector2f(75.0f, 75.0f), PATH_PLAYER));
+	player = new Player("Player", ShapeData(Vector2f(100.0f, -2000.0f), Vector2f(75.0f, 75.0f), ""));
 	map = new Map();
 	camera = new Camera();
 } 
@@ -37,7 +41,7 @@ Game::~Game()
 
 void Game::Start()
 {
-	window.create(VideoMode(1920, 1080), "Shelter Game", Style::Fullscreen);
+	window.create(VideoMode(1920, 1080), "Shelter Game");
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
 	new Timer([&]() { Init(); }, seconds(1.0f), true, false);
@@ -47,6 +51,7 @@ void Game::Init()
 {
 	map->Init();
 	camera->Init();
+	new InventoryPlayer();
 
 	/*TriggerBox* _box = new TriggerBox(ShapeData(Vector2f(100.0f, 0.0f), Vector2f(200.0f, 200.0f), ""), [&]() {
 		cout << "coucou" << endl;
@@ -77,8 +82,8 @@ void Game::UpdateWindow()
 	window.clear();
 
 	const float _deltaTime = TimerManager::GetInstance().GetDeltaTime();
-	camera->Update(_deltaTime);
-	window.setView(camera->GetView());
+	//camera->Update(_deltaTime);
+	//window.setView(camera->GetView());
 
 	DrawMap();
 	DrawActors();
@@ -89,37 +94,30 @@ void Game::UpdateWindow()
 
 #pragma region Draws
 
-void Game::DrawWorldUIs()
-{
-	for (Canvas* _canvas : HUD::GetInstance().GetAllValues())
-	{
-		for (Widget* _widget : _canvas->GetWorldWidgets())
-		{
-			if (!_widget->IsVisible()) continue;
-			window.draw(*_widget->GetDrawable());
-		}
-	}
-}
-
 void Game::DrawMap()
 {
-	for (ShapeObject* _drawable : map->GetAllDrawables())
+	/*for (ShapeObject* _drawable : map->GetAllDrawables())
 	{
 		window.draw(*_drawable->GetDrawable());
-	}
+	}*/
 }
 
 void Game::DrawActors()
 {
-	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
+	/*for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 	{
 		window.draw(*_actor->GetDrawable());
-	}
+	}*/
 }
 
 void Game::DrawUIs()
 {
-	View _view = window.getDefaultView();
+	for (Widget* _widget : HUD::GetInstance().GetCurrent()->GetUiWidgets())
+	{
+		window.draw(*_widget->GetDrawable());
+	}
+
+	/*View _view = window.getDefaultView();
 	for (Canvas* _canvas : HUD::GetInstance().GetAllValues())
 	{
 		if (!_canvas->IsVisible()) 
@@ -133,7 +131,7 @@ void Game::DrawUIs()
 				continue;
 			window.draw(*_widget->GetDrawable());
 		}
-	}
+	}*/
 }
 #pragma endregion
 

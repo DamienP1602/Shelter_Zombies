@@ -32,18 +32,6 @@ void HUD::Interact(const Vector2f& _worldPosition, const Event& _event)
 
 		_button->OnHeld();
 	}
-
-	//If interaction with scrollbar
-	for (ScrollBar* _scrollBar : scrollBars)
-	{
-		if (!_scrollBar->IsVisible()) 
-			continue;
-
-		if (_event.type == Event::MouseWheelScrolled)
-		{
-			_scrollBar->UpdateScroll(_event);
-		}
-	}
 }
 
 Button* HUD::GetHoveredButton(const vector<Button*>& _buttons)

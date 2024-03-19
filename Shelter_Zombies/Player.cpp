@@ -43,7 +43,6 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	components.push_back(interaction);
 
 	stats = new PlayerStat(this);
-	pauseMenu = new PauseMenu();
 
 	sound = new SoundData(SOUND_CHARGE_COMPLETE, 40.0f, false);
 
@@ -174,7 +173,6 @@ void Player::SetupPlayerInput()
 
 	new ActionMap("Menu", {
 		ActionData("Pause", [&]() {
-			TryToOpen(pauseMenu);
 			stats->SetStatus(false);
 		}, InputData({ ActionType::KeyPressed, Keyboard::Escape })),
 		ActionData("Inventory", [&]() { TryToOpen(inventory); }, InputData({ ActionType::KeyPressed, Keyboard::B })),

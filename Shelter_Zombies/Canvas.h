@@ -12,10 +12,15 @@ using namespace sf;
 /// </summary>
 class Canvas : public IManagable<string>
 {
+protected:
+	float windowX;
+	float windowY;
+
+private:
 	bool isVisible;
 	FloatRect rect;
 	vector<Widget*> uiWidgets;
-	vector<Widget*> worldWidgets; //TODO what is this ?
+	vector<Widget*> worldWidgets;
 
 public:
 	bool GetVisibilityStatus()
@@ -54,6 +59,17 @@ public:
 	vector<Widget*> GetWorldWidgets() const
 	{
 		return worldWidgets;
+	}
+	void RemoveUIWidget(Widget* _widget)
+	{
+		for (vector<Widget*>::iterator _it = uiWidgets.begin(); _it != uiWidgets.end(); _it++)
+		{
+			if (*_it == _widget)
+			{
+				uiWidgets.erase(_it);
+				return;
+			}
+		}
 	}
 
 public:

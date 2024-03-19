@@ -8,8 +8,6 @@
 using namespace std;
 using namespace sf;
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
 #define PATH_THIN "Levels/Thin.png"
 #define PATH_MID "Levels/Mid.png"
 #define PATH_WIDE "Levels/Wide.png"

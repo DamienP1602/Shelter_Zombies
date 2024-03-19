@@ -1,9 +1,13 @@
 #include "Canvas.h"
 #include "HUD.h"
+#include "Game.h"
 
 Canvas::Canvas(const string& _name, const FloatRect& _rect) : IManagable(_name)
 {
 	Register();
+
+	windowX = Game::GetWindowSize().x;
+	windowY = Game::GetWindowSize().y;
 
 	isVisible = true;
 	rect = _rect;
@@ -33,11 +37,6 @@ void Canvas::AddWidget(Widget* _widget)
 	if (Button* _button = dynamic_cast<Button*>(_widget))
 	{
 		HUD::GetInstance().AddButton(_button);
-	}
-
-	if (ScrollBar* _scrollBar = dynamic_cast<ScrollBar*>(_widget))
-	{
-		HUD::GetInstance().AddScrollBar(_scrollBar);
 	}
 
 	vector<Widget*>* _widgets[] = {

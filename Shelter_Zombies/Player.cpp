@@ -3,15 +3,12 @@
 
 // Sound
 #include "SoundData.h"
-// Mobs
-#include "Mob.h"
-#include "SoundData.h"
-#include "SoundData.h"
 
 // System
 #include "Macro.h"
 #include "Kismet.h"
 #include "Camera.h"
+
 // Managers
 #include "ActorManager.h"
 #include "InputManager.h"
@@ -89,7 +86,7 @@ void Player::TryToOpen(Menu* _menu, const bool _restoreActions)
 		SoundManager::GetInstance().Stop("bench rest");
 		new SoundData("bossgushing", 50.0f, false);
 
-		movement->SetCanMove(false);
+		//movement->SetCanMove(false);
 		attack->SetCanAttack(false);
 		_menu->SetStatus(true);
 		//stats->SetStatus(false);
@@ -110,14 +107,14 @@ void Player::CloseAllMenus(const bool _restoreActions)
 
 	if (_restoreActions)
 	{
-		movement->SetCanMove(true);
+		//movement->SetCanMove(true);
 		attack->SetCanAttack(true);
 	}
 }
 
 void Player::Init()
 {
-	movement->SetCanMove(true);
+	//movement->SetCanMove(true);
 	/*stats->SetStatus(true);
 	inventory->SetStatus(false);*/
 

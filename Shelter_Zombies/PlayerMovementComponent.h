@@ -1,11 +1,13 @@
 #pragma once
-#include "EntityMovementComponent.h"
+#include "Component.h"
 #include "PlayerAnimationComponent.h"
 #include "SoundManager.h"
 
-class PlayerMovementComponent : public EntityMovementComponent
+class PlayerMovementComponent : public Component
 {
 	// Movement
+	bool canMove = false;
+	float speed = 0.45f;
 	bool directionHasChanged;
 	Vector2f direction;
 

@@ -1,5 +1,6 @@
 #include "StandbyState.h"
-#include "Brain.h"
+#include "EntityBrain.h"
+#include "Entity.h"
 
 StandbyState::StandbyState(Brain* _brain) : State(_brain)
 {

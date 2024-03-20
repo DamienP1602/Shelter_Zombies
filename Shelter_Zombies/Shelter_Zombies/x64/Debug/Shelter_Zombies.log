@@ -1,150 +1,93 @@
-﻿  Animation.cpp
+﻿  Action.cpp
+  Animation.cpp
   Artillery.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Artillery.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Artillery.cpp')
+  
   AttackState.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Artillery.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Artillery.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'Artillery.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityBrain.h(12,13): error C2143: syntax error: missing ';' before '*'
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'AttackState.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityBrain.h(12,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'AttackState.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityBrain.h(12,21): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'AttackState.cpp')
+  AudioMenu.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'AudioMenu.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityBrain.h(25,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'AttackState.cpp')
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'AudioMenu.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityBrain.h(25,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'AttackState.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityBrain.h(26,2): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'AttackState.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(61,3): error C2027: use of undefined type 'EntityAttackComponent'
-  (compiling source file 'AttackState.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(9,7):
-  see declaration of 'EntityAttackComponent'
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'AttackState.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'AttackState.cpp')
-  
-  AttackToChase.cpp
   Barrack.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Barrack.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Barrack.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'Barrack.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
   
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.h(36,71): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Barrack.cpp')
   
   Brain.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Brain.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Brain.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'Brain.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
-  
+  BuildingManager.cpp
+  BuildingMenu.cpp
   Camera.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Camera.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Camera.cpp')
+  
   ChaseState.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\ChaseState.cpp(25,35): error C2061: syntax error: identifier 'EntityBrain'
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\ChaseState.cpp(26,34): error C2061: syntax error: identifier 'EntityBrain'
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\ChaseState.cpp(32,13): error C2027: use of undefined type 'Actor'
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\Component.h(3,7):
-  see declaration of 'Actor'
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'ChaseState.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\ChaseState.cpp(32,59): error C2059: syntax error: ')'
-  ChaseToAttack.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'ChaseState.cpp')
+  
+  CollectableActor.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'CollectableActor.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'CollectableActor.cpp')
+  
+  CollisionComponent.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'CollisionComponent.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'CollisionComponent.cpp')
+  
   Construction.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Construction.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Construction.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'Construction.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
   
   ControllerMenu.cpp
-  Enemy.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Enemy.cpp')
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'ControllerMenu.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Enemy.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Enemy.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(61,3): error C2027: use of undefined type 'EntityAttackComponent'
-  (compiling source file 'Enemy.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(9,7):
-  see declaration of 'EntityAttackComponent'
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Enemy.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Enemy.cpp')
-  
-  EntityBrain.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'EntityBrain.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'EntityBrain.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'EntityBrain.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(61,3): error C2027: use of undefined type 'EntityAttackComponent'
-  (compiling source file 'EntityBrain.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(9,7):
-  see declaration of 'EntityAttackComponent'
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'EntityBrain.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'EntityBrain.cpp')
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'ControllerMenu.cpp')
   
   EnemyEntityManager.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'EnemyEntityManager.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'EnemyEntityManager.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'EnemyEntityManager.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
   
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244:         with
@@ -166,32 +109,22 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:         [
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:             T=float
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:         ]
-  EntityLifeComponent.cpp
+  Engineer.cpp
   Entity.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Entity.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Entity.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'Entity.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
   
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.cpp(21,57): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.cpp(21,41): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
   AllyEntityManager.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'AllyEntityManager.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'AllyEntityManager.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'AllyEntityManager.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
   
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.h(36,71): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'AllyEntityManager.cpp')
@@ -216,204 +149,168 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:         [
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:             T=float
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:         ]
-  Fighter.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Fighter.cpp')
+  EntityBrain.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'EntityBrain.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Fighter.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'Fighter.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
-  
-  SightComponent.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'SightComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'SightComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'SightComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(61,3): error C2027: use of undefined type 'EntityAttackComponent'
-  (compiling source file 'SightComponent.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(9,7):
-  see declaration of 'EntityAttackComponent'
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'SightComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'SightComponent.cpp')
-  
-  Map.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Map.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Map.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Map.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(61,3): error C2027: use of undefined type 'EntityAttackComponent'
-  (compiling source file 'Map.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(9,7):
-  see declaration of 'EntityAttackComponent'
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Map.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Map.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Boss.h(3,10): error C1083: Cannot open include file: 'MobMovementComponent.h': No such file or directory
-  (compiling source file 'Map.cpp')
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'EntityBrain.cpp')
   
   Generating Code...
   Compiling...
-  EntityAttackComponent.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AttackState.h(11,23): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'EntityAttackComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AttackState.h(11,23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'EntityAttackComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AttackState.h(11,41): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'EntityAttackComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(61,3): error C2027: use of undefined type 'EntityAttackComponent'
-  (compiling source file 'EntityAttackComponent.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(9,7):
-  see declaration of 'EntityAttackComponent'
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'EntityAttackComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'EntityAttackComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.cpp(8,13): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.cpp(9,10): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   EntityMovementComponent.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.cpp(21,2): warning C4150: deletion of pointer to incomplete type 'EntityAttackComponent'; no destructor called
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(9,7):
-  see declaration of 'EntityAttackComponent'
+  Fighter.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Fighter.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.cpp(68,2): error C3861: 'Normalize': identifier not found
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.cpp(77,9): error C3861: 'Distance': identifier not found
-  OptionsMenu.cpp
-  StandbyState.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.cpp(8,37): error C2248: 'StandbyToChase::StandbyToChase': cannot access private member declared in class 'StandbyToChase'
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyToChase.h(6,2):
-  see declaration of 'StandbyToChase::StandbyToChase'
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyToChase.h(4,7):
-  see declaration of 'StandbyToChase'
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Fighter.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.cpp(9,37): error C2248: 'StandbyToDeath::StandbyToDeath': cannot access private member declared in class 'StandbyToDeath'
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyToDeath.h(6,2):
-  see declaration of 'StandbyToDeath::StandbyToDeath'
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyToDeath.h(4,7):
-  see declaration of 'StandbyToDeath'
+  FxManager.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'FxManager.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.cpp(21,2): warning C4150: deletion of pointer to incomplete type 'Entity'; no destructor called
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.h(6,7):
-  see declaration of 'Entity'
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'FxManager.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.cpp(26,36): error C2061: syntax error: identifier 'EntityBrain'
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.cpp(27,36): error C2061: syntax error: identifier 'EntityBrain'
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.cpp(32,11): error C2680: 'Entity *': invalid target type for dynamic_cast
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.cpp(32,11):
-  'Entity': class must be defined before using in a dynamic_cast
+  Game.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.cpp(38,38): error C2027: use of undefined type 'Entity'
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\StandbyState.h(6,7):
-  see declaration of 'Entity'
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Game.cpp')
   
-  PauseMenu.cpp
+  GameMenu.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'GameMenu.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'GameMenu.cpp')
+  
+  InteractableActor.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'InteractableActor.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'InteractableActor.cpp')
+  
+  InteractionComponent.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'InteractionComponent.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'InteractionComponent.cpp')
+  
+  Inventory.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Inventory.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Inventory.cpp')
+  
+  InventoryPlayer.cpp
+  KeyboardMenu.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'KeyboardMenu.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'KeyboardMenu.cpp')
+  
+  Main.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+  MainMenu.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'MainMenu.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'MainMenu.cpp')
+  
+  Map.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Map.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Map.cpp')
+  
+  Menu.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Menu.cpp')
+  
   Player.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C2143: syntax error: missing ';' before '*'
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Player.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Player.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Player.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(61,3): error C2027: use of undefined type 'EntityAttackComponent'
-  (compiling source file 'Player.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(9,7):
-  see declaration of 'EntityAttackComponent'
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Player.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Player.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Mob.h(3,10): error C1083: Cannot open include file: 'MobMovementComponent.h': No such file or directory
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Player.cpp')
   
   PlayerAttackComponent.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C2143: syntax error: missing ';' before '*'
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'PlayerAttackComponent.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'PlayerAttackComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(48,30): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'PlayerAttackComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.h(61,3): error C2027: use of undefined type 'EntityAttackComponent'
-  (compiling source file 'PlayerAttackComponent.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(9,7):
-  see declaration of 'EntityAttackComponent'
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'PlayerAttackComponent.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'PlayerAttackComponent.cpp')
   
   PlayerMovementComponent.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\PlayerMovementComponent.cpp(10,90): error C2665: 'EntityMovementComponent::EntityMovementComponent': no overloaded function could convert all the argument types
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.h(57,1):
-  could be 'EntityMovementComponent::EntityMovementComponent(const EntityMovementComponent &)'
-  	D:\GitHub\Shelter_Zombies\Shelter_Zombies\PlayerMovementComponent.cpp(10,90):
-  	'EntityMovementComponent::EntityMovementComponent(const EntityMovementComponent &)': cannot convert argument 1 from 'Actor *' to 'const EntityMovementComponent &'
-  		D:\GitHub\Shelter_Zombies\Shelter_Zombies\PlayerMovementComponent.cpp(10,91):
-  		Reason: cannot convert from 'Actor *' to 'const EntityMovementComponent'
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\PlayerMovementComponent.cpp(10,90):
-  while trying to match the argument list '(Actor *)'
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'PlayerMovementComponent.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'PlayerMovementComponent.cpp')
+  
+  PlayerSoundData.cpp
+  PlayerStat.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'PlayerStat.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'PlayerStat.cpp')
   
   Shooter.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Shooter.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Shooter.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'Shooter.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
-  
-  ShopMenu.cpp
-  Support.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(26,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Support.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(27,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'Support.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(42,51): error C2027: use of undefined type 'EntityLifeComponent'
-  (compiling source file 'Support.cpp')
-  D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(7,7):
-  see declaration of 'EntityLifeComponent'
-  
-  TitleMenu.cpp
   Generating Code...
+  Compiling...
+  SightComponent.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'SightComponent.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'SightComponent.cpp')
+  
+  StandbyState.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'StandbyState.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'StandbyState.cpp')
+  
+  Support.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Support.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Support.cpp')
+  
+  TextureData.cpp
+  VillageMenu.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'VillageMenu.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'VillageMenu.cpp')
+  
+  Workshop.cpp
+  Generating Code...
+  Shelter_Zombies.vcxproj -> D:\GitHub\Shelter_Zombies\Shelter_Zombies\x64\Debug\Shelter_Zombies.exe

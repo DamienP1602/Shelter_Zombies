@@ -70,7 +70,7 @@ class Player : public Actor
 public:
 	void SetStatus(const bool _status)
 	{
-		movement->SetCanMove(_status);
+		//movement->SetCanMove(_status);
 	}
 	PlayerMovementComponent* GetPlayerMovement()const
 	{

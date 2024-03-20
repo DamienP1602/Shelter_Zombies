@@ -1,5 +1,5 @@
 #include "AttackState.h"
-#include "Brain.h"
+#include "EntityBrain.h"
 
 AttackState::AttackState(Brain* _brain) : State(_brain)
 {

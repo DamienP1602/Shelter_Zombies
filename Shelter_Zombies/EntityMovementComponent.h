@@ -6,8 +6,6 @@
 #include <functional>
 #include <iostream>
 
-class EntityAttackComponent;
-
 using namespace std;
 using namespace sf;
 
@@ -22,7 +20,6 @@ protected:
 
 	AnimationComponent* animation = nullptr;
 	CollisionComponent* collision = nullptr;
-	EntityAttackComponent* attack = nullptr;
 
 public:
 	EntityMovementComponent(Actor* _owner, const float _speed);

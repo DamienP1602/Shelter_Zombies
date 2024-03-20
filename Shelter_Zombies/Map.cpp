@@ -7,11 +7,8 @@
 #include "Game.h"
 #include "Item.h"
 #include "Enemy.h"
-#include "Boss.h"
-#include "Mob.h"
 #include "InteractableActor.h"
 #include "Game.h"
-
 
 #define PATH_BENCH "Map/Bench.png"
 #define PATH_STAND "/UIs/Shop/Stand.png"

@@ -1,6 +1,6 @@
 #include "ChaseState.h"
-#include "EntityLifeComponent.h"
-#include "Brain.h"
+#include "EntityMovementComponent.h"
+#include "EntityBrain.h"
 
 ChaseState::ChaseState(Brain* _brain) : State(_brain)
 {

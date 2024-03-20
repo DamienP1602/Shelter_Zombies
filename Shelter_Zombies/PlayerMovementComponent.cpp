@@ -7,7 +7,7 @@
 #include "Kismet.h"
 #include "FxManager.h"
 
-PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : EntityMovementComponent(_owner)
+PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_owner)
 {
 	// Movement
 	canMove = false;
@@ -132,12 +132,12 @@ void PlayerMovementComponent::Update(const float _deltaTime)
 
 	const Vector2f& _collisionOffset = Vector2f(0.0f, -5.0f);
 	const Vector2f& _destination = _offset + _collisionOffset;
-	collision->GetBoxCollision()->GetDrawable()->setPosition(owner->GetShapePosition() + Vector2f(_destination.x * checkWallDistance, _destination.y));
+	//collision->GetBoxCollision()->GetDrawable()->setPosition(owner->GetShapePosition() + Vector2f(_destination.x * checkWallDistance, _destination.y));
 
-	if (!collision->CheckCollision())
-	{
-		owner->GetDrawable()->move(_offset);
-	}
+	//if (!collision->CheckCollision())
+	//{
+	//	owner->GetDrawable()->move(_offset);
+	//}
 }
 
 void PlayerMovementComponent::Jump()

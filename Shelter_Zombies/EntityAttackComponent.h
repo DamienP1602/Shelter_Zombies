@@ -2,9 +2,6 @@
 #include "Component.h"
 #include "Timer.h"
 #include "Kismet.h"
-#include "Entity.h"
-
-class EntityLifeComponent;
 
 class EntityAttackComponent : public Component
 {
@@ -35,12 +32,7 @@ public:
 	{
 		return cooldownTimer && cooldownTimer->IsRunning();
 	}
-	bool IsTargetDead() const
-	{
-		if (!target)
-			return true;
-		return target->GetComponent<EntityLifeComponent>()->Isdead();
-	}
+	bool IsTargetDead() const;
 	HitInfo GetHitInfo() const
 	{
 		return hitInfo;

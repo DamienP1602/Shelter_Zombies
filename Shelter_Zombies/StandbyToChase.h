@@ -3,6 +3,7 @@
 
 class StandbyToChase : public Transition
 {
+public:
 	StandbyToChase(BlackBoard* _blackBoard);
 
 public:

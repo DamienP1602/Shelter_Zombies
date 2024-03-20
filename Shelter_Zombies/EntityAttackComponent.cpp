@@ -1,6 +1,7 @@
 #include "EntityAttackComponent.h"
 #include "Actor.h"
 #include "Kismet.h"
+#include "EntityLifeComponent.h"
 
 EntityAttackComponent::EntityAttackComponent(Actor* _owner, const int _damages, const int _cooldown, const int _range) : Component(_owner)
 {
@@ -18,6 +19,13 @@ EntityAttackComponent::~EntityAttackComponent()
 	target = nullptr;
 	delete cooldownTimer;
 	delete target;
+}
+
+bool EntityAttackComponent::IsTargetDead() const
+{
+	if (!target)
+		return true;
+	return target->GetComponent<EntityLifeComponent>()->Isdead();
 }
 
 void EntityAttackComponent::Update(const float _deltaTime)

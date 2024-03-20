@@ -1,6 +1,7 @@
 #include "EntityMovementComponent.h"
 #include "AnimationComponent.h"
 #include "Actor.h"
+#include "Kismet.h"
 
 EntityMovementComponent::EntityMovementComponent(Actor* _owner, const float _speed) : Component(_owner)
 {
@@ -8,17 +9,14 @@ EntityMovementComponent::EntityMovementComponent(Actor* _owner, const float _spe
 	minRange = 1; //TODO check
 	collision = owner->GetComponent<CollisionComponent>();
 	animation = owner->GetComponent<AnimationComponent>();
-	attack = owner->GetComponent<EntityAttackComponent>();
 }
 
 EntityMovementComponent::~EntityMovementComponent()
 {
 	animation = nullptr;
 	collision = nullptr;
-	attack = nullptr;
 	delete animation;
 	delete collision;
-	delete attack;
 }
 
 void EntityMovementComponent::SetDestination(const Vector2f& _destination, const bool _canMove)

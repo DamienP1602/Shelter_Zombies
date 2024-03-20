@@ -40,12 +40,12 @@ void InventoryPlayer::Init()
 	canvas->AddWidget(_playerBackground);
 
 	const Vector2f& _playerNamePosition = Vector2f(_playerBackgroundPosition.x, windowY * 0.2f);
-	TextWidget* _playerName = new TextWidget(TextData("player name", _playerNamePosition, "Font.ttf",25));
+	TextWidget* _playerName = new TextWidget(TextData(Game::GetPlayer()->GetData()->name, _playerNamePosition, "Font.ttf", 25));
 	_playerName->GetDrawable()->setOrigin(_playerName->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
 	canvas->AddWidget(_playerName);
 
 	const Vector2f& _playerLevelPosition = Vector2f(_playerBackgroundPosition.x, windowY * 0.48f);
-	TextWidget* _playerLevel = new TextWidget(TextData("player level", _playerLevelPosition, "Font.ttf", 25));
+	TextWidget* _playerLevel = new TextWidget(TextData("Level " + to_string(Game::GetPlayer()->GetData()->level), _playerLevelPosition, "Font.ttf", 25));
 	_playerLevel->GetDrawable()->setOrigin(_playerLevel->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
 	canvas->AddWidget(_playerLevel);
 
@@ -112,6 +112,20 @@ void InventoryPlayer::Init()
 	}
 
 	InitTalentTree();
+
+	string _stats[] = {
+		"PV : " + to_string(Game::GetPlayer()->GetData()->currentHP) + " / " + to_string(Game::GetPlayer()->GetData()->healPointMax),
+		"Dégâts : " + to_string(Game::GetPlayer()->GetData()->damagePoint),
+		"Speed : " + to_string(static_cast<int>(Game::GetPlayer()->GetData()->speed)),
+		"Range : " + to_string(static_cast<int>(Game::GetPlayer()->GetData()->range))
+	};
+
+	for (int _i = 0; _i < 4; _i++)
+	{
+		const Vector2f& _gap = Vector2f(0.0f,-55.0f + (35.0f * _i));
+		TextWidget* _text = new Label(TextData(_stats[_i], _statsBackgroundPosition + _gap, FONT));
+		canvas->AddWidget(_text);
+	}
 }
 
 void InventoryPlayer::InitTalentTree()

@@ -6,6 +6,7 @@
 
 AllyEntityManager::AllyEntityManager()
 {
+	maxEntities = 10;
 }
 
 AllyEntityManager::~AllyEntityManager()

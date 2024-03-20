@@ -37,7 +37,7 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	components.push_back(attack);
 
 	mode = new ConstructionMode();
-	data = new PlayerData(15,4,5,2,1);
+	data = new PlayerData(_name,15,4,5,2,1);
 
 	Init();
 }
@@ -77,7 +77,27 @@ void Player::SetupPlayerInput()
 					new GameMenu();
 				}				
 			},InputData({ActionType::KeyPressed, Keyboard::Escape})),
+
+		ActionData("Create",[&]()
+			{
+				if (mode->shapeOfConstruction)
+				{
+					if (Game::GetMap()->PutInMap(mode->shapeOfConstruction, MousePosition()))
+					{
+						mode->Reset();
+					}
+				}
+			},InputData({ActionType::MouseButtonPressed, Mouse::Left})),
+		ActionData("UndoCreate",[&]() 
+			{ 
+				if (mode->shapeOfConstruction)
+				{
+					mode->Destroy();
+				}
+			}
+			,InputData({ActionType::MouseButtonPressed, Mouse::Right})),
 		});
+
 
 }
 
@@ -117,6 +137,15 @@ void Player::CloseAllMenus(const bool _restoreActions)
 	}
 }
 
+Vector2f Player::MousePosition()
+{
+	const Vector2f& _mousePosition = Vector2f(Mouse::getPosition(Game::GetWindow()));
+	const Vector2f& _playerPosition = Game::GetPlayer()->GetShapePosition();
+	const Vector2f& _windowSize = Game::GetWindowSize();
+
+	return (_mousePosition + _playerPosition) - _windowSize / 2.0f;
+}
+
 void Player::Init()
 {
 	movement->SetCanMove(true);
@@ -133,9 +162,6 @@ void Player::Update(const float _deltaTime)
 
 	if (mode->shapeOfConstruction)
 	{
-		const Vector2f& _mousePosition = Vector2f(Mouse::getPosition(Game::GetWindow()));
-		const Vector2f& _playerPosition = Game::GetPlayer()->GetShapePosition();
-		const Vector2f& _windowSize = Game::GetWindowSize();
-		mode->SetPosition((_mousePosition + _playerPosition) - _windowSize / 2.0f);
+		mode->SetPosition(MousePosition());
 	}
 }

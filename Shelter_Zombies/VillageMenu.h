@@ -4,6 +4,7 @@
 #include "ShapeWidget.h"
 #include "Game.h"
 #include "Wall.h"
+#include "Timer.h"
 
 #include <iostream>
 
@@ -61,10 +62,10 @@ public:
 	{
 		if (!allBuildings[0]->isInit)
 		{
-
+			
 			function<void()> _callbacks[] = {
-				[&](){Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(),0));},
-				[&](){Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(),1));; },
+				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 0)); },seconds(0.1f)); },
+				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 1)); },seconds(0.1f)); },
 				[&](){; },
 				[&](){; }
 			};

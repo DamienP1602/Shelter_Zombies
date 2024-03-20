@@ -16,6 +16,7 @@ using namespace std;
 
 struct PlayerData
 {
+	string name;
 	int healPointMax;
 	int currentHP;
 	int damagePoint;
@@ -26,8 +27,9 @@ struct PlayerData
 	vector<Item*> equipments;
 	vector<Spells*> spells;
 
-	PlayerData(int _hp, int _dmg, float _speed, float _range, int _level)
+	PlayerData(const string& _name,int _hp, int _dmg, float _speed, float _range, int _level)
 	{
+		name = _name;
 		healPointMax = _hp + (_hp / 10 * _level);
 		currentHP = healPointMax;
 		damagePoint = _dmg + (_dmg / 10 * _level);
@@ -41,10 +43,10 @@ struct PlayerData
 	}
 	void InitEquipments()
 	{
-		equipments.push_back(new Item(0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Arme", ""),FONT,IT_WEAPON));
-		equipments.push_back(new Item(0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Casque", ""),FONT,IT_HELMET));
-		equipments.push_back(new Item(0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "PLastron", ""),FONT,IT_CHESTPLATE));
-		equipments.push_back(new Item(0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Bottes", ""),FONT,IT_BOOTS));
+		equipments.push_back(new Item(3, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Arme", ""),FONT,IT_WEAPON));
+		equipments.push_back(new Item(5, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Casque", ""),FONT,IT_HELMET));
+		equipments.push_back(new Item(7, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "PLastron", ""),FONT,IT_CHESTPLATE));
+		equipments.push_back(new Item(9, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Bottes", ""),FONT,IT_BOOTS));
 	}
 
 	void LevelUp()
@@ -89,6 +91,15 @@ struct ConstructionMode
 	void Reset()
 	{
 		shapeOfConstruction = nullptr;
+
+		position = Vector2f();
+		cost = 0;
+	}
+	void Destroy()
+	{
+		shapeOfConstruction = ;
+		ActorManager::GetInstance().Remove(shapeOfConstruction);
+
 		position = Vector2f();
 		cost = 0;
 	}
@@ -111,6 +122,10 @@ class Player : public Actor
 	ConstructionMode* mode;
 
 public:
+	int GetGold() const
+	{
+		return gold;
+	}
 	PlayerData* GetData() const
 	{
 		return data;
@@ -125,7 +140,6 @@ public:
 	}
 	void SetConstructionMode(InteractableActor* _building)
 	{
-
 		if (mode->shapeOfConstruction) return;
 
 		mode->shapeOfConstruction = _building;
@@ -145,4 +159,6 @@ public:
 	virtual void Init() override;
 	virtual void Update(const float _deltaTime) override;
 	void CloseAllMenus(const bool _restoreActions);
+
+	Vector2f MousePosition();
 };

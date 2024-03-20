@@ -45,10 +45,32 @@ void Map::Init()
 
 			bool _specialColor = (_j + _i) % 2 == 0 ? true : false;
 			if (_specialColor) _tile->visualTile->GetDrawable()->setFillColor(Color::Green);
+			SetOriginAtMiddle(_tile->visualTile->GetDrawable());			
 
 			_actualRow->tiles.push_back(_tile);
 		}
 		allTiles.push_back(_actualRow);
 	}
 
+}
+
+bool Map::PutInMap(InteractableActor* _actor,const Vector2f& _mousePosition)
+{
+	for (Row* _row : allTiles)
+	{
+		for (Tile* _tile : _row->tiles)
+		{
+			if (_tile->visualTile->GetDrawable()->getGlobalBounds().contains(_mousePosition))
+			{
+				if (!_tile->actorOnTile)
+				{
+					_tile->actorOnTile = _actor;
+					_tile->actorOnTile->GetDrawable()->setPosition(_tile->visualTile->GetShapePosition());
+					return true;
+				}
+				else return false;
+			}
+		}
+	}
+	return false;
 }

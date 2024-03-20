@@ -55,6 +55,11 @@ public:
 			for (Tile* _tile : _row->tiles)
 			{
 				_drawables.push_back(_tile->visualTile);
+
+				if (_tile->actorOnTile)
+				{
+					_drawables.push_back(_tile->actorOnTile);
+				}
 			}
 		}
 
@@ -67,4 +72,6 @@ public:
 
 public:
 	virtual void Init();
+
+	bool PutInMap(InteractableActor* _actor, const Vector2f& _mousePosition);
 };

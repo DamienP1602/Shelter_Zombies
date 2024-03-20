@@ -13,7 +13,7 @@ using namespace std;
 class AllyEntityManager : public Singleton<AllyEntityManager>, public IManager<string, Entity>
 {
 private:
-	int maxEntities = 10;
+	int maxEntities;
 	vector<Fighter*> allFighters;
 	vector<Shooter*> allShooters;
 	vector<Support*> allSupports;

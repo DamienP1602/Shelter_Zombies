@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "MainMenu.h"
+
 #include "Map.h"
 #include "Player.h"
 #include "Camera.h"
@@ -9,16 +9,12 @@
 using namespace std;
 using namespace sf;
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
-
 /// <summary>
 /// The Game class
 /// </summary>
 class Game
 {
 	static RenderWindow window;
-	MainMenu* menu;
 	static Map* map;
 
 private:

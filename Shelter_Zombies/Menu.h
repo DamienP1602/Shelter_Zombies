@@ -4,7 +4,6 @@
 #include "ShapeWidget.h"
 #include "Button.h"
 #include "Label.h"
-#include "ScrollBar.h"
 #include "SoundData.h"
 
 //TODO Menu change paths
@@ -21,6 +20,9 @@ class Menu : public IManagable<string>
 	SoundData* sound;
 
 protected:
+	float windowX;
+	float windowY;
+
 	Canvas* canvas;
 	Button* backButton;
 	Menu* owner;
@@ -47,11 +49,16 @@ public:
 	{
 		return isInit && canvas->GetVisibilityStatus();
 	}
+	Canvas* GetCanvas() const
+	{
+		return canvas;
+	}
 
 public:
 	Menu(const string& _name, Menu* _owner = nullptr);
 
 	virtual void Init();
+	void BackButton();
 
 private:
 	virtual void Register() override;

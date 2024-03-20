@@ -7,7 +7,7 @@
 InteractionComponent::InteractionComponent(Actor* _owner) : Component(_owner)
 {
 	range = 200.0f;
-	inventory = dynamic_cast<Player*>(_owner)->GetInventory();
+	//inventory = dynamic_cast<Player*>(_owner)->GetInventory();
 	pnj = nullptr;
 }
 

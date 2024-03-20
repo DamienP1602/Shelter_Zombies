@@ -1,6 +1,5 @@
 #pragma once
 #include "Menu.h"
-#include "TitleMenu.h"
 #include "MusicData.h"
 
 /// <summary>
@@ -8,7 +7,6 @@
 /// </summary>
 class MainMenu : public Menu
 {
-	TitleMenu* titleMenu;
 	MusicData* music;
 
 public:

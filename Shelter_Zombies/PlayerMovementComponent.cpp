@@ -70,12 +70,12 @@ void PlayerMovementComponent::Update(const float _deltaTime)
 {
 	if (!canMove) return;
 
-	if (isOnGround = CheckGround())
+	/*if (isOnGround = CheckGround())
 	{
 		downSpeed = gravity;
 		canDoubleJump = true;
 		SetDirectionX(direction.x, "Right");
-	}
+	}*/
 
 	Game::GetCamera()->SetUpdate(!isOnGround);
 
@@ -104,19 +104,19 @@ void PlayerMovementComponent::Update(const float _deltaTime)
 		_offset = direction * speed * _deltaTime;
 
 		// Si je suis en l'air et que je ne saute pas
-		if (!isOnGround && !isJumping)
-		{
-			downSpeed += downFactor / 1000.0f * _deltaTime;
-			downSpeed = downSpeed > 2.0f ? 2.0f : downSpeed;
+		//if (!isOnGround && !isJumping)
+		//{
+		//	downSpeed += downFactor / 1000.0f * _deltaTime;
+		//	downSpeed = downSpeed > 2.0f ? 2.0f : downSpeed;
 
-			// Application de la gravité
-			_offset = direction + Vector2f(0.0f, 1.0f * downSpeed);
-			Normalize(_offset);
-			_offset *= _deltaTime;
-		}
+		//	// Application de la gravité
+		//	_offset = direction + Vector2f(0.0f, 1.0f * downSpeed);
+		//	Normalize(_offset);
+		//	_offset *= _deltaTime;
+		//}
 
 		// Si je suis en train de jump
-		else if (isJumping)
+		if (isJumping)
 		{
 			currentJumpForce -= jumpFactor / 1000.0f * _deltaTime;
 			if (currentJumpForce <= 0.5f)

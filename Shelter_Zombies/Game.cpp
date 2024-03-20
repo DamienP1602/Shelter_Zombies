@@ -6,6 +6,13 @@
 #include "Widget.h"
 #include "TriggerBox.h"
 
+#include "VillageMenu.h"
+#include "AttackMenu.h"
+#include "InventoryPlayer.h"
+#include "BuildingMenu.h"
+#include "BarrakMenu.h"
+#include "GameMenu.h"
+
 //TODO GAME change anim player's path
 //#define PATH_PLAYER "Animations/knighModif.png"
 
@@ -14,13 +21,19 @@ Map* Game::map;
 Player* Game::player;
 Camera* Game::camera;
 
+#include "TriggerBox.h"
+
+#define PATH_BOOFLY "Animations/Boofly.png"
+#define PATH_BELFLY "Animations/BelflyModif.png"
+#define PATH_HUSK_BULLY "Animations/HuskBully.png"
+#define PATH_DEATHMOB "Animations/DeathMob.png"
+#define PATH_FALSE_KNIGHT "Animations/FalseKnight.png"
+
 Game::Game()
 {
-	menu = new MainMenu();
+	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f)));
 	map = new Map();
 	camera = new Camera();
-	//TODO GAME init player
-	//player = new Player("Player", ShapeData(Vector2f(100.0f, -2000.0f), Vector2f(75.0f, 75.0f), PATH_PLAYER));
 } 
 
 Game::~Game()
@@ -31,17 +44,24 @@ Game::~Game()
 
 void Game::Start()
 {
-	window.create(VideoMode(1920, 1080), "Shelter Game", Style::Fullscreen);
+	window.create(VideoMode(1920, 1080), "Shelter Game");
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
-	new Timer([&]() { Init(); }, seconds(1.0f), true, false);
+	Init();
+	Update();
 }
 
 void Game::Init()
 {
-	menu->Init();
 	map->Init();
 	camera->Init();
+
+	//new InventoryPlayer();
+	new VillageMenu();
+	//new AttackMenu();
+	//new BuildingMenu();
+	//new BarrackMenu();
+	//GameMenu();
 
 	/*TriggerBox* _box = new TriggerBox(ShapeData(Vector2f(100.0f, 0.0f), Vector2f(200.0f, 200.0f), ""), [&]() {
 		cout << "coucou" << endl;
@@ -83,6 +103,7 @@ void Game::UpdateWindow()
 }
 
 #pragma region Draws
+
 void Game::DrawMap()
 {
 	for (ShapeObject* _drawable : map->GetAllDrawables())

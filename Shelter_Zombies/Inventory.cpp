@@ -74,13 +74,13 @@ Button* Inventory::GetFirstAvailableButton() const
 
 Item* Inventory::FindItemData(const string& _path)
 {
-	for (Item* _item : GetAllValues())
+	/*for (Item* _item : GetAllValues())
 	{
 		if (_item->GetPath() == _path && _item->GetCount() < stackSize)
 		{
 			return _item;
 		}
-	}
+	}*/
 
 	return nullptr;
 }
@@ -383,34 +383,6 @@ void Inventory::SetShriekStatus(const bool _status)
 void Inventory::AddItem(const int _count, const ItemData& _data)
 {
 	if (_count <= 0) return;
-
-	if (_data.type == IT_HEALTH)
-	{
-		UpdateMaskCount(_count);
-	}
-
-	else if (_data.type == IT_VESSEL)
-	{
-		UpdateVesselCount(_count);
-	}
-	
-	else if (_data.type == IT_ITEM)
-	{
-		if (Item* _item = FindItemData(_data.path))
-		{
-			_item->UpdateCount(1);
-			AddItem(_count - 1, _data);
-			return;
-		}
-
-		CreateItemData(_data);
-		AddItem(_count - 1, _data);
-	}
-	else if (_data.type == IT_GEOS)
-	{
-		int _winningGains = Random<int>(100, 1);
-		Game::GetPlayer()->GetStats()->UpdateGeos(_winningGains);
-	}
 }
 
 void Inventory::CreateItemData(const ItemData& _data)

@@ -14,17 +14,16 @@ Camera::Camera() : Actor("Camera" , ShapeData())
 	speed = 0.5f;
 	axeX = 0.0f;
 	axeY = 0.0f;
-	dampX = 100.0f;
+	dampX = 00.0f;
 	dampY = 0.0f;
 
 	targetPosition = Vector2f();
-	offsetCamera = Vector2f(dampX * 0.75f,0.0f);
+	offsetCamera = Vector2f(dampX * 0.0f,0.0f);
 	offsetScreen = Vector2f();
 	zoom = Vector2f();
 	defaultSize = view.getSize();
 
 	view = View();
-	view.zoom(-1.01f);
 
 	isDown = false;
 	isZoom = false;
@@ -107,6 +106,10 @@ void Camera::Update(const float _deltaTime)
 	MoveToTarget(_deltaTime);
 	UpdateViewSize(_deltaTime);
 	shake->Update(view);
+	const Vector2f& _playerPosition = Game::GetPlayer()->GetShapePosition();
+	const Vector2f& _windowSize = Game::GetWindow().getView().getSize();
+	const Vector2f& _position = Vector2f(_playerPosition - _windowSize / 2.0f);
+	view.reset(FloatRect(_position, _windowSize));
 }
 
 void Camera::ResetZoom(const float _deltaTime)

@@ -24,6 +24,10 @@ public:
 	{
 		return GetDrawable()->getPosition();
 	}
+	virtual Vector2f GetShapeSize()
+	{
+		return GetDrawable()->getGlobalBounds().getSize();
+	}
 
 public:
 	ShapeWidget(const ShapeData& _data, const WidgetType& _type = WT_UI);

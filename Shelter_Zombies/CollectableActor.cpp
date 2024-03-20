@@ -43,7 +43,6 @@ void CollectableActor::TryToCollect()
 	const Vector2f& _playerPos = player->GetShapePosition();
 	if (Distance(GetShapePosition(), _playerPos) <= 100)
 	{
-		player->GetInventory()->AddItem(1, data);
 		SetToRemove(true);
 	}
 }

@@ -9,13 +9,14 @@ using namespace sf;
 
 /// <summary>
 /// The canvas to draw widgets
-/// </summary>
+/// </summary>>
 class Canvas : public IManagable<string>
 {
+private:
 	bool isVisible;
 	FloatRect rect;
 	vector<Widget*> uiWidgets;
-	vector<Widget*> worldWidgets; //TODO what is this ?
+	vector<Widget*> worldWidgets;
 
 public:
 	bool GetVisibilityStatus()
@@ -54,6 +55,17 @@ public:
 	vector<Widget*> GetWorldWidgets() const
 	{
 		return worldWidgets;
+	}
+	void RemoveUIWidget(Widget* _widget)
+	{
+		for (vector<Widget*>::iterator _it = uiWidgets.begin(); _it != uiWidgets.end(); _it++)
+		{
+			if (*_it == _widget)
+			{
+				uiWidgets.erase(_it);
+				return;
+			}
+		}
 	}
 
 public:

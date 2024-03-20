@@ -8,7 +8,7 @@
 
 MainMenu::MainMenu() : Menu("MainMenu")
 {
-	titleMenu = new TitleMenu(this);
+	
 }
 
 
@@ -17,7 +17,6 @@ void MainMenu::OpenTitleMenu()
 	if (!canvas->GetVisibilityStatus()) 
 		return;
 	canvas->SetVisibilityStatus(false);
-	titleMenu->Init();
 }
 
 

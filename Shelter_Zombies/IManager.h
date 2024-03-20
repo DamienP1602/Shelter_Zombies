@@ -85,6 +85,14 @@ public:
 		}
 	}
 
+	void SetCurrent(Value* _value)
+	{
+		current = _value;
+	}
+	void SetCurrent(const Key& _key)
+	{
+		if (Exist(_key)) current = allValues[_key];
+	}
 	Value* GetCurrent() const
 	{
 		return current;

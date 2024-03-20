@@ -7,10 +7,10 @@
 enum ItemType
 {
 	IT_NONE,
-	IT_HEALTH,
-	IT_VESSEL,
-	IT_ITEM,
-	IT_GEOS,
+	IT_HELMET,
+	IT_CHESTPLATE,
+	IT_BOOTS,
+	IT_WEAPON
 };
 
 struct ItemData
@@ -23,28 +23,10 @@ struct ItemData
 
 class Item : public IManagable<int>
 {
-	int count;
 	ItemWidget* widget;
 	Label* countText;
 
 public:
-	void UpdateCount(const int _factor)
-	{
-		count += _factor;
-
-		if (count > 1)
-		{
-			countText->SetString(to_string(count));
-		}
-	}
-	bool IsEmpty() const
-	{
-		return count == 0;
-	}
-	int GetCount() const
-	{
-		return count;
-	}
 	string GetPath() const
 	{
 		return widget->GetID();

@@ -8,12 +8,13 @@
 #include <cstdlib>
 #include "Actor.h"
 #include "ActorManager.h"
+#include "Widget.h"
 
 using namespace std;
 using namespace sf;
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
+#define SCREEN_WIDTH 1920
+#define SCREEN_HEIGHT 1080
 
 #define STRING_ID(name) name + to_string(GetUniqueID())
 #define SIZE(vector) static_cast<int>(vector.size())

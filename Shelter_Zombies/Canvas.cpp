@@ -35,11 +35,6 @@ void Canvas::AddWidget(Widget* _widget)
 		HUD::GetInstance().AddButton(_button);
 	}
 
-	if (ScrollBar* _scrollBar = dynamic_cast<ScrollBar*>(_widget))
-	{
-		HUD::GetInstance().AddScrollBar(_scrollBar);
-	}
-
 	vector<Widget*>* _widgets[] = {
 		&uiWidgets,
 		&worldWidgets

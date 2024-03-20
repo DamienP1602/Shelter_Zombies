@@ -12,9 +12,8 @@ BuildingMenu::BuildingMenu(/*Building* _current*/) : Menu("BuildingMenu", MenuMa
 
 void BuildingMenu::Init()
 {
-	//const Vector2f& _leftBackgroundPosition = Vector2f(windowX * 0.225f,windowY * 0.5f);
-	//ShapeWidget* _leftBackground = new ShapeWidget(ShapeData(_leftBackgroundPosition,Vector2f(300.0f,600.0f),"red.png"));
-	//canvas->AddWidget(_leftBackground);
+	Menu::Init();
+
 
 	const Vector2f& _rightBackgroundPosition = Vector2f(windowX * 0.5f, windowY * 0.5f);
 	ShapeWidget* _rightBackground = new ShapeWidget(ShapeData(_rightBackgroundPosition, Vector2f(650.0f, 400.0f), "blue.png"));

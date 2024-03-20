@@ -1,7 +1,8 @@
 #pragma once
 #include "Actor.h"
 #include "Player.h"
-#include"AnimationComponent.h"
+#include "AnimationComponent.h"
+#include "Item.h"
 
 class CollectableActor : public Actor
 {

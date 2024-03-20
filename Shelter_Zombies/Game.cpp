@@ -11,6 +11,7 @@
 #include "InventoryPlayer.h"
 #include "BuildingMenu.h"
 #include "BarrakMenu.h"
+#include "GameMenu.h"
 
 //TODO GAME change anim player's path
 //#define PATH_PLAYER "Animations/knighModif.png"
@@ -30,7 +31,7 @@ Camera* Game::camera;
 
 Game::Game()
 {
-	player = new Player("Player", ShapeData(Vector2f(100.0f, -2000.0f), Vector2f(75.0f, 75.0f), ""));
+	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f)));
 	map = new Map();
 	camera = new Camera();
 } 
@@ -47,6 +48,7 @@ void Game::Start()
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
 	Init();
+	Update();
 }
 
 void Game::Init()
@@ -55,10 +57,11 @@ void Game::Init()
 	camera->Init();
 
 	//new InventoryPlayer();
-	//new VillageMenu();
+	new VillageMenu();
 	//new AttackMenu();
 	//new BuildingMenu();
 	//new BarrackMenu();
+	//GameMenu();
 
 	/*TriggerBox* _box = new TriggerBox(ShapeData(Vector2f(100.0f, 0.0f), Vector2f(200.0f, 200.0f), ""), [&]() {
 		cout << "coucou" << endl;
@@ -89,8 +92,8 @@ void Game::UpdateWindow()
 	window.clear();
 
 	const float _deltaTime = TimerManager::GetInstance().GetDeltaTime();
-	//camera->Update(_deltaTime);
-	//window.setView(camera->GetView());
+	camera->Update(_deltaTime);
+	window.setView(camera->GetView());
 
 	DrawMap();
 	DrawActors();
@@ -103,32 +106,27 @@ void Game::UpdateWindow()
 
 void Game::DrawMap()
 {
-	/*for (ShapeObject* _drawable : map->GetAllDrawables())
+	for (ShapeObject* _drawable : map->GetAllDrawables())
 	{
 		if (_drawable->IsHidden())
 			continue;
 		window.draw(*_drawable->GetDrawable());
-	}*/
+	}
 }
 
 void Game::DrawActors()
 {
-	/*for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
+	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 	{
 		if (_actor->IsHidden())
 			continue;
 		window.draw(*_actor->GetDrawable());
-	}*/
+	}
 }
 
 void Game::DrawUIs()
 {
-	for (Widget* _widget : HUD::GetInstance().GetCurrent()->GetUiWidgets())
-	{
-		window.draw(*_widget->GetDrawable());
-	}
-
-	/*View _view = window.getDefaultView();
+	View _view = window.getDefaultView();
 	for (Canvas* _canvas : HUD::GetInstance().GetAllValues())
 	{
 		if (!_canvas->IsVisible()) 
@@ -142,7 +140,7 @@ void Game::DrawUIs()
 				continue;
 			window.draw(*_widget->GetDrawable());
 		}
-	}*/
+	}
 }
 #pragma endregion
 

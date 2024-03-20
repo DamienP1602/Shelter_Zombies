@@ -191,6 +191,7 @@
     <ClInclude Include="FxData.h" />
     <ClInclude Include="FxManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameMenu.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="IManagable.h" />
     <ClInclude Include="IManager.h" />
@@ -238,6 +239,7 @@
     <ClInclude Include="SoundData.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="SoundSystem.h" />
+    <ClInclude Include="Spells.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Support.h" />
     <ClInclude Include="TextObject.h" />
@@ -250,7 +252,6 @@
     <ClInclude Include="Trap.h" />
     <ClInclude Include="TriggerBox.h" />
     <ClInclude Include="Turret.h" />
-    <ClInclude Include="UIelements.h" />
     <ClInclude Include="VillageMenu.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="Widget.h" />
@@ -314,6 +315,7 @@
     <ClCompile Include="FxData.cpp" />
     <ClCompile Include="FxManager.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="InspectComponent.cpp" />
@@ -358,6 +360,7 @@
     <ClCompile Include="SoundData.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SoundSystem.cpp" />
+    <ClCompile Include="Spells.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Support.cpp" />
     <ClCompile Include="TextObject.cpp" />

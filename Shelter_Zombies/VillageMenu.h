@@ -60,7 +60,7 @@ public:
 	{
 		if (!allBuildings[0]->isInit)
 		{
-			const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.75f);
+			const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.85f);
 
 			for (int _i = 0; _i < 4; _i++)
 			{
@@ -76,7 +76,7 @@ public:
 	{
 		if (!allBuildings[1]->isInit)
 		{
-			const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.75f);
+			const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.85f);
 
 			for (int _i = 0; _i < 4; _i++)
 			{
@@ -92,7 +92,7 @@ public:
 	{
 		if (!allBuildings[2]->isInit)
 		{
-			const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.75f);
+			const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.85f);
 
 			for (int _i = 0; _i < 4; _i++)
 			{
@@ -109,7 +109,7 @@ public:
 	{
 		if (!allBuildings[3]->isInit)
 		{
-			const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.75f);
+			const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.85f);
 
 			for (int _i = 0; _i < 4; _i++)
 			{

@@ -181,11 +181,11 @@
     <Filter Include="Source Files\UIs\Menu">
       <UniqueIdentifier>{5b326332-c4a6-48e2-9e81-cf0dbc9556a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Objects\ShapesObjects\Actors\Player\Spells">
+      <UniqueIdentifier>{5b56a4f6-1801-49bb-bd44-2554e4cc95db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="UIelements.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
@@ -549,6 +549,12 @@
     <ClInclude Include="ProgressBar.h">
       <Filter>Source Files\UIs\Widgets\ShapesWidgets</Filter>
     </ClInclude>
+    <ClInclude Include="GameMenu.h">
+      <Filter>Source Files\UIs\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Spells.h">
+      <Filter>Source Files\Objects\ShapesObjects\Actors\Player\Spells</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -898,6 +904,12 @@
     </ClCompile>
     <ClCompile Include="ProgressBar.cpp">
       <Filter>Source Files\UIs\Widgets\ShapesWidgets</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenu.cpp">
+      <Filter>Source Files\UIs\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Spells.cpp">
+      <Filter>Source Files\Objects\ShapesObjects\Actors\Player\Spells</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

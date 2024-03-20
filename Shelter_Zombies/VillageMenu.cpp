@@ -13,6 +13,7 @@ VillageMenu::VillageMenu() : Menu("PlayerVillageMenu", MenuManager::GetInstance(
 
 void VillageMenu::Init()
 {
+	Menu::Init();
 #pragma region DefaultShape
 
 	const Vector2f& _lifePositon = Vector2f(windowX * 0.12f, windowY * 0.05f);
@@ -61,9 +62,9 @@ void VillageMenu::Init()
 
 	const function<void()>& _callback = [&]()
 		{
-			if (InventoryPlayer* _inventory = dynamic_cast<InventoryPlayer*>(MenuManager::GetInstance().Get("InventoryPlayer")))
+			if (MenuManager::GetInstance().Get("InventoryPlayerMenu"))
 			{
-				MenuManager::GetInstance().SetCurrent(_inventory);
+				MenuManager::GetInstance().SetCurrent("InventoryPlayerMenu");
 				MenuManager::GetInstance().DisableNotCurrent();
 			}
 			else
@@ -71,11 +72,11 @@ void VillageMenu::Init()
 				new InventoryPlayer();
 			}
 		};
-	const Vector2f& _characterButtonPosition = Vector2f(windowX * 0.9f, windowY * 0.8f);
+	const Vector2f& _characterButtonPosition = Vector2f(windowX * 0.95f, windowY * 0.9f);
 	ShapeWidget* _characterButton = new Button(ShapeData(_characterButtonPosition,Vector2f(150.0f,150.0f),"red.png"), ButtonData(NULL, NULL, _callback, NULL, NULL));
 	canvas->AddWidget(_characterButton);
 
-	const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.85f);
+	const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.95f);
 	
 	function<void()> _callbacks[] = {
 		[&]() {RemoveFromCanva(); panel->InitWalls(); AddToCanva(); },
@@ -95,7 +96,7 @@ void VillageMenu::Init()
 
 #pragma region ConstructPanel
 
-	const Vector2f& _backgroundBuildingsPosition = Vector2f(windowX * 0.13f, windowY * 0.75f);
+	const Vector2f& _backgroundBuildingsPosition = Vector2f(windowX * 0.13f, windowY * 0.85f);
 	panel->SetBackground(new ShapeWidget(ShapeData(_backgroundBuildingsPosition,Vector2f(450.0f,100.f),"white.png")));
 
 	canvas->AddWidget(panel->GetBackground());

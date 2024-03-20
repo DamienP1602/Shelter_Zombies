@@ -28,3 +28,9 @@ void Menu::Init()
 {
 	isInit = true;
 }
+
+void Menu::BackButton()
+{
+	MenuManager::GetInstance().SetCurrent(owner);
+	MenuManager::GetInstance().DisableNotCurrent();
+}

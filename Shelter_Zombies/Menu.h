@@ -16,7 +16,6 @@
 /// </summary>
 class Menu : public IManagable<string>
 {
-
 	bool isInit;
 	SoundData* sound;
 
@@ -59,6 +58,7 @@ public:
 	Menu(const string& _name, Menu* _owner = nullptr);
 
 	virtual void Init();
+	void BackButton();
 
 private:
 	virtual void Register() override;

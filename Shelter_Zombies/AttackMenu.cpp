@@ -11,6 +11,8 @@ AttackMenu::AttackMenu() : Menu("AttackMenu",MenuManager::GetInstance().GetCurre
 
 void AttackMenu::Init()
 {
+	Menu::Init();
+
 	const Vector2f& _lifePositon = Vector2f(windowX * 0.12f, windowY * 0.05f);
 	ShapeWidget* _life = new ProgressBar(ShapeData(_lifePositon, Vector2f(200.0f, 50.0f), "red.png"), "red.png", PT_LEFT);
 	canvas->AddWidget(_life);

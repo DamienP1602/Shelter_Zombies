@@ -14,7 +14,7 @@ MobAttackComponent::MobAttackComponent(Actor* _owner, const int _damages) : Comp
 void MobAttackComponent::ApplyDamagesToPlayer()
 {
 	cout << "ApplyDamagesToPlayer" << endl;
-	Game::GetPlayer()->GetStats()->UpdateLife(-1);
+	//Game::GetPlayer()->GetStats()->UpdateLife(-1);
 }
 
 

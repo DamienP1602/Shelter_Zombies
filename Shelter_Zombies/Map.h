@@ -8,91 +8,63 @@
 using namespace std;
 using namespace sf;
 
-#define PATH_THIN "Levels/Thin.png"
-#define PATH_MID "Levels/Mid.png"
-#define PATH_WIDE "Levels/Wide.png"
-
-struct WallData
+struct Tile
 {
-	Vector2f position;
+	ShapeObject* visualTile;
 	Vector2f size;
-	string path;
-};
-
-struct MapData
-{
-	string backgroundPath;
-	Vector2f backgroundPos;
-	Vector2f backgroundSize;	
-
-	Vector2f clampCamMin;
-	Vector2f clampCamMax;
-
-	vector<WallData> walls;
-	vector<CollectableActor*> items;
-};
-
-enum PlatformType
-{
-	PT_THIN,
-	PT_MID,
-	PT_WIDE,
-};
-
-struct PlatformData
-{
 	Vector2f position;
-	PlatformType type;
+	InteractableActor* actorOnTile;
 
-	PlatformData(const Vector2f& _position, const PlatformType& _type)
+	Tile()
 	{
-		position = _position;
-		type = _type;
+		visualTile = nullptr;
+		size = Vector2f();
+		position = Vector2f();
+		actorOnTile = nullptr;
+	}
+	Tile(ShapeObject* _visualTile,const Vector2f& _size)
+	{
+		visualTile = _visualTile;
+		size = _size;
+		position = _visualTile->GetShapePosition();
+		actorOnTile = nullptr;
+	}
+};
+
+struct Row
+{
+	vector<Tile*> tiles;
+
+	Row()
+	{
+		tiles = vector<Tile*>();
 	}
 };
 
 class Map
 {
-	PNJ* pnj;
-	vector<PlatformData> platformsData;
-	vector<ShapeObject*> drawables;
-	int currentLevel;
+	vector<Row*> allTiles;
 
 public:
 	vector<ShapeObject*> GetAllDrawables() const
 	{
-		return drawables;
+		vector<ShapeObject*> _drawables;
+
+		for (Row* _row : allTiles)
+		{
+			for (Tile* _tile : _row->tiles)
+			{
+				_drawables.push_back(_tile->visualTile);
+			}
+		}
+
+		return _drawables;
 	}
 
 public:
 	Map();
 	~Map();
 
-private:
-	MapData LoadMapData(const string& _path);
-
-	void InitPlatforms();
-
-	void ComputePlatformType(const PlatformType& _type, Vector2f& _size, string& _path)
-	{
-		if (_type == PT_THIN)
-		{
-			_size = Vector2f(134.0f, 85.0f);
-			_path = PATH_THIN;
-		}
-		else if (_type == PT_MID)
-		{
-			_size = Vector2f(198.0f, 85.0f);
-			_path = PATH_MID;
-		}
-		else if (_type == PT_WIDE)
-		{
-			_size = Vector2f(263.0f, 85.0f);
-			_path = PATH_WIDE;
-		}
-
-	}
-
 public:
-	void Init();
+	virtual void Init();
 };

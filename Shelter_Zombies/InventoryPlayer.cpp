@@ -16,9 +16,15 @@ InventoryPlayer::~InventoryPlayer()
 
 void InventoryPlayer::Init()
 {
+	Menu::Init();
+
 	const Vector2f& _backgroundPosition = Vector2f(windowX * 0.5f, windowY * 0.5f);
 	ShapeWidget* _background = new ShapeWidget(ShapeData(_backgroundPosition, Vector2f(1000.0f, 800.0f), "white.png"));
 	canvas->AddWidget(_background);
+
+	const Vector2f& _itemsBackgroundPosition = Vector2f(windowX * 0.22f, windowY * 0.5f);
+	ShapeWidget* _itemsBackground = new ShapeWidget(ShapeData(_itemsBackgroundPosition, Vector2f(150.0f, 600.0f), "blue.png"));
+	canvas->AddWidget(_itemsBackground);
 
 	const Vector2f& _leftBackgroundPosition = Vector2f(windowX * 0.3625f,windowY * 0.5f);
 	ShapeWidget* _leftBackground = new ShapeWidget(ShapeData(_leftBackgroundPosition, Vector2f(400.0f, 750.0f), "red.png"));
@@ -68,6 +74,35 @@ void InventoryPlayer::Init()
 	const Vector2f& _talentTreePosition = Vector2f(_rightBackgroundPosition.x ,windowY * 0.575f);
 	talents->background = new ShapeWidget(ShapeData(_talentTreePosition,Vector2f(450.0f,500.0f),"green.png"));
 	canvas->AddWidget(talents->background);
+
+	const Vector2f& _backButtonPosition = Vector2f((_backgroundPosition.x + _background->GetShapeSize().x / 2.0f) - 25.0f, (_backgroundPosition.y - _background->GetShapeSize().y / 2.0f) + 25.0f);
+	backButton = new Button(ShapeData(_backButtonPosition, Vector2f(50.0f, 50.0f), "red.png"), ButtonData(NULL, NULL, [&]() {BackButton(); }, NULL, NULL));
+	canvas->AddWidget(backButton);
+
+	string _names[] = {
+		"Weapon",
+		"Head",
+		"Chest",
+		"Boots"
+	};
+
+	function<void()> _callbacks[] = {
+		[&]() {cout << "Weapon" << endl; },
+		[&]() {cout << "Head" << endl; },
+		[&]() {cout << "Chest" << endl; },
+		[&]() {cout << "Boots" << endl; }
+	};
+
+	for (int _i = 0; _i < 4; _i++)
+	{
+		const Vector2f& _gap = Vector2f(0.0f,-225 + (150.0f * _i));
+		ShapeWidget* _button = new Button(ShapeData(_itemsBackgroundPosition + _gap,Vector2f(100.0f,100.0f),"red.png"),ButtonData(NULL,NULL,_callbacks[_i],NULL,NULL));
+		TextWidget* _name = new Label(TextData(_names[_i], _button->GetShapePosition(),FONT));
+		_name->GetDrawable()->setPosition(_button->GetShapePosition().x, _button->GetShapePosition().y + 30.0f);
+		canvas->AddWidget(_button);
+		canvas->AddWidget(_name);
+
+	}
 
 	InitTalentTree();
 

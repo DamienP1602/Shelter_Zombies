@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <SFML/Graphics.hpp>
-
 #include "Map.h"
 #include "Player.h"
 #include "Camera.h"

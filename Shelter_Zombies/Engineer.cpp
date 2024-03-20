@@ -6,5 +6,5 @@
 Engineer::Engineer(const Vector2f& _position) :
 	Building("Engineer", ShapeData(_position, BUILDING_SHAPE_ENGINEER_SIZE, BUILDING_SHAPE_ENGINEER_PATH))
 {
-	data = new BuildingData(30, BonusType::Construction_AttackBonus);
+	data = new BuildingData(30, 10, BonusType::Construction_AttackBonus);
 }

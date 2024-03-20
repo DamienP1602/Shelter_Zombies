@@ -17,16 +17,18 @@ enum BonusType
 
 struct BuildingData
 {
-	int healPointMax;
-	int currentHP;
+	int maxLife;
+	int currentLife;
+	int cost;
 	int level;
 	BonusType bonus;
 
-	BuildingData(int _hp, BonusType _bonus)
+	BuildingData(int _hp, int _cost, BonusType _bonus)
 	{
 		level = 0;
-		healPointMax = _hp + (_hp / 10 * level);
-		currentHP = healPointMax;
+		maxLife = _hp + (_hp / 10 * level);
+		currentLife = maxLife;
+		cost = _cost;
 		bonus = _bonus;
 	}
 	void LevelUp()
@@ -36,7 +38,7 @@ struct BuildingData
 	}
 	void UpdateData()
 	{
-		healPointMax = healPointMax + (healPointMax / 10 * level);
+		maxLife = maxLife + (maxLife / 10 * level);
 	}
 };
 
@@ -49,6 +51,11 @@ protected:
 public:
 	Building(const string& _name, const ShapeData& _shape, Canvas* _canvas = nullptr);
 	~Building();
+
+	void RestoreLife() const
+	{
+		data->currentLife = data->maxLife;
+	}
 
 	BuildingData* GetData() const
 	{

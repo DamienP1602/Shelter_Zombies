@@ -43,7 +43,7 @@ struct EntityData
 class Entity : public Actor
 {
 protected:
-	Entity* target = nullptr;
+	Actor* target = nullptr;
 	EntityData* data = nullptr;
 	EntityBrain* brain = nullptr;
 	EntityMovementComponent* movement = nullptr;
@@ -55,7 +55,7 @@ public:
 	Entity(string _name, const ShapeData& _shape);
 	~Entity();
 
-	void SetTarget(Entity* _target)
+	void SetTarget(Actor* _target)
 	{
 		target = _target;
 		attack->SetTarget(_target);
@@ -66,8 +66,7 @@ public:
 		isActive = _value;
 		movement->SetCanMove(_value);
 	}
-
-	Entity* GetTarget() const
+	Actor* GetTarget() const
 	{
 		return target;
 	}

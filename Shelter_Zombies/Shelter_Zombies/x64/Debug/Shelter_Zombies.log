@@ -1,18 +1,10 @@
 ﻿  Action.cpp
-  Animation.cpp
   Artillery.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Artillery.cpp')
   
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Artillery.cpp')
-  
-  AttackState.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'AttackState.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'AttackState.cpp')
   
   AudioMenu.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
@@ -31,6 +23,10 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.h(36,71): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Barrack.cpp')
   
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\Barrack.cpp(13,72): warning C4129: 'T': unrecognized character escape sequence
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\Barrack.cpp(13,72): warning C4129: 'G': unrecognized character escape sequence
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\Barrack.cpp(13,72): warning C4129: 'B': unrecognized character escape sequence
+  Black_smith.cpp
   Brain.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Brain.cpp')
@@ -38,8 +34,6 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Brain.cpp')
   
-  BuildingManager.cpp
-  BuildingMenu.cpp
   Camera.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Camera.cpp')
@@ -47,13 +41,7 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Camera.cpp')
   
-  ChaseState.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'ChaseState.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'ChaseState.cpp')
-  
+  Canteen.cpp
   CollectableActor.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'CollectableActor.cpp')
@@ -89,26 +77,26 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'EnemyEntityManager.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(48,42): warning C4244:         ]
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(55,42): warning C4244:         ]
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(62,42): warning C4244:         ]
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(69,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244:         ]
   Engineer.cpp
   Entity.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
@@ -129,36 +117,26 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.h(36,71): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'AllyEntityManager.cpp')
   
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(80,42): warning C4244:         ]
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(87,42): warning C4244:         ]
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(94,42): warning C4244:         ]
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(101,42): warning C4244:         ]
-  EntityBrain.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'EntityBrain.cpp')
-  
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  (compiling source file 'EntityBrain.cpp')
-  
-  Generating Code...
-  Compiling...
-  EntityMovementComponent.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(86,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(86,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(86,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(86,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(86,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(93,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(93,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(93,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(93,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(93,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(100,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(100,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(100,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(100,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(100,42): warning C4244:         ]
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(107,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(107,42): warning C4244:         with
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(107,42): warning C4244:         [
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(107,42): warning C4244:             T=float
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp(107,42): warning C4244:         ]
   Fighter.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Fighter.cpp')
@@ -187,6 +165,19 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'GameMenu.cpp')
   
+  Generating Code...
+  Compiling...
+  Gameplay.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Gameplay.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  (compiling source file 'Gameplay.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.h(36,71): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Gameplay.cpp')
+  
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\Gameplay.cpp(87,18): warning C4305: 'initializing': truncation from 'long' to 'float'
   InteractableActor.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'InteractableActor.cpp')
@@ -208,7 +199,6 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Inventory.cpp')
   
-  InventoryPlayer.cpp
   KeyboardMenu.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'KeyboardMenu.cpp')
@@ -244,6 +234,7 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Menu.cpp')
   
+  Nexus.cpp
   Player.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Player.cpp')
@@ -265,7 +256,6 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'PlayerMovementComponent.cpp')
   
-  PlayerSoundData.cpp
   PlayerStat.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'PlayerStat.cpp')
@@ -280,8 +270,6 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Shooter.cpp')
   
-  Generating Code...
-  Compiling...
   SightComponent.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'SightComponent.cpp')
@@ -303,7 +291,6 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warnin
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'Support.cpp')
   
-  TextureData.cpp
   VillageMenu.cpp
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file 'VillageMenu.cpp')

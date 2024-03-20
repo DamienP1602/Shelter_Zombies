@@ -40,9 +40,15 @@ void EnemyEntityManager::Init(vector<Fighter*> _allFighters, vector<Shooter*> _a
 	allArtilleries = _allArtilleries;
 }
 
-void EnemyEntityManager::SpawnEntities()
+void EnemyEntityManager::SpawnEntities(bool _isAttack)
 {
 	//TODO need screen location
+	//Vector2f _position;
+	//if (_isAttack)
+	//	_position = 
+	//else
+	//	_position = 
+
 	for (int i = 0; i < allFighters.size(); i++)
 	{
 		Vector2f _position = Vector2f(400, 100 * i); //Column

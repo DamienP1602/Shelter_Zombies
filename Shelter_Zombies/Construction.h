@@ -5,15 +5,15 @@ class Entity;
 
 struct ConstructionData
 {
-	int healPointMax;
-	int currentHP;
+	int maxLife;
+	int currentLife;
 	int damagePoint;
 	int level;
 
 	ConstructionData(int _hp, int _dmg, int _level)
 	{
-		healPointMax = _hp + (_hp / 10 * _level);
-		currentHP = healPointMax;
+		maxLife = _hp + (_hp / 10 * _level);
+		currentLife = maxLife;
 		damagePoint = _dmg + (_dmg / 10 * _level);
 		level = _level;
 	}
@@ -24,7 +24,7 @@ struct ConstructionData
 	}
 	void UpdateData()
 	{
-		healPointMax = healPointMax + (healPointMax / 10 * level);
+		maxLife = maxLife + (maxLife / 10 * level);
 		damagePoint = damagePoint + (damagePoint / 10 * level);
 	}
 };
@@ -37,10 +37,16 @@ class Construction : public InteractableActor
 protected:
 	ConstructionData* data = nullptr;
 	bool isDestroy = false;
+	bool isActive = false;
 
 public:
 	Construction(const string& _name, const ShapeData& _shape, Canvas* _canvas = nullptr);
 	~Construction();
+
+	void RestoreLife() const
+	{
+		data->currentLife = data->maxLife;
+	}
 
 	ConstructionData* GetData() const
 	{
@@ -49,6 +55,10 @@ public:
 	bool IsDestroy() const
 	{
 		return isDestroy;
+	}
+	void SetActive(bool _value)
+	{
+		isActive = _value;
 	}
 
 private:

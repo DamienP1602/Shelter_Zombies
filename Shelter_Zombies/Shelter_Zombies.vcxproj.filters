@@ -172,6 +172,9 @@
     <Filter Include="Source Files\Components\Sight">
       <UniqueIdentifier>{8c776f99-25a2-48c1-85c1-32b85394c9f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Gameplay">
+      <UniqueIdentifier>{c3bdfce2-32b6-41b9-8e6d-48b099099162}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -528,6 +531,9 @@
     <ClInclude Include="StandbyToDeath.h">
       <Filter>Source Files\IAs\Transitions</Filter>
     </ClInclude>
+    <ClInclude Include="Gameplay.h">
+      <Filter>Source Files\Gameplay</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -868,6 +874,9 @@
     </ClCompile>
     <ClCompile Include="StandbyToDeath.cpp">
       <Filter>Source Files\IAs\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay.cpp">
+      <Filter>Source Files\Gameplay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

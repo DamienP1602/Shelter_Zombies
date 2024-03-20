@@ -44,5 +44,5 @@ public:
 	bool AddShooter(Shooter* _shooter);
 	bool AddSupport(Support* _support);
 	bool AddArtillery(Artillery* _artillery);
-	void SpawnEntities();
+	void SpawnEntities(bool _isAttack);
 };

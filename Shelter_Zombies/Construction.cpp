@@ -14,14 +14,14 @@ Construction::~Construction()
 
 void Construction::TakeDamage(int _damage)
 {
-	data->currentHP -= _damage;
-	if (data->currentHP <= 0)
+	data->currentLife -= _damage;
+	if (data->currentLife <= 0)
 		isDestroy = true;
 }
 
 void Construction::Repare()
 {
-	data->currentHP = data->healPointMax;
+	data->currentLife = data->maxLife;
 }
 
 void Construction::Attack(Entity* _target)

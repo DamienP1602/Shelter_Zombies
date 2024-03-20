@@ -23,5 +23,5 @@ public:
 	~EnemyEntityManager();
 
 	void Init(vector<Fighter*> _allFighters, vector<Shooter*> _allShooters, vector<Support*> _allSupports, vector<Artillery*> _allArtilleries);
-	void SpawnEntities();
+	void SpawnEntities(bool _isAttack);
 };

@@ -12,12 +12,12 @@
 class InteractableActor : public Actor
 {
 protected:
-	Canvas* canvas = nullptr;
-	bool isOpen = false;
-	ShapeWidget* interactionBG = nullptr;
+	Canvas* canvas;
+	bool isOpen;
+	ShapeWidget* interactionBG;
 
 public:
-	InteractableActor(const string& _name, const ShapeData& _data, Canvas* _canvas = nullptr);
+	InteractableActor(const string& _name, const ShapeData& _data, Canvas* _canvas = new Canvas("InteractableActor"));
 	~InteractableActor();
 
 	void SetIsOpen(const bool _status)
@@ -28,6 +28,7 @@ public:
 	{
 		canvas = _canvas;
 	}
+	virtual int GetCost() = 0;
 	virtual void Init() override;
 	virtual void Update(const float _deltaTime);
 	virtual void OpenWidget();

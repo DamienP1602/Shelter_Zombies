@@ -12,7 +12,7 @@
 Barrack::Barrack(const Vector2f& _position) :
 	Building("Barrack", ShapeData(_position, BUILDING_SHAPE_BARRACK_SIZE, BUILDING_SHAPE_BARRACK_PATH))
 {
-	data = new BuildingData(30, BonusType::None);
+	data = new BuildingData(30,40, BonusType::None);
 }
 
 void Barrack::CreateEntity(int _type)

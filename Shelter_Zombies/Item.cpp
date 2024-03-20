@@ -1,8 +1,9 @@
 #include "Item.h"
 #include "Macro.h"
 
-Item::Item(ItemWidget* _widget, const string& _fontPath) : IManagable(GetUniqueID())
+Item::Item(const int _value,ItemWidget* _widget, const string& _fontPath, const ItemType& _type) : IManagable(GetUniqueID())
 {
+	value = _value;
 	widget = _widget;
-	countText = new Label(TextData("", _widget->GetObject()->GetShapePosition() + _widget->GetObject()->GetShapeSize() / 2.0f, _fontPath, 20, Color::White));
+	type = _type;
 }

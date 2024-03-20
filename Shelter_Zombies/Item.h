@@ -23,20 +23,21 @@ struct ItemData
 
 class Item : public IManagable<int>
 {
+	int value;
 	ItemWidget* widget;
-	Label* countText;
+	ItemType type;
 
 public:
+	int GetValue() const
+	{
+		return value;
+	}
 	string GetPath() const
 	{
 		return widget->GetID();
 	}
-	Label* GetCountText() const
-	{
-		return countText;
-	}
 
 public:
-	Item(ItemWidget* _widget, const string& _fontPath);
+	Item(const int _value,ItemWidget* _widget, const string& _fontPath,const ItemType& _type);
 };
 

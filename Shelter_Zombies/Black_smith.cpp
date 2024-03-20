@@ -6,5 +6,5 @@
 Black_smith::Black_smith(const Vector2f& _position) :
 	Building("Black_smith", ShapeData(_position, BUILDING_SHAPE_BLACK_SMITH_SIZE, BUILDING_SHAPE_BLACK_SMITH_PATH))
 {
-	data = new BuildingData(30, BonusType::Entity_AttackBonus);
+	data = new BuildingData(30,50, BonusType::Entity_AttackBonus);
 }

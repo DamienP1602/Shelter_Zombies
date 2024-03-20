@@ -22,9 +22,8 @@
 #include "MusicData.h"
 #include "MenuManager.h"
 #include "GameMenu.h"
-#define PATH_ITEM "UIs/Inventory/Item.png"
-#define PATH_DEATHMOB "Animations/DeathMob.png"
-#define DEAD_ZONE 50.0f
+#include "CameraManager.h"
+
 
 Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data, CT_BLOCK)
 {
@@ -36,6 +35,9 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 
 	attack = new PlayerAttackComponent(this, 1);
 	components.push_back(attack);
+
+	mode = new ConstructionMode();
+	data = new PlayerData(15,4,5,2,1);
 
 	Init();
 }
@@ -128,4 +130,12 @@ void Player::Init()
 void Player::Update(const float _deltaTime)
 {
 	Actor::Update(_deltaTime);
+
+	if (mode->shapeOfConstruction)
+	{
+		const Vector2f& _mousePosition = Vector2f(Mouse::getPosition(Game::GetWindow()));
+		const Vector2f& _playerPosition = Game::GetPlayer()->GetShapePosition();
+		const Vector2f& _windowSize = Game::GetWindowSize();
+		mode->SetPosition((_mousePosition + _playerPosition) - _windowSize / 2.0f);
+	}
 }

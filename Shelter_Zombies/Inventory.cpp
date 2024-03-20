@@ -387,7 +387,7 @@ void Inventory::AddItem(const int _count, const ItemData& _data)
 
 void Inventory::CreateItemData(const ItemData& _data)
 {
-	Button* _button = GetFirstAvailableButton();
+	/*Button* _button = GetFirstAvailableButton();
 	if (!_button) return;
 
 	ShapeObject* _object = _button->GetObject();
@@ -400,5 +400,5 @@ void Inventory::CreateItemData(const ItemData& _data)
 
 	canvas->AddWidget(_widget);
 	canvas->AddWidget(_item->GetCountText());
-	_button->SetForeground(_widget);
+	_button->SetForeground(_widget);*/
 }

@@ -9,13 +9,15 @@ struct ConstructionData
 	int currentHP;
 	int damagePoint;
 	int level;
+	int cost;
 
-	ConstructionData(int _hp, int _dmg, int _level)
+	ConstructionData(const int _hp, const int _dmg, const int _level,const int _cost)
 	{
 		healPointMax = _hp + (_hp / 10 * _level);
 		currentHP = healPointMax;
 		damagePoint = _dmg + (_dmg / 10 * _level);
 		level = _level;
+		cost = _cost;
 	}
 	void LevelUp()
 	{
@@ -35,16 +37,20 @@ struct ConstructionData
 class Construction : public InteractableActor
 {
 protected:
-	ConstructionData* data = nullptr;
-	bool isDestroy = false;
+	ConstructionData* data;
+	bool isDestroy;
 
 public:
-	Construction(const string& _name, const ShapeData& _shape, Canvas* _canvas = nullptr);
+	Construction(const string& _name, const ShapeData& _shape, Canvas* _canvas = new Canvas("InteractableActor"));
 	~Construction();
 
 	ConstructionData* GetData() const
 	{
 		return data;
+	}
+	virtual int GetCost() override
+	{
+		return data->cost;
 	}
 	bool IsDestroy() const
 	{

@@ -6,5 +6,5 @@
 Workshop::Workshop(const Vector2f& _position):
 	Building("Workshop", ShapeData(_position, BUILDING_SHAPE_WORKSHOP_SIZE, BUILDING_SHAPE_WORKSHOP_PATH))
 {
-	data = new BuildingData(30, BonusType::Construction_DefenseBonus);
+	data = new BuildingData(30,60, BonusType::Construction_DefenseBonus);
 }

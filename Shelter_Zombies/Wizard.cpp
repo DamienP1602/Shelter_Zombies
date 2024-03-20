@@ -6,5 +6,5 @@
 Wizard::Wizard(const Vector2f& _position):
 	Building("Wizard", ShapeData(_position, BUILDING_SHAPE_WIZARD_SIZE, BUILDING_SHAPE_WIZARD_PATH))
 {
-	data = new BuildingData(30, BonusType::Construction_SpeedBonus);
+	data = new BuildingData(30,50, BonusType::Construction_SpeedBonus);
 }

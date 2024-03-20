@@ -49,9 +49,6 @@
     <Filter Include="Source Files\IAs\Transitions">
       <UniqueIdentifier>{ffb848e0-9f62-4939-8847-b030b95d9d17}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\IAs\Brains\Enemybrains">
-      <UniqueIdentifier>{7524fa03-ea8f-4f14-b3c5-7ddaf0e56f13}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Manager\FXs">
       <UniqueIdentifier>{d9efaa4c-7a9e-47a0-b81b-eeb1cb5e02af}</UniqueIdentifier>
     </Filter>
@@ -97,12 +94,6 @@
     <Filter Include="Source Files\Objects\ShapesObjects\Actors\Player">
       <UniqueIdentifier>{df9b554f-2b2c-4580-a64c-ec2d153dfaea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Objects\ShapesObjects\Actors\Enemies\Boss">
-      <UniqueIdentifier>{8075d5db-f5cb-4f30-b5cf-2f96e8782aa6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Objects\ShapesObjects\Actors\Enemies\Mobs">
-      <UniqueIdentifier>{21dcfa69-ea01-4424-8397-f511f0767dcb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\UIs">
       <UniqueIdentifier>{7a0092fb-f462-4e21-bc0f-1b9c124102cb}</UniqueIdentifier>
     </Filter>
@@ -145,9 +136,6 @@
     <Filter Include="Source Files\Components\Interaction">
       <UniqueIdentifier>{f4954d28-486b-43c9-ae19-f54808d5cb70}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Components\Inspect">
-      <UniqueIdentifier>{ffac9a96-a6a2-48f4-85bd-62f33a53b2d0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Components\Collision">
       <UniqueIdentifier>{0067128b-0013-421b-96e3-cdfc22d581e8}</UniqueIdentifier>
     </Filter>
@@ -184,6 +172,9 @@
     <Filter Include="Source Files\Manager\Actors">
       <UniqueIdentifier>{bb69a248-c537-4c6a-abd5-240a08578226}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Components\Sight">
+      <UniqueIdentifier>{ffac9a96-a6a2-48f4-85bd-62f33a53b2d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UIelements.h">
@@ -191,15 +182,6 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Source Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="BossBrain.h">
-      <Filter>Source Files\IAs\Brains\Enemybrains</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyBrain.h">
-      <Filter>Source Files\IAs\Brains\Enemybrains</Filter>
-    </ClInclude>
-    <ClInclude Include="MobBrain.h">
-      <Filter>Source Files\IAs\Brains\Enemybrains</Filter>
     </ClInclude>
     <ClInclude Include="BlackBoard.h">
       <Filter>Source Files\IAs\Brains</Filter>
@@ -222,19 +204,13 @@
     <ClInclude Include="AttackState.h">
       <Filter>Source Files\IAs\States</Filter>
     </ClInclude>
-    <ClInclude Include="BossAttackState.h">
-      <Filter>Source Files\IAs\States</Filter>
-    </ClInclude>
     <ClInclude Include="ChaseState.h">
       <Filter>Source Files\IAs\States</Filter>
     </ClInclude>
     <ClInclude Include="DeathState.h">
       <Filter>Source Files\IAs\States</Filter>
     </ClInclude>
-    <ClInclude Include="MobAttackState.h">
-      <Filter>Source Files\IAs\States</Filter>
-    </ClInclude>
-    <ClInclude Include="PatrolState.h">
+    <ClInclude Include="StandbyState.h">
       <Filter>Source Files\IAs\States</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
@@ -369,12 +345,6 @@
     <ClInclude Include="Enemy.h">
       <Filter>Source Files\Objects\ShapesObjects\Actors\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="Boss.h">
-      <Filter>Source Files\Objects\ShapesObjects\Actors\Enemies\Boss</Filter>
-    </ClInclude>
-    <ClInclude Include="Mob.h">
-      <Filter>Source Files\Objects\ShapesObjects\Actors\Enemies\Mobs</Filter>
-    </ClInclude>
     <ClInclude Include="InteractableActor.h">
       <Filter>Source Files\Objects\ShapesObjects\Actors\Interactables</Filter>
     </ClInclude>
@@ -417,10 +387,7 @@
     <ClInclude Include="Component.h">
       <Filter>Source Files\Components</Filter>
     </ClInclude>
-    <ClInclude Include="MobMovementComponent.h">
-      <Filter>Source Files\Components\Movement</Filter>
-    </ClInclude>
-    <ClInclude Include="MovementComponent.h">
+    <ClInclude Include="EntityMovementComponent.h">
       <Filter>Source Files\Components\Movement</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementComponent.h">
@@ -429,14 +396,14 @@
     <ClInclude Include="PlayerStat.h">
       <Filter>Source Files\Components\Life</Filter>
     </ClInclude>
-    <ClInclude Include="EnemyLifeComponent.h">
+    <ClInclude Include="EntityLifeComponent.h">
       <Filter>Source Files\Components\Life</Filter>
     </ClInclude>
     <ClInclude Include="InteractionComponent.h">
       <Filter>Source Files\Components\Interaction</Filter>
     </ClInclude>
-    <ClInclude Include="InspectComponent.h">
-      <Filter>Source Files\Components\Inspect</Filter>
+    <ClInclude Include="SightComponent.h">
+      <Filter>Source Files\Components\Sight</Filter>
     </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>Source Files\Manager\Input</Filter>
@@ -444,7 +411,7 @@
     <ClInclude Include="CollisionComponent.h">
       <Filter>Source Files\Components\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="MobAttackComponent.h">
+    <ClInclude Include="EntityAttackComponent.h">
       <Filter>Source Files\Components\Attack</Filter>
     </ClInclude>
     <ClInclude Include="PlayerAttackComponent.h">
@@ -558,6 +525,18 @@
     <ClInclude Include="EnemyEntityManager.h">
       <Filter>Source Files\Manager\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="AttackToStandby.h">
+      <Filter>Source Files\IAs\Transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="StandbyToChase.h">
+      <Filter>Source Files\IAs\Transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="StandbyToDeath.h">
+      <Filter>Source Files\IAs\Transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBrain.h">
+      <Filter>Source Files\IAs\Brains</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -565,15 +544,6 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="BossBrain.cpp">
-      <Filter>Source Files\IAs\Brains\Enemybrains</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyBrain.cpp">
-      <Filter>Source Files\IAs\Brains\Enemybrains</Filter>
-    </ClCompile>
-    <ClCompile Include="MobBrain.cpp">
-      <Filter>Source Files\IAs\Brains\Enemybrains</Filter>
     </ClCompile>
     <ClCompile Include="Brain.cpp">
       <Filter>Source Files\IAs\Brains</Filter>
@@ -593,19 +563,13 @@
     <ClCompile Include="AttackState.cpp">
       <Filter>Source Files\IAs\States</Filter>
     </ClCompile>
-    <ClCompile Include="BossAttackState.cpp">
-      <Filter>Source Files\IAs\States</Filter>
-    </ClCompile>
     <ClCompile Include="ChaseState.cpp">
       <Filter>Source Files\IAs\States</Filter>
     </ClCompile>
     <ClCompile Include="DeathState.cpp">
       <Filter>Source Files\IAs\States</Filter>
     </ClCompile>
-    <ClCompile Include="MobAttackState.cpp">
-      <Filter>Source Files\IAs\States</Filter>
-    </ClCompile>
-    <ClCompile Include="PatrolState.cpp">
+    <ClCompile Include="StandbyState.cpp">
       <Filter>Source Files\IAs\States</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
@@ -731,12 +695,6 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files\Objects\ShapesObjects\Actors\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="Boss.cpp">
-      <Filter>Source Files\Objects\ShapesObjects\Actors\Enemies\Boss</Filter>
-    </ClCompile>
-    <ClCompile Include="Mob.cpp">
-      <Filter>Source Files\Objects\ShapesObjects\Actors\Enemies\Mobs</Filter>
-    </ClCompile>
     <ClCompile Include="InteractableActor.cpp">
       <Filter>Source Files\Objects\ShapesObjects\Actors\Interactables</Filter>
     </ClCompile>
@@ -776,10 +734,7 @@
     <ClCompile Include="Component.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
-    <ClCompile Include="MobMovementComponent.cpp">
-      <Filter>Source Files\Components\Movement</Filter>
-    </ClCompile>
-    <ClCompile Include="MovementComponent.cpp">
+    <ClCompile Include="EntityMovementComponent.cpp">
       <Filter>Source Files\Components\Movement</Filter>
     </ClCompile>
     <ClCompile Include="PlayerMovementComponent.cpp">
@@ -788,14 +743,14 @@
     <ClCompile Include="PlayerStat.cpp">
       <Filter>Source Files\Components\Life</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyLifeComponent.cpp">
+    <ClCompile Include="EntityLifeComponent.cpp">
       <Filter>Source Files\Components\Life</Filter>
     </ClCompile>
     <ClCompile Include="InteractionComponent.cpp">
       <Filter>Source Files\Components\Interaction</Filter>
     </ClCompile>
-    <ClCompile Include="InspectComponent.cpp">
-      <Filter>Source Files\Components\Inspect</Filter>
+    <ClCompile Include="SightComponent.cpp">
+      <Filter>Source Files\Components\Sight</Filter>
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>Source Files\Manager\Input</Filter>
@@ -803,7 +758,7 @@
     <ClCompile Include="CollisionComponent.cpp">
       <Filter>Source Files\Components\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="MobAttackComponent.cpp">
+    <ClCompile Include="EntityAttackComponent.cpp">
       <Filter>Source Files\Components\Attack</Filter>
     </ClCompile>
     <ClCompile Include="PlayerAttackComponent.cpp">
@@ -913,6 +868,18 @@
     </ClCompile>
     <ClCompile Include="EnemyEntityManager.cpp">
       <Filter>Source Files\Manager\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackToStandby.cpp">
+      <Filter>Source Files\IAs\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="StandbyToChase.cpp">
+      <Filter>Source Files\IAs\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="StandbyToDeath.cpp">
+      <Filter>Source Files\IAs\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBrain.cpp">
+      <Filter>Source Files\IAs\Brains</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

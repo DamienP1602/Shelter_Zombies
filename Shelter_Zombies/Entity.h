@@ -1,20 +1,24 @@
 #pragma once
 #include "Actor.h"
+#include "EntityBrain.h"
+#include "EntityMovementComponent.h"
+#include "EntityAttackComponent.h"
+#include "EntityLifeComponent.h"
 
 struct EntityData
 {
-	int healPointMax;
-	int currentHP;
+	int maxLife;
 	int damagePoint;
+	float cooldown;
 	float speed;
 	float range;
 	int level;
 
-	EntityData(int _hp, int _dmg, float _speed, float _range, int _level)
+	EntityData(int _hp, int _dmg, float _cooldown, float _speed, float _range, int _level)
 	{
-		healPointMax = _hp + (_hp / 10 * _level);
-		currentHP = healPointMax;
+		maxLife = _hp + (_hp / 10 * _level);
 		damagePoint = _dmg + (_dmg / 10 * _level);
+		cooldown = _cooldown;
 		speed = _speed;
 		range = _range;
 		level = _level;
@@ -26,7 +30,8 @@ struct EntityData
 	}
 	void UpdateData()
 	{
-		healPointMax = healPointMax + (healPointMax / 10 * level);
+		maxLife = maxLife + (maxLife / 10 * level);
+		cooldown = cooldown - (0.2f * level);
 		damagePoint = damagePoint + (damagePoint / 10 * level);
 		speed = speed + (speed / 10 * level);
 	}
@@ -40,20 +45,31 @@ class Entity : public Actor
 protected:
 	Entity* target = nullptr;
 	EntityData* data = nullptr;
-	bool isDead = false;
+	EntityBrain* brain = nullptr;
+	EntityMovementComponent* movement = nullptr;
+	EntityAttackComponent* attack = nullptr;
+	EntityLifeComponent* life = nullptr;
 	bool isActive = false;
 
 public:
 	Entity(string _name, const ShapeData& _shape);
 	~Entity();
 
-	Entity* GetTarget() const
-	{
-		return target;
-	}
 	void SetTarget(Entity* _target)
 	{
 		target = _target;
+		attack->SetTarget(_target);
+		movement->SetDestination(_target->GetShapePosition());
+	}
+	void SetActive(bool _value)
+	{
+		isActive = _value;
+		movement->SetCanMove(_value);
+	}
+
+	Entity* GetTarget() const
+	{
+		return target;
 	}
 	EntityData* GetData() const
 	{
@@ -61,22 +77,14 @@ public:
 	}
 	bool IsDead() const
 	{
-		return isDead;
+		return life->Isdead();
 	}
 	bool IsActive() const
 	{
 		return isActive;
 	}
-	void SetActive(bool _value)
-	{
-		isActive = _value;
-	}
-
-	void TakeDamage(int _damage);
-	void Healing(int _heal);
 
 protected:
-	virtual void Movement() = 0;
-	virtual void Action();
+	void UpdateData();
 };
 

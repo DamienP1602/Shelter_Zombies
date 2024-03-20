@@ -31,7 +31,7 @@ public:
 	{
 		return maxEntities;
 	}
-	bool GetEntitiesCount()
+	int GetEntitiesCount()
 	{
 		return allFighters.size() + allShooters.size() + allSupports.size() + allArtilleries.size();
 	}

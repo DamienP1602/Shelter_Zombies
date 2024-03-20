@@ -1,8 +1,8 @@
 #pragma once
 #include "Enemy.h"
 #include "MobMovementComponent.h"
-#include "InspectComponent.h"
-#include "MobAttackComponent.h"
+#include "SightComponent.h"
+#include "EntityAttackComponent.h"
 
 class Player;
 
@@ -13,8 +13,8 @@ protected:
 	bool cooldownAttack;
 
 	MobMovementComponent* movement;
-	InspectComponent* inspect;
-	MobAttackComponent* attack;
+	SightComponent* sight;
+	EntityAttackComponent* attack;
 
 public:
 	Mob(const ShapeData& _data);

@@ -1,9 +1,9 @@
 #pragma once
-#include "MovementComponent.h"
+#include "EntityMovementComponent.h"
 #include "PlayerAnimationComponent.h"
 #include "SoundManager.h"
 
-class PlayerMovementComponent : public MovementComponent
+class PlayerMovementComponent : public EntityMovementComponent
 {
 	// Movement
 	bool directionHasChanged;

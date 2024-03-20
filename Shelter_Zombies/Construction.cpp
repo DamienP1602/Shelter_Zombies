@@ -26,5 +26,4 @@ void Construction::Repare()
 
 void Construction::Attack(Entity* _target)
 {
-	_target->TakeDamage(data->damagePoint);
 }

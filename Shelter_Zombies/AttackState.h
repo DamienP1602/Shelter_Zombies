@@ -1,22 +1,22 @@
 #pragma once
 #include "State.h"
-#include "AttackToDeath.h"
-#include "InspectComponent.h"
-#include "MobAttackComponent.h"
+#include "AttackToStandby.h"
+#include "AttackToChase.h"
+#include "EntityAttackComponent.h"
 
 class AttackState : public State
 {
-	AttackToDeath* attackToDeath;
-	InspectComponent* inspect;
-	MobAttackComponent* attack;
-protected:
-	AnimationComponent* animation;
+	AttackToStandby* attackToStandby = nullptr;
+	AttackToChase* attackToChase = nullptr;
+	EntityAttackComponent* attack = nullptr;
 
 public:
 	AttackState(Brain* _brain);
+	~AttackState();
 
 public:
 	virtual void Start() override;
 	virtual void Update(const float _deltaTime) override;
 	virtual void Stop() override;
+	void Init() override;
 };

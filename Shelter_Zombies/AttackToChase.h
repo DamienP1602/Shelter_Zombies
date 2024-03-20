@@ -3,7 +3,6 @@
 
 class AttackToChase : public Transition
 {
-
 public:
 	AttackToChase(BlackBoard* _blackBoard);
 

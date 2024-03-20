@@ -1,6 +1,6 @@
 #include "Mob.h"
 #include "Macro.h"
-#include "MovementComponent.h"
+#include "EntityMovementComponent.h"
 #include "MobBrain.h"
 
 Mob::Mob(const ShapeData& _data) : Enemy(STRING_ID("Mob"), _data)
@@ -11,13 +11,13 @@ Mob::Mob(const ShapeData& _data) : Enemy(STRING_ID("Mob"), _data)
 	/*movement = new MobMovementComponent(this);
 	components.push_back(movement);*/
 
-	life = new EnemyLifeComponent(this, 1);
+	life = new EntityLifeComponent(this, 1);
 	components.push_back(life);
 
-	inspect = new InspectComponent(this, 100.0f);
-	components.push_back(inspect);
+	sight = new SightComponent(this, 100.0f);
+	components.push_back(sight);
 
-	attack = new MobAttackComponent(this, 1);
+	attack = new EntityAttackComponent(this, 1, 2, 8);
 	components.push_back(attack);
 
 	brain = new MobBrain(this);

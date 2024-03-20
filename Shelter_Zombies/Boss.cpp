@@ -4,7 +4,7 @@
 
 Boss::Boss(const ShapeData& _data) : Enemy("Boss" + to_string(GetUniqueID()), _data)
 {
-	life = new EnemyLifeComponent(this, 3);
+	life = new EntityLifeComponent(this, 3);
 	components.push_back(life);
 
 	movement = new MobMovementComponent(this);
@@ -13,10 +13,10 @@ Boss::Boss(const ShapeData& _data) : Enemy("Boss" + to_string(GetUniqueID()), _d
 
 	movement->SetSpeed(0.5f);
 
-	inspect = new InspectComponent(this, 500.0f);
-	components.push_back(inspect);
+	sight = new SightComponent(this, 500.0f);
+	components.push_back(sight);
 
-	attack = new MobAttackComponent(this, 1);
+	attack = new EntityAttackComponent(this, 1, 5, 2);
 	components.push_back(attack);
 
 	brain = new BossBrain(this);

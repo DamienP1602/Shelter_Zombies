@@ -1,10 +1,7 @@
 #pragma once
 #include "Component.h"
 #include "BlackBoard.h"
-#include "PatrolState.h"
-#include "ChaseState.h"
-#include "AttackState.h"
-
+#include "State.h"
 #include <vector>
 
 using namespace std;
@@ -14,7 +11,7 @@ class Brain : public Component
 	BlackBoard* blackBoard;
 
 protected:
-	State* currentState;
+	State* currentState = nullptr;
 	vector<State*> states;
 
 public:
@@ -22,7 +19,6 @@ public:
 	{
 		return blackBoard;
 	}
-
 	template<typename T>
 	T* GetState() const
 	{

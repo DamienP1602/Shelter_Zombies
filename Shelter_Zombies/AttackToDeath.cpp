@@ -2,7 +2,6 @@
 
 AttackToDeath::AttackToDeath(BlackBoard* _blackBoard) : Transition(_blackBoard)
 {
-
 }
 
 void AttackToDeath::Init(State* _nextState)

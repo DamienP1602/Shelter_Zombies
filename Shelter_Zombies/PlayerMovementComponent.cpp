@@ -7,7 +7,7 @@
 #include "Kismet.h"
 #include "FxManager.h"
 
-PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : MovementComponent(_owner)
+PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : EntityMovementComponent(_owner)
 {
 	// Movement
 	canMove = false;

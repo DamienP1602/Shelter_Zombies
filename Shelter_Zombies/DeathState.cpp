@@ -8,8 +8,6 @@ DeathState::DeathState(Brain* _brain) : State(_brain)
 
 void DeathState::Start()
 {
-	cout << brain->GetOwner()->GetID() << "Start Death" << endl;
-
 	//Actor* _owner = brain->GetOwner();
 
 	//if (!inspect || !animation || !patrol)
@@ -34,13 +32,10 @@ void DeathState::Start()
 void DeathState::Update(const float _deltaTime)
 {
 	State::Update(_deltaTime);
-
-
 }
 
 void DeathState::Stop()
 {
-	cout << brain->GetOwner()->GetID() << "Stop Death" << endl;
 }
 
 void DeathState::Init() // besoin de garder vide

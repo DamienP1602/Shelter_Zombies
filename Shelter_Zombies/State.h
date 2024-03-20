@@ -1,11 +1,8 @@
 #pragma once
-#include "Transition.h"
 #include <vector>
+#include "Transition.h"
 #include "Timer.h"
-
 #include "AnimationComponent.h"
-#include "MobMovementComponent.h"
-#include "InspectComponent.h"
 
 using namespace std;
 
@@ -24,7 +21,6 @@ public:
 	{
 		Transition* _nextTransition = nextTransition;
 		nextTransition = nullptr;
-
 		return _nextTransition; 
 	}
 

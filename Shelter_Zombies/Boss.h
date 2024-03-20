@@ -1,16 +1,16 @@
 #pragma once
 #include "Enemy.h"
 #include "MobMovementComponent.h"
-#include "MobAttackComponent.h"
-#include "InspectComponent.h"
+#include "EntityAttackComponent.h"
+#include "SightComponent.h"
 #include "Game.h"
 
 class Boss : public Enemy
 {
 protected:
 	MobMovementComponent* movement;
-	MobAttackComponent* attack;
-	InspectComponent* inspect;
+	EntityAttackComponent* attack;
+	SightComponent* sight;
 
 public:
 	Boss(const ShapeData& _data);

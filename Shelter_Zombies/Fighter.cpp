@@ -6,15 +6,6 @@
 Fighter::Fighter(const Vector2f& _position) : 
 	Entity("Fighter", ShapeData(_position, ENTITY_SHAPE_FIGHTER_SIZE, ENTITY_SHAPE_FIGHTER_PATH))
 {
-	data = new EntityData(10, 4, 3, 1, 0);
-}
-
-void Fighter::Movement()
-{
-
-}
-
-void Fighter::Action()
-{
-	target->TakeDamage(data->damagePoint);
+	data = new EntityData(10, 4, 1, 3, 1, 0);
+	UpdateData();
 }

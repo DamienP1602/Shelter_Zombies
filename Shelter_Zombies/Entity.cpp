@@ -4,7 +4,10 @@ Entity::Entity(string _name, const ShapeData& _shape):
 	Actor(_name, _shape, CT_BLOCK)
 {
 	layer = 2;
-	isDead = false;
+	brain = new EntityBrain(this);
+	movement = new EntityMovementComponent(this, 1);
+	attack = new EntityAttackComponent(this, 1, 1, 1);
+	life = new EntityLifeComponent(this, 1);
 }
 
 Entity::~Entity()
@@ -13,20 +16,9 @@ Entity::~Entity()
 	data = nullptr;
 }
 
-void Entity::TakeDamage(int _damage)
+void Entity::UpdateData()
 {
-	data->currentHP -= _damage;
-	if (data->currentHP <= 0)
-		isDead = false;
-}
-
-void Entity::Healing(int _heal)
-{
-	data->currentHP + _heal > data->healPointMax ? data->currentHP = data->healPointMax : data->currentHP += _heal;
-}
-
-void Entity::Action()
-{
-	if (!target)
-		return;
+	attack->SetData(data->damagePoint, data->cooldown, data->range);
+	life->SetLife(data->maxLife);
+	movement->SetSpeed(data->speed);
 }

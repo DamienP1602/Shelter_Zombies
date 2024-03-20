@@ -1,4 +1,5 @@
 #include "Brain.h"
+#include "Entity.h"
 
 Brain::Brain(Actor* _owner) : Component(_owner)
 {
@@ -11,17 +12,17 @@ Brain::~Brain()
 	delete currentState;
 }
 
-
 void Brain::Update(const float _deltaTime)
 {
+	if (!dynamic_cast<Entity*>(owner)->IsActive())
+		return;
+
 	currentState->Update(_deltaTime);
 
 	if (Transition* _transition = currentState->GetNextTransition())
 	{
 		currentState->Stop();
-
 		currentState = _transition->GetNextState();
-
 		currentState->Start();
 	}
 }

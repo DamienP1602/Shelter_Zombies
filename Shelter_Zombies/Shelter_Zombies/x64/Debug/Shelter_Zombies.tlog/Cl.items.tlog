@@ -36,9 +36,9 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\DeathState.cpp;D:\GitHub\Shelter_Zombi
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Decor.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\Decor.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\DecorManager.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\DecorManager.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Enemy.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\Enemy.obj
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyBrain.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\EnemyBrain.obj
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityBrain.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\EntityBrain.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\EnemyEntityManager.obj
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyLifeComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\EnemyLifeComponent.obj
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityLifeComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\EntityLifeComponent.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Engineer.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\Engineer.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Entity.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\Entity.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\AllyEntityManager.obj
@@ -52,7 +52,7 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\FxManager.cpp;D:\GitHub\Shelter_Zombie
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Game.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\Game.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\HUD.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\HUD.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\InputManager.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\InputManager.obj
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\InspectComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\InspectComponent.obj
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\SightComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\SightComponent.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\InteractableActor.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\InteractableActor.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\InteractionComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\InteractionComponent.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Inventory.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\Inventory.obj
@@ -68,11 +68,11 @@ D:\GitHub\Shelter_Zombies\Shelter_Zombies\Map.cpp;D:\GitHub\Shelter_Zombies\Shel
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Menu.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\Menu.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\MenuManager.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\MenuManager.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Mob.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\Mob.obj
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\MobAttackComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\MobAttackComponent.obj
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\EntityAttackComponent.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\MobAttackState.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\MobAttackState.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\MobBrain.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\MobBrain.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\MobMovementComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\MobMovementComponent.obj
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\MovementComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\MovementComponent.obj
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityMovementComponent.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\EntityMovementComponent.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\MusicData.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\MusicData.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\MusicManager.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\MusicManager.obj
 D:\GitHub\Shelter_Zombies\Shelter_Zombies\Nexus.cpp;D:\GitHub\Shelter_Zombies\Shelter_Zombies\Shelter_Zombies\x64\Debug\Nexus.obj

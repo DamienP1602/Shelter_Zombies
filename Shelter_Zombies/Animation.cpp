@@ -1,6 +1,6 @@
 #include "Animation.h"
 #include "AnimationComponent.h"
-#include "MovementComponent.h"
+#include "EntityMovementComponent.h"
 #include "Timer.h"
 #include "Macro.h"
 

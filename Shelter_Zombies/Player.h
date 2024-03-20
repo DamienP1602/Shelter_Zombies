@@ -97,8 +97,9 @@ struct ConstructionMode
 	}
 	void Destroy()
 	{
-		shapeOfConstruction = ;
 		ActorManager::GetInstance().Remove(shapeOfConstruction);
+		ActorManager::GetInstance().GarbageValues();
+		shapeOfConstruction = nullptr;
 
 		position = Vector2f();
 		cost = 0;

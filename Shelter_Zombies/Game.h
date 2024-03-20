@@ -8,6 +8,8 @@
 using namespace std;
 using namespace sf;
 
+class Gameplay;
+
 /// <summary>
 /// The Game class
 /// </summary>
@@ -19,6 +21,7 @@ class Game
 private:
 	static Player* player;
 	static Camera* camera;
+	static Gameplay* gameplay;
 
 public:
 	static RenderWindow& GetWindow()

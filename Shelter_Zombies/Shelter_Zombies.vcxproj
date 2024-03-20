@@ -155,7 +155,7 @@
     <ClInclude Include="Building.h" />
     <ClInclude Include="BlackBoard.h" />
     <ClInclude Include="Brain.h" />
-    <ClInclude Include="BuildingManager.h" />
+    <ClInclude Include="AllyBuildingManager.h" />
     <ClInclude Include="BuildingMenu.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
@@ -169,11 +169,13 @@
     <ClInclude Include="CollisionComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Construction.h" />
-    <ClInclude Include="ConstructionManager.h" />
+    <ClInclude Include="AllyConstructionManager.h" />
     <ClInclude Include="ControllerMenu.h" />
     <ClInclude Include="DeathState.h" />
     <ClInclude Include="Decor.h" />
     <ClInclude Include="DecorManager.h" />
+    <ClInclude Include="EnemyBuildingManager.h" />
+    <ClInclude Include="EnemyConstructionManager.h" />
     <ClInclude Include="EnemyEntityManager.h" />
     <ClInclude Include="Engineer.h" />
     <ClInclude Include="Entity.h" />
@@ -275,7 +277,7 @@
     <ClCompile Include="Black_smith.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Brain.cpp" />
-    <ClCompile Include="BuildingManager.cpp" />
+    <ClCompile Include="AllyBuildingManager.cpp" />
     <ClCompile Include="BuildingMenu.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -289,11 +291,13 @@
     <ClCompile Include="CollisionComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Construction.cpp" />
-    <ClCompile Include="ConstructionManager.cpp" />
+    <ClCompile Include="AllyConstructionManager.cpp" />
     <ClCompile Include="ControllerMenu.cpp" />
     <ClCompile Include="DeathState.cpp" />
     <ClCompile Include="Decor.cpp" />
     <ClCompile Include="DecorManager.cpp" />
+    <ClCompile Include="EnemyBuildingManager.cpp" />
+    <ClCompile Include="EnemyConstructionManager.cpp" />
     <ClCompile Include="EnemyEntityManager.cpp" />
     <ClCompile Include="Engineer.cpp" />
     <ClCompile Include="Entity.cpp" />

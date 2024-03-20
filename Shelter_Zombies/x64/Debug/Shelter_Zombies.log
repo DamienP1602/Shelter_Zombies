@@ -1,0 +1,68 @@
+﻿  Armory.cpp
+  AudioMenu.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Camera.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  CollectableActor.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  ControllerMenu.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  FxManager.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Game.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  GameMenu.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Gameplay.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\AllyEntityManager.h(36,71): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\Gameplay.cpp(99,18): warning C4305: 'initialisation' : troncation de 'long' à 'float'
+  InteractableActor.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Inventory.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  KeyboardMenu.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Main.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  MainMenu.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Map.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Menu.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Player.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  PlayerAttackComponent.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  PlayerMovementComponent.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  PlayerStat.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Génération de code en cours...
+  Compilation en cours...
+  VillageMenu.cpp
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(23,14): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.h(24,11): warning C4244: '=' : conversion de 'const int' en 'float', perte possible de données
+  Génération de code en cours...
+Game.obj : error LNK2001: symbole externe non résolu "private: static class Gameplay * Game::gameplay" (?gameplay@Game@@0PEAVGameplay@@EA)
+C:\Users\User\GitHub\Shelter_Zombies\Shelter_Zombies\x64\Debug\Shelter_Zombies.exe : fatal error LNK1120: 1 externes non résolus

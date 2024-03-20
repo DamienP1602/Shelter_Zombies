@@ -1,5 +1,4 @@
 #include "Game.h"
-
 #include "TimerManager.h"
 #include "ProgressBar.h"
 #include "Timer.h"

@@ -1,7 +1,7 @@
 #include "Canteen.h"
 
-#define BUILDING_SHAPE_CANTEEN_PATH ""
-#define BUILDING_SHAPE_CANTEEN_SIZE Vector2f()
+#define BUILDING_SHAPE_CANTEEN_PATH "GPE/Building/Canteen.png"
+#define BUILDING_SHAPE_CANTEEN_SIZE Vector2f(500,500)
 
 Canteen::Canteen(const Vector2f& _position) :
 	Building("Canteen", ShapeData(_position, BUILDING_SHAPE_CANTEEN_SIZE, BUILDING_SHAPE_CANTEEN_PATH))

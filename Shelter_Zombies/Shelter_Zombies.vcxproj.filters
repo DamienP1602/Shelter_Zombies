@@ -411,10 +411,10 @@
     <ClInclude Include="PlayerSoundData.h">
       <Filter>Source Files\Manager\Sounds</Filter>
     </ClInclude>
-    <ClInclude Include="BuildingManager.h">
+    <ClInclude Include="AllyBuildingManager.h">
       <Filter>Source Files\Manager\GPE</Filter>
     </ClInclude>
-    <ClInclude Include="ConstructionManager.h">
+    <ClInclude Include="AllyConstructionManager.h">
       <Filter>Source Files\Manager\GPE</Filter>
     </ClInclude>
     <ClInclude Include="DecorManager.h">
@@ -533,6 +533,12 @@
     </ClInclude>
     <ClInclude Include="Gameplay.h">
       <Filter>Source Files\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBuildingManager.h">
+      <Filter>Source Files\Manager\GPE</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyConstructionManager.h">
+      <Filter>Source Files\Manager\GPE</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -755,10 +761,10 @@
     <ClCompile Include="PlayerSoundData.cpp">
       <Filter>Source Files\Manager\Sounds</Filter>
     </ClCompile>
-    <ClCompile Include="BuildingManager.cpp">
+    <ClCompile Include="AllyBuildingManager.cpp">
       <Filter>Source Files\Manager\GPE</Filter>
     </ClCompile>
-    <ClCompile Include="ConstructionManager.cpp">
+    <ClCompile Include="AllyConstructionManager.cpp">
       <Filter>Source Files\Manager\GPE</Filter>
     </ClCompile>
     <ClCompile Include="DecorManager.cpp">
@@ -877,6 +883,12 @@
     </ClCompile>
     <ClCompile Include="Gameplay.cpp">
       <Filter>Source Files\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyConstructionManager.cpp">
+      <Filter>Source Files\Manager\GPE</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBuildingManager.cpp">
+      <Filter>Source Files\Manager\GPE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

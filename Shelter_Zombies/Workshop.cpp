@@ -1,7 +1,7 @@
 #include "Workshop.h"
 
-#define BUILDING_SHAPE_WORKSHOP_PATH ""
-#define BUILDING_SHAPE_WORKSHOP_SIZE Vector2f()
+#define BUILDING_SHAPE_WORKSHOP_PATH "GPE/Building/Workshop.png"
+#define BUILDING_SHAPE_WORKSHOP_SIZE Vector2f(500,500)
 
 Workshop::Workshop(const Vector2f& _position):
 	Building("Workshop", ShapeData(_position, BUILDING_SHAPE_WORKSHOP_SIZE, BUILDING_SHAPE_WORKSHOP_PATH))

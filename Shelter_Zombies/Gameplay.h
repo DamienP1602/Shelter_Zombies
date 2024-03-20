@@ -1,6 +1,5 @@
 #pragma once
 #include "Game.h"
-#include "Map.h"
 
 using namespace std;
 using namespace sf;
@@ -19,8 +18,8 @@ class Gameplay
 {
 	GameMode currentMode;
 	Game* game = nullptr;
+	Map* currentMap = nullptr;
 	vector<Map*> allMaps;
-	Map* currentMap;
 
 public:
 	Gameplay(Game* _game);

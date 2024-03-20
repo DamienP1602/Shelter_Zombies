@@ -6,7 +6,7 @@
 #include "AllyEntityManager.h"
 #include "IManager.h"
 
-#define BUILDING_SHAPE_BARRACK_PATH "Assets\Textures\GPE\Building\Barrack.png"
+#define BUILDING_SHAPE_BARRACK_PATH "GPE/Building/Barrack.png"
 #define BUILDING_SHAPE_BARRACK_SIZE Vector2f(500,500)
 
 Barrack::Barrack(const Vector2f& _position) :

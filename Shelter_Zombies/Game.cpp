@@ -5,6 +5,7 @@
 #include "HUD.h"
 #include "Widget.h"
 #include "TriggerBox.h"
+#include "Gameplay.h"
 
 #include "VillageMenu.h"
 #include "AttackMenu.h"
@@ -34,6 +35,7 @@ Game::Game()
 	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f)));
 	map = new Map();
 	camera = new Camera();
+	gameplay = new Gameplay(this);
 } 
 
 Game::~Game()

@@ -1,8 +1,11 @@
 #include "Gameplay.h"
+#include "Game.h"
 #include "AllyEntityManager.h"
 #include "EnemyEntityManager.h"
-#include "ConstructionManager.h"
-#include "BuildingManager.h"
+#include "AllyConstructionManager.h"
+#include "EnemyConstructionManager.h"
+#include "AllyBuildingManager.h"
+#include "EnemyBuildingManager.h"
 #include "Kismet.h"
 
 Gameplay::Gameplay(Game* _game)
@@ -36,12 +39,12 @@ void Gameplay::ModePassif()
 		_allAlly[i]->GetComponent<EntityLifeComponent>()->RestoreLife();
 
 	//Restore all HPs of construction
-	vector<Construction*> _allConstruction = ConstructionManager::GetInstance().GetAllValues();
+	vector<Construction*> _allConstruction = AllyConstructionManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allConstruction.size(); i++)
 		_allConstruction[i]->RestoreLife();
 
 	//Restore all HPs of building
-	vector<Building*> _allBuilding = BuildingManager::GetInstance().GetAllValues();
+	vector<Building*> _allBuilding = AllyBuildingManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allBuilding.size(); i++)
 		_allBuilding[i]->RestoreLife();
 }
@@ -53,7 +56,7 @@ void Gameplay::ModeDefense()
 	//TODO active player attack UI
 
 	//Active all construction
-	vector<Construction*> _allConstruction = ConstructionManager::GetInstance().GetAllValues();
+	vector<Construction*> _allConstruction = AllyConstructionManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allConstruction.size(); i++)
 		_allConstruction[i]->SetActive(true);
 
@@ -61,7 +64,10 @@ void Gameplay::ModeDefense()
 	EnemyEntityManager::GetInstance().SpawnEntities(false);
 	vector<Entity*> _allEnemy = EnemyEntityManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allEnemy.size(); i++)
+	{
 		_allEnemy[i]->SetActive(true);
+		SelectionTarget(_allEnemy[i], false);
+	}
 }
 
 void Gameplay::ModeAttack()
@@ -72,13 +78,19 @@ void Gameplay::ModeAttack()
 	EnemyEntityManager::GetInstance().SpawnEntities(true);
 	vector<Entity*> _allEnemy = EnemyEntityManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allEnemy.size(); i++)
+	{
 		_allEnemy[i]->SetActive(true);
+		SelectionTarget(_allEnemy[i], false);
+	}
 
 	//Active all allys and spawn them
 	AllyEntityManager::GetInstance().SpawnEntities(true);
 	vector<Entity*> _allAlly = AllyEntityManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allAlly.size(); i++)
+	{
 		_allAlly[i]->SetActive(true);
+		SelectionTarget(_allEnemy[i], true);
+	}
 }
 
 void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
@@ -98,29 +110,27 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 
-		//TODO EnemyBuildingManager
-		//vector<Building*> _allEnemyBuilding = EnemyBuildingManager::GetInstance().GetAllValues();
-		//for (size_t i = 0; i < _allEnemyBuilding.size(); i++)
-		//{
-		//	float _testDistance = Distance(_entity->GetShapePosition(), _allEnemyBuilding[i]->GetShapePosition());
-		//	if (_testDistance < _distance)
-		//	{
-		//		_distance = _testDistance;
-		//		_target = _allEnemyBuilding[i];
-		//	}
-		//}
+		vector<Building*> _allEnemyBuilding = EnemyBuildingManager::GetInstance().GetAllValues();
+		for (size_t i = 0; i < _allEnemyBuilding.size(); i++)
+		{
+			float _testDistance = Distance(_entity->GetShapePosition(), _allEnemyBuilding[i]->GetShapePosition());
+			if (_testDistance < _distance)
+			{
+				_distance = _testDistance;
+				_target = _allEnemyBuilding[i];
+			}
+		}
 
-		//TODO EnemyConstructionManager
-		//vector<Construction*> _allEnemyConstruction = EnemyConstructionManager::GetInstance().GetAllValues();
-		//for (size_t i = 0; i < _allEnemyConstruction.size(); i++)
-		//{
-		//	float _testDistance = Distance(_entity->GetShapePosition(), _allEnemyConstruction[i]->GetShapePosition());
-		//	if (_testDistance < _distance)
-		//	{
-		//		_distance = _testDistance;
-		//		_target = _allEnemyConstruction[i];
-		//	}
-		//}
+		vector<Construction*> _allEnemyConstruction = EnemyConstructionManager::GetInstance().GetAllValues();
+		for (size_t i = 0; i < _allEnemyConstruction.size(); i++)
+		{
+			float _testDistance = Distance(_entity->GetShapePosition(), _allEnemyConstruction[i]->GetShapePosition());
+			if (_testDistance < _distance)
+			{
+				_distance = _testDistance;
+				_target = _allEnemyConstruction[i];
+			}
+		}
 	}
 	else
 	{
@@ -135,7 +145,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 
-		vector<Building*> _allAllyBuilding = BuildingManager::GetInstance().GetAllValues();
+		vector<Building*> _allAllyBuilding = AllyBuildingManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyBuilding.size(); i++)
 		{
 			float _testDistance = Distance(_entity->GetShapePosition(), _allAllyBuilding[i]->GetShapePosition());
@@ -146,7 +156,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 
-		vector<Construction*> _allAllyConstruction = ConstructionManager::GetInstance().GetAllValues();
+		vector<Construction*> _allAllyConstruction = AllyConstructionManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyConstruction.size(); i++)
 		{
 			float _testDistance = Distance(_entity->GetShapePosition(), _allAllyConstruction[i]->GetShapePosition());

@@ -39,7 +39,6 @@ bool AllyEntityManager::AddKnight(Knight* _fighter)
 		return false;
 	allFighters.push_back(_fighter);
 	Add(_fighter->GetID(), _fighter);
-	_fighter->SetIsHidden(true);
 	return true;
 }
 

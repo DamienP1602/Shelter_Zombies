@@ -2,4 +2,5 @@
 
 AllyBuildingManager::AllyBuildingManager()
 {
+	nexus = nullptr;
 }

@@ -3,11 +3,11 @@
 #include "Kismet.h"
 #include "EntityLifeComponent.h"
 
-EntityAttackComponent::EntityAttackComponent(Actor* _owner, const int _damages, const int _cooldown, const int _range) : Component(_owner)
+EntityAttackComponent::EntityAttackComponent(Actor* _owner) : Component(_owner)
 {
-	damages = _damages;
-	cooldown = _cooldown;
-	range = _range;
+	damages = 1;
+	cooldown = 1;
+	range = 1;
 	isInRange = false;
 	hitInfo = HitInfo();
 	cooldownTimer = nullptr;

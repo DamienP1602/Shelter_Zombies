@@ -22,22 +22,22 @@ void Barrack::CreateEntity(int _type)
 	{
 	case 0: //Fighter
 		//Cost 1
-		if (AllyEntityManager::GetInstance().AddKnight(new Knight(Vector2f(-2000, -2000), 0)))
+		if (AllyEntityManager::GetInstance().AddKnight(new Knight(Vector2f(0, 0), 0)))
 			break;
 		break;
 	case 1: //Shooter
 		//Cost 3
-		if (AllyEntityManager::GetInstance().AddArcher(new Archer(Vector2f(-2000, -2000), 0)))
+		if (AllyEntityManager::GetInstance().AddArcher(new Archer(Vector2f(0, 0), 0)))
 			break;
 		break;
 	case 2: //Support
 		//Cost 5
-		if (AllyEntityManager::GetInstance().AddChurch(new Church(Vector2f(-2000, -2000), 0)))
+		if (AllyEntityManager::GetInstance().AddChurch(new Church(Vector2f(0, 0), 0)))
 			break;
 		break;
 	case 3: //Artillery
 		//Cost 10
-		if (AllyEntityManager::GetInstance().AddCatapult(new Catapult(Vector2f(-2000, -2000), 0)))
+		if (AllyEntityManager::GetInstance().AddCatapult(new Catapult(Vector2f(0, 0), 0)))
 			break;
 		break;
 	}

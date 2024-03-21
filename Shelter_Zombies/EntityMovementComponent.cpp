@@ -3,12 +3,14 @@
 #include "Actor.h"
 #include "Kismet.h"
 
-EntityMovementComponent::EntityMovementComponent(Actor* _owner, const float _speed) : Component(_owner)
+EntityMovementComponent::EntityMovementComponent(Actor* _owner) : Component(_owner)
 {
-	speed = _speed;
-	minRange = 1; //TODO check
-	collision = owner->GetComponent<CollisionComponent>();
+	string _name = _owner->GetID();
+	canMove = false;
+	speed = 1;
+	minRange = 1;
 	animation = owner->GetComponent<AnimationComponent>();
+	collision = owner->GetComponent<CollisionComponent>();
 }
 
 EntityMovementComponent::~EntityMovementComponent()

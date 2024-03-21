@@ -17,7 +17,7 @@ void ActorManager::Init()
 
 void ActorManager::Update()
 {
-	 const float _deltaTime = TimerManager::GetInstance().GetDeltaTime();
+	const float _deltaTime = TimerManager::GetInstance().GetDeltaTime();
 
 	for (Actor* _actor : GetAllValues())
 	{

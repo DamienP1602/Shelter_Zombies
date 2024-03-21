@@ -14,7 +14,7 @@ class EntityAttackComponent : public Component
 	Actor* target = nullptr;
 
 public:
-	EntityAttackComponent(Actor* _owner, const int _damages, const int _cooldown, const int _range);
+	EntityAttackComponent(Actor* _owner);
 	~EntityAttackComponent();
 
 	void SetData(const int _damages, const float _cooldown, const float _range)

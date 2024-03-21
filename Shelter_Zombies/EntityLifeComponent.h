@@ -8,11 +8,12 @@ class EntityLifeComponent : public Component
 	bool isDead;
 
 public:
-	EntityLifeComponent(Actor* _owner, const int _life);
+	EntityLifeComponent(Actor* _owner);
 
 	void SetLife(const int _life)
 	{
 		maxLife = _life;
+		currentLife = maxLife;
 	}
 	void RestoreLife()
 	{

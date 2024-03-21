@@ -8,15 +8,14 @@
 #include "EnemyBuildingManager.h"
 #include "Kismet.h"
 #include "Map.h"
+#include "io.h"
 
-Gameplay::Gameplay(Game* _game, vector<Map*> _allMaps)
+Gameplay::Gameplay()
 {
-	currentMode = GameMode::Passif;
-	game = _game;
-	currentMap = 0;
-	allMaps = _allMaps;
-
-	Init();
+	game = nullptr;
+	waveCooldown = 5; //seconds
+	waveTimerEnd = false;
+	waveTimer = new Timer([&]() { WaveTimerEnd(); }, seconds(waveCooldown), false, false);
 }
 
 Gameplay::~Gameplay()
@@ -28,18 +27,45 @@ Gameplay::~Gameplay()
 	delete game;
 }
 
+bool Gameplay::CheckEnemyArmy()
+{
+	return EnemyEntityManager::GetInstance().Count() == 0;
+}
+
+bool Gameplay::CheckEnemyBase()
+{
+	return EnemyBuildingManager::GetInstance().IsNexusDestroy();
+}
+
+bool Gameplay::CheckAllyArmy()
+{
+	return AllyEntityManager::GetInstance().Count() == 0 /*&& game->GetPlayer()->IsDead()*/;
+}
+
+bool Gameplay::CheckAllyBase()
+{
+	return AllyBuildingManager::GetInstance().IsNexusDestroy();
+}
+
 void Gameplay::ModePassif()
 {
 	currentMode = GameMode::Passif;
+	waveTimerEnd = false;
+	waveTimer->Start();
+
 	//TODO active player construction UI
 
 	//TODO Restore HP of player
 	//game->GetPlayer()->RestoreLife();
 
-	//Restore all HPs of ally
+	//Restore all HPs of ally and despawn them
 	vector<Entity*> _allAlly = AllyEntityManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allAlly.size(); i++)
+	{
 		_allAlly[i]->GetComponent<EntityLifeComponent>()->RestoreLife();
+		_allAlly[i]->SetActive(false);
+		_allAlly[i]->SetIsHidden(true);
+	}
 
 	//Restore all HPs of construction
 	vector<Construction*> _allConstruction = AllyConstructionManager::GetInstance().GetAllValues();
@@ -50,11 +76,22 @@ void Gameplay::ModePassif()
 	vector<Building*> _allBuilding = AllyBuildingManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allBuilding.size(); i++)
 		_allBuilding[i]->RestoreLife();
+
+	//Restore all enemies HPs and despawn them
+	EnemyEntityManager::GetInstance().SpawnEntities(false);
+	vector<Entity*> _allEnemy = EnemyEntityManager::GetInstance().GetAllValues();
+	for (size_t i = 0; i < _allEnemy.size(); i++)
+	{
+		_allEnemy[i]->GetComponent<EntityLifeComponent>()->RestoreLife();
+		_allEnemy[i]->SetActive(false);
+		_allEnemy[i]->SetIsHidden(true);
+	}
 }
 
 void Gameplay::ModeDefense()
 {
 	currentMode = GameMode::Defense;
+	waveTimer->Reset();
 
 	//TODO active player attack UI
 
@@ -76,6 +113,7 @@ void Gameplay::ModeDefense()
 void Gameplay::ModeAttack()
 {
 	currentMode = GameMode::Attack;
+	waveTimer->Reset();
 
 	//TODO active player attack UI
 
@@ -104,9 +142,52 @@ void Gameplay::SelectMap(int _map)
 	allMaps[currentMap]->Load();
 }
 
-void Gameplay::Init()
+void Gameplay::Init(Game* _game)
 {
-	//EnemyEntityManager::GetInstance().SetArmy();
+	currentMode = GameMode::Passif;
+	game = _game;
+	currentMap = 0;
+	//allMaps = _allMaps;
+
+	EnemyEntityManager::GetInstance().SetArmy(3, 2, 1, 1);
+	ModePassif();
+}
+
+void Gameplay::Update()
+{
+	ChangeMode();
+}
+
+void Gameplay::ChangeMode()
+{
+	if (currentMode == GameMode::Passif && IsTimerWaveEnd())
+	{
+		cout << "WARNING: incoming enemy attack, prepare to defend your base" << endl;
+		ModeDefense();
+	}
+	else if (currentMode == GameMode::Defense && CheckEnemyArmy())
+	{
+		cout << "Enemy army defeat: You successfully defend your base !" << endl;
+		ModePassif();
+	}
+	else if (currentMode == GameMode::Defense && CheckAllyBase())
+	{
+		cout << "Your nexus have been destroy: Game-Over !!" << endl;
+		//LoadPreviousMap();
+		ModePassif();
+		game->Close();
+	}
+	else if (currentMode == GameMode::Attack && CheckEnemyBase())
+	{
+		cout << "Enemy nexus destroy: You successfully win victory and this new base !" << endl;
+		ModePassif();
+	}
+	else if (currentMode == GameMode::Attack && CheckAllyArmy())
+	{
+		cout << "You have lost the battle but not the war: go back to your base !" << endl;
+		//LoadMainBase();
+		ModePassif();
+	}
 }
 
 void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
@@ -193,4 +274,9 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		}
 	}
 	_entity->SetTarget(_target);
+}
+
+void Gameplay::WaveTimerEnd()
+{
+	waveTimerEnd = true;
 }

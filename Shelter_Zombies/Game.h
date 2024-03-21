@@ -17,7 +17,6 @@ class Game
 {
 	static RenderWindow window;
 	static Map* map;
-	static Gameplay* gameplay;
 
 private:
 	static Player* player;
@@ -43,10 +42,6 @@ public:
 	static Map* GetMap() 
 	{
 		return map;
-	}
-	static Gameplay* GetGameplay()
-	{
-		return gameplay;
 	}
 
 public:

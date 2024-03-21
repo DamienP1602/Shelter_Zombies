@@ -44,7 +44,27 @@ void EnemyEntityManager::SetArmy(const int _skelets, const int _orcs, const int 
 {
 	for (int i = 0; i < _skelets; i++)
 	{
-
+		Skelet* _skelet = new Skelet(Vector2f(0, 0), 0);
+		allFighters.push_back(_skelet);
+		Add(_skelet->GetID(), _skelet);
+	}
+	for (int i = 0; i < _orcs; i++)
+	{
+		Orc* _orc = new Orc(Vector2f(0, 0), 0);
+		allShooters.push_back(_orc);
+		Add(_orc->GetID(), _orc);
+	}
+	for (int i = 0; i < _warlocks; i++)
+	{
+		Warlock* _warlock = new Warlock(Vector2f(0, 0), 0);
+		allSupports.push_back(_warlock);
+		Add(_warlock->GetID(), _warlock);
+	}
+	for (int i = 0; i < _golems; i++)
+	{
+		Golem* _golem = new Golem(Vector2f(0, 0), 0);
+		allArtilleries.push_back(_golem);
+		Add(_golem->GetID(), _golem);
 	}
 }
 

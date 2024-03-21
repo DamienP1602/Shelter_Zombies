@@ -22,12 +22,13 @@ protected:
 	CollisionComponent* collision = nullptr;
 
 public:
-	EntityMovementComponent(Actor* _owner, const float _speed);
+	EntityMovementComponent(Actor* _owner);
 	~EntityMovementComponent();
 
-	void SetSpeed(const float _speed)
+	void SetData(const float _speed, const float _range)
 	{
 		speed = _speed;
+		minRange = _range;
 	}
 	void SetCanMove(const bool _status)
 	{

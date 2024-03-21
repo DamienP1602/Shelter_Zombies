@@ -6,5 +6,7 @@ class Church : public Entity
 public:
 	Church(const Vector2f& _position, const int _level);
 	~Church();
+
+	void Init() override;
 };
 

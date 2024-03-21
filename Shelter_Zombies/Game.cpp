@@ -22,15 +22,12 @@ RenderWindow Game::window;
 Map* Game::map;
 Player* Game::player;
 Camera* Game::camera;
-Gameplay* Game::gameplay;
-
 
 Game::Game()
 {
 	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f)));
 	map = new Map();
 	camera = new Camera();
-	//gameplay = new Gameplay(this, map, );
 } 
 
 Game::~Game()
@@ -52,6 +49,7 @@ void Game::Init()
 {
 	map->Init();
 	camera->Init();
+	Gameplay::GetInstance().Init(this);
 
 	//new InventoryPlayer();
 	new VillageMenu();
@@ -78,6 +76,7 @@ void Game::Update()
 	while (window.isOpen())
 	{
 		TimerManager::GetInstance().Update();
+		Gameplay::GetInstance().Update();
 		if (!InputManager::GetInstance().Update(window)) 
 			break;
 		ActorManager::GetInstance().Update();

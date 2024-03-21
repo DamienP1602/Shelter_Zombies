@@ -21,18 +21,32 @@ class Gameplay : public Singleton<Gameplay>
 	Game* game = nullptr;
 	int currentMap;
 	vector<Map*> allMaps;
+	int waveCooldown;
+	Timer* waveTimer;
+	bool waveTimerEnd;
 
 public:
-	Gameplay(Game* _game, vector<Map*> _allMaps);
+	Gameplay();
 	~Gameplay();
+
+	bool IsTimerWaveEnd()
+	{
+		return waveTimerEnd;
+	}
+	bool CheckEnemyArmy();
+	bool CheckEnemyBase();
+	bool CheckAllyArmy();
+	bool CheckAllyBase();
+
+	void Init(Game* _game);
+	void Update();
+	void ChangeMode();
 
 	void ModePassif();
 	void ModeDefense();
 	void ModeAttack();
 	void SelectMap(int _map);
-
-private:
-	void Init();
 	void SelectionTarget(Entity* _entity,const bool _isAlly);
+	void WaveTimerEnd();
 };
 

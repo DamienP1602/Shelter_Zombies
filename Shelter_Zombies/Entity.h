@@ -85,5 +85,6 @@ public:
 
 protected:
 	void UpdateData();
+	virtual void Init();
 };
 

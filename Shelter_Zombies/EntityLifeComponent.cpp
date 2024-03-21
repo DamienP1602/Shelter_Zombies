@@ -2,9 +2,9 @@
 #include "Timer.h"
 #include "ActorManager.h"
 
-EntityLifeComponent::EntityLifeComponent(Actor* _owner, const int _maxLife) : Component(_owner)
+EntityLifeComponent::EntityLifeComponent(Actor* _owner) : Component(_owner)
 {
-	maxLife = _maxLife;
+	maxLife = 10;
 	currentLife = maxLife;
 }
 
@@ -14,7 +14,7 @@ void EntityLifeComponent::TakeDamages(const int _damages)
 	if (currentLife <= 0)
 	{
 		isDead = true;
-		new Timer([&]() { Destroy(); }, seconds(0.1f), true, false);
+		new Timer([&]() { Destroy(); }, seconds(0.5f), true, false);
 	}
 }
 

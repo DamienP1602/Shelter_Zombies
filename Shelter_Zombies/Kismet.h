@@ -20,6 +20,9 @@ bool Raycast(const Vector2f& _origin, const Vector2f& _direction, const float _m
 			 HitInfo& _hitInfo, const vector<Actor*>& _ignoredActors = vector<Actor*>(),
 			 const float _precision = 0.01f);
 
+bool CircleCast(const Vector2f& _origin, const float _radius,Actor*& _target, bool& _isInRange,
+	const vector<Actor*>& _ignoredActors = vector<Actor*>());
+
 vector<HitInfo> RaycastAll(const Vector2f& _origin, const Vector2f& _direction, const float _maxDistance,
 						   const vector<Shape*>& _ignoredShapes, const float _precision = 0.01f);
  

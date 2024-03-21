@@ -27,7 +27,11 @@ public:
 	{
 		target = _target;
 	}
-
+	Actor* GetTarget() const
+	{
+		return target;
+	}
+	
 	bool IsAttacking() const
 	{
 		return cooldownTimer && cooldownTimer->IsRunning();
@@ -36,6 +40,10 @@ public:
 	HitInfo GetHitInfo() const
 	{
 		return hitInfo;
+	}
+	void SetInRange(const bool _value)
+	{
+		isInRange = _value;
 	}
 
 	virtual void Update(const float _deltaTime) override;

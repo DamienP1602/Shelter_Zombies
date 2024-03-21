@@ -3,7 +3,7 @@
 #include "ActorManager.h"
 
 bool Raycast(const Vector2f& _origin, const Vector2f& _direction, const float _maxDistance,
-			 HitInfo& _hitInfo, const vector<Actor*>& _ignoredActors, const float _precision)
+	HitInfo& _hitInfo, const vector<Actor*>& _ignoredActors, const float _precision)
 {
 	if (_direction == Vector2f()) return false;
 
@@ -33,8 +33,29 @@ bool Raycast(const Vector2f& _origin, const Vector2f& _direction, const float _m
 	return false;
 }
 
+bool CircleCast(const Vector2f& _origin, const float _radius, Actor*& _target, bool& _isInRange, const vector<Actor*>& _ignoredActors)
+{
+	Shape* _circleShape = new CircleShape(_radius * 20.0f);
+	_circleShape->setPosition(_origin);
+
+	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
+	{
+		if (Contains(_actor, _ignoredActors)) continue;
+
+		if (_circleShape->getGlobalBounds().intersects(_actor->GetDrawable()->getGlobalBounds()))
+		{
+			cout << "RADIUS " << endl;
+			_target = _actor;
+			_isInRange = true;
+			return true;
+		}
+	}
+	_isInRange = false;
+	return false;
+}
+
 vector<HitInfo> RaycastAll(const Vector2f& _origin, const Vector2f& _direction, const float _maxDistance,
-						   const vector<Shape*>& _ignoredShapes, const float _precision)
+	const vector<Shape*>& _ignoredShapes, const float _precision)
 {
 	vector<HitInfo> _hitInfos;
 	if (_direction == Vector2f()) return _hitInfos;

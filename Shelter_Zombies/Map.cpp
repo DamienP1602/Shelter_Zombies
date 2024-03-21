@@ -34,10 +34,10 @@ Map::~Map()
 		}
 	}
 
-	for (ShapeObject* _shape : borders->shapes)
+	/*for (ShapeObject* _shape : borders->shapes)
 	{
 		delete _shape;
-	}
+	}*/
 }
 
 void Map::Init()

@@ -31,7 +31,7 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	components.push_back(movement);
 
 	mode = new ConstructionMode();
-	data = new PlayerData(_name,15,4,5,2,1);
+	data = new PlayerData(_name,15,4,5,3,1);
 
 	attack = new PlayerAttackComponent(this, data->damagePoint,data->range);
 	components.push_back(attack);

@@ -23,5 +23,6 @@ public:
 	~EnemyEntityManager();
 
 	void Init(vector<Skelet*> _allFighters, vector<Orc*> _allShooters, vector<Warlock*> _allSupports, vector<Golem*> _allArtilleries);
+	void SetArmy(const int _skelets, const int _orcs, const int _warlocks, const int _golems);
 	void SpawnEntities(bool _isAttack);
 };

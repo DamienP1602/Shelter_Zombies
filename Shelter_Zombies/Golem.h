@@ -5,5 +5,6 @@ class Golem : public Entity
 {
 public:
 	Golem(const Vector2f& _position, const int _level);
+	~Golem();
 };
 

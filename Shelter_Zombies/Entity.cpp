@@ -12,6 +12,7 @@ Entity::Entity(string _name, const ShapeData& _shape):
 
 Entity::~Entity()
 {
+	
 	target = nullptr;
 	data = nullptr;
 }

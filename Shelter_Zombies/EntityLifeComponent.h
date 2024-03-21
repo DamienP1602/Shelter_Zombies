@@ -23,11 +23,14 @@ public:
 	{
 		return currentLife;
 	}
-	bool Isdead()
+	bool IsDead() const
 	{
 		return isDead;
 	}
 
 	void TakeDamages(const int _damages);
 	void Healing(const int _heal);
+
+private:
+	void Destroy();
 };

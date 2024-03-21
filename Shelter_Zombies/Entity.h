@@ -76,7 +76,7 @@ public:
 	}
 	bool IsDead() const
 	{
-		return life->Isdead();
+		return life->IsDead();
 	}
 	bool IsActive() const
 	{

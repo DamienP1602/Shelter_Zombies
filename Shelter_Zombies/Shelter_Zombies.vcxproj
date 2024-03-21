@@ -142,7 +142,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="Armory.h" />
-    <ClInclude Include="Artillery.h" />
+    <ClInclude Include="Catapult.h" />
     <ClInclude Include="AttackMenu.h" />
     <ClInclude Include="AttackState.h" />
     <ClInclude Include="AttackToChase.h" />
@@ -184,7 +184,8 @@
     <ClInclude Include="EntityBrain.h" />
     <ClInclude Include="EntityLifeComponent.h" />
     <ClInclude Include="EntityMovementComponent.h" />
-    <ClInclude Include="Fighter.h" />
+    <ClInclude Include="Golem.h" />
+    <ClInclude Include="Knight.h" />
     <ClInclude Include="FileLoader.h" />
     <ClInclude Include="FontData.h" />
     <ClInclude Include="FontManager.h" />
@@ -216,6 +217,7 @@
     <ClInclude Include="MusicManager.h" />
     <ClInclude Include="Nexus.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Orc.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerAnimationComponent.h" />
     <ClInclude Include="PlayerAttackComponent.h" />
@@ -228,9 +230,10 @@
     <ClInclude Include="ProgressLabel.h" />
     <ClInclude Include="ShapeObject.h" />
     <ClInclude Include="ShapeWidget.h" />
-    <ClInclude Include="Shooter.h" />
+    <ClInclude Include="Archer.h" />
     <ClInclude Include="SightComponent.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Skelet.h" />
     <ClInclude Include="SoundData.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="SoundSystem.h" />
@@ -239,7 +242,7 @@
     <ClInclude Include="StandbyToChase.h" />
     <ClInclude Include="StandbyToDeath.h" />
     <ClInclude Include="State.h" />
-    <ClInclude Include="Support.h" />
+    <ClInclude Include="Church.h" />
     <ClInclude Include="TextObject.h" />
     <ClInclude Include="TextureData.h" />
     <ClInclude Include="TextureManager.h" />
@@ -254,6 +257,7 @@
     <ClInclude Include="Wall.h" />
     <ClInclude Include="Widget.h" />
     <ClInclude Include="WidgetManager.h" />
+    <ClInclude Include="Warlock.h" />
     <ClInclude Include="Wizard.h" />
     <ClInclude Include="Workshop.h" />
   </ItemGroup>
@@ -265,7 +269,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="Armory.cpp" />
-    <ClCompile Include="Artillery.cpp" />
+    <ClCompile Include="Catapult.cpp" />
     <ClCompile Include="AttackMenu.cpp" />
     <ClCompile Include="AttackState.cpp" />
     <ClCompile Include="AttackToChase.cpp" />
@@ -306,7 +310,8 @@
     <ClCompile Include="EntityBrain.cpp" />
     <ClCompile Include="EntityLifeComponent.cpp" />
     <ClCompile Include="EntityMovementComponent.cpp" />
-    <ClCompile Include="Fighter.cpp" />
+    <ClCompile Include="Golem.cpp" />
+    <ClCompile Include="Knight.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="FontData.cpp" />
     <ClCompile Include="FontManager.cpp" />
@@ -337,6 +342,7 @@
     <ClCompile Include="MusicManager.cpp" />
     <ClCompile Include="Nexus.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Orc.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerAnimationComponent.cpp" />
     <ClCompile Include="PlayerAttackComponent.cpp" />
@@ -348,8 +354,9 @@
     <ClCompile Include="ProgressLabel.cpp" />
     <ClCompile Include="ShapeObject.cpp" />
     <ClCompile Include="ShapeWidget.cpp" />
-    <ClCompile Include="Shooter.cpp" />
+    <ClCompile Include="Archer.cpp" />
     <ClCompile Include="SightComponent.cpp" />
+    <ClCompile Include="Skelet.cpp" />
     <ClCompile Include="SoundData.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SoundSystem.cpp" />
@@ -358,7 +365,7 @@
     <ClCompile Include="StandbyToChase.cpp" />
     <ClCompile Include="StandbyToDeath.cpp" />
     <ClCompile Include="State.cpp" />
-    <ClCompile Include="Support.cpp" />
+    <ClCompile Include="Church.cpp" />
     <ClCompile Include="TextObject.cpp" />
     <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -372,6 +379,7 @@
     <ClCompile Include="Wall.cpp" />
     <ClCompile Include="Widget.cpp" />
     <ClCompile Include="WidgetManager.cpp" />
+    <ClCompile Include="Warlock.cpp" />
     <ClCompile Include="Wizard.cpp" />
     <ClCompile Include="Workshop.cpp" />
   </ItemGroup>

@@ -1,11 +1,12 @@
 #include "AllyEntityManager.h"
-#include "Fighter.h"
-#include "Shooter.h"
-#include "Support.h"
-#include "Artillery.h"
+#include "Knight.h"
+#include "Archer.h"
+#include "Church.h"
+#include "Catapult.h"
 
 AllyEntityManager::AllyEntityManager()
 {
+	maxEntities = 10;
 }
 
 AllyEntityManager::~AllyEntityManager()
@@ -32,7 +33,7 @@ AllyEntityManager::~AllyEntityManager()
 	}
 }
 
-bool AllyEntityManager::AddFighter(Fighter* _fighter)
+bool AllyEntityManager::AddKnight(Knight* _fighter)
 {
 	if (IsMaxEntities())
 		return false;
@@ -42,7 +43,7 @@ bool AllyEntityManager::AddFighter(Fighter* _fighter)
 	return true;
 }
 
-bool AllyEntityManager::AddShooter(Shooter* _shooter)
+bool AllyEntityManager::AddArcher(Archer* _shooter)
 {
 	if (IsMaxEntities())
 		return false;
@@ -52,7 +53,7 @@ bool AllyEntityManager::AddShooter(Shooter* _shooter)
 	return true;
 }
 
-bool AllyEntityManager::AddSupport(Support* _support)
+bool AllyEntityManager::AddChurch(Church* _support)
 {
 	if (IsMaxEntities())
 		return false;
@@ -62,7 +63,7 @@ bool AllyEntityManager::AddSupport(Support* _support)
 	return true;
 }
 
-bool AllyEntityManager::AddArtillery(Artillery* _artillery)
+bool AllyEntityManager::AddCatapult(Catapult* _artillery)
 {
 	if (IsMaxEntities())
 		return false;
@@ -72,7 +73,7 @@ bool AllyEntityManager::AddArtillery(Artillery* _artillery)
 	return true;
 }
 
-void AllyEntityManager::SpawnEntities(bool _isAttack)
+void AllyEntityManager::SpawnEntities(const bool _isAttack)
 {
 	//TODO need screen location
 	//Vector2f _position;
@@ -81,30 +82,30 @@ void AllyEntityManager::SpawnEntities(bool _isAttack)
 	//else
 	//	_position = 
 
-	for (int i = 0; i < allFighters.size(); i++)
+	for (size_t i = 0; i < allFighters.size(); i++)
 	{
-		Vector2f _position = Vector2f(400, 100 * i); //Column
+		Vector2f _position = Vector2f(400.f, 100.f * i); //Column
 		allFighters[i]->SetShapePosition(_position);
 		allFighters[i]->SetActive(true);
 		allFighters[i]->SetIsHidden(false);
 	}
-	for (int i = 0; i < allShooters.size(); i++)
+	for (size_t i = 0; i < allShooters.size(); i++)
 	{
-		Vector2f _position = Vector2f(300, 100 * i); //Column
+		Vector2f _position = Vector2f(300.f, 100.f * i); //Column
 		allShooters[i]->SetShapePosition(_position);
 		allShooters[i]->SetActive(true);
 		allShooters[i]->SetIsHidden(false);
 	}
-	for (int i = 0; i < allSupports.size(); i++)
+	for (size_t i = 0; i < allSupports.size(); i++)
 	{
-		Vector2f _position = Vector2f(200, 100 * i); //Column
+		Vector2f _position = Vector2f(200.f, 100.f * i); //Column
 		allSupports[i]->SetShapePosition(_position);
 		allSupports[i]->SetActive(true);
 		allSupports[i]->SetIsHidden(false);
 	}
-	for (int i = 0; i < allArtilleries.size(); i++)
+	for (size_t i = 0; i < allArtilleries.size(); i++)
 	{
-		Vector2f _position = Vector2f(100, 100 * i); //Column
+		Vector2f _position = Vector2f(100.f, 100.f * i); //Column
 		allArtilleries[i]->SetShapePosition(_position);
 		allArtilleries[i]->SetActive(true);
 		allArtilleries[i]->SetIsHidden(false);

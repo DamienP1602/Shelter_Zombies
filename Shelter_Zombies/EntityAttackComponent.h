@@ -17,7 +17,7 @@ public:
 	EntityAttackComponent(Actor* _owner, const int _damages, const int _cooldown, const int _range);
 	~EntityAttackComponent();
 
-	void SetData(const int _damages, const int _cooldown, const int _range)
+	void SetData(const int _damages, const float _cooldown, const float _range)
 	{
 		damages = _damages;
 		cooldown = _cooldown;

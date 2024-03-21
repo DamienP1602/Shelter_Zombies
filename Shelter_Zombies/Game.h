@@ -17,11 +17,11 @@ class Game
 {
 	static RenderWindow window;
 	static Map* map;
+	static Gameplay* gameplay;
 
 private:
 	static Player* player;
 	static Camera* camera;
-	static Gameplay* gameplay;
 
 public:
 	static RenderWindow& GetWindow()
@@ -43,6 +43,10 @@ public:
 	static Map* GetMap() 
 	{
 		return map;
+	}
+	static Gameplay* GetGameplay()
+	{
+		return gameplay;
 	}
 
 public:

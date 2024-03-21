@@ -7,11 +7,14 @@
 #include "AllyBuildingManager.h"
 #include "EnemyBuildingManager.h"
 #include "Kismet.h"
+#include "Map.h"
 
-Gameplay::Gameplay(Game* _game)
+Gameplay::Gameplay(Game* _game, vector<Map*> _allMaps)
 {
-	game = _game;
 	currentMode = GameMode::Passif;
+	game = _game;
+	currentMap = 0;
+	allMaps = _allMaps;
 }
 
 Gameplay::~Gameplay()
@@ -20,9 +23,7 @@ Gameplay::~Gameplay()
 		allMaps[i] = nullptr;
 	allMaps.clear();
 	game = nullptr;
-	currentMap = nullptr;
 	delete game;
-	delete currentMap;
 }
 
 void Gameplay::ModePassif()
@@ -74,6 +75,8 @@ void Gameplay::ModeAttack()
 {
 	currentMode = GameMode::Attack;
 
+	//TODO active player attack UI
+
 	//Active all enemies and spawn them
 	EnemyEntityManager::GetInstance().SpawnEntities(true);
 	vector<Entity*> _allEnemy = EnemyEntityManager::GetInstance().GetAllValues();
@@ -93,16 +96,23 @@ void Gameplay::ModeAttack()
 	}
 }
 
+void Gameplay::SelectMap(int _map)
+{
+	currentMap = _map;
+	allMaps[currentMap]->Load();
+}
+
 void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 {
 	Actor* _target = nullptr;
 	float _distance = LONG_MAX;
+	float _testDistance = 0;
 	if (_isAlly)
 	{
 		vector<Entity*> _allEnemyEntity = EnemyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyEntity.size(); i++)
 		{
-			float _testDistance = Distance(_entity->GetShapePosition(), _allEnemyEntity[i]->GetShapePosition());
+			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyEntity[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
 				_distance = _testDistance;
@@ -113,7 +123,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Building*> _allEnemyBuilding = EnemyBuildingManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyBuilding.size(); i++)
 		{
-			float _testDistance = Distance(_entity->GetShapePosition(), _allEnemyBuilding[i]->GetShapePosition());
+			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyBuilding[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
 				_distance = _testDistance;
@@ -124,7 +134,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Construction*> _allEnemyConstruction = EnemyConstructionManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyConstruction.size(); i++)
 		{
-			float _testDistance = Distance(_entity->GetShapePosition(), _allEnemyConstruction[i]->GetShapePosition());
+			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyConstruction[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
 				_distance = _testDistance;
@@ -137,7 +147,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Entity*> _allAllyEntity = AllyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyEntity.size(); i++)
 		{
-			float _testDistance = Distance(_entity->GetShapePosition(), _allAllyEntity[i]->GetShapePosition());
+			_testDistance = Distance(_entity->GetShapePosition(), _allAllyEntity[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
 				_distance = _testDistance;
@@ -148,7 +158,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Building*> _allAllyBuilding = AllyBuildingManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyBuilding.size(); i++)
 		{
-			float _testDistance = Distance(_entity->GetShapePosition(), _allAllyBuilding[i]->GetShapePosition());
+			_testDistance = Distance(_entity->GetShapePosition(), _allAllyBuilding[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
 				_distance = _testDistance;
@@ -159,12 +169,20 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Construction*> _allAllyConstruction = AllyConstructionManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyConstruction.size(); i++)
 		{
-			float _testDistance = Distance(_entity->GetShapePosition(), _allAllyConstruction[i]->GetShapePosition());
+			_testDistance = Distance(_entity->GetShapePosition(), _allAllyConstruction[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
 				_distance = _testDistance;
 				_target = _allAllyConstruction[i];
 			}
+		}
+
+		Player* _player = game->GetPlayer();
+		_testDistance = Distance(_entity->GetShapePosition(), _player->GetShapePosition());
+		if (_testDistance < _distance)
+		{
+			_distance = _testDistance;
+			_target = _player;
 		}
 	}
 	_entity->SetTarget(_target);

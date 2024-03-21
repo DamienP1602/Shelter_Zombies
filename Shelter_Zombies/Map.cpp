@@ -49,3 +49,8 @@ void Map::Init()
 	}
 
 }
+
+void Map::Load()
+{
+	//TODO load
+}

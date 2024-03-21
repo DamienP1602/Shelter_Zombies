@@ -1,8 +1,8 @@
 #include "EnemyEntityManager.h"
-#include "Fighter.h"
-#include "Shooter.h"
-#include "Support.h"
-#include "Artillery.h"
+#include "Skelet.h"
+#include "Orc.h"
+#include "Warlock.h"
+#include "Golem.h"
 
 EnemyEntityManager::EnemyEntityManager()
 {
@@ -32,7 +32,7 @@ EnemyEntityManager::~EnemyEntityManager()
 	}
 }
 
-void EnemyEntityManager::Init(vector<Fighter*> _allFighters, vector<Shooter*> _allShooters, vector<Support*> _allSupports, vector<Artillery*> _allArtilleries)
+void EnemyEntityManager::Init(vector<Skelet*> _allFighters, vector<Orc*> _allShooters, vector<Warlock*> _allSupports, vector<Golem*> _allArtilleries)
 {
 	allFighters = _allFighters;
 	allShooters = _allShooters;

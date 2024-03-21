@@ -67,4 +67,5 @@ public:
 
 public:
 	virtual void Init();
+	virtual void Load();
 };

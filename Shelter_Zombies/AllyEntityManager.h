@@ -3,10 +3,10 @@
 #include "IManager.h"
 #include "Entity.h"
 
-class Fighter;
-class Shooter;
-class Support;
-class Artillery;
+class Knight;
+class Archer;
+class Church;
+class Catapult;
 
 using namespace std;
 
@@ -14,16 +14,16 @@ class AllyEntityManager : public Singleton<AllyEntityManager>, public IManager<s
 {
 private:
 	int maxEntities = 10;
-	vector<Fighter*> allFighters;
-	vector<Shooter*> allShooters;
-	vector<Support*> allSupports;
-	vector<Artillery*> allArtilleries;
+	vector<Knight*> allFighters;
+	vector<Archer*> allShooters;
+	vector<Church*> allSupports;
+	vector<Catapult*> allArtilleries;
 
 public:
 	AllyEntityManager();
 	~AllyEntityManager();
 
-	void SetMaxEntities(int _max)
+	void SetMaxEntities(const int _max)
 	{
 		maxEntities = _max;
 	}
@@ -33,16 +33,16 @@ public:
 	}
 	int GetEntitiesCount()
 	{
-		return allFighters.size() + allShooters.size() + allSupports.size() + allArtilleries.size();
+		return int(allFighters.size() + allShooters.size() + allSupports.size() + allArtilleries.size());
 	}
 	bool IsMaxEntities()
 	{
 		return GetEntitiesCount() == maxEntities;
 	}
 
-	bool AddFighter(Fighter* _fighter);
-	bool AddShooter(Shooter* _shooter);
-	bool AddSupport(Support* _support);
-	bool AddArtillery(Artillery* _artillery);
-	void SpawnEntities(bool _isAttack);
+	bool AddKnight(Knight* _fighter);
+	bool AddArcher(Archer* _shooter);
+	bool AddChurch(Church* _support);
+	bool AddCatapult(Catapult* _artillery);
+	void SpawnEntities(const bool _isAttack);
 };

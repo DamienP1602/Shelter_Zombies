@@ -21,6 +21,7 @@ RenderWindow Game::window;
 Map* Game::map;
 Player* Game::player;
 Camera* Game::camera;
+Gameplay* Game::gameplay;
 
 #include "TriggerBox.h"
 
@@ -35,7 +36,7 @@ Game::Game()
 	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f)));
 	map = new Map();
 	camera = new Camera();
-	gameplay = new Gameplay(this);
+	//gameplay = new Gameplay(this, map, );
 } 
 
 Game::~Game()

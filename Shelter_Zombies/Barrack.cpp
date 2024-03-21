@@ -1,8 +1,8 @@
 #include "Barrack.h"
-#include "Fighter.h"
-#include "Shooter.h"
-#include "Support.h"
-#include "Artillery.h"
+#include "Knight.h"
+#include "Archer.h"
+#include "Church.h"
+#include "Catapult.h"
 #include "AllyEntityManager.h"
 #include "IManager.h"
 
@@ -22,22 +22,22 @@ void Barrack::CreateEntity(int _type)
 	{
 	case 0: //Fighter
 		//Cost 1
-		if (AllyEntityManager::GetInstance().AddFighter(new Fighter(Vector2f(-2000, -2000))))
+		if (AllyEntityManager::GetInstance().AddKnight(new Knight(Vector2f(-2000, -2000), 0)))
 			break;
 		break;
 	case 1: //Shooter
 		//Cost 3
-		if (AllyEntityManager::GetInstance().AddShooter(new Shooter(Vector2f(-2000, -2000))))
+		if (AllyEntityManager::GetInstance().AddArcher(new Archer(Vector2f(-2000, -2000), 0)))
 			break;
 		break;
 	case 2: //Support
 		//Cost 5
-		if (AllyEntityManager::GetInstance().AddSupport(new Support(Vector2f(-2000, -2000))))
+		if (AllyEntityManager::GetInstance().AddChurch(new Church(Vector2f(-2000, -2000), 0)))
 			break;
 		break;
 	case 3: //Artillery
 		//Cost 10
-		if (AllyEntityManager::GetInstance().AddArtillery(new Artillery(Vector2f(-2000, -2000))))
+		if (AllyEntityManager::GetInstance().AddCatapult(new Catapult(Vector2f(-2000, -2000), 0)))
 			break;
 		break;
 	}

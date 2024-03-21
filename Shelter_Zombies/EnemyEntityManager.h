@@ -3,25 +3,25 @@
 #include "IManager.h"
 #include "Entity.h"
 
-class Fighter;
-class Shooter;
-class Support;
-class Artillery;
+class Skelet;
+class Orc;
+class Warlock;
+class Golem;
 
 using namespace std;
 
 class EnemyEntityManager : public Singleton<EnemyEntityManager>, public IManager<string, Entity>
 {
 private:
-	vector<Fighter*> allFighters;
-	vector<Shooter*> allShooters;
-	vector<Support*> allSupports;
-	vector<Artillery*> allArtilleries;
+	vector<Skelet*> allFighters;
+	vector<Orc*> allShooters;
+	vector<Warlock*> allSupports;
+	vector<Golem*> allArtilleries;
 
 public:
 	EnemyEntityManager();
 	~EnemyEntityManager();
 
-	void Init(vector<Fighter*> _allFighters, vector<Shooter*> _allShooters, vector<Support*> _allSupports, vector<Artillery*> _allArtilleries);
+	void Init(vector<Skelet*> _allFighters, vector<Orc*> _allShooters, vector<Warlock*> _allSupports, vector<Golem*> _allArtilleries);
 	void SpawnEntities(bool _isAttack);
 };

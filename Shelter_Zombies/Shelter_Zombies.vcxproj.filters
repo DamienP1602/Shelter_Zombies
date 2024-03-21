@@ -175,6 +175,12 @@
     <Filter Include="Source Files\Gameplay">
       <UniqueIdentifier>{c3bdfce2-32b6-41b9-8e6d-48b099099162}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entities\Ally">
+      <UniqueIdentifier>{ae9ec829-3bcc-4c80-9ed4-4f4197cd4910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entities\Enemy">
+      <UniqueIdentifier>{7b0432eb-371d-402f-b8c5-c30197e5d75c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -423,20 +429,8 @@
     <ClInclude Include="Entity.h">
       <Filter>Source Files\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Fighter.h">
-      <Filter>Source Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Shooter.h">
-      <Filter>Source Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Support.h">
-      <Filter>Source Files\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="Construction.h">
       <Filter>Source Files\GPE\Construction</Filter>
-    </ClInclude>
-    <ClInclude Include="Artillery.h">
-      <Filter>Source Files\Entities</Filter>
     </ClInclude>
     <ClInclude Include="Wall.h">
       <Filter>Source Files\GPE\Construction</Filter>
@@ -539,6 +533,30 @@
     </ClInclude>
     <ClInclude Include="EnemyConstructionManager.h">
       <Filter>Source Files\Manager\GPE</Filter>
+    </ClInclude>
+    <ClInclude Include="Catapult.h">
+      <Filter>Source Files\Entities\Ally</Filter>
+    </ClInclude>
+    <ClInclude Include="Knight.h">
+      <Filter>Source Files\Entities\Ally</Filter>
+    </ClInclude>
+    <ClInclude Include="Archer.h">
+      <Filter>Source Files\Entities\Ally</Filter>
+    </ClInclude>
+    <ClInclude Include="Church.h">
+      <Filter>Source Files\Entities\Ally</Filter>
+    </ClInclude>
+    <ClInclude Include="Golem.h">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Orc.h">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Skelet.h">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Warlock.h">
+      <Filter>Source Files\Entities\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -773,20 +791,8 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Fighter.cpp">
-      <Filter>Source Files\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="Shooter.cpp">
-      <Filter>Source Files\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="Support.cpp">
-      <Filter>Source Files\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="Construction.cpp">
       <Filter>Source Files\GPE\Construction</Filter>
-    </ClCompile>
-    <ClCompile Include="Artillery.cpp">
-      <Filter>Source Files\Entities</Filter>
     </ClCompile>
     <ClCompile Include="Wall.cpp">
       <Filter>Source Files\GPE\Construction</Filter>
@@ -889,6 +895,30 @@
     </ClCompile>
     <ClCompile Include="EnemyBuildingManager.cpp">
       <Filter>Source Files\Manager\GPE</Filter>
+    </ClCompile>
+    <ClCompile Include="Catapult.cpp">
+      <Filter>Source Files\Entities\Ally</Filter>
+    </ClCompile>
+    <ClCompile Include="Knight.cpp">
+      <Filter>Source Files\Entities\Ally</Filter>
+    </ClCompile>
+    <ClCompile Include="Archer.cpp">
+      <Filter>Source Files\Entities\Ally</Filter>
+    </ClCompile>
+    <ClCompile Include="Church.cpp">
+      <Filter>Source Files\Entities\Ally</Filter>
+    </ClCompile>
+    <ClCompile Include="Golem.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Orc.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Skelet.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Warlock.cpp">
+      <Filter>Source Files\Entities\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

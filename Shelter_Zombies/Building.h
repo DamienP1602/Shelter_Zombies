@@ -21,13 +21,14 @@ struct BuildingData
 	int currentLife;
 	int cost;
 	int level;
+	int cost;
 	BonusType bonus;
 
-	BuildingData(int _hp, int _cost, BonusType _bonus)
+	BuildingData(const int _hp,const int _cost ,const BonusType& _bonus)
 	{
 		level = 0;
-		maxLife = _hp + (_hp / 10 * level);
-		currentLife = maxLife;
+		healPointMax = _hp + (_hp / 10 * level);
+		currentHP = healPointMax;
 		cost = _cost;
 		bonus = _bonus;
 	}
@@ -65,7 +66,10 @@ public:
 	{
 		return isDestroy;
 	}
-
+	virtual int GetCost() override
+	{
+		return data->cost;
+	}
 private:
 	void TakeDamage(int _damage);
 	void Repare();

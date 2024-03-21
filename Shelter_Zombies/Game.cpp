@@ -25,15 +25,9 @@ Gameplay* Game::gameplay;
 
 #include "TriggerBox.h"
 
-#define PATH_BOOFLY "Animations/Boofly.png"
-#define PATH_BELFLY "Animations/BelflyModif.png"
-#define PATH_HUSK_BULLY "Animations/HuskBully.png"
-#define PATH_DEATHMOB "Animations/DeathMob.png"
-#define PATH_FALSE_KNIGHT "Animations/FalseKnight.png"
-
 Game::Game()
 {
-	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f)));
+	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(50.0f, 50.0f)));
 	map = new Map();
 	camera = new Camera();
 	//gameplay = new Gameplay(this, map, );
@@ -47,7 +41,7 @@ Game::~Game()
 
 void Game::Start()
 {
-	window.create(VideoMode(1920, 1080), "Shelter Game");
+	window.create(VideoMode(1920, 1080), "Shelter Game",Style::Fullscreen);
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
 	Init();

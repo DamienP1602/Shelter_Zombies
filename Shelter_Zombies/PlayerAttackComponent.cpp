@@ -4,14 +4,13 @@
 #include "Macro.h"
 #include"Game.h"
 
-PlayerAttackComponent::PlayerAttackComponent(Actor* _owner, const int _damages) : Component(_owner)
+PlayerAttackComponent::PlayerAttackComponent(Actor* _owner, const int _damages,const int _range) : Component(_owner)
 {
 	canAttack = true;
 	damages = _damages;
-	range = 50.0f;
+	range = _range;
 	animation = owner->GetComponent<PlayerAnimationComponent>();
 }
-
 
 void PlayerAttackComponent::SpecialAttack()
 {

@@ -2,6 +2,7 @@
 #include "ProgressBar.h"
 #include "inventoryPlayer.h"
 #include "MenuManager.h"
+#include "AllyEntityManager.h"
 
 
 VillageMenu::VillageMenu() : Menu("PlayerVillageMenu", MenuManager::GetInstance().GetCurrent())
@@ -44,15 +45,18 @@ void VillageMenu::Init()
 
 #pragma region Texts
 
-	TextWidget* _lifeText = new Label(TextData("0/20 life", _lifePositon, "Font.ttf", 25));
+	const string& _textForLife = "PV " + to_string(Game::GetPlayer()->GetData()->currentHP) + " / " + to_string(Game::GetPlayer()->GetData()->healPointMax);
+	TextWidget* _lifeText = new Label(TextData(_textForLife, _lifePositon, "Font.ttf", 25));
 	_lifeText->GetDrawable()->setOrigin(_lifeText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
 	canvas->AddWidget(_lifeText);
 
-	TextWidget* _troopsText = new Label(TextData("0/20 troops", _troopsBarPosition, "Font.ttf", 25));
+	const string& _textForTroops = to_string(AllyEntityManager::GetInstance().GetEntitiesCount()) + " / " + to_string(AllyEntityManager::GetInstance().GetMaxEntities());
+	TextWidget* _troopsText = new Label(TextData(_textForTroops, _troopsBarPosition, "Font.ttf", 25));
 	_troopsText->GetDrawable()->setOrigin(_troopsText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
 	canvas->AddWidget(_troopsText);
 
-	TextWidget* _goldText = new Label(TextData("0/20 gold", _goldBarPosition, "Font.ttf", 25));
+	const string& _textForGold = to_string(Game::GetPlayer()->GetGold());
+	TextWidget* _goldText = new Label(TextData(_textForGold, _goldBarPosition, "Font.ttf", 25));
 	_goldText->GetDrawable()->setOrigin(_goldText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
 	canvas->AddWidget(_goldText);
 

@@ -3,6 +3,9 @@
 #include <vector>
 #include "ShapeWidget.h"
 #include "Game.h"
+#include "Wall.h"
+#include "Timer.h"
+#include "Fighter.h"
 
 #include <iostream>
 
@@ -60,12 +63,20 @@ public:
 	{
 		if (!allBuildings[0]->isInit)
 		{
+			
+			function<void()> _callbacks[] = {
+				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 0)); },seconds(0.1f)); },
+				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 1)); },seconds(0.1f)); },
+				[&](){Fighter* _newFight = new Fighter(Vector2f(Game::GetPlayer()->GetShapePosition() + Vector2f(200.0f,200.0f))); },
+				[&](){; }
+			};
+
 			const Vector2f& _contructButtonPosition = Vector2f(windowX * 0.05f, windowY * 0.85f);
 
 			for (int _i = 0; _i < 4; _i++)
 			{
 				const Vector2f& _gap = Vector2f((100.f * _i), 0.0f);
-				allBuildings[0]->allBuildings.push_back(new ShapeWidget(ShapeData(_contructButtonPosition + _gap, Vector2f(75.0f, 75.0f), "red.png")));
+				allBuildings[0]->allBuildings.push_back(new Button(ShapeData(_contructButtonPosition + _gap, Vector2f(75.0f, 75.0f), "red.png"),ButtonData(NULL,NULL, _callbacks[_i], NULL, NULL)));
 			}
 			allBuildings[0]->isInit = true;
 		}
@@ -81,7 +92,7 @@ public:
 			for (int _i = 0; _i < 4; _i++)
 			{
 				const Vector2f& _gap = Vector2f((100.f * _i), 0.0f);
-				allBuildings[1]->allBuildings.push_back(new ShapeWidget(ShapeData(_contructButtonPosition + _gap, Vector2f(75.0f, 75.0f), "green.png")));
+				allBuildings[1]->allBuildings.push_back(new Button(ShapeData(_contructButtonPosition + _gap, Vector2f(75.0f, 75.0f), "green.png")));
 			}
 			allBuildings[1]->isInit = true;
 		}
@@ -97,7 +108,7 @@ public:
 			for (int _i = 0; _i < 4; _i++)
 			{
 				const Vector2f& _gap = Vector2f((100.f * _i), 0.0f);
-				allBuildings[2]->allBuildings.push_back(new ShapeWidget(ShapeData(_contructButtonPosition + _gap, Vector2f(75.0f, 75.0f), "blue.png")));
+				allBuildings[2]->allBuildings.push_back(new Button(ShapeData(_contructButtonPosition + _gap, Vector2f(75.0f, 75.0f), "blue.png")));
 			}
 			allBuildings[2]->isInit = true;
 		}
@@ -114,7 +125,7 @@ public:
 			for (int _i = 0; _i < 4; _i++)
 			{
 				const Vector2f& _gap = Vector2f((100.f * _i), 0.0f);
-				allBuildings[3]->allBuildings.push_back(new ShapeWidget(ShapeData(_contructButtonPosition + _gap, Vector2f(75.0f, 75.0f), "yellow.png")));
+				allBuildings[3]->allBuildings.push_back(new Button(ShapeData(_contructButtonPosition + _gap, Vector2f(75.0f, 75.0f), "yellow.png")));
 			}
 			allBuildings[3]->isInit = true;
 		}

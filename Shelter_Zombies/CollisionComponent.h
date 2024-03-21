@@ -8,6 +8,7 @@ enum CollisionType
 	CT_NONE = 1,
 	CT_OVERLAP,
 	CT_BLOCK,
+	CT_ENNEMY
 };
 
 class CollisionComponent : public Component
@@ -23,6 +24,10 @@ public:
 	CollisionType GetType() const
 	{
 		return type;
+	}
+	void SetTypeOfCollision(const CollisionType& _type)
+	{
+		type = _type;
 	}
 
 public:

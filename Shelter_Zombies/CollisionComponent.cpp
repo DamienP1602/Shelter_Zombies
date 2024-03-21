@@ -2,6 +2,7 @@
 #include "Actor.h"
 #include "ActorManager.h"
 #include "Kismet.h"
+#include "Fighter.h"
 
 #include "Player.h"
 
@@ -53,7 +54,14 @@ bool CollisionComponent::CheckCollision(const vector<Actor*>& _ignoredActors)
 		{
 			if (_collisionComponent->GetType() == CT_BLOCK)
 			{
-				//cout << _collisionComponent->owner->GetID() << endl;
+				return true;
+			}
+			if (_collisionComponent->GetType() == CT_ENNEMY)
+			{
+				Player* _player = dynamic_cast<Player*>(owner);
+				Fighter* _ennemy = dynamic_cast<Fighter*>(_collisionComponent->GetOwner());
+
+				_ennemy->TakeDamage(_player->GetComponent<PlayerAttackComponent>()->GetDamages());				
 				return true;
 			}
 		}	

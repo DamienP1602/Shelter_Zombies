@@ -3,6 +3,8 @@
 #include "Label.h"
 #include "Button.h"
 #include "MenuManager.h"
+#include "Game.h"
+#include "AllyEntityManager.h"
 
 AttackMenu::AttackMenu() : Menu("AttackMenu",MenuManager::GetInstance().GetCurrent())
 {
@@ -29,11 +31,13 @@ void AttackMenu::Init()
 	ShapeWidget* _troopsIcon = new ShapeWidget(ShapeData(_troopsIconPosition, Vector2f(75.0f, 75.0f), "green.png"), WT_UI);
 	canvas->AddWidget(_troopsIcon);
 
-	TextWidget* _lifeText = new Label(TextData("0/20 life", _lifePositon, "Font.ttf", 25));
+	const string& _textForLife = "PV " + to_string(Game::GetPlayer()->GetData()->currentHP) + " / " + to_string(Game::GetPlayer()->GetData()->healPointMax);
+	TextWidget* _lifeText = new Label(TextData(_textForLife, _lifePositon, "Font.ttf", 25));
 	_lifeText->GetDrawable()->setOrigin(_lifeText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
 	canvas->AddWidget(_lifeText);
 
-	TextWidget* _troopsText = new Label(TextData("0/20 troops", _troopsBarPosition, "Font.ttf", 25));
+	const string& _textForTroops = to_string(AllyEntityManager::GetInstance().GetEntitiesCount()) + " / " + to_string(AllyEntityManager::GetInstance().GetMaxEntities());
+	TextWidget* _troopsText = new Label(TextData(_textForTroops, _troopsBarPosition, "Font.ttf", 25));
 	_troopsText->GetDrawable()->setOrigin(_troopsText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
 	canvas->AddWidget(_troopsText);
 
@@ -43,7 +47,7 @@ void AttackMenu::Init()
 		[&]() {cout << "Sort 3" << endl; }
 	};
 
-	const Vector2f& _spellPosition = Vector2f(windowX * 0.05f, windowY * 0.85f);
+	const Vector2f& _spellPosition = Vector2f(windowX * 0.05f, windowY * 0.9f);
 	for (int _i = 0; _i < 3; _i++)
 	{
 		const Vector2f& _gap = Vector2f((175.0f * _i), 0.0f);

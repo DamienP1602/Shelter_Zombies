@@ -19,9 +19,8 @@
 #include "MusicData.h"
 #include "MenuManager.h"
 #include "GameMenu.h"
-#define PATH_ITEM "UIs/Inventory/Item.png"
-#define PATH_DEATHMOB "Animations/DeathMob.png"
-#define DEAD_ZONE 50.0f
+#include "CameraManager.h"
+
 
 Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data, CT_BLOCK)
 {
@@ -31,8 +30,13 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	movement = new PlayerMovementComponent(this);
 	components.push_back(movement);
 
-	attack = new PlayerAttackComponent(this, 1);
+	mode = new ConstructionMode();
+	data = new PlayerData(_name,15,4,5,2,1);
+
+	attack = new PlayerAttackComponent(this, data->damagePoint,int(data->range));
 	components.push_back(attack);
+	
+	gold = 0;
 
 	Init();
 }
@@ -72,7 +76,27 @@ void Player::SetupPlayerInput()
 					new GameMenu();
 				}				
 			},InputData({ActionType::KeyPressed, Keyboard::Escape})),
+
+		ActionData("Create",[&]()
+			{
+				if (mode->shapeOfConstruction)
+				{
+					if (Game::GetMap()->PutInMap(mode->shapeOfConstruction, MousePosition()))
+					{
+						mode->Reset();
+					}
+				}
+			},InputData({ActionType::MouseButtonPressed, Mouse::Left})),
+		ActionData("UndoCreate",[&]() 
+			{ 
+				if (mode->shapeOfConstruction)
+				{
+					mode->Destroy();
+				}
+			}
+			,InputData({ActionType::MouseButtonPressed, Mouse::Right})),
 		});
+
 
 }
 
@@ -112,6 +136,15 @@ void Player::CloseAllMenus(const bool _restoreActions)
 	}
 }
 
+Vector2f Player::MousePosition()
+{
+	const Vector2f& _mousePosition = Vector2f(Mouse::getPosition(Game::GetWindow()));
+	const Vector2f& _playerPosition = Game::GetPlayer()->GetShapePosition();
+	const Vector2f& _windowSize = Game::GetWindowSize();
+
+	return (_mousePosition + _playerPosition) - _windowSize / 2.0f;
+}
+
 void Player::Init()
 {
 	//movement->SetCanMove(true);
@@ -125,4 +158,9 @@ void Player::Init()
 void Player::Update(const float _deltaTime)
 {
 	Actor::Update(_deltaTime);
+
+	if (mode->shapeOfConstruction)
+	{
+		mode->SetPosition(MousePosition());
+	}
 }

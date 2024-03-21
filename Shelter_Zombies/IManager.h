@@ -60,6 +60,8 @@ public:
 	{
 		if (!Exist(_value)) return;
 		_value->SetToRemove(true);
+
+		GarbageValues();
 	}
 	void Remove(const Key& _key)
 	{

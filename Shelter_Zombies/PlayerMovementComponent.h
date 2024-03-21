@@ -75,14 +75,6 @@ public:
 public:
 	PlayerMovementComponent(Actor* _owner);
 
-private:
-	bool CheckGround();
-	void StopJump();
-
 public:
 	virtual void Update(const float _deltaTime) override;
-	void Jump();
-	void Dash();
-	void SitDown();
-	void StandUp();
 };

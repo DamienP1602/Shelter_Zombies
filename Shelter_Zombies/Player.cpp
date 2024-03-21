@@ -33,11 +33,13 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	movement = new PlayerMovementComponent(this);
 	components.push_back(movement);
 
-	attack = new PlayerAttackComponent(this, 1);
-	components.push_back(attack);
-
 	mode = new ConstructionMode();
 	data = new PlayerData(_name,15,4,5,2,1);
+
+	attack = new PlayerAttackComponent(this, data->damagePoint,int(data->range));
+	components.push_back(attack);
+	
+	gold = 0;
 
 	Init();
 }

@@ -5,6 +5,7 @@
 #include "Game.h"
 #include "Wall.h"
 #include "Timer.h"
+#include "Fighter.h"
 
 #include <iostream>
 
@@ -66,7 +67,7 @@ public:
 			function<void()> _callbacks[] = {
 				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 0)); },seconds(0.1f)); },
 				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 1)); },seconds(0.1f)); },
-				[&](){; },
+				[&](){Fighter* _newFight = new Fighter(Vector2f(Game::GetPlayer()->GetShapePosition() + Vector2f(200.0f,200.0f))); },
 				[&](){; }
 			};
 

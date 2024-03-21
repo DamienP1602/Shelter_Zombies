@@ -27,9 +27,8 @@ public:
 	}
 
 public:
-	PlayerAttackComponent(Actor* _owner,const int _damages);
+	PlayerAttackComponent(Actor* _owner,const int _damages, const int _range);
 
 public:
-	void SpecialAttack();
 };
 

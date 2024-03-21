@@ -50,7 +50,7 @@ void PlayerMovementComponent::SetDirectionX(const float _directionX, const strin
 
 	if (_directionX == 0.0f)
 	{
-		animation->GetCurrentAnimation()->RunAnimation("StopRight", dashDirection);
+		animation->GetCurrentAnimation()->RunAnimation(_animName, dashDirection);
 
 		if (directionHasChanged)
 		{

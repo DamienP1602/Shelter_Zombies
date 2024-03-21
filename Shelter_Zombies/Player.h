@@ -154,12 +154,10 @@ public:
 private:
 	void InitAnimations();
 	void SetupPlayerInput();
-	void TryToOpen(Menu* _menu, const bool _restoreActions = true);
 
 public:
 	virtual void Init() override;
 	virtual void Update(const float _deltaTime) override;
-	void CloseAllMenus(const bool _restoreActions);
 
 	Vector2f MousePosition();
 };

@@ -558,6 +558,9 @@
     <ClInclude Include="Warlock.h">
       <Filter>Source Files\Entities\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="MultiMapMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -919,6 +922,9 @@
     </ClCompile>
     <ClCompile Include="Warlock.cpp">
       <Filter>Source Files\Entities\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiMapMenu.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,7 @@
 #include "Widget.h"
 #include "TriggerBox.h"
 #include "Gameplay.h"
+#include "TriggerBox.h"
 
 #include "VillageMenu.h"
 #include "AttackMenu.h"
@@ -23,13 +24,6 @@ Player* Game::player;
 Camera* Game::camera;
 Gameplay* Game::gameplay;
 
-#include "TriggerBox.h"
-
-#define PATH_BOOFLY "Animations/Boofly.png"
-#define PATH_BELFLY "Animations/BelflyModif.png"
-#define PATH_HUSK_BULLY "Animations/HuskBully.png"
-#define PATH_DEATHMOB "Animations/DeathMob.png"
-#define PATH_FALSE_KNIGHT "Animations/FalseKnight.png"
 
 Game::Game()
 {

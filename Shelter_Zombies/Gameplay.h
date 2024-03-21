@@ -32,6 +32,7 @@ public:
 	void SelectMap(int _map);
 
 private:
+	void Init();
 	void SelectionTarget(Entity* _entity,const bool _isAlly);
 };
 

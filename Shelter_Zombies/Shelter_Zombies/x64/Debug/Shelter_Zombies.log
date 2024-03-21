@@ -1,33 +1,19 @@
-﻿  Catapult.cpp
-  EnemyEntityManager.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(54,42): warning C4244:         ]
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(61,42): warning C4244:         ]
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(68,42): warning C4244:         ]
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244:         with
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244:         [
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244:             T=float
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\EnemyEntityManager.cpp(75,42): warning C4244:         ]
-  AllyEntityManager.cpp
+﻿  Action.cpp
+  BuildingMenu.cpp
+  Camera.cpp
+  Entity.cpp
+  EntityAttackComponent.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.cpp(9,13): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\EntityAttackComponent.cpp(10,10): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   Golem.cpp
   Gameplay.cpp
-D:\GitHub\Shelter_Zombies\Shelter_Zombies\Gameplay.cpp(108,18): warning C4305: 'initializing': truncation from 'long' to 'float'
-  Orc.cpp
-  Archer.cpp
-  Skelet.cpp
-  Church.cpp
-  Warlock.cpp
+D:\GitHub\Shelter_Zombies\Shelter_Zombies\Gameplay.cpp(115,18): warning C4305: 'initializing': truncation from 'long' to 'float'
+  ItemWidget.cpp
+  KeyboardMenu.cpp
+  ProgressBar.cpp
+  ProgressLabel.cpp
+  VillageMenu.cpp
+  Workshop.cpp
   Generating Code...
+  LINK : D:\GitHub\Shelter_Zombies\Shelter_Zombies\x64\Debug\Shelter_Zombies.exe not found or not built by the last incremental link; performing full link
   Shelter_Zombies.vcxproj -> D:\GitHub\Shelter_Zombies\Shelter_Zombies\x64\Debug\Shelter_Zombies.exe

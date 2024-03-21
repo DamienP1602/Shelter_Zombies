@@ -15,6 +15,8 @@ Gameplay::Gameplay(Game* _game, vector<Map*> _allMaps)
 	game = _game;
 	currentMap = 0;
 	allMaps = _allMaps;
+
+	Init();
 }
 
 Gameplay::~Gameplay()
@@ -100,6 +102,11 @@ void Gameplay::SelectMap(int _map)
 {
 	currentMap = _map;
 	allMaps[currentMap]->Load();
+}
+
+void Gameplay::Init()
+{
+	//EnemyEntityManager::GetInstance().SetArmy();
 }
 
 void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)

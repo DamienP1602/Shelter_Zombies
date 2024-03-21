@@ -6,6 +6,7 @@
 #include "Widget.h"
 #include "TriggerBox.h"
 #include "Gameplay.h"
+#include "TriggerBox.h"
 
 #include "VillageMenu.h"
 #include "AttackMenu.h"
@@ -23,11 +24,10 @@ Player* Game::player;
 Camera* Game::camera;
 Gameplay* Game::gameplay;
 
-#include "TriggerBox.h"
 
 Game::Game()
 {
-	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(50.0f, 50.0f)));
+	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f)));
 	map = new Map();
 	camera = new Camera();
 	//gameplay = new Gameplay(this, map, );
@@ -41,7 +41,7 @@ Game::~Game()
 
 void Game::Start()
 {
-	window.create(VideoMode(1920, 1080), "Shelter Game",Style::Fullscreen);
+	window.create(VideoMode(1920, 1080), "Shelter Game");
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
 	Init();

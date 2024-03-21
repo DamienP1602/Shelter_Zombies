@@ -40,6 +40,14 @@ void EnemyEntityManager::Init(vector<Skelet*> _allFighters, vector<Orc*> _allSho
 	allArtilleries = _allArtilleries;
 }
 
+void EnemyEntityManager::SetArmy(const int _skelets, const int _orcs, const int _warlocks, const int _golems)
+{
+	for (int i = 0; i < _skelets; i++)
+	{
+
+	}
+}
+
 void EnemyEntityManager::SpawnEntities(bool _isAttack)
 {
 	//TODO need screen location

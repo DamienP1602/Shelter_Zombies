@@ -12,6 +12,8 @@ EntityBrain::EntityBrain(Actor* _owner) : Brain(_owner)
 	states.push_back(attack);
 	states.push_back(death);
 
+	currentState = standby;
+
 	Init();
 }
 

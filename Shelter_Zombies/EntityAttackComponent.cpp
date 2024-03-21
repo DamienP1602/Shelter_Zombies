@@ -25,7 +25,7 @@ bool EntityAttackComponent::IsTargetDead() const
 {
 	if (!target)
 		return true;
-	return target->GetComponent<EntityLifeComponent>()->Isdead();
+	return target->GetComponent<EntityLifeComponent>()->IsDead();
 }
 
 void EntityAttackComponent::Update(const float _deltaTime)

@@ -24,9 +24,9 @@ void Knight::Init()
 	const float _speed = 0.2f;
 
 	animation->InitAnimations({
-	AnimationData("Idle", Vector2f(4.0, 2.0f), Vector2f(17.0, 32.0f), READ_RIGHT, true, 1, _speed),
-	AnimationData("Movement", Vector2f(33.0f, 3.0f), Vector2f(26.0, 30.0f), READ_RIGHT, false, 4, _speed, "Idle"),
-	AnimationData("Attack", Vector2f(1.0f, 35.0f), Vector2f(32.0, 33.0f), READ_RIGHT, false, 3, _speed, "Idle"),
-	AnimationData("Death", Vector2f(1.0f, 69.0f), Vector2f(31.0, 33.0f), READ_RIGHT, true, 3, _speed),
+	AnimationData("Idle", Vector2f(1.0, 0.0f), Vector2f(36.0, 33.0f), READ_RIGHT, true, 2, _speed),
+	AnimationData("Movement", Vector2f(0.0f, 36.0f), Vector2f(38.0, 34.0f), READ_RIGHT, false, 6, _speed, "Idle"),
+	AnimationData("Attack", Vector2f(2.0f, 73.0f), Vector2f(40.0, 33.0f), READ_RIGHT, false, 2, _speed, "Idle"),
+	AnimationData("Death", Vector2f(113.0f, 74.0f), Vector2f(40.0, 29.0f), READ_RIGHT, false, 1, _speed),
 		});
 }

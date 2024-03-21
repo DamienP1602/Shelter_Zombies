@@ -5,7 +5,7 @@
 
 class Knight;
 class Archer;
-class Church;
+class Priest;
 class Catapult;
 
 using namespace std;
@@ -16,7 +16,7 @@ private:
 	int maxEntities;
 	vector<Knight*> allFighters;
 	vector<Archer*> allShooters;
-	vector<Church*> allSupports;
+	vector<Priest*> allSupports;
 	vector<Catapult*> allArtilleries;
 
 public:
@@ -42,7 +42,7 @@ public:
 
 	bool AddKnight(Knight* _fighter);
 	bool AddArcher(Archer* _shooter);
-	bool AddChurch(Church* _support);
+	bool AddChurch(Priest* _support);
 	bool AddCatapult(Catapult* _artillery);
 	void SpawnEntities(const bool _isAttack);
 };

@@ -18,3 +18,15 @@ Skelet::~Skelet()
 {
 	EnemyEntityManager::GetInstance().Remove(this);
 }
+
+void Skelet::Init()
+{
+	const float _speed = 0.2f;
+
+	animation->InitAnimations({
+	AnimationData("Idle", Vector2f(0.0, 0.0f), Vector2f(43.0, 37.0f), READ_RIGHT, true, 4, _speed),
+	AnimationData("Movement", Vector2f(0.0f, 42.0f), Vector2f(36.0, 33.0f), READ_RIGHT, false, 8, _speed, "Idle"),
+	AnimationData("Attack", Vector2f(0.0f, 88.0f), Vector2f(45.0, 53.0f), READ_RIGHT, false, 5, _speed, "Idle"),
+	AnimationData("Death", Vector2f(2.0f, 133.0f), Vector2f(32.0, 20.0f), READ_RIGHT, false, 2, _speed),
+		});
+}

@@ -242,7 +242,7 @@
     <ClInclude Include="StandbyToChase.h" />
     <ClInclude Include="StandbyToDeath.h" />
     <ClInclude Include="State.h" />
-    <ClInclude Include="Church.h" />
+    <ClInclude Include="Priest.h" />
     <ClInclude Include="TextObject.h" />
     <ClInclude Include="TextureData.h" />
     <ClInclude Include="TextureManager.h" />
@@ -365,7 +365,7 @@
     <ClCompile Include="StandbyToChase.cpp" />
     <ClCompile Include="StandbyToDeath.cpp" />
     <ClCompile Include="State.cpp" />
-    <ClCompile Include="Church.cpp" />
+    <ClCompile Include="Priest.cpp" />
     <ClCompile Include="TextObject.cpp" />
     <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="TextureManager.cpp" />

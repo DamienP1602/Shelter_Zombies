@@ -1,7 +1,7 @@
 #include "Barrack.h"
 #include "Knight.h"
 #include "Archer.h"
-#include "Church.h"
+#include "Priest.h"
 #include "Catapult.h"
 #include "AllyEntityManager.h"
 #include "IManager.h"
@@ -32,7 +32,7 @@ void Barrack::CreateEntity(int _type)
 		break;
 	case 2: //Support
 		//Cost 5
-		if (AllyEntityManager::GetInstance().AddChurch(new Church(Vector2f(0, 0), 0)))
+		if (AllyEntityManager::GetInstance().AddChurch(new Priest(Vector2f(0, 0), 0)))
 			break;
 		break;
 	case 3: //Artillery

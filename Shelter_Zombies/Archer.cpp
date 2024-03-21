@@ -27,6 +27,6 @@ void Archer::Init()
 	AnimationData("Idle", Vector2f(1.0, 3.0f), Vector2f(25.0, 25.0f), READ_RIGHT, true, 3, _speed),
 	AnimationData("Movement", Vector2f(33.0f, 0.0f), Vector2f(26.0, 30.0f), READ_RIGHT, false, 2, _speed, "Idle"),
 	AnimationData("Attack", Vector2f(1.0f, 2.0f), Vector2f(26.0, 28.0f), READ_RIGHT, false, 5, _speed, "Idle"),
-	AnimationData("Death", Vector2f(64.0f, 3.0f), Vector2f(26.0, 26.0f), READ_RIGHT, true, 4, _speed),
+	AnimationData("Death", Vector2f(64.0f, 3.0f), Vector2f(26.0, 26.0f), READ_RIGHT, false, 4, _speed),
 		});
 }

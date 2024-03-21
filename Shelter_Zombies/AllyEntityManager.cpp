@@ -1,7 +1,7 @@
 #include "AllyEntityManager.h"
 #include "Knight.h"
 #include "Archer.h"
-#include "Church.h"
+#include "Priest.h"
 #include "Catapult.h"
 
 AllyEntityManager::AllyEntityManager()
@@ -52,7 +52,7 @@ bool AllyEntityManager::AddArcher(Archer* _shooter)
 	return true;
 }
 
-bool AllyEntityManager::AddChurch(Church* _support)
+bool AllyEntityManager::AddChurch(Priest* _support)
 {
 	if (IsMaxEntities())
 		return false;

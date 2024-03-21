@@ -27,6 +27,6 @@ void Catapult::Init()
 	AnimationData("Idle", Vector2f(1.0, 0.0f), Vector2f(32.0, 36.0f), READ_DOWN, true, 1, _speed),
 	AnimationData("Movement", Vector2f(1.0f, 39.0f), Vector2f(38.0, 33.0f), READ_DOWN, false, 4, _speed, "Idle"),
 	AnimationData("Attack", Vector2f(185.0f, 53.0f), Vector2f(39.0, 53.0f), READ_DOWN, false, 7, _speed, "Idle"),
-	AnimationData("Death", Vector2f(2.0f, 128.0f), Vector2f(33.0, 36.0f), READ_DOWN, true, 1, _speed),
+	AnimationData("Death", Vector2f(2.0f, 128.0f), Vector2f(33.0, 36.0f), READ_DOWN, false, 1, _speed),
 		});
 }

@@ -45,7 +45,7 @@ bool CircleCast(const Vector2f& _origin, const float _radius, Actor*& _target, b
 		if (_circleShape->getGlobalBounds().intersects(_actor->GetDrawable()->getGlobalBounds()))
 		{
 			cout << "RADIUS " << endl;
-			_target = _actor;
+			if (!_target) _target = _actor;
 			_isInRange = true;
 			return true;
 		}

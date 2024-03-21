@@ -1,9 +1,11 @@
 #include "EntityLifeComponent.h"
 #include "Timer.h"
+#include "ActorManager.h"
 
 EntityLifeComponent::EntityLifeComponent(Actor* _owner, const int _maxLife) : Component(_owner)
 {
 	maxLife = _maxLife;
+	currentLife = maxLife;
 }
 
 void EntityLifeComponent::TakeDamages(const int _damages)
@@ -23,5 +25,5 @@ void EntityLifeComponent::Healing(const int _heal)
 
 void EntityLifeComponent::Destroy()
 {
-	delete owner;
+	ActorManager::GetInstance().Remove(owner);
 }

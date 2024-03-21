@@ -19,7 +19,6 @@ struct BuildingData
 {
 	int maxLife;
 	int currentLife;
-	int cost;
 	int level;
 	int cost;
 	BonusType bonus;
@@ -27,8 +26,8 @@ struct BuildingData
 	BuildingData(const int _hp,const int _cost ,const BonusType& _bonus)
 	{
 		level = 0;
-		healPointMax = _hp + (_hp / 10 * level);
-		currentHP = healPointMax;
+		maxLife = _hp + (_hp / 10 * level);
+		currentLife = maxLife;
 		cost = _cost;
 		bonus = _bonus;
 	}

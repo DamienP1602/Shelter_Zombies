@@ -10,7 +10,7 @@
 PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_owner)
 {
 	// Movement
-	canMove = false;
+	canMove = true;
 	speed = 0.45f;
 	directionHasChanged = false;
 	direction = Vector2f();
@@ -20,6 +20,7 @@ PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_own
 
 	// Components
 	animation = owner->GetComponent<PlayerAnimationComponent>();
+	collision = owner->GetComponent<CollisionComponent>();
 }
 
 void PlayerMovementComponent::Update(const float _deltaTime)
@@ -30,12 +31,12 @@ void PlayerMovementComponent::Update(const float _deltaTime)
 
 	const Vector2f& _collisionOffset = Vector2f(0.0f, 0.0f);
 	const Vector2f& _destination = _offset + _collisionOffset;
-	//collision->GetBoxCollision()->GetDrawable()->setPosition(owner->GetShapePosition() + Vector2f(_destination.x * checkWallDistance, _destination.y));
+	collision->GetBoxCollision()->GetDrawable()->setPosition(owner->GetShapePosition() + Vector2f(_destination.x * checkWallDistance, _destination.y));
 
-	//if (!collision->CheckCollision())
-	//{
-	//	owner->GetDrawable()->move(_offset);
-	//}
+	if (!collision->CheckCollision())
+	{
+		owner->GetDrawable()->move(_offset);
+	}
 }
 
 void PlayerMovementComponent::SetDirectionX(const float _directionX, const string& _animName)

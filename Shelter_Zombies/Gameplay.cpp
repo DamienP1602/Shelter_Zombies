@@ -105,7 +105,7 @@ void Gameplay::SelectMap(int _map)
 void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 {
 	Actor* _target = nullptr;
-	float _distance = LONG_MAX;
+	float _distance = float(LONG_MAX);
 	float _testDistance = 0;
 	if (_isAlly)
 	{

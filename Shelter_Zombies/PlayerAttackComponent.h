@@ -1,33 +1,17 @@
 #pragma once
 #include "Component.h"
 #include "PlayerAnimationComponent.h"
+#include "EntityAttackComponent.h"
 
 
 using namespace std;
 
-class PlayerAttackComponent : public Component
+class PlayerAttackComponent : public EntityAttackComponent
 {
-	bool canAttack;
-	int damages;
-	float range;
 	PlayerAnimationComponent* animation;
 
 public:
-	void SetCanAttack(const bool _status)
-	{
-		canAttack = _status;
-	}
-	void SetDamages(const int _damages)
-	{
-		damages = _damages;
-	}
-	int GetDamages() const
-	{
-		return damages;
-	}
-
-public:
-	PlayerAttackComponent(Actor* _owner,const int _damages, const int _range);
+	PlayerAttackComponent(Actor* _owner,const int _damages, const float _range);
 
 public:
 };

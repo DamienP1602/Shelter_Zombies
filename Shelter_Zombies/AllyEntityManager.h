@@ -14,10 +14,10 @@ class AllyEntityManager : public Singleton<AllyEntityManager>, public IManager<s
 {
 private:
 	int maxEntities;
-	vector<Fighter*> allFighters;
-	vector<Shooter*> allShooters;
-	vector<Support*> allSupports;
-	vector<Artillery*> allArtilleries;
+	vector<Knight*> allFighters;
+	vector<Archer*> allShooters;
+	vector<Church*> allSupports;
+	vector<Catapult*> allArtilleries;
 
 public:
 	AllyEntityManager();

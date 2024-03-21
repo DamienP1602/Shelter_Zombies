@@ -33,6 +33,11 @@ Map::~Map()
 			delete _tile;
 		}
 	}
+
+	for (ShapeObject* _shape : borders->shapes)
+	{
+		delete _shape;
+	}
 }
 
 void Map::Init()
@@ -56,6 +61,8 @@ void Map::Init()
 		allTiles.push_back(_actualRow);
 	}
 
+
+	const Vector2f& _upBorderPosition = Vector2f();
 }
 
 void Map::Load()

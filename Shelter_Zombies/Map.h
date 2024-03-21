@@ -41,9 +41,15 @@ struct Row
 	}
 };
 
+struct Borders
+{
+	vector<ShapeObject*> shapes;
+};
+
 class Map
 {
 	vector<Row*> allTiles;
+	Borders* borders;
 
 public:
 	vector<ShapeObject*> GetAllDrawables() const

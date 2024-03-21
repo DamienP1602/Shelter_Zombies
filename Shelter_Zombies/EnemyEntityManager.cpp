@@ -51,28 +51,28 @@ void EnemyEntityManager::SpawnEntities(bool _isAttack)
 
 	for (int i = 0; i < allFighters.size(); i++)
 	{
-		Vector2f _position = Vector2f(400, 100 * i); //Column
+		Vector2f _position = Vector2f(400.0f, 100.0f * i); //Column
 		allFighters[i]->SetShapePosition(_position);
 		allFighters[i]->SetActive(true);
 		allFighters[i]->SetIsHidden(false);
 	}
 	for (int i = 0; i < allShooters.size(); i++)
 	{
-		Vector2f _position = Vector2f(300, 100 * i); //Column
+		Vector2f _position = Vector2f(300.0f, 100.0f * i); //Column
 		allShooters[i]->SetShapePosition(_position);
 		allShooters[i]->SetActive(true);
 		allShooters[i]->SetIsHidden(false);
 	}
 	for (int i = 0; i < allSupports.size(); i++)
 	{
-		Vector2f _position = Vector2f(200, 100 * i); //Column
+		Vector2f _position = Vector2f(200.0f, 100.0f * i); //Column
 		allSupports[i]->SetShapePosition(_position);
 		allSupports[i]->SetActive(true);
 		allSupports[i]->SetIsHidden(false);
 	}
 	for (int i = 0; i < allArtilleries.size(); i++)
 	{
-		Vector2f _position = Vector2f(100, 100 * i); //Column
+		Vector2f _position = Vector2f(100.0f, 100.0f * i); //Column
 		allArtilleries[i]->SetShapePosition(_position);
 		allArtilleries[i]->SetActive(true);
 		allArtilleries[i]->SetIsHidden(false);

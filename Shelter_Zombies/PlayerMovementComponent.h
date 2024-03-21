@@ -2,6 +2,7 @@
 #include "Component.h"
 #include "PlayerAnimationComponent.h"
 #include "SoundManager.h"
+#include "CollisionComponent.h"
 
 class PlayerMovementComponent : public Component
 {
@@ -45,6 +46,7 @@ class PlayerMovementComponent : public Component
 
 	// Components
 	PlayerAnimationComponent* animation;
+	CollisionComponent* collision;
 
 public:
 	void SetDirectionX(const float _directionX, const string& _animName);

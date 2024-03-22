@@ -124,6 +124,7 @@ class Player : public Actor
 	PlayerMovementComponent* movement;
 	PlayerAttackComponent* attack;
 	PlayerAnimationComponent* animation;
+	EntityLifeComponent* life;
 	PlayerData* data;
 
 	ConstructionMode* mode;

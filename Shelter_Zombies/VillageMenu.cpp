@@ -3,6 +3,7 @@
 #include "inventoryPlayer.h"
 #include "MenuManager.h"
 #include "AllyEntityManager.h"
+#include "MultiMapMenu.h"
 
 
 VillageMenu::VillageMenu() : Menu("PlayerVillageMenu", MenuManager::GetInstance().GetCurrent())
@@ -83,6 +84,23 @@ void VillageMenu::Init()
 		ShapeWidget* _constructButton1 = new Button(ShapeData(_contructButtonPosition + _gap, Vector2f(75.0f, 75.0f), "green.png"),ButtonData(NULL,NULL, _callbacks[_i], NULL, NULL));
 		canvas->AddWidget(_constructButton1);
 	}
+
+	const function<void()>& _mapCallback = [&]()
+		{
+			if (MenuManager::GetInstance().Get("MultiMapMenu"))
+			{
+				MenuManager::GetInstance().SetCurrent("MultiMapMenu");
+				MenuManager::GetInstance().DisableNotCurrent();
+			}
+			else
+			{
+				new MultiMapMenu();
+			}
+		};
+
+	const Vector2f& _mapButtonPosition = Vector2f(windowX * 0.95f, windowY * 0.7f);
+	ShapeWidget* _mapButton = new Button(ShapeData(_mapButtonPosition, Vector2f(150.0f, 150.0f), "blue.png"), ButtonData(NULL, NULL, _mapCallback, NULL, NULL));
+	canvas->AddWidget(_mapButton);
 
 #pragma endregion
 

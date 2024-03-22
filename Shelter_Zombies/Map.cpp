@@ -19,9 +19,13 @@
 
 #define GRASS_PATH "grass.png"
 
-Map::Map()
+Map::Map(const string& _name)
 {
+	name = _name;
+	allTiles = vector<Row*>();
+	borders = new Borders();
 
+	Init();
 }
 
 Map::~Map()
@@ -71,7 +75,10 @@ void Map::Load()
 	{
 		for (Tile* _tile : _row->tiles)
 		{
-			_tile->actorOnTile->SetIsHidden(false);
+			if (_tile->actorOnTile)
+			{
+				_tile->actorOnTile->SetIsHidden(false);
+			}
 			_tile->visualTile->SetIsHidden(false);
 		}
 	}
@@ -83,7 +90,10 @@ void Map::DeLoad()
 	{
 		for (Tile* _tile : _row->tiles)
 		{
-			if (_tile->actorOnTile) _tile->actorOnTile->SetIsHidden(true);
+			if (_tile->actorOnTile)
+			{
+				_tile->actorOnTile->SetIsHidden(true);
+			}
 
 			_tile->visualTile->SetIsHidden(true);
 		}

@@ -13,6 +13,8 @@ MultiMapMenu::MultiMapMenu() : Menu("MultiMapMenu",MenuManager::GetInstance().Ge
 
 void MultiMapMenu::Init()
 {
+	Menu::Init();
+
 	Vector2f _positions[] = {
 		Vector2f(windowX * 0.32f, windowY * 0.3f),
 		Vector2f(windowX * 0.34f, windowY * 0.45f),
@@ -70,6 +72,10 @@ void MultiMapMenu::Init()
 		_buttonBase->GetDrawable()->setFillColor(Color::Transparent);
 		canvas->AddWidget(_buttonBase);
 	}
+
+	const Vector2f& _backButtonPosition = Vector2f(windowX * 0.81,windowY * 0.18f);
+	backButton = new Button(ShapeData(_backButtonPosition, Vector2f(50.0f, 50.0f), "red.png"), ButtonData(NULL, NULL, [&]() {BackButton(); }, NULL, NULL));
+	canvas->AddWidget(backButton);
 	
 }
 

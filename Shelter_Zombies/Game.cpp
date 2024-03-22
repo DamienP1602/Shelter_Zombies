@@ -29,7 +29,7 @@ Camera* Game::camera;
 Game::Game()
 {
 	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f), PLAYER_PATH));
-	map = new Map();
+	map = new Map("");
 	camera = new Camera();
 } 
 
@@ -50,8 +50,8 @@ void Game::Start()
 
 void Game::Init()
 {
-	map->Init();
-	Gameplay::GetInstance().AddMap(map);
+	Gameplay::GetInstance().AddMap(new Map("1"));
+	Gameplay::GetInstance().AddMap(new Map("2"));
 	camera->Init();
 	Gameplay::GetInstance().Init(this);
 
@@ -61,7 +61,7 @@ void Game::Init()
 	//new BuildingMenu();
 	//new BarrackMenu();
 	//new GameMenu();
-	//new MultiMapMenu();
+	new MultiMapMenu();
 
 }
 

@@ -38,6 +38,9 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	attack = new PlayerAttackComponent(this, data->damagePoint,data->range);
 	components.push_back(attack);
 	
+	life = new EntityLifeComponent(this);
+	components.push_back(life);
+
 	gold = 1500;
 
 	Init();

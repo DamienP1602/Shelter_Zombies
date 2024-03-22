@@ -48,6 +48,7 @@ struct Borders
 
 class Map
 {
+	string name;
 	vector<Row*> allTiles;
 	Borders* borders;
 
@@ -73,7 +74,7 @@ public:
 	}
 
 public:
-	Map();
+	Map(const string& _name);
 	~Map();
 
 public:

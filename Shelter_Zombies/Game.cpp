@@ -55,12 +55,12 @@ void Game::Init()
 	Gameplay::GetInstance().Init(this);
 
 	//new InventoryPlayer();
-	new VillageMenu();
+	//new VillageMenu();
 	//new AttackMenu();
 	//new BuildingMenu();
 	//new BarrackMenu();
-	//GameMenu();
-	//new MultiMapMenu();
+	//new GameMenu();
+	new MultiMapMenu();
 
 }
 

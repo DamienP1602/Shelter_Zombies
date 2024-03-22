@@ -11,5 +11,7 @@ public:
 
 public:
 	void Init();
+
+	bool CheckMapLevel(const int _level);
 };
 

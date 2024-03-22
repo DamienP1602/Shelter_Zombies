@@ -181,6 +181,9 @@
     <Filter Include="Source Files\Entities\Enemy">
       <UniqueIdentifier>{7b0432eb-371d-402f-b8c5-c30197e5d75c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Manager\Map">
+      <UniqueIdentifier>{734e3db9-0743-4ba2-bc6c-0c5a8a9f7bda}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -559,7 +562,7 @@
       <Filter>Source Files\Entities\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="MultiMapMenu.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files\UIs\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -924,7 +927,7 @@
       <Filter>Source Files\Entities\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="MultiMapMenu.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\UIs\Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

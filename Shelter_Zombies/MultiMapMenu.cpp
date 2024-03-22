@@ -1,6 +1,8 @@
 #include "MultiMapMenu.h"
 #include "MenuManager.h"
 #include "Label.h"
+#include "Game.h"
+#include "Gameplay.h"
 
 #define MAP_PATH "WorldMap.png"
 
@@ -42,17 +44,38 @@ void MultiMapMenu::Init()
 	for (int _i = 0; _i < 9; _i++)
 	{
 		TextWidget* _text1 = new Label(TextData(_names[_i], _positions[_i], FONT, 20));
+		_text1->GetDrawable()->setOutlineColor(Color::Black);
+		_text1->GetDrawable()->setOutlineThickness(2.0f);
 		canvas->AddWidget(_text1);
 	}
 
 	const Vector2f& _gap = Vector2f(0.0f, 50.0f);
 	const Vector2f& _size = Vector2f(75.0f, 50.0f);
+
+	function<void()> _callbacks[] = {
+		[&]() {if (CheckMapLevel(0)) Gameplay::GetInstance().SelectMap(0) ; },
+		[&]() {; },
+		[&]() {; },
+		[&]() {; },
+		[&]() {; },
+		[&]() {; },
+		[&]() {; },
+		[&]() {; },
+		[&]() {; },
+	};
+
 	for (int _i = 0; _i < 8; _i++)
 	{
-		ShapeWidget* _buttonBase = new Button(ShapeData(_positions[_i] + _gap, _size));
+		ShapeWidget* _buttonBase = new Button(ShapeData(_positions[_i] + _gap, _size),ButtonData());
 		_buttonBase->GetDrawable()->setFillColor(Color::Transparent);
 		canvas->AddWidget(_buttonBase);
 	}
 
 	
+}
+
+bool MultiMapMenu::CheckMapLevel(const int _level)
+{
+	if (Game::GetPlayer()->GetData()->level < _level) return false;
+	return true;
 }

@@ -40,7 +40,7 @@ bool CircleCast(const Vector2f& _origin, const float _radius, Actor*& _target, b
 
 	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 	{
-		if (_actor->IsAlly())
+		if (_actor->IsAlly() || _actor->IsHidden())
 		{
 			continue;
 		}

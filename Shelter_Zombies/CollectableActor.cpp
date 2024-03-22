@@ -27,9 +27,9 @@ CollectableActor::CollectableActor(const string& _name, const ShapeData& _data, 
 	const Vector2f& _size = Vector2f(50.0f, 41.0f);
 	const float _speed = 0.1f;
 
-	animation->InitAnimations({
+	/*animation->InitAnimations({
 		AnimationData("Spawn", Vector2f(0.0f, 92.0f), _size, READ_RIGHT, true, 6, _speed), 
-	});
+	});*/
 }
 
 

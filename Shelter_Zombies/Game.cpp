@@ -14,9 +14,12 @@
 #include "BuildingMenu.h"
 #include "BarrakMenu.h"
 #include "GameMenu.h"
+#include "MultiMapMenu.h"
 
 //TODO GAME change anim player's path
 //#define PATH_PLAYER "Animations/knighModif.png"
+
+#define PLAYER_PATH "Entities/Player/_Player.png"
 
 RenderWindow Game::window;
 Map* Game::map;
@@ -25,7 +28,7 @@ Camera* Game::camera;
 
 Game::Game()
 {
-	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f)));
+	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f), PLAYER_PATH));
 	map = new Map();
 	camera = new Camera();
 } 
@@ -57,18 +60,8 @@ void Game::Init()
 	//new BuildingMenu();
 	//new BarrackMenu();
 	//GameMenu();
+	//new MultiMapMenu();
 
-	/*TriggerBox* _box = new TriggerBox(ShapeData(Vector2f(100.0f, 0.0f), Vector2f(200.0f, 200.0f), ""), [&]() {
-		cout << "coucou" << endl;
-	});
-	_box->GetComponent<CollisionComponent>()->GetBoxCollision()->GetDrawable()->setOutlineThickness(-5.0f);
-	_box->GetComponent<CollisionComponent>()->GetBoxCollision()->GetDrawable()->setFillColor(Color::Red);*/
-
-	/*Vector2f _sizeBoofly = Vector2f(150.0f, 180.0f);
-
-	ShapeData _dataBoofly = ShapeData(Vector2f(200.0f, -350.0f), _sizeBoofly, PATH_BOOFLY, IntRect(0, 17, 315, 345));
-	Boofly* _boofly = new Boofly(_dataBoofly);
-	_boofly->Init();*/
 }
 
 void Game::Update()

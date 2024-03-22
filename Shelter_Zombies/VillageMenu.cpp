@@ -7,6 +7,7 @@
 
 VillageMenu::VillageMenu() : Menu("PlayerVillageMenu", MenuManager::GetInstance().GetCurrent())
 {
+	texts = vector<TextWidget*>();
 	panel = new ConstructPanel();
 
 	Init();
@@ -45,20 +46,7 @@ void VillageMenu::Init()
 
 #pragma region Texts
 
-	const string& _textForLife = "PV " + to_string(Game::GetPlayer()->GetData()->currentHP) + " / " + to_string(Game::GetPlayer()->GetData()->healPointMax);
-	TextWidget* _lifeText = new Label(TextData(_textForLife, _lifePositon, "Font.ttf", 25));
-	_lifeText->GetDrawable()->setOrigin(_lifeText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
-	canvas->AddWidget(_lifeText);
-
-	const string& _textForTroops = to_string(AllyEntityManager::GetInstance().GetEntitiesCount()) + " / " + to_string(AllyEntityManager::GetInstance().GetMaxEntities());
-	TextWidget* _troopsText = new Label(TextData(_textForTroops, _troopsBarPosition, "Font.ttf", 25));
-	_troopsText->GetDrawable()->setOrigin(_troopsText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
-	canvas->AddWidget(_troopsText);
-
-	const string& _textForGold = to_string(Game::GetPlayer()->GetGold());
-	TextWidget* _goldText = new Label(TextData(_textForGold, _goldBarPosition, "Font.ttf", 25));
-	_goldText->GetDrawable()->setOrigin(_goldText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
-	canvas->AddWidget(_goldText);
+	InitTexts();
 
 #pragma endregion
 
@@ -138,6 +126,32 @@ void VillageMenu::AddToCanva()
 			return;
 		}
 	}
+}
+
+void VillageMenu::InitTexts()
+{
+	for (TextWidget* _widget : texts)
+	{
+		canvas->RemoveUIWidget(_widget);
+	}
+
+	const string& _textForLife = "PV " + to_string(Game::GetPlayer()->GetData()->GetActualHealth()) + " / " + to_string(Game::GetPlayer()->GetData()->GetMaximumHealth());
+	TextWidget* _lifeText = new Label(TextData(_textForLife, Vector2f(windowX * 0.12f, windowY * 0.05f), "Font.ttf", 25));
+	_lifeText->GetDrawable()->setOrigin(_lifeText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
+	texts.push_back(_lifeText);
+	canvas->AddWidget(_lifeText);
+
+	const string& _textForTroops = to_string(AllyEntityManager::GetInstance().GetEntitiesCount()) + " / " + to_string(AllyEntityManager::GetInstance().GetMaxEntities());
+	TextWidget* _troopsText = new Label(TextData(_textForTroops, Vector2f(windowX * 0.88f, windowY * 0.05f), "Font.ttf", 25));
+	_troopsText->GetDrawable()->setOrigin(_troopsText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
+	texts.push_back(_troopsText);
+	canvas->AddWidget(_troopsText);
+
+	const string& _textForGold = to_string(Game::GetPlayer()->GetGold());
+	TextWidget* _goldText = new Label(TextData(_textForGold, Vector2f(windowX * 0.88f, windowY * 0.15f), "Font.ttf", 25));
+	_goldText->GetDrawable()->setOrigin(_goldText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
+	texts.push_back(_goldText);
+	canvas->AddWidget(_goldText);
 }
 
 VillageMenu::~VillageMenu()

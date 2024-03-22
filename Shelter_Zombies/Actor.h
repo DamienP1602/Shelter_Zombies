@@ -15,7 +15,7 @@ protected:
 	AnimationComponent* animation;
 
 public:
-	Actor(const string& _name, const ShapeData& _data, const CollisionType& _collisionType = CT_NONE);
+	Actor(const string& _name, const ShapeData& _data, const CollisionType& _collisionType = CT_NONE, const CollisionType& _activeCollision = CT_NONE);
 	~Actor();
 
 	template <typename T>

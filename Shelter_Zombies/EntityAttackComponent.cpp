@@ -2,6 +2,8 @@
 #include "Actor.h"
 #include "Kismet.h"
 #include "EntityLifeComponent.h"
+#include "PlayerAnimationComponent.h"
+#include "PlayerMovementComponent.h"
 
 EntityAttackComponent::EntityAttackComponent(Actor* _owner) : Component(_owner)
 {
@@ -46,6 +48,9 @@ void EntityAttackComponent::Attack()
 {	
 	if (!isInRange || !target) 
 		return;
+
+	owner->GetComponent<PlayerAnimationComponent>()->GetCurrentAnimation()->RunAnimation("Attack",owner->GetComponent<PlayerMovementComponent>()->GetDashDirection());
+
 	target->GetComponent<EntityLifeComponent>()->TakeDamages(damages);
 }
 

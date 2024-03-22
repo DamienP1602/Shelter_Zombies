@@ -5,7 +5,7 @@
 #include"Game.h"
 #include "Kismet.h"
 
-PlayerAttackComponent::PlayerAttackComponent(Actor* _owner, const int _damages, const float _range) : EntityAttackComponent(_owner)
+PlayerAttackComponent::PlayerAttackComponent(Actor* _owner, const int _damages, const int _range) : EntityAttackComponent(_owner, _damages, 1, _range)
 {
 	animation = owner->GetComponent<PlayerAnimationComponent>();
 	SetData(_damages, 1, _range);

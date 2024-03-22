@@ -15,3 +15,9 @@ ShapeObject::~ShapeObject()
 {
 	delete shape;
 }
+
+void ShapeObject::ChangeTexture(const string& _path)
+{
+	TextureManager& _textureManager = TextureManager::GetInstance();
+	_textureManager.Load(this, _path);
+}

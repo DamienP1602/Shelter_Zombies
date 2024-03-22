@@ -153,6 +153,7 @@ public:
 
 class VillageMenu : public Menu
 {
+	vector<TextWidget*> texts;
 	ConstructPanel* panel;
 
 public:
@@ -163,5 +164,7 @@ public:
 	void Init();
 	void RemoveFromCanva();
 	void AddToCanva();
+
+	void InitTexts();
 };
 

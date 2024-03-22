@@ -43,10 +43,10 @@ struct PlayerData
 	}
 	void InitEquipments()
 	{
-		equipments.push_back(new Item(3, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Arme", ""),FONT,IT_WEAPON));
-		equipments.push_back(new Item(5, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Casque", ""),FONT,IT_HELMET));
-		equipments.push_back(new Item(7, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "PLastron", ""),FONT,IT_CHESTPLATE));
-		equipments.push_back(new Item(9, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Bottes", ""),FONT,IT_BOOTS));
+		equipments.push_back(new Item(10,2, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Arme", ""), FONT, IT_WEAPON));
+		equipments.push_back(new Item(7,1, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Casque", ""), FONT, IT_HELMET));
+		equipments.push_back(new Item(12,3, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "PLastron", ""),FONT,IT_CHESTPLATE));
+		equipments.push_back(new Item(5,0.25f, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Bottes", ""),FONT,IT_BOOTS));
 	}
 
 	void LevelUp()
@@ -66,6 +66,24 @@ struct PlayerData
 
 		spells.push_back(_spell);
 	}
+	int GetDamage() const
+	{
+		return int(damagePoint + equipments[0]->GetValue() + equipments[1]->GetValue());
+	}
+	int GetActualHealth() const
+	{
+		return currentHP;
+	}
+	int GetMaximumHealth() const
+	{
+		return int(healPointMax + equipments[2]->GetValue());
+	}
+	float GetSpeed() const
+	{
+		return speed + equipments[3]->GetValue();
+	}
+
+	void CheckHealthAmelioration();
 };
 
 struct ConstructionMode
@@ -127,6 +145,14 @@ public:
 	{
 		return gold;
 	}
+	void AddGold(const int _gold)
+	{
+		gold += _gold;
+	}
+	void RemoveGold(const int _gold)
+	{
+		gold -= _gold;
+	}
 	PlayerData* GetData() const
 	{
 		return data;
@@ -154,12 +180,11 @@ public:
 private:
 	void InitAnimations();
 	void SetupPlayerInput();
-	void TryToOpen(Menu* _menu, const bool _restoreActions = true);
 
 public:
+	void UpgradeEquipment(const int _index);
 	virtual void Init() override;
 	virtual void Update(const float _deltaTime) override;
-	void CloseAllMenus(const bool _restoreActions);
 
 	Vector2f MousePosition();
 };

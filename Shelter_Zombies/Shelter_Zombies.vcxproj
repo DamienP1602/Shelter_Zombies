@@ -213,6 +213,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuManager.h" />
+    <ClInclude Include="MultiMapMenu.h" />
     <ClInclude Include="MusicData.h" />
     <ClInclude Include="MusicManager.h" />
     <ClInclude Include="Nexus.h" />
@@ -338,6 +339,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuManager.cpp" />
+    <ClCompile Include="MultiMapMenu.cpp" />
     <ClCompile Include="MusicData.cpp" />
     <ClCompile Include="MusicManager.cpp" />
     <ClCompile Include="Nexus.cpp" />

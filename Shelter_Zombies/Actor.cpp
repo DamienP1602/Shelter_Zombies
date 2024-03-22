@@ -3,7 +3,7 @@
 #include "Timer.h"
 #include "Macro.h"
 
-Actor::Actor(const string& _name, const ShapeData& _data, const CollisionType& _collisionType)
+Actor::Actor(const string& _name, const ShapeData& _data, const CollisionType& _collisionType,const CollisionType& _activeCollision)
 		   : ShapeObject(_data), IManagable(_name)
 {
 	Register();
@@ -12,7 +12,7 @@ Actor::Actor(const string& _name, const ShapeData& _data, const CollisionType& _
 	animation = new AnimationComponent(this);
 	components.push_back(animation);
 
-	collision = new CollisionComponent(this, _collisionType);
+	collision = new CollisionComponent(this, _collisionType, _activeCollision);
 	components.push_back(collision);
 
 }

@@ -4,6 +4,7 @@
 #include "Timer.h"
 #include "Macro.h"
 
+
 Animation::Animation(const string& _name, AnimationComponent* _owner, Shape* _shape,
                      const AnimationData& _data) : IManagable(_name)
 {

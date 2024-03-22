@@ -20,9 +20,11 @@
 #include "MenuManager.h"
 #include "GameMenu.h"
 #include "CameraManager.h"
+#include "VillageMenu.h"
 
 
-Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data, CT_BLOCK)
+
+Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data, CT_ENTITY)
 {
 	animation = new PlayerAnimationComponent(this);
 	components.push_back(animation);
@@ -36,7 +38,7 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	attack = new PlayerAttackComponent(this, data->damagePoint,data->range);
 	components.push_back(attack);
 	
-	gold = 0;
+	gold = 1500;
 
 	Init();
 }
@@ -44,23 +46,23 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 
 void Player::InitAnimations()
 {
-	//animation->Init();
+	animation->Init();
 }
 
 void Player::SetupPlayerInput()
 {
 	new ActionMap("Controler", {
-		ActionData("Right",[&]() { movement->SetDirectionX(1.0f,"Right"); },InputData({ActionType::KeyPressed, Keyboard::D})),
-		ActionData("StopRight", [&]() { movement->SetDirectionX(0.0f, "StopRight"); }, InputData({ ActionType::KeyReleased, Keyboard::D })),
+		ActionData("Right",[&]() { movement->SetDirectionX(1.0f,"RunRight"); },InputData({ActionType::KeyPressed, Keyboard::D})),
+		ActionData("StopRight", [&]() { movement->SetDirectionX(0.0f, "Idle"); }, InputData({ActionType::KeyReleased, Keyboard::D})),
 
 		ActionData("Up",[&]() { movement->SetDirectionY(-1.0f); },InputData({ActionType::KeyPressed, Keyboard::Z})),
 		ActionData("StopUp", [&]() { movement->SetDirectionY(0.0f); }, InputData({ ActionType::KeyReleased, Keyboard::Z })),
 
 		ActionData("Down",[&]() { movement->SetDirectionY(1.0f); },InputData({ActionType::KeyPressed, Keyboard::S})),
 		ActionData("StopDown", [&]() { movement->SetDirectionY(0.0f); }, InputData({ ActionType::KeyReleased, Keyboard::S })),
-
-		ActionData("Left",[&]() { movement->SetDirectionX(-1.0f,"Left"); },InputData({ActionType::KeyPressed, Keyboard::Q})),
-		ActionData("StopLeft", [&]() { movement->SetDirectionX(0.0f, "StopLeft"); }, InputData({ ActionType::KeyReleased, Keyboard::Q })),
+		
+		ActionData("Left",[&]() { movement->SetDirectionX(-1.0f,"RunLeft"); },InputData({ActionType::KeyPressed, Keyboard::Q})),
+		ActionData("StopLeft", [&]() { movement->SetDirectionX(0.0f, "Idle"); }, InputData({ActionType::KeyReleased, Keyboard::Q})),
 		});
 
 	new ActionMap("GlobalInputs", {
@@ -109,6 +111,11 @@ Vector2f Player::MousePosition()
 	return (_mousePosition + _playerPosition) - _windowSize / 2.0f;
 }
 
+void Player::UpgradeEquipment(const int _index)
+{
+	data->equipments[_index]->TryToUpgrade(this);
+}
+
 void Player::Init()
 {
 	//movement->SetCanMove(true);
@@ -126,5 +133,14 @@ void Player::Update(const float _deltaTime)
 	if (mode->shapeOfConstruction)
 	{
 		mode->SetPosition(MousePosition());
+	}
+}
+
+void PlayerData::CheckHealthAmelioration()
+{
+	if (GetActualHealth() != GetMaximumHealth())
+	{
+		currentHP = GetMaximumHealth();
+		MenuManager::GetInstance().GetSpecificValues<VillageMenu>()[0]->InitTexts();
 	}
 }

@@ -1,7 +1,7 @@
 #include "Entity.h"
 
 Entity::Entity(string _name, const ShapeData& _shape):
-	Actor(_name, _shape, CT_BLOCK)
+	Actor(_name, _shape, CT_ENTITY)
 {
 	layer = 2;
 	brain = new EntityBrain(this);

@@ -28,6 +28,10 @@ public:
 	{
 		return isDead;
 	}
+	bool NeedHealing() const
+	{
+		return currentLife < maxLife;
+	}
 
 	void TakeDamages(const int _damages);
 	void Healing(const int _heal);

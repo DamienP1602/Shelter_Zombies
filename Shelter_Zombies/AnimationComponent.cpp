@@ -41,12 +41,9 @@ void AnimationComponent::RunAnimation(const string& _name, const float _directio
             {
                 if(_name == currentAnimation->GetID()) return;
 
-                //system("cls");
-                //cout << "Stop : " << currentAnimation->GetID() << endl;
                 currentAnimation->Stop();
             }
 
-            //cout << "Start : " << _animation->GetData().name << endl;
             currentAnimation = _animation;
             _animation->Start(_directionX);
         }

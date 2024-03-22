@@ -1,9 +1,10 @@
 #include "Entity.h"
 
-Entity::Entity(string _name, const ShapeData& _shape):
+Entity::Entity(string _name, bool _isAlly, const ShapeData& _shape):
 	Actor(_name, _shape, CT_BLOCK)
 {
 	layer = 2;
+	isAlly = _isAlly;
 	brain = new EntityBrain(this);
 	movement = new EntityMovementComponent(this);
 	components.push_back(movement);

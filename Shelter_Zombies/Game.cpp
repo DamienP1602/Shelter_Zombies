@@ -38,7 +38,7 @@ Game::~Game()
 
 void Game::Start()
 {
-	window.create(VideoMode(1920, 1080), "Shelter Game", Style::Fullscreen);
+	window.create(VideoMode(1920, 1080), "Shelter Game"/*, Style::Fullscreen*/);
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
 	Init();

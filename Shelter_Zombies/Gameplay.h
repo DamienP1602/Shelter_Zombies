@@ -21,7 +21,7 @@ class Gameplay : public Singleton<Gameplay>
 	Game* game = nullptr;
 	int currentMap;
 	vector<Map*> allMaps;
-	int waveCooldown;
+	float waveCooldown;
 	Timer* waveTimer;
 	bool waveTimerEnd;
 

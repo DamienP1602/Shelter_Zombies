@@ -13,10 +13,11 @@ class EntityMovementComponent : public Component
 {
 protected:
 	bool canMove;
-	Vector2f lastDirection;
 	float speed;
 	float minRange;
+	Actor* target;
 	Vector2f destination;
+	Vector2f lastDirection;
 
 	AnimationComponent* animation = nullptr;
 	CollisionComponent* collision = nullptr;
@@ -34,7 +35,7 @@ public:
 	{
 		canMove = _status;
 	}
-	void SetDestination(const Vector2f& _destination, const bool _canMove = true);
+	void SetTarget(Actor* _target, const bool _canMove = true);
 
 	Vector2f GetDestination() const
 	{
@@ -50,6 +51,7 @@ public:
 	}
 
 	virtual void Update(const float _deltaTime) override;
+	void SetDestination();
 	void MoveToDestination(const float _deltaTime);
 	bool IsAtPosition() const;
 };

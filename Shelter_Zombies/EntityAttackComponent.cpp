@@ -2,6 +2,7 @@
 #include "Actor.h"
 #include "Kismet.h"
 #include "EntityLifeComponent.h"
+#include "io.h"
 
 EntityAttackComponent::EntityAttackComponent(Actor* _owner) : Component(_owner)
 {
@@ -46,7 +47,9 @@ void EntityAttackComponent::Attack()
 {	
 	if (!isInRange || !target) 
 		return;
+	owner->GetComponent<AnimationComponent>()->RunAnimation("Attack", 1);
 	target->GetComponent<EntityLifeComponent>()->TakeDamages(damages);
+	cout << "ATTACK" << endl;
 }
 
 void EntityAttackComponent::StartAttack()

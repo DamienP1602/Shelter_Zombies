@@ -31,6 +31,7 @@ void ChaseState::Start()
 	Actor* _owner = brain->GetOwner();
 	movement = _owner->GetComponent<EntityMovementComponent>();
 	movement->SetCanMove(true);
+	_owner->GetComponent<AnimationComponent>()->RunAnimation("Movement", 1);
 }
 
 void ChaseState::Update(const float _deltaTime)

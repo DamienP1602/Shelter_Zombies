@@ -85,10 +85,10 @@ public:
 	{
 		return isActive;
 	}
-	bool IsAlly() const
+	/*virtual bool IsAlly() const override
 	{
 		return isAlly;
-	}
+	}*/
 
 protected:
 	void UpdateData();

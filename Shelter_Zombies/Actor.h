@@ -39,6 +39,10 @@ public:
 	{
 		return layer;
 	}
+	virtual bool IsAlly() const
+	{
+		return false;
+	};
 
 protected:
 	virtual void Register() override;

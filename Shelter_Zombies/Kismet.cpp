@@ -40,6 +40,11 @@ bool CircleCast(const Vector2f& _origin, const float _radius, Actor*& _target, b
 
 	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 	{
+		if (_actor->IsAlly())
+		{
+			continue;
+		}
+
 		if (Contains(_actor, _ignoredActors)) continue;
 
 		if (_circleShape->getGlobalBounds().intersects(_actor->GetDrawable()->getGlobalBounds()))
@@ -67,6 +72,8 @@ vector<HitInfo> RaycastAll(const Vector2f& _origin, const Vector2f& _direction, 
 	{
 		for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 		{
+			//if (_actor->IsAlly()) return _hitInfos;
+
 			Shape* _shape = _actor->GetDrawable();
 			if (Contains(_shape, _ignoredShapes)) continue;
 
@@ -89,26 +96,6 @@ vector<HitInfo> RaycastAll(const Vector2f& _origin, const Vector2f& _direction, 
 }
 
 bool BoxCast(const FloatRect& _boxRect, HitInfo& _hitInfo, const vector<Actor*>& _ignoredActors)
-{
-	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
-	{
-		if (Contains(_actor, _ignoredActors))
-			continue;
-
-		if (_boxRect.intersects(_actor->GetDrawable()->getGlobalBounds()))
-		{
-			_hitInfo.position = _actor->GetShapePosition();
-			_hitInfo.distance = Distance(_hitInfo.position, _boxRect.getPosition());
-			_hitInfo.actor = _actor;
-
-			return true;
-		}
-	}
-
-	return false;
-}
-
-bool AllBoxCast(const FloatRect& _boxRect, HitInfo& _hitInfo, const vector<Actor*>& _ignoredActors)
 {
 	for (Actor* _actor : ActorManager::GetInstance().GetAllValues())
 	{

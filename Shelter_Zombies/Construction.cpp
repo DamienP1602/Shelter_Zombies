@@ -1,10 +1,11 @@
 #include "Construction.h"
 #include "Entity.h"
 
-Construction::Construction(const string& _name, const ShapeData& _shape, Canvas* _canvas) :
+Construction::Construction(const string& _name, const ShapeData& _shape, const bool _isAlly, Canvas* _canvas) :
 	InteractableActor(_name, _shape, _canvas)
 {
 	layer = 1;
+	isAlly = _isAlly;
 }
 
 Construction::~Construction()

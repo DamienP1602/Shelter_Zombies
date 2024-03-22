@@ -1,9 +1,10 @@
 #include "Building.h"
 
-Building::Building(const string& _name, const ShapeData& _shape, Canvas* _canvas) :
+Building::Building(const string& _name, const ShapeData& _shape, const bool _isAlly, Canvas* _canvas) :
 	InteractableActor(_name, _shape, _canvas)
 {
 	layer = 1;
+	isAlly = _isAlly;
 }
 
 Building::~Building()

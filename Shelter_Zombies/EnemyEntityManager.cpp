@@ -70,36 +70,36 @@ void EnemyEntityManager::SetArmy(const int _skelets, const int _orcs, const int 
 
 void EnemyEntityManager::SpawnEntities(bool _isAttack)
 {
-	Vector2f _origin = _isAttack ? Vector2f(0, 1000) : Vector2f(0, 600);
+	const Vector2f& _origin = _isAttack ? Vector2f(0.0f, 1000.0f) : Vector2f(0.0f, 600.0f);
 
 	int _size = int(allFighters.size());
-	for (int i = 0; i < allFighters.size(); i++)
+	for (int i = 0; i < _size; i++)
 	{
-		Vector2f _position = _origin + Vector2f(1920 / _size * (i + 1), -300); //Column
+		const Vector2f& _position = _origin + Vector2f(1920.f / _size * (i + 1.f), -300.f); //Column
 		allFighters[i]->SetShapePosition(_position);
 		allFighters[i]->SetActive(false);
 		allFighters[i]->SetIsHidden(false);
 	}
 	_size = int(allShooters.size());
-	for (int i = 0; i < allShooters.size(); i++)
+	for (int i = 0; i < _size; i++)
 	{
-		Vector2f _position = _origin + Vector2f(1920 / _size * (i + 1), -200);
+		const Vector2f& _position = _origin + Vector2f(1920.f / _size * (i + 1.f), -200.f);
 		allShooters[i]->SetShapePosition(_position);
 		allShooters[i]->SetActive(false);
 		allShooters[i]->SetIsHidden(false);
 	}
 	_size = int(allSupports.size());
-	for (int i = 0; i < allSupports.size(); i++)
+	for (int i = 0; i < _size; i++)
 	{
-		Vector2f _position = _origin + Vector2f(1920 / _size * (i + 1), -100);
+		const Vector2f& _position = _origin + Vector2f(1920.f / _size * (i + 1.f), -100.f);
 		allSupports[i]->SetShapePosition(_position);
 		allSupports[i]->SetActive(false);
 		allSupports[i]->SetIsHidden(false);
 	}
 	_size = int(allArtilleries.size());
-	for (int i = 0; i < allArtilleries.size(); i++)
+	for (int i = 0; i < _size; i++)
 	{
-		Vector2f _position = _origin + Vector2f(1920 / _size * (i + 1), 0);
+		const Vector2f& _position = _origin + Vector2f(1920.f / _size * (i + 1.f), 0.f);
 		allArtilleries[i]->SetShapePosition(_position);
 		allArtilleries[i]->SetActive(false);
 		allArtilleries[i]->SetIsHidden(false);

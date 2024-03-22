@@ -40,9 +40,10 @@ protected:
 	ConstructionData* data = nullptr;
 	bool isDestroy = false;
 	bool isActive = false;
+	bool isAlly = false;
 
 public:
-	Construction(const string& _name, const ShapeData& _shape, Canvas* _canvas = new Canvas("InteractableActor"));
+	Construction(const string& _name, const ShapeData& _shape,const bool _isAlly = false, Canvas* _canvas = new Canvas("InteractableActor"));
 	~Construction();
 
 	void RestoreLife() const
@@ -66,7 +67,10 @@ public:
 	{
 		isActive = _value;
 	}
-
+	virtual bool IsAlly() const override
+	{
+		return isAlly;
+	}
 private:
 	void TakeDamage(int _damage);
 	void Repare();

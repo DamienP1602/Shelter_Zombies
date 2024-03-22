@@ -15,10 +15,6 @@ Skelet::Skelet(const Vector2f& _position, const int _level) :
 	Init();
 }
 
-Skelet::~Skelet()
-{
-	EnemyEntityManager::GetInstance().Remove(this);
-}
 
 void Skelet::Init()
 {

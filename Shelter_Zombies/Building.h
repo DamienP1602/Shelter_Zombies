@@ -47,9 +47,10 @@ class Building : public InteractableActor
 protected:
 	BuildingData* data = nullptr;
 	bool isDestroy = false;
+	bool isAlly = false;
 
 public:
-	Building(const string& _name, const ShapeData& _shape, Canvas* _canvas = nullptr);
+	Building(const string& _name, const ShapeData& _shape,const bool _isAlly = false, Canvas* _canvas = nullptr);
 	~Building();
 
 	void RestoreLife() const
@@ -68,6 +69,10 @@ public:
 	virtual int GetCost() override
 	{
 		return data->cost;
+	}
+	virtual bool IsAlly() const override
+	{
+		return isAlly;
 	}
 private:
 	void TakeDamage(int _damage);

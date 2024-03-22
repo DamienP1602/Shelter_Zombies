@@ -64,8 +64,8 @@ public:
 		if (!allBuildings[0]->isInit)
 		{			
 			function<void()> _callbacks[] = {
-				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 0)); },seconds(0.1f)); },
-				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 1)); },seconds(0.1f)); },
+				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 0,true)); },seconds(0.1f)); },
+				[&](){new Timer([&]() {Game::GetPlayer()->SetConstructionMode(new Wall(Vector2f(), 1,true)); },seconds(0.1f)); },
 				[&](){new Skelet(Vector2f(Game::GetPlayer()->GetShapePosition() + Vector2f(500.0f,500.0f)),1); },
 				[&](){; }
 			};

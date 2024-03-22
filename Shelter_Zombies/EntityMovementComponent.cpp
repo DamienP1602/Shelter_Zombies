@@ -8,6 +8,7 @@ EntityMovementComponent::EntityMovementComponent(Actor* _owner) : Component(_own
 	string _name = _owner->GetID();
 	target = nullptr;
 	canMove = false;
+	lastDirection = Vector2f(1.0f, 1.0f);
 	speed = 1;
 	minRange = 1;
 	animation = owner->GetComponent<AnimationComponent>();
@@ -26,13 +27,10 @@ void EntityMovementComponent::SetTarget(Actor* _target, const bool _canMove)
 {
 	target = _target;
 	canMove = _canMove;
-	animation->RunAnimation("Movement", lastDirection.x);
 }
 
 void EntityMovementComponent::Update(const float _deltaTime)
 {
-	//if (!canMove)
-	//	animation->RunAnimation("Idle", lastDirection.x);
 	SetDestination();
 	canMove = !IsAtPosition();
 	MoveToDestination(_deltaTime);

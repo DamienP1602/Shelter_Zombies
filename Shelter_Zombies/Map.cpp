@@ -69,6 +69,11 @@ void Map::Load()
 {
 	//TODO LOAD
 }
+
+void Map::DeLoad()
+{
+}
+
 bool Map::PutInMap(InteractableActor* _actor,const Vector2f& _mousePosition)
 {
 	for (Row* _row : allTiles)

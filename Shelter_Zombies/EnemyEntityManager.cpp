@@ -45,6 +45,7 @@ void EnemyEntityManager::SetArmy(const int _skelets, const int _orcs, const int 
 	for (int i = 0; i < _skelets; i++)
 	{
 		Skelet* _skelet = new Skelet(Vector2f(0, 0), _level);
+		_skelet->Init();
 		allFighters.push_back(_skelet);
 		Add(_skelet->GetID(), _skelet);
 	}

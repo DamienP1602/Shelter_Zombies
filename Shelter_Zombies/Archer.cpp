@@ -15,11 +15,6 @@ Archer::Archer(const Vector2f& _position, const int _level) :
 	Init();
 }
 
-Archer::~Archer()
-{
-	AllyEntityManager::GetInstance().Remove(this);
-}
-
 void Archer::Init()
 {
 	const float _speed = 0.1f;
@@ -30,5 +25,4 @@ void Archer::Init()
 	AnimationData("Attack", Vector2f(1.0f, 2.0f), Vector2f(26.0, 28.0f), READ_RIGHT, false, 5, _speed, "Idle"),
 	AnimationData("Death", Vector2f(64.0f, 3.0f), Vector2f(26.0, 26.0f), READ_RIGHT, false, 4, _speed),
 		});
-	animation->SetCurrent("Idle");
 }

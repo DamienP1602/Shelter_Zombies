@@ -15,11 +15,6 @@ Priest::Priest(const Vector2f& _position, const int _level) :
 	Init();
 }
 
-Priest::~Priest()
-{
-	AllyEntityManager::GetInstance().Remove(this);
-}
-
 void Priest::Init()
 {
 	const float _speed = 0.1f;
@@ -30,5 +25,4 @@ void Priest::Init()
 	AnimationData("Attack", Vector2f(0.0f, 112.0f), Vector2f(47.0, 49.0f), READ_RIGHT, false, 2, _speed, "Idle"),
 	AnimationData("Death", Vector2f(2.0f, 167.0f), Vector2f(51.0, 30.0f), READ_RIGHT, false, 1, _speed),
 		});
-	animation->SetCurrent("Idle");
 }

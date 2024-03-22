@@ -4,6 +4,8 @@
 #include "Button.h"
 #include "Label.h"
 
+class Player;
+
 enum ItemType
 {
 	IT_NONE,
@@ -23,12 +25,19 @@ struct ItemData
 
 class Item : public IManagable<int>
 {
-	int value;
+	float value;
+	float bonusValue;
+	int upgradeCost;
+	int level;
 	ItemWidget* widget;
 	ItemType type;
 
 public:
-	int GetValue() const
+	int GetUpgradeCost() const
+	{
+		return int(upgradeCost * level);
+	}
+	float GetValue() const
 	{
 		return value;
 	}
@@ -36,8 +45,17 @@ public:
 	{
 		return widget->GetID();
 	}
+	int GetLevel() const
+	{
+		return level;
+	}
 
 public:
-	Item(const int _value,ItemWidget* _widget, const string& _fontPath,const ItemType& _type);
+	Item(const int _upgradeCost,const float _bonusValue,const int _level,const float _value,ItemWidget* _widget, const string& _fontPath,const ItemType& _type);
+
+public:
+	void TryToUpgrade(Player* _player);
+
+	string GetNewPaths();
 };
 

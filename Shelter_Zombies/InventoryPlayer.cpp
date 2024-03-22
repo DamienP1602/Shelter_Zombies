@@ -6,6 +6,9 @@ InventoryPlayer::InventoryPlayer() : Menu("InventoryPlayerMenu",MenuManager::Get
 {
 	talents = new TalentTree();
 	info = new InformationPanel(Vector2f(windowX,windowY));
+	buttonsInventory = vector<ShapeWidget*>();
+	statsText = vector<string>();
+	stats = vector<TextWidget*>();
 
 	Init();
 }
@@ -87,10 +90,10 @@ void InventoryPlayer::Init()
 	};
 
 	function<void()> _callbacks[] = {
-		[&]() {cout << "Weapon" << endl; },
-		[&]() {cout << "Head" << endl; },
-		[&]() {cout << "Chest" << endl; },
-		[&]() {cout << "Boots" << endl; }
+		[&]() {Game::GetPlayer()->UpgradeEquipment(0); Update(0); },
+		[&]() {Game::GetPlayer()->UpgradeEquipment(1); Update(1); },
+		[&]() {Game::GetPlayer()->UpgradeEquipment(2); Update(2); },
+		[&]() {Game::GetPlayer()->UpgradeEquipment(3); Update(3); }
 	};
 
 	function<void()> _hoveredCallbacks[] = {
@@ -100,32 +103,28 @@ void InventoryPlayer::Init()
 		[&]() {info->SetPanel(3); }
 	};
 
+	string _paths[] = {
+		"Items/Weapon1.png",
+		"Items/Helmet1.png",
+		"Items/Chest1.png",
+		"Items/Boots1.png"
+	};
+
 	for (int _i = 0; _i < 4; _i++)
 	{
 		const Vector2f& _gap = Vector2f(0.0f,-225 + (150.0f * _i));
-		ShapeWidget* _button = new Button(ShapeData(_itemsBackgroundPosition + _gap,Vector2f(100.0f,100.0f),"red.png"),ButtonData(_hoveredCallbacks[_i], NULL, _callbacks[_i], NULL, NULL));
+		ShapeWidget* _button = new Button(ShapeData(_itemsBackgroundPosition + _gap,Vector2f(100.0f,100.0f), _paths[_i]), ButtonData(_hoveredCallbacks[_i], NULL, _callbacks[_i], NULL, NULL));
 		TextWidget* _name = new Label(TextData(_names[_i], _button->GetShapePosition(),FONT));
 		_name->GetDrawable()->setPosition(_button->GetShapePosition().x, _button->GetShapePosition().y + 30.0f);
 		canvas->AddWidget(_button);
+		buttonsInventory.push_back(_button);
 		canvas->AddWidget(_name);
 
 	}
 
 	InitTalentTree();
-
-	string _stats[] = {
-		"PV : " + to_string(Game::GetPlayer()->GetData()->currentHP) + " / " + to_string(Game::GetPlayer()->GetData()->healPointMax),
-		"Dégâts : " + to_string(Game::GetPlayer()->GetData()->damagePoint),
-		"Speed : " + to_string(static_cast<int>(Game::GetPlayer()->GetData()->speed)),
-		"Range : " + to_string(static_cast<int>(Game::GetPlayer()->GetData()->range))
-	};
-
-	for (int _i = 0; _i < 4; _i++)
-	{
-		const Vector2f& _gap = Vector2f(0.0f,-55.0f + (35.0f * _i));
-		TextWidget* _text = new Label(TextData(_stats[_i], _statsBackgroundPosition + _gap, FONT));
-		canvas->AddWidget(_text);
-	}
+	InitStats();
+	
 }
 
 void InventoryPlayer::InitTalentTree()
@@ -175,5 +174,42 @@ void InventoryPlayer::InitTalentTree()
 	const Vector2f& _eithTalentPosition = Vector2f(_backgroundPosition.x * 1.075f, _backgroundPosition.y * 0.7f);
 	ShapeWidget* _eithTalent = new Button(ShapeData(_eithTalentPosition, _talentSize, "yellow.png"), ButtonData(_hoveredCallbacks[7], NULL, NULL, NULL, NULL));
 	canvas->AddWidget(_eithTalent);
+}
+
+void InventoryPlayer::InitStats()
+{
+	for (TextWidget* _label : stats)
+	{
+		canvas->RemoveUIWidget(_label);
+	}
+	statsText.clear();
+
+	const Vector2f& _statsBackgroundPosition = Vector2f(windowX * 0.3625f, windowY * 0.6f);
+
+	string _stats[] = {
+		"PV : " + to_string(Game::GetPlayer()->GetData()->GetActualHealth()) + " / " + to_string(Game::GetPlayer()->GetData()->GetMaximumHealth()),
+		"Dégâts : " + to_string(Game::GetPlayer()->GetData()->GetDamage()),
+		"Speed : " + to_string(static_cast<int>(Game::GetPlayer()->GetData()->GetSpeed())),
+		"Range : " + to_string(static_cast<int>(Game::GetPlayer()->GetData()->range))
+	};
+
+	for (int _i = 0; _i < 4; _i++)
+	{
+		const Vector2f& _gap = Vector2f(0.0f, -55.0f + (35.0f * _i));
+		TextWidget* _text = new Label(TextData(_stats[_i], _statsBackgroundPosition + _gap, FONT));
+		statsText.push_back(_stats[_i]);
+		stats.push_back(_text);
+		canvas->AddWidget(_text);
+	}
+}
+
+void InventoryPlayer::Update(const int _index)
+{
+	info->data.Init();
+
+	Game::GetPlayer()->GetData()->CheckHealthAmelioration();
+
+	buttonsInventory[_index]->GetObject()->ChangeTexture(Game::GetPlayer()->GetData()->equipments[_index]->GetNewPaths());
+	InitStats();
 }
 

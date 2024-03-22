@@ -20,6 +20,8 @@
 #include "MenuManager.h"
 #include "GameMenu.h"
 #include "CameraManager.h"
+#include "VillageMenu.h"
+
 
 
 Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data, CT_BLOCK)
@@ -36,7 +38,7 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	attack = new PlayerAttackComponent(this, data->damagePoint,data->range);
 	components.push_back(attack);
 	
-	gold = 0;
+	gold = 1500;
 
 	Init();
 }
@@ -109,6 +111,11 @@ Vector2f Player::MousePosition()
 	return (_mousePosition + _playerPosition) - _windowSize / 2.0f;
 }
 
+void Player::UpgradeEquipment(const int _index)
+{
+	data->equipments[_index]->TryToUpgrade(this);
+}
+
 void Player::Init()
 {
 	//movement->SetCanMove(true);
@@ -126,5 +133,14 @@ void Player::Update(const float _deltaTime)
 	if (mode->shapeOfConstruction)
 	{
 		mode->SetPosition(MousePosition());
+	}
+}
+
+void PlayerData::CheckHealthAmelioration()
+{
+	if (GetActualHealth() != GetMaximumHealth())
+	{
+		currentHP = GetMaximumHealth();
+		MenuManager::GetInstance().GetSpecificValues<VillageMenu>()[0]->InitTexts();
 	}
 }

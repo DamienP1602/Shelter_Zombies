@@ -67,4 +67,7 @@ public:
 public:
 	ShapeObject(const ShapeData& _data);
 	~ShapeObject();
+
+public:
+	void ChangeTexture(const string& _path);
 };

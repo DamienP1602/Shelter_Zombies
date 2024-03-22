@@ -22,6 +22,7 @@ struct EntityData
 		speed = _speed;
 		range = _range;
 		level = _level;
+		UpdateData();
 	}
 	void LevelUp()
 	{
@@ -50,16 +51,17 @@ protected:
 	EntityAttackComponent* attack = nullptr;
 	EntityLifeComponent* life = nullptr;
 	bool isActive = false;
+	bool isAlly = true;
 
 public:
-	Entity(string _name, const ShapeData& _shape);
+	Entity(string _name, bool _isAlly, const ShapeData& _shape);
 	~Entity();
 
 	void SetTarget(Actor* _target)
 	{
 		target = _target;
 		attack->SetTarget(_target);
-		movement->SetDestination(_target->GetShapePosition());
+		movement->SetTarget(_target);
 	}
 	void SetActive(bool _value)
 	{
@@ -74,6 +76,7 @@ public:
 	{
 		return data;
 	}
+
 	bool IsDead() const
 	{
 		return life->IsDead();
@@ -82,9 +85,13 @@ public:
 	{
 		return isActive;
 	}
+	bool IsAlly() const
+	{
+		return isAlly;
+	}
 
 protected:
 	void UpdateData();
-	virtual void Init();
+	virtual void Init() override;
 };
 

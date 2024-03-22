@@ -30,6 +30,8 @@ void StandbyState::Init()
 
 void StandbyState::Start()
 {
+	Actor* _owner = brain->GetOwner();
+	_owner->GetComponent<AnimationComponent>()->RunAnimation("Idle", 1);
 	entity = dynamic_cast<Entity*>(brain->GetOwner());
 }
 

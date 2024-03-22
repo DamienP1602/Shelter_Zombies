@@ -1,8 +1,11 @@
 #pragma once
 #include "State.h"
+#include "EntityMovementComponent.h"
 
 class DeathState : public State
 {
+	EntityMovementComponent* movement = nullptr;
+
 public:
 	DeathState(Brain* _brain);
 

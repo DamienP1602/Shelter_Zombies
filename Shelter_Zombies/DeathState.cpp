@@ -1,6 +1,7 @@
 #include "DeathState.h"
 #include "Brain.h"
-#include "FileLoader.h"
+#include "EntityMovementComponent.h"
+#include "Actor.h"
 
 DeathState::DeathState(Brain* _brain) : State(_brain)
 {
@@ -8,25 +9,9 @@ DeathState::DeathState(Brain* _brain) : State(_brain)
 
 void DeathState::Start()
 {
-	//Actor* _owner = brain->GetOwner();
-
-	//if (!inspect || !animation || !patrol)
-	//{
-	//	inspect = _owner->GetComponent<InspectComponent>();
-	//	animation = _owner->GetComponent<AnimationComponent>();
-	//	patrol = _owner->GetComponent<MobMovementComponent>();
-	//}
-
-	//patrol->SetCanMove(false);
-
-	//for (const string& _name : animation->GetAnimationNames())
-	//{
-	//	if (ContainsText(_name, "Death")) //si il trouve "Death" au débuit du name alors il lance l'anim
-	//	{
- //			animation->RunAnimation(_name, animation->GetCurrentAnimation()->GetDirectionX());
-	//		return;
-	//	}
-	//}
+	Actor* _owner = brain->GetOwner();
+	movement = _owner->GetComponent<EntityMovementComponent>();
+	_owner->GetComponent<AnimationComponent>()->RunAnimation("Death", 1);
 }
 
 void DeathState::Update(const float _deltaTime)

@@ -9,11 +9,14 @@
 #include "Kismet.h"
 #include "Map.h"
 #include "io.h"
+#include "Priest.h"
+#include "Warlock.h"
 
 Gameplay::Gameplay()
 {
 	game = nullptr;
-	waveCooldown = 5; //seconds
+	currentMap = 0;
+	waveCooldown = 5.f; //seconds
 	waveTimerEnd = false;
 	waveTimer = new Timer([&]() { WaveTimerEnd(); }, seconds(waveCooldown), false, false);
 }
@@ -78,7 +81,6 @@ void Gameplay::ModePassif()
 		_allBuilding[i]->RestoreLife();
 
 	//Restore all enemies HPs and despawn them
-	EnemyEntityManager::GetInstance().SpawnEntities(false);
 	vector<Entity*> _allEnemy = EnemyEntityManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allEnemy.size(); i++)
 	{
@@ -101,7 +103,7 @@ void Gameplay::ModeDefense()
 		_allConstruction[i]->SetActive(true);
 
 	//Active all enemies and spawn them
-	EnemyEntityManager::GetInstance().SpawnEntities(false);
+	EnemyEntityManager::GetInstance().SpawnEntities(true);
 	vector<Entity*> _allEnemy = EnemyEntityManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allEnemy.size(); i++)
 	{
@@ -118,7 +120,7 @@ void Gameplay::ModeAttack()
 	//TODO active player attack UI
 
 	//Active all enemies and spawn them
-	EnemyEntityManager::GetInstance().SpawnEntities(true);
+	EnemyEntityManager::GetInstance().SpawnEntities(false);
 	vector<Entity*> _allEnemy = EnemyEntityManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allEnemy.size(); i++)
 	{
@@ -149,7 +151,7 @@ void Gameplay::Init(Game* _game)
 	currentMap = 0;
 	//allMaps = _allMaps;
 
-	EnemyEntityManager::GetInstance().SetArmy(3, 2, 1, 1);
+	EnemyEntityManager::GetInstance().SetArmy(1, 1, 1, 1, 0);
 	ModePassif();
 }
 
@@ -195,7 +197,34 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 	Actor* _target = nullptr;
 	float _distance = float(LONG_MAX);
 	float _testDistance = 0;
-	if (_isAlly)
+
+	if (dynamic_cast<Warlock*>(_entity))
+	{
+		vector<Entity*> _allEnemyEntity = EnemyEntityManager::GetInstance().GetAllValues();
+		for (size_t i = 0; i < _allEnemyEntity.size(); i++)
+		{
+			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyEntity[i]->GetShapePosition());
+			if (_testDistance < _distance && _allEnemyEntity[i]->GetComponent<EntityLifeComponent>()->NeedHealing())
+			{
+				_distance = _testDistance;
+				_target = _allEnemyEntity[i];
+			}
+		}
+	}
+	else if (dynamic_cast<Priest*>(_entity))
+	{
+		vector<Entity*> _allAllyEntity = AllyEntityManager::GetInstance().GetAllValues();
+		for (size_t i = 0; i < _allAllyEntity.size(); i++)
+		{
+			_testDistance = Distance(_entity->GetShapePosition(), _allAllyEntity[i]->GetShapePosition());
+			if (_testDistance < _distance && _allAllyEntity[i]->GetComponent<EntityLifeComponent>()->NeedHealing())
+			{
+				_distance = _testDistance;
+				_target = _allAllyEntity[i];
+			}
+		}
+	}
+	else if (_isAlly)
 	{
 		vector<Entity*> _allEnemyEntity = EnemyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyEntity.size(); i++)
@@ -230,7 +259,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 	}
-	else
+	else if (!_isAlly)
 	{
 		vector<Entity*> _allAllyEntity = AllyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyEntity.size(); i++)
@@ -273,6 +302,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			_target = _player;
 		}
 	}
+
 	_entity->SetTarget(_target);
 }
 

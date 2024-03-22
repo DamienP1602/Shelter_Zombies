@@ -40,29 +40,29 @@ void EnemyEntityManager::Init(vector<Skelet*> _allFighters, vector<Orc*> _allSho
 	allArtilleries = _allArtilleries;
 }
 
-void EnemyEntityManager::SetArmy(const int _skelets, const int _orcs, const int _warlocks, const int _golems)
+void EnemyEntityManager::SetArmy(const int _skelets, const int _orcs, const int _warlocks, const int _golems, const int _level)
 {
 	for (int i = 0; i < _skelets; i++)
 	{
-		Skelet* _skelet = new Skelet(Vector2f(0, 0), 0);
+		Skelet* _skelet = new Skelet(Vector2f(0, 0), _level);
 		allFighters.push_back(_skelet);
 		Add(_skelet->GetID(), _skelet);
 	}
 	for (int i = 0; i < _orcs; i++)
 	{
-		Orc* _orc = new Orc(Vector2f(0, 0), 0);
+		Orc* _orc = new Orc(Vector2f(0, 0), _level);
 		allShooters.push_back(_orc);
 		Add(_orc->GetID(), _orc);
 	}
 	for (int i = 0; i < _warlocks; i++)
 	{
-		Warlock* _warlock = new Warlock(Vector2f(0, 0), 0);
+		Warlock* _warlock = new Warlock(Vector2f(0, 0), _level);
 		allSupports.push_back(_warlock);
 		Add(_warlock->GetID(), _warlock);
 	}
 	for (int i = 0; i < _golems; i++)
 	{
-		Golem* _golem = new Golem(Vector2f(0, 0), 0);
+		Golem* _golem = new Golem(Vector2f(0, 0), _level);
 		allArtilleries.push_back(_golem);
 		Add(_golem->GetID(), _golem);
 	}
@@ -70,39 +70,38 @@ void EnemyEntityManager::SetArmy(const int _skelets, const int _orcs, const int 
 
 void EnemyEntityManager::SpawnEntities(bool _isAttack)
 {
-	//TODO need screen location
-	//Vector2f _position;
-	//if (_isAttack)
-	//	_position = 
-	//else
-	//	_position = 
+	Vector2f _origin = _isAttack ? Vector2f(0, 1000) : Vector2f(0, 600);
 
+	int _size = int(allFighters.size());
 	for (int i = 0; i < allFighters.size(); i++)
 	{
-		Vector2f _position = Vector2f(400.0f, 100.0f * i); //Column
+		Vector2f _position = _origin + Vector2f(1920 / _size * (i + 1), -300); //Column
 		allFighters[i]->SetShapePosition(_position);
-		allFighters[i]->SetActive(true);
+		allFighters[i]->SetActive(false);
 		allFighters[i]->SetIsHidden(false);
 	}
+	_size = int(allShooters.size());
 	for (int i = 0; i < allShooters.size(); i++)
 	{
-		Vector2f _position = Vector2f(300.0f, 100.0f * i); //Column
+		Vector2f _position = _origin + Vector2f(1920 / _size * (i + 1), -200);
 		allShooters[i]->SetShapePosition(_position);
-		allShooters[i]->SetActive(true);
+		allShooters[i]->SetActive(false);
 		allShooters[i]->SetIsHidden(false);
 	}
+	_size = int(allSupports.size());
 	for (int i = 0; i < allSupports.size(); i++)
 	{
-		Vector2f _position = Vector2f(200.0f, 100.0f * i); //Column
+		Vector2f _position = _origin + Vector2f(1920 / _size * (i + 1), -100);
 		allSupports[i]->SetShapePosition(_position);
-		allSupports[i]->SetActive(true);
+		allSupports[i]->SetActive(false);
 		allSupports[i]->SetIsHidden(false);
 	}
+	_size = int(allArtilleries.size());
 	for (int i = 0; i < allArtilleries.size(); i++)
 	{
-		Vector2f _position = Vector2f(100.0f, 100.0f * i); //Column
+		Vector2f _position = _origin + Vector2f(1920 / _size * (i + 1), 0);
 		allArtilleries[i]->SetShapePosition(_position);
-		allArtilleries[i]->SetActive(true);
+		allArtilleries[i]->SetActive(false);
 		allArtilleries[i]->SetIsHidden(false);
 	}
 }

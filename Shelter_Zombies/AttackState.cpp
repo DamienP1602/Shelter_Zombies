@@ -1,5 +1,6 @@
 #include "AttackState.h"
 #include "EntityBrain.h"
+#include "AnimationComponent.h"
 
 AttackState::AttackState(Brain* _brain) : State(_brain)
 {
@@ -34,7 +35,6 @@ void AttackState::Update(const float _deltaTime)
 
 void AttackState::Stop()
 {
-	//animation->RunAnimation("Idle", animation->GetCurrentAnimation()->GetDirectionX());
 	attack->StopAttack();
 }
 

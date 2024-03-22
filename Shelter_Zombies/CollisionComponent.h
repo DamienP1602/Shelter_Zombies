@@ -6,15 +6,16 @@
 enum CollisionType
 {
 	CT_NONE = 1,
-	CT_OVERLAP,
-	CT_BLOCK,
-	CT_ENNEMY
+	CT_CONSTRUCTION,
+	CT_WALL,
+	CT_ENTITY
 };
 
 class CollisionComponent : public Component
 {
 	ShapeObject* boxCollision;
 	CollisionType type;
+	CollisionType activeCollision;
 
 public:
 	ShapeObject* GetBoxCollision() const
@@ -31,7 +32,7 @@ public:
 	}
 
 public:
-	CollisionComponent(Actor* _owner, const CollisionType& _type);
+	CollisionComponent(Actor* _owner, const CollisionType& _type,const CollisionType& _activeCollision);
 	~CollisionComponent();
 
 public:

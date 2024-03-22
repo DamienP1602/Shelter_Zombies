@@ -10,7 +10,7 @@
 #define FONT "Font.ttf"
 
 InteractableActor::InteractableActor(const string& _name, const ShapeData& _data, Canvas* _canvas) :
-	Actor(_name, _data, CT_BLOCK)
+	Actor(_name, _data, CT_CONSTRUCTION)
 {
 	canvas = _canvas;
 	isOpen = false;

@@ -5,7 +5,7 @@
 
 #include "Player.h"
 
-CollisionComponent::CollisionComponent(Actor* _owner, const CollisionType& _type) : Component(_owner)
+CollisionComponent::CollisionComponent(Actor* _owner, const CollisionType& _type, const CollisionType& _activeCollision) : Component(_owner)
 {
 	boxCollision = new ShapeObject(ShapeData(_owner->GetShapePosition(), _owner->GetShapeSize() * 0.8f, ""));
 	boxCollision->GetDrawable()->setOrigin(_owner->GetBounds().getSize() / 2.0f);
@@ -27,6 +27,7 @@ CollisionComponent::CollisionComponent(Actor* _owner, const CollisionType& _type
 	}
 
 	type = _type;
+	activeCollision = _activeCollision;
 }
 
 CollisionComponent::~CollisionComponent()
@@ -37,7 +38,7 @@ CollisionComponent::~CollisionComponent()
 
 bool CollisionComponent::CheckCollision(const Vector2f& _position)
 {
-	return type == CT_BLOCK && boxCollision->GetDrawable()->getGlobalBounds().contains(_position);
+	return type == activeCollision && boxCollision->GetDrawable()->getGlobalBounds().contains(_position);
 }
 
 bool CollisionComponent::CheckCollision(const vector<Actor*>& _ignoredActors)
@@ -51,7 +52,7 @@ bool CollisionComponent::CheckCollision(const vector<Actor*>& _ignoredActors)
 	{
 		if (CollisionComponent* _collisionComponent = _hitInfo.actor->GetComponent<CollisionComponent>())
 		{
-			if (_collisionComponent->GetType() == CT_BLOCK)
+			if (_collisionComponent->GetType() == activeCollision)
 			{
 				return true;
 			}

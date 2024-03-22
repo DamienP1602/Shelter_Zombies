@@ -3,7 +3,6 @@
 #include "PlayerAnimationComponent.h"
 #include "EntityAttackComponent.h"
 
-
 using namespace std;
 
 class PlayerAttackComponent : public EntityAttackComponent
@@ -11,7 +10,7 @@ class PlayerAttackComponent : public EntityAttackComponent
 	PlayerAnimationComponent* animation;
 
 public:
-	PlayerAttackComponent(Actor* _owner,const int _damages, const float _range);
+	PlayerAttackComponent(Actor* _owner,const int _damages, const int _range);
 
 public:
 	virtual void Update(const float _deltaTime) override;

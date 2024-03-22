@@ -15,11 +15,6 @@ Warlock::Warlock(const Vector2f& _position, const int _level) :
 	Init();
 }
 
-Warlock::~Warlock()
-{
-	EnemyEntityManager::GetInstance().Remove(this);
-}
-
 void Warlock::Init()
 {
 	const float _speed = 0.1f;
@@ -30,5 +25,4 @@ void Warlock::Init()
 	AnimationData("Attack", Vector2f(1.0f, 128.0f), Vector2f(40.0, 58.0f), READ_RIGHT, false, 2, _speed, "Idle"),
 	AnimationData("Death", Vector2f(3.0f, 190.0f), Vector2f(36.0, 56.0f), READ_RIGHT, false, 1, _speed),
 		});
-	animation->SetCurrent("Idle");
 }

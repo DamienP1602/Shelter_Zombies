@@ -79,6 +79,7 @@ public:
 public:
 	virtual void Init();
 	virtual void Load();
+	virtual void DeLoad();
 
 	bool PutInMap(InteractableActor* _actor, const Vector2f& _mousePosition);
 };

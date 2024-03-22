@@ -1,6 +1,6 @@
 #include "Entity.h"
 
-Entity::Entity(string _name, bool _isAlly, const ShapeData& _shape) :
+Entity::Entity(string _name, const bool _isAlly, const ShapeData& _shape):
 	Actor(_name, _shape, CT_ENTITY)
 {
 	layer = 2;
@@ -11,6 +11,7 @@ Entity::Entity(string _name, bool _isAlly, const ShapeData& _shape) :
 	components.push_back(attack);
 	life = new EntityLifeComponent(this);
 	components.push_back(life);
+	isAlly = _isAlly;
 
 	isAlly = _isAlly;
 

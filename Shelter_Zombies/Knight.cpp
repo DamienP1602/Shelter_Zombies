@@ -15,11 +15,6 @@ Knight::Knight(const Vector2f& _position, const int _level) :
 	Init();
 }
 
-Knight::~Knight()
-{
-	AllyEntityManager::GetInstance().Remove(this);
-}
-
 void Knight::Init()
 {
 	const float _speed = 0.1f;
@@ -30,5 +25,4 @@ void Knight::Init()
 	AnimationData("Attack", Vector2f(2.0f, 73.0f), Vector2f(40.0, 33.0f), READ_RIGHT, false, 2, _speed, "Idle"),
 	AnimationData("Death", Vector2f(113.0f, 74.0f), Vector2f(40.0, 29.0f), READ_RIGHT, false, 1, _speed),
 		});
-	animation->SetCurrent("Idle");
 }

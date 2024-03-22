@@ -15,11 +15,6 @@ Catapult::Catapult(const Vector2f& _position, const int _level) :
 	Init();
 }
 
-Catapult::~Catapult()
-{
-	AllyEntityManager::GetInstance().Remove(this);
-}
-
 void Catapult::Init()
 {
 	const float _speed = 0.1f;
@@ -30,5 +25,4 @@ void Catapult::Init()
 	AnimationData("Attack", Vector2f(185.0f, 53.0f), Vector2f(39.0, 53.0f), READ_DOWN, false, 7, _speed, "Idle"),
 	AnimationData("Death", Vector2f(2.0f, 128.0f), Vector2f(33.0, 36.0f), READ_DOWN, false, 1, _speed),
 		});
-	animation->SetCurrent("Idle");
 }

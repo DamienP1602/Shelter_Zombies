@@ -15,11 +15,6 @@ Orc::Orc(const Vector2f& _position, const int _level) :
 	Init();
 }
 
-Orc::~Orc()
-{
-	EnemyEntityManager::GetInstance().Remove(this);
-}
-
 void Orc::Init()
 {
 	const float _speed = 0.1f;
@@ -30,6 +25,5 @@ void Orc::Init()
 	AnimationData("Attack", Vector2f(0.0f, 200.0f), Vector2f(90.0, 90.0f), READ_RIGHT, false, 9, _speed, "Idle"),
 	AnimationData("Death", Vector2f(10.0f, 300.0f), Vector2f(82.0, 94.0f), READ_RIGHT, false, 1, _speed),
 		});
-	animation->SetCurrent("Idle");
 }
 

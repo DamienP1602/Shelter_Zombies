@@ -49,7 +49,6 @@ void EntityAttackComponent::Attack()
 		return;
 	owner->GetComponent<AnimationComponent>()->RunAnimation("Attack", 1);
 	target->GetComponent<EntityLifeComponent>()->TakeDamages(damages);
-	cout << "ATTACK" << endl;
 }
 
 void EntityAttackComponent::StartAttack()

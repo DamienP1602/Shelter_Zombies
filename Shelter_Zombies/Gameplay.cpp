@@ -140,6 +140,7 @@ void Gameplay::ModeAttack()
 
 void Gameplay::SelectMap(int _map)
 {
+	allMaps[currentMap]->DeLoad();
 	currentMap = _map;
 	allMaps[currentMap]->Load();
 }
@@ -187,7 +188,7 @@ void Gameplay::ChangeMode()
 	else if (currentMode == GameMode::Attack && CheckAllyArmy())
 	{
 		cout << "You have lost the battle but not the war: go back to your base !" << endl;
-		//LoadMainBase();
+		SelectMap(0);
 		ModePassif();
 	}
 }
@@ -203,6 +204,8 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Entity*> _allEnemyEntity = EnemyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyEntity.size(); i++)
 		{
+			if (_allEnemyEntity[i]->IsHidden())
+				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyEntity[i]->GetShapePosition());
 			if (_testDistance < _distance && _allEnemyEntity[i]->GetComponent<EntityLifeComponent>()->NeedHealing())
 			{
@@ -216,6 +219,8 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Entity*> _allAllyEntity = AllyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyEntity.size(); i++)
 		{
+			if (_allAllyEntity[i]->IsHidden())
+				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allAllyEntity[i]->GetShapePosition());
 			if (_testDistance < _distance && _allAllyEntity[i]->GetComponent<EntityLifeComponent>()->NeedHealing())
 			{
@@ -229,6 +234,8 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Entity*> _allEnemyEntity = EnemyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyEntity.size(); i++)
 		{
+			if (_allEnemyEntity[i]->IsHidden())
+				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyEntity[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{

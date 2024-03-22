@@ -53,24 +53,23 @@ void MultiMapMenu::Init()
 	const Vector2f& _size = Vector2f(75.0f, 50.0f);
 
 	function<void()> _callbacks[] = {
-		[&]() {if (CheckMapLevel(0)) Gameplay::GetInstance().SelectMap(0) ; },
-		[&]() {; },
-		[&]() {; },
-		[&]() {; },
-		[&]() {; },
-		[&]() {; },
-		[&]() {; },
-		[&]() {; },
-		[&]() {; },
+		[&]() {if (CheckMapLevel(0)) Gameplay::GetInstance().SelectMap(0); },
+		[&]() {if (CheckMapLevel(1)) Gameplay::GetInstance().SelectMap(1); },
+		[&]() {if (CheckMapLevel(2)) Gameplay::GetInstance().SelectMap(2); },
+		[&]() {if (CheckMapLevel(3)) Gameplay::GetInstance().SelectMap(3); },
+		[&]() {if (CheckMapLevel(4)) Gameplay::GetInstance().SelectMap(4); },
+		[&]() {if (CheckMapLevel(5)) Gameplay::GetInstance().SelectMap(5); },
+		[&]() {if (CheckMapLevel(6)) Gameplay::GetInstance().SelectMap(6); },
+		[&]() {if (CheckMapLevel(7)) Gameplay::GetInstance().SelectMap(7); },
+		[&]() {if (CheckMapLevel(8)) Gameplay::GetInstance().SelectMap(8); },
 	};
 
-	for (int _i = 0; _i < 8; _i++)
+	for (int _i = 0; _i < 9; _i++)
 	{
-		ShapeWidget* _buttonBase = new Button(ShapeData(_positions[_i] + _gap, _size),ButtonData());
+		ShapeWidget* _buttonBase = new Button(ShapeData(_positions[_i] + _gap, _size),ButtonData(NULL,NULL, _callbacks[_i], NULL, NULL));
 		_buttonBase->GetDrawable()->setFillColor(Color::Transparent);
 		canvas->AddWidget(_buttonBase);
 	}
-
 	
 }
 

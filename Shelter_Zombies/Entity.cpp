@@ -1,7 +1,7 @@
 #include "Entity.h"
 
-Entity::Entity(string _name, const bool _isAlly, const ShapeData& _shape):
-	Actor(_name, _shape, CT_ENTITY)
+Entity::Entity(string _name, const bool _isAlly, const ShapeData& _shape,const CollisionType& _activeCollision):
+	Actor(_name, _shape, CT_ENTITY, _activeCollision)
 {
 	layer = 2;
 	brain = new EntityBrain(this);

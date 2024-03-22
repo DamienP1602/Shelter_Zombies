@@ -49,12 +49,16 @@ public:
 	{
 		return level;
 	}
+	float GetBonusValue() const
+	{
+		return bonusValue;
+	}
 
 public:
 	Item(const int _upgradeCost,const float _bonusValue,const int _level,const float _value,ItemWidget* _widget, const string& _fontPath,const ItemType& _type);
 
 public:
-	void TryToUpgrade(Player* _player);
+	bool TryToUpgrade(Player* _player);
 
 	string GetNewPaths();
 };

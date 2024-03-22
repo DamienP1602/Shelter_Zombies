@@ -90,10 +90,10 @@ void InventoryPlayer::Init()
 	};
 
 	function<void()> _callbacks[] = {
-		[&]() {Game::GetPlayer()->UpgradeEquipment(0); Update(0); },
-		[&]() {Game::GetPlayer()->UpgradeEquipment(1); Update(1); },
-		[&]() {Game::GetPlayer()->UpgradeEquipment(2); Update(2); },
-		[&]() {Game::GetPlayer()->UpgradeEquipment(3); Update(3); }
+		[&]() { if (Game::GetPlayer()->UpgradeEquipment(0)) Update(0); },
+		[&]() { if (Game::GetPlayer()->UpgradeEquipment(1)) Update(1); },
+		[&]() { if (Game::GetPlayer()->UpgradeEquipment(2)) Update(2); },
+		[&]() { if (Game::GetPlayer()->UpgradeEquipment(3)) Update(3); }
 	};
 
 	function<void()> _hoveredCallbacks[] = {
@@ -205,9 +205,11 @@ void InventoryPlayer::InitStats()
 
 void InventoryPlayer::Update(const int _index)
 {
-	info->data.Init();
+	Item* _item = Game::GetPlayer()->GetData()->equipments[_index];
 
-	Game::GetPlayer()->GetData()->CheckHealthAmelioration();
+	Game::GetPlayer()->GetData()->Upgrade(_index, _item->GetBonusValue());
+
+	info->data.Init();
 
 	buttonsInventory[_index]->GetObject()->ChangeTexture(Game::GetPlayer()->GetData()->equipments[_index]->GetNewPaths());
 	InitStats();

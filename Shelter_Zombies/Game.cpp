@@ -41,7 +41,7 @@ Game::~Game()
 
 void Game::Start()
 {
-	window.create(VideoMode(1920, 1080), "Shelter Game"/*, Style::Fullscreen*/);
+	window.create(VideoMode(1920, 1080), "Shelter Game", Style::Fullscreen);
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
 	Init();
@@ -51,16 +51,17 @@ void Game::Start()
 void Game::Init()
 {
 	map->Init();
+	Gameplay::GetInstance().AddMap(map);
 	camera->Init();
 	Gameplay::GetInstance().Init(this);
 
 	//new InventoryPlayer();
-	//new VillageMenu();
+	new VillageMenu();
 	//new AttackMenu();
 	//new BuildingMenu();
 	//new BarrackMenu();
 	//new GameMenu();
-	new MultiMapMenu();
+	//new MultiMapMenu();
 
 }
 

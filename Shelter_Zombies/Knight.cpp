@@ -7,7 +7,7 @@
 #define ENTITY_SHAPE_FIGHTER_SIZE Vector2f(75.f,75.f)
 
 Knight::Knight(const Vector2f& _position, const int _level) :
-	Entity("Knight", true, ShapeData(_position, ENTITY_SHAPE_FIGHTER_SIZE, ENTITY_SHAPE_FIGHTER_PATH, IntRect(1, 0, 36, 33)))
+	Entity("Knight", true, ShapeData(_position, ENTITY_SHAPE_FIGHTER_SIZE, ENTITY_SHAPE_FIGHTER_PATH, IntRect(1, 0, 36, 33)), CT_CONSTRUCTION)
 {
 	data = new EntityData(10, 4, 1, .3f, 100, _level);
 	brain = new EntityBrain(this);

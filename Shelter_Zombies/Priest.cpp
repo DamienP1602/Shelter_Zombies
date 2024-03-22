@@ -7,7 +7,7 @@
 #define ENTITY_SHAPE_SUPPORT_SIZE Vector2f(75.f,75.f)
 
 Priest::Priest(const Vector2f& _position, const int _level) :
-	Entity("Church", true, ShapeData(_position, ENTITY_SHAPE_SUPPORT_SIZE, ENTITY_SHAPE_SUPPORT_PATH, IntRect(4, 3, 35, 49)))
+	Entity("Church", true, ShapeData(_position, ENTITY_SHAPE_SUPPORT_SIZE, ENTITY_SHAPE_SUPPORT_PATH, IntRect(4, 3, 35, 49)), CT_CONSTRUCTION)
 {
 	data = new EntityData(6, -3, 4, .8f, 300, _level);
 	brain = new EntityBrain(this);

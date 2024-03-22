@@ -75,4 +75,6 @@ private:
 	void TakeDamage(int _damage);
 	void Repare();
 	void Attack(Entity* _target);
+
+	virtual void Register() override;
 };

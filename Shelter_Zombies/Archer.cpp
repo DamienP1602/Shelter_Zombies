@@ -7,7 +7,7 @@
 #define ENTITY_SHAPE_SHOOTER_SIZE Vector2f(75.f, 75.f)
 
 Archer::Archer(const Vector2f& _position, const int _level) :
-	Entity("Archer", true, ShapeData(_position, ENTITY_SHAPE_SHOOTER_SIZE, ENTITY_SHAPE_SHOOTER_PATH, IntRect(1, 3, 25, 25)))
+	Entity("Archer", true, ShapeData(_position, ENTITY_SHAPE_SHOOTER_SIZE, ENTITY_SHAPE_SHOOTER_PATH, IntRect(1, 3, 25, 25)),CT_CONSTRUCTION)
 {
 	data = new EntityData(5, 2, 2, .3f, 400, _level);
 	brain = new EntityBrain(this);

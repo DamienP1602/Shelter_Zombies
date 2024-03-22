@@ -7,7 +7,7 @@
 #define ENTITY_SHAPE_ARTILLERY_SIZE Vector2f(75.f,75.f)
 
 Golem::Golem(const Vector2f& _position, const int _level) :
-	Entity("Golem", false, ShapeData(_position, ENTITY_SHAPE_ARTILLERY_SIZE, ENTITY_SHAPE_ARTILLERY_PATH, IntRect(4, 2, 17, 32)))
+	Entity("Golem", false, ShapeData(_position, ENTITY_SHAPE_ARTILLERY_SIZE, ENTITY_SHAPE_ARTILLERY_PATH, IntRect(4, 2, 17, 32)), CT_CONSTRUCTION)
 {
 	data = new EntityData(3, 8, 6, .1f, 800, _level);
 	brain = new EntityBrain(this);

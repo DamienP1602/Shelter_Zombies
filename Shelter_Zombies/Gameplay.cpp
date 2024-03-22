@@ -16,7 +16,7 @@ Gameplay::Gameplay()
 {
 	game = nullptr;
 	currentMap = 0;
-	waveCooldown = 5.f; //seconds
+	waveCooldown = 20.f; //seconds
 	waveTimerEnd = false;
 	waveTimer = new Timer([&]() { WaveTimerEnd(); }, seconds(waveCooldown), false, false);
 }
@@ -28,6 +28,11 @@ Gameplay::~Gameplay()
 	allMaps.clear();
 	game = nullptr;
 	delete game;
+}
+
+void Gameplay::AddMap(Map* _map)
+{
+	allMaps.push_back(_map);
 }
 
 bool Gameplay::CheckEnemyArmy()
@@ -140,6 +145,8 @@ void Gameplay::ModeAttack()
 
 void Gameplay::SelectMap(int _map)
 {
+	if (_map == currentMap) return;
+
 	allMaps[currentMap]->DeLoad();
 	currentMap = _map;
 	allMaps[currentMap]->Load();

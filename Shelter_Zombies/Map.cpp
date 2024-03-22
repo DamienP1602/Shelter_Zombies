@@ -67,11 +67,27 @@ void Map::Init()
 
 void Map::Load()
 {
-	//TODO LOAD
+	for (Row* _row : allTiles)
+	{
+		for (Tile* _tile : _row->tiles)
+		{
+			_tile->actorOnTile->SetIsHidden(false);
+			_tile->visualTile->SetIsHidden(false);
+		}
+	}
 }
 
 void Map::DeLoad()
 {
+	for (Row* _row : allTiles)
+	{
+		for (Tile* _tile : _row->tiles)
+		{
+			if (_tile->actorOnTile) _tile->actorOnTile->SetIsHidden(true);
+
+			_tile->visualTile->SetIsHidden(true);
+		}
+	}
 }
 
 bool Map::PutInMap(InteractableActor* _actor,const Vector2f& _mousePosition)

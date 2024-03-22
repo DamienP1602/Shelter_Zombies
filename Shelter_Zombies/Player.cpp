@@ -111,9 +111,9 @@ Vector2f Player::MousePosition()
 	return (_mousePosition + _playerPosition) - _windowSize / 2.0f;
 }
 
-void Player::UpgradeEquipment(const int _index)
+bool Player::UpgradeEquipment(const int _index)
 {
-	data->equipments[_index]->TryToUpgrade(this);
+	return data->equipments[_index]->TryToUpgrade(this);
 }
 
 void Player::Init()
@@ -133,14 +133,5 @@ void Player::Update(const float _deltaTime)
 	if (mode->shapeOfConstruction)
 	{
 		mode->SetPosition(MousePosition());
-	}
-}
-
-void PlayerData::CheckHealthAmelioration()
-{
-	if (GetActualHealth() != GetMaximumHealth())
-	{
-		currentHP = GetMaximumHealth();
-		MenuManager::GetInstance().GetSpecificValues<VillageMenu>()[0]->InitTexts();
 	}
 }

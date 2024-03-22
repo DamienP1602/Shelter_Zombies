@@ -12,15 +12,16 @@ Item::Item(const int _upgradeCost, const float _bonusValue, const int _level, co
 	level = _level;
 }
 
-void Item::TryToUpgrade(Player* _player)
+bool Item::TryToUpgrade(Player* _player)
 {
 	const int _cost = upgradeCost * level;
-	if ((_player->GetGold() - _cost) < 0) return;
-	if (level == 5) return;
+	if ((_player->GetGold() - _cost) < 0) return false;
+	if (level == 5) return false;
 	
 	_player->RemoveGold(_cost);
 	level++;
 	value += bonusValue;
+	return true;
 }
 
 string Item::GetNewPaths()

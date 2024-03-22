@@ -1,11 +1,14 @@
 #include "Construction.h"
 #include "Entity.h"
+#include "AllyConstructionManager.h"
 
 Construction::Construction(const string& _name, const ShapeData& _shape, const bool _isAlly, Canvas* _canvas) :
 	InteractableActor(_name, _shape, _canvas)
 {
 	layer = 1;
 	isAlly = _isAlly;
+
+	Register();
 }
 
 Construction::~Construction()
@@ -27,4 +30,9 @@ void Construction::Repare()
 
 void Construction::Attack(Entity* _target)
 {
+}
+
+void Construction::Register()
+{
+	AllyConstructionManager::GetInstance().Add(id, this);
 }

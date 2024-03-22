@@ -33,6 +33,7 @@ public:
 	{
 		return waveTimerEnd;
 	}
+	void AddMap(Map* _map);
 	bool CheckEnemyArmy();
 	bool CheckEnemyBase();
 	bool CheckAllyArmy();

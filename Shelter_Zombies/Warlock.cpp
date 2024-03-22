@@ -7,7 +7,7 @@
 #define ENTITY_SHAPE_SUPPORT_SIZE Vector2f(75.f,75.f)
 
 Warlock::Warlock(const Vector2f& _position, const int _level) :
-	Entity("Warlock", false, ShapeData(_position, ENTITY_SHAPE_SUPPORT_SIZE, ENTITY_SHAPE_SUPPORT_PATH, IntRect(3, 3, 36, 56)))
+	Entity("Warlock", false, ShapeData(_position, ENTITY_SHAPE_SUPPORT_SIZE, ENTITY_SHAPE_SUPPORT_PATH, IntRect(3, 3, 36, 56)), CT_CONSTRUCTION)
 {
 	data = new EntityData(6, -3, 4, .6f, 300, _level);
 	brain = new EntityBrain(this);

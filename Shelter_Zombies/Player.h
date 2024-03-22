@@ -14,28 +14,18 @@
 
 using namespace std;
 
-struct PlayerData
+struct PlayerData : public EntityData
 {
 	string name;
-	int healPointMax;
 	int currentHP;
-	int damagePoint;
-	float speed;
-	float range;
-	int level;
 
 	vector<Item*> equipments;
 	vector<Spells*> spells;
 
-	PlayerData(const string& _name,int _hp, int _dmg, float _speed, float _range, int _level)
+	PlayerData(const string& _name,int _hp, int _dmg, float _speed, float _range, int _level) : EntityData(_hp,_dmg,1,_speed,_range,_level)
 	{
 		name = _name;
-		healPointMax = _hp + (_hp / 10 * _level);
-		currentHP = healPointMax;
-		damagePoint = _dmg + (_dmg / 10 * _level);
-		speed = _speed;
-		range = _range;
-		level = _level;
+		currentHP = maxLife;
 
 		equipments = vector<Item*>();
 		InitEquipments();
@@ -49,26 +39,26 @@ struct PlayerData
 		equipments.push_back(new Item(5,0.25f, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Bottes", ""),FONT,IT_BOOTS));
 	}
 
-	void LevelUp()
-	{
-		level += 1;
-		UpdateData();
-	}
-	void UpdateData()
-	{
-		healPointMax = healPointMax + (healPointMax / 10 * level);
-		damagePoint = damagePoint + (damagePoint / 10 * level);
-		speed = speed + (speed / 10 * level);
-	}
 	void AddSpells(Spells* _spell)
 	{
 		if (SIZE(spells) == 3) return;
 
 		spells.push_back(_spell);
 	}
+	template <typename T>
+	void Upgrade(const int _index, const T& _value)
+	{
+		if (_index <= 1) damagePoint += _value;
+		if (_index == 2)
+		{
+			maxLife += _value;
+			currentHP = maxLife;
+		}
+		if (_index == 3) speed += _value;
+	}
 	int GetDamage() const
 	{
-		return int(damagePoint + equipments[0]->GetValue() + equipments[1]->GetValue());
+		return damagePoint;
 	}
 	int GetActualHealth() const
 	{
@@ -76,14 +66,12 @@ struct PlayerData
 	}
 	int GetMaximumHealth() const
 	{
-		return int(healPointMax + equipments[2]->GetValue());
+		return maxLife;
 	}
 	float GetSpeed() const
 	{
-		return speed + equipments[3]->GetValue();
+		return speed;
 	}
-
-	void CheckHealthAmelioration();
 };
 
 struct ConstructionMode
@@ -182,7 +170,7 @@ private:
 	void SetupPlayerInput();
 
 public:
-	void UpgradeEquipment(const int _index);
+	bool UpgradeEquipment(const int _index);
 	virtual void Init() override;
 	virtual void Update(const float _deltaTime) override;
 

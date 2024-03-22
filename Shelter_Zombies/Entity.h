@@ -54,7 +54,7 @@ protected:
 	bool isAlly = true;
 
 public:
-	Entity(string _name, const bool _isAlly, const ShapeData& _shape);
+	Entity(string _name, const bool _isAlly, const ShapeData& _shape, const CollisionType& _activeCollision);
 	~Entity();
 
 	void SetTarget(Actor* _target)

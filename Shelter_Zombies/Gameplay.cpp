@@ -145,7 +145,8 @@ void Gameplay::ModeAttack()
 
 void Gameplay::SelectMap(int _map)
 {
-	if (_map == currentMap) return;
+	if (_map == currentMap)
+		return;
 
 	allMaps[currentMap]->DeLoad();
 	currentMap = _map;
@@ -183,8 +184,7 @@ void Gameplay::ChangeMode()
 	else if (currentMode == GameMode::Defense && CheckAllyBase())
 	{
 		cout << "Your nexus have been destroy: Game-Over !!" << endl;
-		//LoadPreviousMap();
-		ModePassif();
+		//ModePassif();
 		game->Close();
 	}
 	else if (currentMode == GameMode::Attack && CheckEnemyBase())

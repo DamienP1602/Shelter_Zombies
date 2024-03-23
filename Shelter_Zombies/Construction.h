@@ -1,5 +1,6 @@
 #pragma once
 #include "InteractableActor.h"
+#include "EntityLifeComponent.h"
 
 class Entity;
 
@@ -38,6 +39,7 @@ class Construction : public InteractableActor
 {
 protected:
 	ConstructionData* data = nullptr;
+	EntityLifeComponent* life = nullptr;
 	bool isDestroy = false;
 	bool isActive = false;
 	bool isAlly = false;
@@ -45,11 +47,6 @@ protected:
 public:
 	Construction(const string& _name, const ShapeData& _shape,const bool _isAlly = false, Canvas* _canvas = new Canvas("InteractableActor"));
 	~Construction();
-
-	void RestoreLife() const
-	{
-		data->currentLife = data->maxLife;
-	}
 
 	ConstructionData* GetData() const
 	{
@@ -71,10 +68,9 @@ public:
 	{
 		return isAlly;
 	}
+
 private:
-	void TakeDamage(int _damage);
-	void Repare();
-	void Attack(Entity* _target);
+	virtual void Attack(Entity* _target);
 
 	virtual void Register() override;
 };

@@ -6,6 +6,7 @@ Construction::Construction(const string& _name, const ShapeData& _shape, const b
 	InteractableActor(_name, _shape, _canvas)
 {
 	layer = 1;
+	life = new EntityLifeComponent(this);
 	isAlly = _isAlly;
 
 	Register();
@@ -14,18 +15,9 @@ Construction::Construction(const string& _name, const ShapeData& _shape, const b
 Construction::~Construction()
 {
 	data = nullptr;
-}
-
-void Construction::TakeDamage(int _damage)
-{
-	data->currentLife -= _damage;
-	if (data->currentLife <= 0)
-		isDestroy = true;
-}
-
-void Construction::Repare()
-{
-	data->currentLife = data->maxLife;
+	life = nullptr;
+	delete data;
+	delete life;
 }
 
 void Construction::Attack(Entity* _target)

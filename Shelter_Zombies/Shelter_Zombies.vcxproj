@@ -240,6 +240,7 @@
     <ClInclude Include="SoundSystem.h" />
     <ClInclude Include="Spells.h" />
     <ClInclude Include="StandbyState.h" />
+    <ClInclude Include="StandbyToAttack.h" />
     <ClInclude Include="StandbyToChase.h" />
     <ClInclude Include="StandbyToDeath.h" />
     <ClInclude Include="State.h" />
@@ -364,6 +365,7 @@
     <ClCompile Include="SoundSystem.cpp" />
     <ClCompile Include="Spells.cpp" />
     <ClCompile Include="StandbyState.cpp" />
+    <ClCompile Include="StandbyToAttack.cpp" />
     <ClCompile Include="StandbyToChase.cpp" />
     <ClCompile Include="StandbyToDeath.cpp" />
     <ClCompile Include="State.cpp" />

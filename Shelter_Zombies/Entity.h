@@ -16,8 +16,8 @@ struct EntityData
 
 	EntityData(int _hp, int _dmg, float _cooldown, float _speed, float _range, int _level)
 	{
-		maxLife = _hp + (_hp / 10 * _level);
-		damagePoint = _dmg + (_dmg / 10 * _level);
+		maxLife = _hp;
+		damagePoint = _dmg;
 		cooldown = _cooldown;
 		speed = _speed;
 		range = _range;

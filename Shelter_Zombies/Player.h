@@ -3,6 +3,7 @@
 #include "PlayerMovementComponent.h"
 #include "PlayerAttackComponent.h"
 #include "PlayerAnimationComponent.h"
+#include "EntityLifeComponent.h"
 #include "CollisionComponent.h"
 #include "Menu.h"
 #include "Entity.h"
@@ -17,26 +18,23 @@ using namespace std;
 struct PlayerData : public EntityData
 {
 	string name;
-	int currentHP;
 
 	vector<Item*> equipments;
 	vector<Spells*> spells;
 
-	PlayerData(const string& _name,int _hp, int _dmg, float _speed, float _range, int _level) : EntityData(_hp,_dmg,1,_speed,_range,_level)
+	PlayerData(const string& _name, int _hp, int _dmg, float _speed, float _range, int _level) : EntityData(_hp, _dmg, 1, _speed, _range, _level)
 	{
 		name = _name;
-		currentHP = maxLife;
-
 		equipments = vector<Item*>();
 		InitEquipments();
 		spells = vector<Spells*>();
 	}
 	void InitEquipments()
 	{
-		equipments.push_back(new Item(10,2, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Arme", ""), FONT, IT_WEAPON));
-		equipments.push_back(new Item(7,1, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Casque", ""), FONT, IT_HELMET));
-		equipments.push_back(new Item(12,3, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "PLastron", ""),FONT,IT_CHESTPLATE));
-		equipments.push_back(new Item(5,0.25f, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Bottes", ""),FONT,IT_BOOTS));
+		equipments.push_back(new Item(10, 2, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Arme", ""), FONT, IT_WEAPON));
+		equipments.push_back(new Item(7, 1, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Casque", ""), FONT, IT_HELMET));
+		equipments.push_back(new Item(12, 3, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "PLastron", ""), FONT, IT_CHESTPLATE));
+		equipments.push_back(new Item(5, 0.25f, 1, 0, new ItemWidget(ShapeData(Vector2f(), Vector2f(50.0f, 50.0f), "blue.png"), "Bottes", ""), FONT, IT_BOOTS));
 	}
 
 	void AddSpells(Spells* _spell)
@@ -52,17 +50,13 @@ struct PlayerData : public EntityData
 		if (_index == 2)
 		{
 			maxLife += _value;
-			currentHP = maxLife;
+			//currentHP = maxLife;
 		}
 		if (_index == 3) speed += _value;
 	}
 	int GetDamage() const
 	{
 		return damagePoint;
-	}
-	int GetActualHealth() const
-	{
-		return currentHP;
 	}
 	int GetMaximumHealth() const
 	{
@@ -87,7 +81,7 @@ struct ConstructionMode
 		cost = 0;
 	}
 
-	ConstructionMode(InteractableActor* _shape, const Vector2f& _position,const int _cost)
+	ConstructionMode(InteractableActor* _shape, const Vector2f& _position, const int _cost)
 	{
 		shapeOfConstruction = _shape;
 		position = _position;
@@ -110,7 +104,7 @@ struct ConstructionMode
 		position = Vector2f();
 		cost = 0;
 	}
-	
+
 	void SetPosition(const Vector2f& _position)
 	{
 		position = _position;
@@ -123,6 +117,7 @@ class Player : public Actor
 	int gold;
 	PlayerMovementComponent* movement;
 	PlayerAttackComponent* attack;
+	EntityLifeComponent* life;
 	PlayerAnimationComponent* animation;
 	PlayerData* data;
 

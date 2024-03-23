@@ -6,8 +6,10 @@ Construction::Construction(const string& _name, const ShapeData& _shape, const b
 	InteractableActor(_name, _shape, _canvas)
 {
 	layer = 1;
-	life = new EntityLifeComponent(this);
 	isAlly = _isAlly;
+	life = new EntityLifeComponent(this);
+	attack = new EntityAttackComponent(this);
+	components.push_back(life);
 
 	Register();
 }
@@ -27,4 +29,10 @@ void Construction::Attack(Entity* _target)
 void Construction::Register()
 {
 	AllyConstructionManager::GetInstance().Add(id, this);
+}
+
+void Construction::UpdateData()
+{
+	attack->SetData(data->damagePoint, data->cooldown, data->range);
+	life->SetLife(data->maxLife);
 }

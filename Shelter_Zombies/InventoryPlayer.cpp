@@ -187,7 +187,7 @@ void InventoryPlayer::InitStats()
 	const Vector2f& _statsBackgroundPosition = Vector2f(windowX * 0.3625f, windowY * 0.6f);
 
 	string _stats[] = {
-		"PV : " + to_string(Game::GetPlayer()->GetData()->GetActualHealth()) + " / " + to_string(Game::GetPlayer()->GetData()->GetMaximumHealth()),
+		"PV : " + to_string(Game::GetPlayer()->GetComponent<EntityLifeComponent>()->GetLife()) + " / " + to_string(Game::GetPlayer()->GetData()->GetMaximumHealth()),
 		"Dégâts : " + to_string(Game::GetPlayer()->GetData()->GetDamage()),
 		"Speed : " + to_string(static_cast<int>(Game::GetPlayer()->GetData()->GetSpeed())),
 		"Range : " + to_string(static_cast<int>(Game::GetPlayer()->GetData()->range))
@@ -208,6 +208,10 @@ void InventoryPlayer::Update(const int _index)
 	Item* _item = Game::GetPlayer()->GetData()->equipments[_index];
 
 	Game::GetPlayer()->GetData()->Upgrade(_index, _item->GetBonusValue());
+
+	//TODO change patch
+	if (_index == 2)
+		Game::GetPlayer()->GetComponent<EntityLifeComponent>()->RestoreLife();
 
 	info->data.Init();
 

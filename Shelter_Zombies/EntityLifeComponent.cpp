@@ -15,8 +15,9 @@ void EntityLifeComponent::TakeDamages(const int _damages)
 	if (currentLife <= 0)
 	{
 		isDead = true;
-		//owner->GetComponent<AnimationComponent>()->RunAnimation("Death", 1);
-		new Timer([&]() { Destroy(); }, seconds(0.5f), true, false);
+		owner->GetComponent<AnimationComponent>()->RunAnimation("Death", 1);
+		Destroy();
+		//new Timer([&]() { Destroy(); }, seconds(0.5f), true, false);
 	}
 }
 

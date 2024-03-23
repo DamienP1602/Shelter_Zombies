@@ -135,7 +135,7 @@ void VillageMenu::InitTexts()
 		canvas->RemoveUIWidget(_widget);
 	}
 
-	const string& _textForLife = "PV " + to_string(Game::GetPlayer()->GetData()->GetActualHealth()) + " / " + to_string(Game::GetPlayer()->GetData()->GetMaximumHealth());
+	const string& _textForLife = "PV " + to_string(Game::GetPlayer()->GetComponent<EntityLifeComponent>()->GetLife()) + " / " + to_string(Game::GetPlayer()->GetData()->GetMaximumHealth());
 	TextWidget* _lifeText = new Label(TextData(_textForLife, Vector2f(windowX * 0.12f, windowY * 0.05f), "Font.ttf", 25));
 	_lifeText->GetDrawable()->setOrigin(_lifeText->GetDrawable()->getGlobalBounds().getSize() / 2.0f);
 	texts.push_back(_lifeText);

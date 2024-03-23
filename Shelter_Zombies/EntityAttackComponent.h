@@ -21,11 +21,15 @@ public:
 	{
 		damages = _damages;
 		cooldown = _cooldown;
-		range = _range;
+		range = _range * 1.1f;
 	}
 	void SetTarget(Actor* _target)
 	{
 		target = _target;
+	}
+	void SetInRange(const bool _value)
+	{
+		isInRange = _value;
 	}
 	Actor* GetTarget() const
 	{
@@ -37,13 +41,13 @@ public:
 		return cooldownTimer && cooldownTimer->IsRunning();
 	}
 	bool IsTargetDead() const;
+	bool IsInRange() const
+	{
+		return isInRange;
+	}
 	HitInfo GetHitInfo() const
 	{
 		return hitInfo;
-	}
-	void SetInRange(const bool _value)
-	{
-		isInRange = _value;
 	}
 
 	virtual void Update(const float _deltaTime) override;

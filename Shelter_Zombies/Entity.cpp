@@ -5,14 +5,13 @@ Entity::Entity(string _name, const bool _isAlly, const ShapeData& _shape,const C
 {
 	layer = 2;
 	brain = new EntityBrain(this);
+	components.push_back(brain);
 	movement = new EntityMovementComponent(this);
 	components.push_back(movement);
 	attack = new EntityAttackComponent(this);
 	components.push_back(attack);
 	life = new EntityLifeComponent(this);
 	components.push_back(life);
-	isAlly = _isAlly;
-
 	isAlly = _isAlly;
 
 	SetActive(false);
@@ -23,6 +22,8 @@ Entity::~Entity()
 {	
 	target = nullptr;
 	data = nullptr;
+	delete data;
+	delete target;
 }
 
 void Entity::UpdateData()

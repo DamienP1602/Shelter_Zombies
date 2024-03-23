@@ -22,8 +22,6 @@
 #include "CameraManager.h"
 #include "VillageMenu.h"
 
-
-
 Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data, CT_ENTITY)
 {
 	animation = new PlayerAnimationComponent(this);
@@ -33,11 +31,11 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	components.push_back(movement);
 
 	mode = new ConstructionMode();
-	data = new PlayerData(_name,15,4,5,3,1);
+	data = new PlayerData(_name, 150, 0, 5, 3, 1); //TODO remove change test 
 
-	attack = new PlayerAttackComponent(this, data->damagePoint,data->range);
+	attack = new PlayerAttackComponent(this, data->damagePoint, data->range);
 	components.push_back(attack);
-	
+
 	life = new EntityLifeComponent(this);
 	components.push_back(life);
 
@@ -63,7 +61,7 @@ void Player::SetupPlayerInput()
 
 		ActionData("Down",[&]() { movement->SetDirectionY(1.0f); },InputData({ActionType::KeyPressed, Keyboard::S})),
 		ActionData("StopDown", [&]() { movement->SetDirectionY(0.0f); }, InputData({ ActionType::KeyReleased, Keyboard::S })),
-		
+
 		ActionData("Left",[&]() { movement->SetDirectionX(-1.0f,"RunLeft"); },InputData({ActionType::KeyPressed, Keyboard::Q})),
 		ActionData("StopLeft", [&]() { movement->SetDirectionX(0.0f, "Idle"); }, InputData({ActionType::KeyReleased, Keyboard::Q})),
 		});
@@ -79,7 +77,7 @@ void Player::SetupPlayerInput()
 				else
 				{
 					new GameMenu();
-				}				
+				}
 			},InputData({ActionType::KeyPressed, Keyboard::Escape})),
 
 		ActionData("Create",[&]()
@@ -92,8 +90,8 @@ void Player::SetupPlayerInput()
 					}
 				}
 			},InputData({ActionType::MouseButtonPressed, Mouse::Left})),
-		ActionData("UndoCreate",[&]() 
-			{ 
+		ActionData("UndoCreate",[&]()
+			{
 				if (mode->shapeOfConstruction)
 				{
 					mode->Destroy();
@@ -125,6 +123,8 @@ void Player::Init()
 	/*stats->SetStatus(true);
 	inventory->SetStatus(false);*/
 
+	attack->SetData(data->damagePoint, data->cooldown, data->range);
+	life->SetLife(data->maxLife);
 	InitAnimations();
 	SetupPlayerInput();
 }

@@ -30,7 +30,8 @@ void AttackState::Start()
 void AttackState::Update(const float _deltaTime)
 {
 	State::Update(_deltaTime);
-	brain->GetBlackBoard()->hasTarget = attack->IsTargetDead();
+	brain->GetBlackBoard()->hasTarget = !attack->IsTargetDead();
+	brain->GetBlackBoard()->isInRange = attack->IsInRange();
 }
 
 void AttackState::Stop()

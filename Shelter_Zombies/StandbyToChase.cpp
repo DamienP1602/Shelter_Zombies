@@ -11,5 +11,5 @@ void StandbyToChase::Init(State* _nextState)
 
 bool StandbyToChase::CanNext() const
 {
-	return blackBoard->hasTarget;
+	return blackBoard->hasTarget && !blackBoard->isInRange;
 }

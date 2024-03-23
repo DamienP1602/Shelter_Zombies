@@ -24,7 +24,7 @@ EntityAttackComponent::~EntityAttackComponent()
 
 bool EntityAttackComponent::IsTargetDead() const
 {
-	if (!target)
+	if (target->IsToRemove())
 		return true;
 	return target->GetComponent<EntityLifeComponent>()->IsDead();
 }
@@ -36,16 +36,17 @@ void EntityAttackComponent::Update(const float _deltaTime)
 
 void EntityAttackComponent::CheckTargetInRange()
 {
-	if (!target)
+	if (!target || target->IsToRemove())
 		return;
-	const Vector2f& _direction = target->GetShapePosition() - owner->GetShapePosition();
-	const bool _hasHit = Raycast(owner->GetShapePosition(), _direction, range, hitInfo, { owner });
-	isInRange = _hasHit && hitInfo.actor == target;
+	//const Vector2f& _direction = target->GetShapePosition() - owner->GetShapePosition();
+	//const bool _hasHit = Raycast(owner->GetShapePosition(), _direction, range, hitInfo, { owner });
+	//isInRange = _hasHit && hitInfo.actor == target;
+	isInRange = Distance(owner->GetShapePosition(), target->GetShapePosition()) <= range;
 }
 
 void EntityAttackComponent::Attack()
-{	
-	if (!isInRange || !target) 
+{
+	if (!isInRange || !target || target->IsToRemove())
 		return;
 	owner->GetComponent<AnimationComponent>()->RunAnimation("Attack", 1);
 	target->GetComponent<EntityLifeComponent>()->TakeDamages(damages);
@@ -53,6 +54,7 @@ void EntityAttackComponent::Attack()
 
 void EntityAttackComponent::StartAttack()
 {
+	Attack();
 	cooldownTimer = new Timer([&]() { Attack(); }, seconds(cooldown), true, true);
 }
 

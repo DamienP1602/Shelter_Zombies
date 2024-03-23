@@ -6,6 +6,7 @@ EntityLifeComponent::EntityLifeComponent(Actor* _owner) : Component(_owner)
 {
 	maxLife = 10;
 	currentLife = maxLife;
+	isDead = false;
 }
 
 void EntityLifeComponent::TakeDamages(const int _damages)
@@ -15,7 +16,8 @@ void EntityLifeComponent::TakeDamages(const int _damages)
 	{
 		isDead = true;
 		owner->GetComponent<AnimationComponent>()->RunAnimation("Death", 1);
-		new Timer([&]() { Destroy(); }, seconds(0.5f), true, false);
+		Destroy();
+		//new Timer([&]() { Destroy(); }, seconds(0.5f), true, false);
 	}
 }
 

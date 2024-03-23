@@ -36,5 +36,6 @@ public:
 
 private:
 	virtual void Register() override;
+protected:
 	void Verify();
 };

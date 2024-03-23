@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "StandbyToChase.h"
+#include "StandbyToAttack.h"
 #include "StandbyToDeath.h"
 
 class Entity;
@@ -9,6 +10,7 @@ class StandbyState : public State
 {
 	Entity* entity = nullptr;
 	StandbyToChase* standbyToChase = nullptr;
+	StandbyToAttack* standbyToAttack = nullptr;
 	StandbyToDeath* standbyToDeath = nullptr;
 
 public:

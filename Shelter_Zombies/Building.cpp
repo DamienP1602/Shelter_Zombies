@@ -4,22 +4,14 @@ Building::Building(const string& _name, const ShapeData& _shape, const bool _isA
 	InteractableActor(_name, _shape, _canvas)
 {
 	layer = 1;
+	life = new EntityLifeComponent(this);
 	isAlly = _isAlly;
 }
 
 Building::~Building()
 {
+	life = nullptr;
 	data = nullptr;
-}
-
-void Building::TakeDamage(int _damage)
-{
-	data->currentLife -= _damage;
-	if (data->currentLife <= 0)
-		isDestroy = true;
-}
-
-void Building::Repare()
-{
-	data->currentLife = data->maxLife;
+	delete data;
+	delete life;
 }

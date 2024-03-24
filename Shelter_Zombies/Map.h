@@ -83,4 +83,5 @@ public:
 	virtual void DeLoad();
 
 	bool PutInMap(InteractableActor* _actor, const Vector2f& _mousePosition);
+	bool PutInMap(InteractableActor* _actor, const Vector2i& _gridPosition);
 };

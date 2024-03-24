@@ -120,3 +120,25 @@ bool Map::PutInMap(InteractableActor* _actor,const Vector2f& _mousePosition)
 	}
 	return false;
 }
+
+bool Map::PutInMap(InteractableActor* _actor, const Vector2i& _gridPosition)
+{
+	for (int _i = 0; _i < SIZE(allTiles); _i++)
+	{
+		for (int _j = 0; _j < SIZE(allTiles[_i]->tiles); _j++)
+		{
+			if (_i == _gridPosition.x && _j == _gridPosition.y)
+			{
+				if (!allTiles[_i]->tiles[_j]->actorOnTile)
+				{
+					allTiles[_i]->tiles[_j]->actorOnTile = _actor;
+					allTiles[_i]->tiles[_j]->actorOnTile->GetDrawable()->setPosition(allTiles[_i]->tiles[_j]->visualTile->GetShapePosition());
+					return true;
+				}
+				else return false;
+
+			}
+		}
+	}
+	return false;
+}

@@ -72,6 +72,10 @@ struct PlayerData : public EntityData
 	{
 		return speed;
 	}
+	void RestoreHealth()
+	{
+		currentHP = maxLife;
+	}
 };
 
 struct ConstructionMode

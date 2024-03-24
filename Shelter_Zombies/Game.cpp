@@ -16,9 +16,7 @@
 #include "GameMenu.h"
 #include "MultiMapMenu.h"
 #include "Gameplay.h"
-
-//TODO GAME change anim player's path
-//#define PATH_PLAYER "Animations/knighModif.png"
+#include "AllyBuildingManager.h"
 
 #define PLAYER_PATH "Entities/Player/_Player.png"
 
@@ -43,19 +41,21 @@ void Game::Start()
 
 void Game::Init()
 {
+	Gameplay::GetInstance().AddMap(new Map("0"));
+
 	Gameplay::GetInstance().AddMap(new Map("1"));
 	Gameplay::GetInstance().AddMap(new Map("2"));
-	camera->Init();
 	Gameplay::GetInstance().Init(this);
+	camera->Init();
 
-	//new InventoryPlayer();
+	InitPlayerMap();
 	new VillageMenu();
-	//new AttackMenu();
-	//new BuildingMenu();
-	//new BarrackMenu();
-	//new GameMenu();
-	new MultiMapMenu();
+}
 
+void Game::InitPlayerMap()
+{
+	AllyBuildingManager::GetInstance().SetNexus(Vector2f(15.0f, 15.0f));
+		
 }
 
 void Game::Update()

@@ -148,7 +148,6 @@
     <ClInclude Include="AttackToChase.h" />
     <ClInclude Include="AttackToDeath.h" />
     <ClInclude Include="AttackToStandby.h" />
-    <ClInclude Include="AudioMenu.h" />
     <ClInclude Include="Barrack.h" />
     <ClInclude Include="BarrakMenu.h" />
     <ClInclude Include="Black_smith.h" />
@@ -170,7 +169,6 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Construction.h" />
     <ClInclude Include="AllyConstructionManager.h" />
-    <ClInclude Include="ControllerMenu.h" />
     <ClInclude Include="DeathState.h" />
     <ClInclude Include="Decor.h" />
     <ClInclude Include="DecorManager.h" />
@@ -201,15 +199,12 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InteractableActor.h" />
     <ClInclude Include="InteractionComponent.h" />
-    <ClInclude Include="inventory.h" />
     <ClInclude Include="InventoryPlayer.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemWidget.h" />
-    <ClInclude Include="KeyboardMenu.h" />
     <ClInclude Include="Kismet.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="Macro.h" />
-    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuManager.h" />
@@ -276,7 +271,6 @@
     <ClCompile Include="AttackToChase.cpp" />
     <ClCompile Include="AttackToDeath.cpp" />
     <ClCompile Include="AttackToStandby.cpp" />
-    <ClCompile Include="AudioMenu.cpp" />
     <ClCompile Include="Barrack.cpp" />
     <ClCompile Include="BarrakMenu.cpp" />
     <ClCompile Include="Black_smith.cpp" />
@@ -297,7 +291,6 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Construction.cpp" />
     <ClCompile Include="AllyConstructionManager.cpp" />
-    <ClCompile Include="ControllerMenu.cpp" />
     <ClCompile Include="DeathState.cpp" />
     <ClCompile Include="Decor.cpp" />
     <ClCompile Include="DecorManager.cpp" />
@@ -326,16 +319,13 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="InteractableActor.cpp" />
     <ClCompile Include="InteractionComponent.cpp" />
-    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InventoryPlayer.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemWidget.cpp" />
-    <ClCompile Include="KeyboardMenu.cpp" />
     <ClCompile Include="Kismet.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="Macro.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuManager.cpp" />

@@ -2,5 +2,5 @@
 
 AllyBuildingManager::AllyBuildingManager()
 {
-	nexus = nullptr;
+	nexus = new Nexus(Vector2f(0.0f,0.0f));
 }

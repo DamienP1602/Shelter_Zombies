@@ -26,7 +26,6 @@ void InteractionComponent::TryToInteract()
 			pnj->GetComponent<AnimationComponent>()->RunAnimation("Talk", 1);
 		}
 
-		inventory->SetStatus(false);
 	}
 }
 

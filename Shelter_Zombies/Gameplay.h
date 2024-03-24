@@ -30,6 +30,10 @@ public:
 	{
 		return allMaps[currentMap];
 	}
+	Map* GetMap(const int _index) const
+	{
+		return allMaps[_index];
+	}
 
 public:
 	Gameplay();

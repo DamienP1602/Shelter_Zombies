@@ -4,7 +4,6 @@
 #include "Label.h"
 #include "Macro.h"
 
-//TODO InteractableActor change paths
 #define PATH_INTERACTION "UIs/Discussions/Interaction.png"
 #define PATH_DISCUSSION "UIs/Discussions/Dialog.png"
 #define FONT "Font.ttf"

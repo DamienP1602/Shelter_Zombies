@@ -303,18 +303,6 @@
     <ClInclude Include="Map.h">
       <Filter>Source Files\Maps</Filter>
     </ClInclude>
-    <ClInclude Include="AudioMenu.h">
-      <Filter>Source Files\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="ControllerMenu.h">
-      <Filter>Source Files\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyboardMenu.h">
-      <Filter>Source Files\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Source Files\Menus</Filter>
-    </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>Source Files\Menus</Filter>
     </ClInclude>
@@ -409,9 +397,6 @@
       <Filter>Source Files\Resources</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>Source Files\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="inventory.h">
       <Filter>Source Files\Menus</Filter>
     </ClInclude>
     <ClInclude Include="TriggerBox.h">
@@ -674,18 +659,6 @@
     <ClCompile Include="Map.cpp">
       <Filter>Source Files\Maps</Filter>
     </ClCompile>
-    <ClCompile Include="AudioMenu.cpp">
-      <Filter>Source Files\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="ControllerMenu.cpp">
-      <Filter>Source Files\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyboardMenu.cpp">
-      <Filter>Source Files\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
-      <Filter>Source Files\Menus</Filter>
-    </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files\Menus</Filter>
     </ClCompile>
@@ -777,9 +750,6 @@
       <Filter>Source Files\Resources</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>Source Files\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="Inventory.cpp">
       <Filter>Source Files\Menus</Filter>
     </ClCompile>
     <ClCompile Include="PlayerSoundData.cpp">

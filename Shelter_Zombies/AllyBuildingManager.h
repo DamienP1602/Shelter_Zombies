@@ -3,6 +3,7 @@
 #include "IManager.h"
 #include "Building.h"
 #include "Nexus.h"
+#include "Gameplay.h"
 
 class AllyBuildingManager : public Singleton<AllyBuildingManager>, public IManager<string, Building>
 {
@@ -20,7 +21,7 @@ public:
 
 	void SetNexus(Vector2f _position)
 	{
-		//TODO set nexus
+		Gameplay::GetInstance().GetMap(0)->PutInMap(nexus, Vector2i(_position));
 		nexus = new Nexus(_position);
 	}
 };

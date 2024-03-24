@@ -11,6 +11,9 @@
 #include "io.h"
 #include "Priest.h"
 #include "Warlock.h"
+#include "VillageMenu.h"
+#include "MenuManager.h"
+#include "AttackMenu.h"
 
 Gameplay::Gameplay()
 {
@@ -61,10 +64,17 @@ void Gameplay::ModePassif()
 	waveTimerEnd = false;
 	waveTimer->Start();
 
-	//TODO active player construction UI
+	if (VillageMenu* _menu = dynamic_cast<VillageMenu*>(MenuManager::GetInstance().Get("PlayerVillageMenu")))
+	{
+		MenuManager::GetInstance().SetCurrent(_menu);
+		MenuManager::GetInstance().DisableNotCurrent();
+	}
+	else
+	{
+		new VillageMenu();
+	}
 
-	//TODO Restore HP of player
-	//game->GetPlayer()->RestoreLife();
+	Game::GetPlayer()->GetData()->RestoreHealth();
 
 	//Restore all HPs of ally and despawn them
 	vector<Entity*> _allAlly = AllyEntityManager::GetInstance().GetAllValues();
@@ -100,7 +110,15 @@ void Gameplay::ModeDefense()
 	currentMode = GameMode::Defense;
 	waveTimer->Reset();
 
-	//TODO active player attack UI
+	if (AttackMenu* _menu = dynamic_cast<AttackMenu*>(MenuManager::GetInstance().Get("AttackMenu")))
+	{
+		MenuManager::GetInstance().SetCurrent(_menu);
+		MenuManager::GetInstance().DisableNotCurrent();
+	}
+	else
+	{
+		new AttackMenu();
+	}
 
 	//Active all construction
 	vector<Construction*> _allConstruction = AllyConstructionManager::GetInstance().GetAllValues();
@@ -122,7 +140,15 @@ void Gameplay::ModeAttack()
 	currentMode = GameMode::Attack;
 	waveTimer->Reset();
 
-	//TODO active player attack UI
+	if (AttackMenu* _menu = dynamic_cast<AttackMenu*>(MenuManager::GetInstance().Get("AttackMenu")))
+	{
+		MenuManager::GetInstance().SetCurrent(_menu);
+		MenuManager::GetInstance().DisableNotCurrent();
+	}
+	else
+	{
+		new AttackMenu();
+	}
 
 	//Active all enemies and spawn them
 	EnemyEntityManager::GetInstance().SpawnEntities(false);

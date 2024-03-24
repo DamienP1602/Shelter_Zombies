@@ -15,6 +15,7 @@
 #include "BarrakMenu.h"
 #include "GameMenu.h"
 #include "MultiMapMenu.h"
+#include "Gameplay.h"
 
 //TODO GAME change anim player's path
 //#define PATH_PLAYER "Animations/knighModif.png"
@@ -22,22 +23,14 @@
 #define PLAYER_PATH "Entities/Player/_Player.png"
 
 RenderWindow Game::window;
-Map* Game::map;
 Player* Game::player;
 Camera* Game::camera;
 
 Game::Game()
 {
 	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f), PLAYER_PATH));
-	map = new Map("");
 	camera = new Camera();
 } 
-
-Game::~Game()
-{
-	delete map;
-}
-
 
 void Game::Start()
 {
@@ -96,7 +89,7 @@ void Game::UpdateWindow()
 
 void Game::DrawMap()
 {
-	for (ShapeObject* _drawable : map->GetAllDrawables())
+	for (ShapeObject* _drawable : Gameplay::GetInstance().GetCurrentMap()->GetAllDrawables())
 	{
 		if (_drawable->IsHidden())
 			continue;

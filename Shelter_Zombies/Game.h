@@ -16,7 +16,6 @@ class Gameplay;
 class Game
 {
 	static RenderWindow window;
-	static Map* map;
 
 private:
 	static Player* player;
@@ -39,14 +38,9 @@ public:
 	{
 		return camera;
 	}
-	static Map* GetMap() 
-	{
-		return map;
-	}
 
 public:
 	Game();
-	~Game();
 
 public:
 	void Start();

@@ -26,6 +26,12 @@ class Gameplay : public Singleton<Gameplay>
 	bool waveTimerEnd;
 
 public:
+	Map* GetCurrentMap() const
+	{
+		return allMaps[currentMap];
+	}
+
+public:
 	Gameplay();
 	~Gameplay();
 

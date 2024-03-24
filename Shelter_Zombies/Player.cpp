@@ -21,6 +21,7 @@
 #include "GameMenu.h"
 #include "CameraManager.h"
 #include "VillageMenu.h"
+#include "Gameplay.h"
 
 
 
@@ -86,7 +87,7 @@ void Player::SetupPlayerInput()
 			{
 				if (mode->shapeOfConstruction)
 				{
-					if (Game::GetMap()->PutInMap(mode->shapeOfConstruction, MousePosition()))
+					if (Gameplay::GetInstance().GetCurrentMap()->PutInMap(mode->shapeOfConstruction, MousePosition()))
 					{
 						mode->Reset();
 					}

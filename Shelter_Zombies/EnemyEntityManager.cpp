@@ -6,6 +6,7 @@
 
 EnemyEntityManager::EnemyEntityManager()
 {
+	needToDelete = false;
 }
 
 EnemyEntityManager::~EnemyEntityManager()

@@ -11,6 +11,7 @@ class InteractionComponent : public Component
 
 public:
 	InteractionComponent(Actor* _owner);
+	~InteractionComponent();
 
 public:
 	void TryToInteract();

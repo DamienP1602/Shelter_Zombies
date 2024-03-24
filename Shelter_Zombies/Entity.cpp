@@ -1,6 +1,6 @@
 #include "Entity.h"
 
-Entity::Entity(string _name, const bool _isAlly, const ShapeData& _shape,const CollisionType& _activeCollision):
+Entity::Entity(string _name, const bool _isAlly, const ShapeData& _shape, const CollisionType& _activeCollision) :
 	Actor(_name, _shape, CT_ENTITY, _activeCollision)
 {
 	layer = 2;
@@ -19,11 +19,19 @@ Entity::Entity(string _name, const bool _isAlly, const ShapeData& _shape,const C
 }
 
 Entity::~Entity()
-{	
+{
 	target = nullptr;
 	data = nullptr;
+	brain = nullptr;
+	movement = nullptr;
+	attack = nullptr;
+	life = nullptr;
 	delete data;
 	delete target;
+	delete brain;
+	delete movement;
+	delete attack;
+	delete life;
 }
 
 void Entity::UpdateData()

@@ -6,6 +6,12 @@ PlayerAnimationComponent::PlayerAnimationComponent(Actor* _owner) : Component(_o
 	animPlayer = vector<string>();
 }
 
+PlayerAnimationComponent::~PlayerAnimationComponent()
+{
+	animation = nullptr;
+	delete animation;
+}
+
 void PlayerAnimationComponent::Init()
 {
 	animPlayer.push_back("Idle");

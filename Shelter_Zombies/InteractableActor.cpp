@@ -4,9 +4,8 @@
 #include "Label.h"
 #include "Macro.h"
 
-//TODO InteractableActor change paths
-#define PATH_INTERACTION "UIs/Discussions/Interaction.png"
-#define PATH_DISCUSSION "UIs/Discussions/Dialog.png"
+//#define PATH_INTERACTION "UIs/Discussions/Interaction.png"
+//#define PATH_DISCUSSION "UIs/Discussions/Dialog.png"
 #define FONT "Font.ttf"
 
 InteractableActor::InteractableActor(const string& _name, const ShapeData& _data, Canvas* _canvas) :
@@ -58,9 +57,9 @@ void InteractableActor::Init()
 	const RenderWindow& _window = Game::GetWindow();
 	const Vector2f& _interactionBGPos2 = _window.mapPixelToCoords(static_cast<Vector2i>(_interactionBGPos));
 
-	interactionBG = new ShapeWidget(ShapeData(_interactionBGPos, Vector2f(200.0f, 124.0f), PATH_INTERACTION), WT_WORLD);
-	interactionBG->SetVisible(false);
-	canvas->AddWidget(interactionBG);
+	//interactionBG = new ShapeWidget(ShapeData(_interactionBGPos, Vector2f(200.0f, 124.0f), PATH_INTERACTION), WT_WORLD);
+	//interactionBG->SetVisible(false);
+	//canvas->AddWidget(interactionBG);
 
 	const Vector2f& _halfWindowSize = Game::GetWindowSize() / 2.0f;
 	const Vector2f& _discussionPos = Vector2f(_halfWindowSize.x, 80.0f);

@@ -3,12 +3,10 @@
 #include "IManager.h"
 #include "ActionMap.h"
 
-
 class InputManager : public Singleton<InputManager>, public IManager<string, ActionMap>
 {
 	Vector2f mousePosition;
 	Vector2f worldPosition;
-
 
 public:
 	Vector2f GetMousePosition() const 

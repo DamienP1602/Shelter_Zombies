@@ -1,6 +1,6 @@
 #include "AttackState.h"
 #include "EntityBrain.h"
-#include "AnimationComponent.h"
+#include "Entity.h"
 
 AttackState::AttackState(Brain* _brain) : State(_brain)
 {
@@ -32,6 +32,7 @@ void AttackState::Update(const float _deltaTime)
 	State::Update(_deltaTime);
 	brain->GetBlackBoard()->hasTarget = !attack->IsTargetDead();
 	brain->GetBlackBoard()->isInRange = attack->IsInRange();
+	brain->GetBlackBoard()->isDead = dynamic_cast<Entity*>(brain->GetOwner())->IsDead();
 }
 
 void AttackState::Stop()

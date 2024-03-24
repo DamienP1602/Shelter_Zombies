@@ -20,6 +20,7 @@ public:
 
 public:
 	PlayerAnimationComponent(Actor* _owner);
+	~PlayerAnimationComponent();
 
 public:
 	void Init();

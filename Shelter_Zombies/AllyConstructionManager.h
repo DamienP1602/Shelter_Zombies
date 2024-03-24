@@ -5,7 +5,6 @@
 
 class AllyConstructionManager : public Singleton<AllyConstructionManager>, public IManager<string, Construction>
 {
-
 public:
 	AllyConstructionManager();
 };

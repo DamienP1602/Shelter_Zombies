@@ -7,7 +7,7 @@
 #include "IManager.h"
 
 #define BUILDING_SHAPE_BARRACK_PATH "GPE/Building/Barrack.png"
-#define BUILDING_SHAPE_BARRACK_SIZE Vector2f(500,500)
+#define BUILDING_SHAPE_BARRACK_SIZE Vector2f(200.f,200.f)
 
 Barrack::Barrack(const Vector2f& _position) :
 	Building("Barrack", ShapeData(_position, BUILDING_SHAPE_BARRACK_SIZE, BUILDING_SHAPE_BARRACK_PATH))

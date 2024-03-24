@@ -101,7 +101,8 @@ public:
 	}
 	Value* Get(const Key& _key)
 	{
-		if (!Exist(_key)) return nullptr;
+		if (!Exist(_key)) 
+			return nullptr;
 		return allValues[_key];
 	}
 	map<Key, Value*> GetAll() const 
@@ -139,7 +140,8 @@ public:
 
 	bool Exist(const Key& _key) const
 	{
-		//if (allValues.empty()) return false;
+		//if (allValues.empty()) 
+		// return false;
 		return allValues.find(_key) != allValues.end();
 	}
 	bool Exist(Value* _value) const

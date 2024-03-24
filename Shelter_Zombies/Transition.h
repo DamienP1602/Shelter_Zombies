@@ -17,6 +17,7 @@ public:
 
 public:
 	Transition(BlackBoard* _blackBoard);
+	~Transition();
 
 public:
 	virtual void Init(State* _state) = 0;

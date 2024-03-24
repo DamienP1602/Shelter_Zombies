@@ -1,10 +1,8 @@
 #pragma once
 #include "Transition.h"
 
-
 class ChaseToAttack : public Transition
 {
-
 public:
 	ChaseToAttack(BlackBoard* _blackBoard);
 

@@ -17,8 +17,10 @@ EntityMovementComponent::EntityMovementComponent(Actor* _owner) : Component(_own
 
 EntityMovementComponent::~EntityMovementComponent()
 {
+	target = nullptr;
 	animation = nullptr;
 	collision = nullptr;
+	delete target;
 	delete animation;
 	delete collision;
 }

@@ -15,6 +15,16 @@ Animation::Animation(const string& _name, AnimationComponent* _owner, Shape* _sh
     Register();
 }
 
+Animation::~Animation()
+{
+    owner = nullptr;
+    shape = nullptr;
+    timer = nullptr;
+    delete owner;
+    delete shape;
+    delete timer;
+}
+
 void Animation::Register()
 {
     owner->Add(id, this);

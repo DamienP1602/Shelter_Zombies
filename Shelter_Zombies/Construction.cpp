@@ -18,8 +18,10 @@ Construction::~Construction()
 {
 	data = nullptr;
 	life = nullptr;
+	attack = nullptr;
 	delete data;
 	delete life;
+	delete attack;
 }
 
 void Construction::Attack(Entity* _target)

@@ -5,3 +5,9 @@ Component::Component(Actor* _owner)
 {
 	owner = _owner;
 }
+
+Component::~Component()
+{
+	owner = nullptr;
+	delete owner;
+}

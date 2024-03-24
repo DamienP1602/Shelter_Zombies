@@ -46,6 +46,7 @@ void StandbyState::Update(const float _deltaTime)
 	if (entity->GetTarget() == nullptr || entity->GetTarget()->IsToRemove())
 		Gameplay::GetInstance().SelectionTarget(entity, entity->IsAlly());
 	brain->GetBlackBoard()->hasTarget = entity->GetTarget() && !entity->IsToRemove();
+	brain->GetBlackBoard()->isDead = entity->IsDead();
 }
 
 void StandbyState::Stop()

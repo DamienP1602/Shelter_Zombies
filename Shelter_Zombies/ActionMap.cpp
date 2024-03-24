@@ -14,6 +14,13 @@ ActionMap::ActionMap(const string& _name, const vector<ActionData>& _actionsData
 	}
 }
 
+ActionMap::~ActionMap()
+{
+	for (size_t i = 0; i < actions.size(); i++)
+		actions[i] = nullptr;
+	actions.clear();
+}
+
 void ActionMap::Register()
 {
 	InputManager::GetInstance().Add(id, this);

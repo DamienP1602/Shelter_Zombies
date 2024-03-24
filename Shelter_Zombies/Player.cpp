@@ -31,7 +31,7 @@ Player::Player(const string& _name, const ShapeData& _data) : Actor(_name, _data
 	components.push_back(movement);
 
 	mode = new ConstructionMode();
-	data = new PlayerData(_name, 150, 0, 5, 3, 1); //TODO remove change test 
+	data = new PlayerData(_name, 150, 5, 5, 3, 1); //TODO remove change test 
 
 	attack = new PlayerAttackComponent(this, data->damagePoint, data->range);
 	components.push_back(attack);

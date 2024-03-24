@@ -27,7 +27,9 @@ Gameplay::~Gameplay()
 		allMaps[i] = nullptr;
 	allMaps.clear();
 	game = nullptr;
+	waveTimer = nullptr;
 	delete game;
+	delete waveTimer;
 }
 
 void Gameplay::AddMap(Map* _map)
@@ -47,7 +49,7 @@ bool Gameplay::CheckEnemyBase()
 
 bool Gameplay::CheckAllyArmy()
 {
-	return AllyEntityManager::GetInstance().Count() == 0 /*&& game->GetPlayer()->IsDead()*/;
+	return AllyEntityManager::GetInstance().Count() == 0 && game->GetPlayer()->GetComponent<EntityLifeComponent>()->IsDead();
 }
 
 bool Gameplay::CheckAllyBase()
@@ -160,7 +162,8 @@ void Gameplay::Init(Game* _game)
 	currentMap = 0;
 	//allMaps = _allMaps;
 
-	EnemyEntityManager::GetInstance().SetArmy(1, 0, 0, 0, 0);
+	EnemyEntityManager::GetInstance().SetArmy(3, 2, 1, 1, 0);
+	AllyBuildingManager::GetInstance().SetNexus(Vector2f(100.f, 700.f));
 	ModePassif();
 }
 
@@ -205,7 +208,8 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 	Actor* _target = nullptr;
 	float _distance = float(LONG_MAX);
 	float _testDistance = 0;
-
+	
+	//If entity is a Warlock => focus enemy entity that need healing
 	if (dynamic_cast<Warlock*>(_entity))
 	{
 		vector<Entity*> _allEnemyEntity = EnemyEntityManager::GetInstance().GetAllValues();
@@ -221,6 +225,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 	}
+	//If entity is a Priest => focus ally entity that need healing
 	else if (dynamic_cast<Priest*>(_entity))
 	{
 		vector<Entity*> _allAllyEntity = AllyEntityManager::GetInstance().GetAllValues();
@@ -236,6 +241,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 	}
+	//If entity is an ally entity (other that Priest) => focus enemy entity then building then construction
 	else if (_isAlly)
 	{
 		vector<Entity*> _allEnemyEntity = EnemyEntityManager::GetInstance().GetAllValues();
@@ -277,6 +283,7 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 	}
+	//If entity is an enemy entity (other that Warlock) => focus ally entity then building then construction then the player
 	else if (!_isAlly)
 	{
 		vector<Entity*> _allAllyEntity = AllyEntityManager::GetInstance().GetAllValues();

@@ -21,6 +21,8 @@ void ActorManager::Update()
 
 	for (Actor* _actor : GetAllValues())
 	{
+		if (_actor->IsToRemove())
+			continue;
 		_actor->Update(stop ? 0.0f : _deltaTime);
 	}
 	GarbageValues();

@@ -9,6 +9,12 @@ AnimationComponent::AnimationComponent(Actor* _owner) : Component(_owner)
     animationNames = vector<string>();
 }
 
+AnimationComponent::~AnimationComponent()
+{
+    currentAnimation = nullptr;
+    delete currentAnimation;
+}
+
 
 void AnimationComponent::InitAnimations(const vector<AnimationData>& _animationsData)
 {

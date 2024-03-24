@@ -1,6 +1,12 @@
 #include "MusicManager.h"
 #include <iostream>
 
+MusicManager::~MusicManager()
+{
+	current = nullptr;
+	delete current;
+}
+
 void MusicManager::Play(const string& _path)
 {
 	if (current)

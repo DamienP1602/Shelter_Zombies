@@ -11,6 +11,7 @@ class PlayerAttackComponent : public EntityAttackComponent
 
 public:
 	PlayerAttackComponent(Actor* _owner,const int _damages, const float _range);
+	~PlayerAttackComponent();
 
 public:
 	virtual void Update(const float _deltaTime) override;

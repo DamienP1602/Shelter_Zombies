@@ -1,6 +1,7 @@
 #include "ChaseState.h"
 #include "EntityMovementComponent.h"
 #include "EntityBrain.h"
+#include "Entity.h"
 
 ChaseState::ChaseState(Brain* _brain) : State(_brain)
 {
@@ -16,8 +17,10 @@ ChaseState::~ChaseState()
 {
 	chaseToAttack = nullptr;
 	chaseToAttack = nullptr;
+	movement = nullptr;
 	delete chaseToAttack;
 	delete chaseToAttack;
+	delete movement;
 }
 
 void ChaseState::Init()
@@ -38,6 +41,7 @@ void ChaseState::Update(const float _deltaTime)
 {
 	State::Update(_deltaTime);
 	brain->GetBlackBoard()->isInRange = movement->IsAtPosition();
+	brain->GetBlackBoard()->isDead = dynamic_cast<Entity*>(brain->GetOwner())->IsDead();
 }
 
 void ChaseState::Stop()

@@ -5,7 +5,6 @@
 
 class DecorManager : public Singleton<DecorManager>, public IManager<string, Decor>
 {
-
 public:
 	DecorManager();
 };

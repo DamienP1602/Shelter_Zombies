@@ -1,5 +1,6 @@
 #pragma once
 #include "InteractableActor.h"
+#include "EntityLifeComponent.h"
 
 enum BonusType
 {
@@ -46,17 +47,13 @@ class Building : public InteractableActor
 {
 protected:
 	BuildingData* data = nullptr;
+	EntityLifeComponent* life = nullptr;
 	bool isDestroy = false;
 	bool isAlly = false;
 
 public:
 	Building(const string& _name, const ShapeData& _shape,const bool _isAlly = false, Canvas* _canvas = nullptr);
 	~Building();
-
-	void RestoreLife() const
-	{
-		data->currentLife = data->maxLife;
-	}
 
 	BuildingData* GetData() const
 	{
@@ -74,8 +71,4 @@ public:
 	{
 		return isAlly;
 	}
-private:
-	void TakeDamage(int _damage);
-	void Repare();
 };
-

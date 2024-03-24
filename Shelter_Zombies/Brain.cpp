@@ -8,6 +8,11 @@ Brain::Brain(Actor* _owner) : Component(_owner)
 
 Brain::~Brain()
 {
+	for (size_t i = 0; i < states.size(); i++)
+		states[i] = nullptr;
+	states.clear();
+	blackBoard = nullptr;
+	currentState = nullptr;
 	delete blackBoard;
 	delete currentState;
 }

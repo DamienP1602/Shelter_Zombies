@@ -12,6 +12,7 @@ public:
 
 public:
 	Component(Actor* _owner);
+	~Component();
 
 public:
 	virtual void Init() { };

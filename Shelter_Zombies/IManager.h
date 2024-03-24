@@ -101,7 +101,8 @@ public:
 	}
 	Value* Get(const Key& _key)
 	{
-		if (!Exist(_key)) return nullptr;
+		if (!Exist(_key)) 
+			return nullptr;
 		return allValues[_key];
 	}
 	map<Key, Value*> GetAll() const 

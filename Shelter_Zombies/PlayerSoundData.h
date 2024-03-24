@@ -8,6 +8,7 @@ class PlayerSoundData
 
 public:
 	PlayerSoundData();
+	~PlayerSoundData();
 
 public:
 	vector<SoundData*> GetPlayerSounds() const

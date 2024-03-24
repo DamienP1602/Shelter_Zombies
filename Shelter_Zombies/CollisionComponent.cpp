@@ -32,6 +32,7 @@ CollisionComponent::CollisionComponent(Actor* _owner, const CollisionType& _type
 
 CollisionComponent::~CollisionComponent()
 {
+	boxCollision = nullptr;
 	delete boxCollision;
 }
 

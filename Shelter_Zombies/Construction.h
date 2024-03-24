@@ -1,23 +1,28 @@
 #pragma once
 #include "InteractableActor.h"
+#include "EntityLifeComponent.h"
+#include "EntityAttackComponent.h"
 
 class Entity;
 
 struct ConstructionData
 {
 	int maxLife;
-	int currentLife;
 	int damagePoint;
+	float cooldown;
+	float range;
 	int level;
 	int cost;
 
-	ConstructionData(const int _hp, const int _dmg, const int _level,const int _cost)
+	ConstructionData(const int _hp, const int _dmg, const float _cooldown, const float _range, const int _level,const int _cost)
 	{
-		maxLife = _hp + (_hp / 10 * _level);
-		currentLife = maxLife;
-		damagePoint = _dmg + (_dmg / 10 * _level);
+		maxLife = _hp;
+		damagePoint = _dmg;
+		cooldown = _cooldown;
+		range = _range;
 		level = _level;
 		cost = _cost;
+		UpdateData();
 	}
 	void LevelUp()
 	{
@@ -38,6 +43,8 @@ class Construction : public InteractableActor
 {
 protected:
 	ConstructionData* data = nullptr;
+	EntityLifeComponent* life = nullptr;
+	EntityAttackComponent* attack = nullptr;
 	bool isDestroy = false;
 	bool isActive = false;
 	bool isAlly = false;
@@ -45,11 +52,6 @@ protected:
 public:
 	Construction(const string& _name, const ShapeData& _shape,const bool _isAlly = false, Canvas* _canvas = new Canvas("InteractableActor"));
 	~Construction();
-
-	void RestoreLife() const
-	{
-		data->currentLife = data->maxLife;
-	}
 
 	ConstructionData* GetData() const
 	{
@@ -71,10 +73,9 @@ public:
 	{
 		return isAlly;
 	}
-private:
-	void TakeDamage(int _damage);
-	void Repare();
-	void Attack(Entity* _target);
 
+protected:
+	virtual void Attack(Entity* _target);
 	virtual void Register() override;
+	void UpdateData();
 };

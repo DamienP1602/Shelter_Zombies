@@ -1,7 +1,7 @@
 #include "Nexus.h"
 
 #define BUILDING_SHAPE_NEXUS_PATH "GPE/Building/Nexus.png"
-#define BUILDING_SHAPE_NEXUS_SIZE Vector2f(50.0f,50.0f)
+#define BUILDING_SHAPE_NEXUS_SIZE Vector2f(200.f,200.f)
 
 Nexus::Nexus(const Vector2f& _position):
 	Building("Nexus", ShapeData(_position, BUILDING_SHAPE_NEXUS_SIZE, BUILDING_SHAPE_NEXUS_PATH))

@@ -17,8 +17,10 @@ EntityMovementComponent::EntityMovementComponent(Actor* _owner) : Component(_own
 
 EntityMovementComponent::~EntityMovementComponent()
 {
+	target = nullptr;
 	animation = nullptr;
 	collision = nullptr;
+	delete target;
 	delete animation;
 	delete collision;
 }
@@ -38,7 +40,7 @@ void EntityMovementComponent::Update(const float _deltaTime)
 
 void EntityMovementComponent::SetDestination()
 {
-	if (!target)
+	if (!target || target->IsToRemove())
 		destination = owner->GetShapePosition();
 	else
 		destination = target->GetShapePosition();

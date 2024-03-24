@@ -12,6 +12,12 @@ PlayerAttackComponent::PlayerAttackComponent(Actor* _owner, const int _damages, 
 	StartAttack();
 }
 
+PlayerAttackComponent::~PlayerAttackComponent()
+{
+	animation = nullptr;
+	delete animation;
+}
+
 void PlayerAttackComponent::Update(const float _deltaTime)
 {
 	const Vector2f& _origin = owner->GetDrawable()->getPosition();

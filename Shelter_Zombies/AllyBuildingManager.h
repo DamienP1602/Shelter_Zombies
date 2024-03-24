@@ -11,6 +11,7 @@ class AllyBuildingManager : public Singleton<AllyBuildingManager>, public IManag
 
 public:
 	AllyBuildingManager();
+	~AllyBuildingManager();
 
 	bool IsNexusDestroy() const
 	{

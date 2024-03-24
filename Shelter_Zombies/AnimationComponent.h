@@ -28,6 +28,7 @@ public:
 
 public:
     AnimationComponent(Actor* _owner);
+    ~AnimationComponent();
 
 public:
     void InitAnimations(const vector<AnimationData>& _animationsData);

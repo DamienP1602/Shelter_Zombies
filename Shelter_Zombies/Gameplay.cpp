@@ -19,7 +19,7 @@ Gameplay::Gameplay()
 {
 	game = nullptr;
 	currentMap = 0;
-	waveCooldown = 20.f; //seconds
+	waveCooldown = 8.f; //seconds
 	waveTimerEnd = false;
 	waveTimer = new Timer([&]() { WaveTimerEnd(); }, seconds(waveCooldown), false, false);
 }
@@ -30,7 +30,9 @@ Gameplay::~Gameplay()
 		allMaps[i] = nullptr;
 	allMaps.clear();
 	game = nullptr;
+	waveTimer = nullptr;
 	delete game;
+	delete waveTimer;
 }
 
 void Gameplay::AddMap(Map* _map)
@@ -50,7 +52,7 @@ bool Gameplay::CheckEnemyBase()
 
 bool Gameplay::CheckAllyArmy()
 {
-	return AllyEntityManager::GetInstance().Count() == 0 /*&& game->GetPlayer()->IsDead()*/;
+	return AllyEntityManager::GetInstance().Count() == 0 && game->GetPlayer()->GetComponent<EntityLifeComponent>()->IsDead();
 }
 
 bool Gameplay::CheckAllyBase()
@@ -88,12 +90,12 @@ void Gameplay::ModePassif()
 	//Restore all HPs of construction
 	vector<Construction*> _allConstruction = AllyConstructionManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allConstruction.size(); i++)
-		_allConstruction[i]->RestoreLife();
+		_allConstruction[i]->GetComponent<EntityLifeComponent>()->RestoreLife();
 
 	//Restore all HPs of building
 	vector<Building*> _allBuilding = AllyBuildingManager::GetInstance().GetAllValues();
 	for (size_t i = 0; i < _allBuilding.size(); i++)
-		_allBuilding[i]->RestoreLife();
+		_allBuilding[i]->GetComponent<EntityLifeComponent>()->RestoreLife();
 
 	//Restore all enemies HPs and despawn them
 	vector<Entity*> _allEnemy = EnemyEntityManager::GetInstance().GetAllValues();
@@ -171,7 +173,8 @@ void Gameplay::ModeAttack()
 
 void Gameplay::SelectMap(int _map)
 {
-	if (_map == currentMap) return;
+	if (_map == currentMap)
+		return;
 
 	allMaps[currentMap]->DeLoad();
 	currentMap = _map;
@@ -185,7 +188,8 @@ void Gameplay::Init(Game* _game)
 	currentMap = 0;
 	//allMaps = _allMaps;
 
-	EnemyEntityManager::GetInstance().SetArmy(1, 1, 1, 1, 0);
+	EnemyEntityManager::GetInstance().SetArmy(3, 2, 1, 1, 0);
+	AllyBuildingManager::GetInstance().SetNexus(Vector2f(100.f, 700.f));
 	ModePassif();
 }
 
@@ -209,8 +213,7 @@ void Gameplay::ChangeMode()
 	else if (currentMode == GameMode::Defense && CheckAllyBase())
 	{
 		cout << "Your nexus have been destroy: Game-Over !!" << endl;
-		//LoadPreviousMap();
-		ModePassif();
+		//ModePassif();
 		game->Close();
 	}
 	else if (currentMode == GameMode::Attack && CheckEnemyBase())
@@ -231,13 +234,14 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 	Actor* _target = nullptr;
 	float _distance = float(LONG_MAX);
 	float _testDistance = 0;
-
+	
+	//If entity is a Warlock => focus enemy entity that need healing
 	if (dynamic_cast<Warlock*>(_entity))
 	{
 		vector<Entity*> _allEnemyEntity = EnemyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyEntity.size(); i++)
 		{
-			if (_allEnemyEntity[i]->IsHidden())
+			if (_allEnemyEntity[i]->IsHidden() || _allEnemyEntity[i]->IsToRemove())
 				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyEntity[i]->GetShapePosition());
 			if (_testDistance < _distance && _allEnemyEntity[i]->GetComponent<EntityLifeComponent>()->NeedHealing())
@@ -247,12 +251,13 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 	}
+	//If entity is a Priest => focus ally entity that need healing
 	else if (dynamic_cast<Priest*>(_entity))
 	{
 		vector<Entity*> _allAllyEntity = AllyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyEntity.size(); i++)
 		{
-			if (_allAllyEntity[i]->IsHidden())
+			if (_allAllyEntity[i]->IsHidden() || _allAllyEntity[i]->IsToRemove())
 				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allAllyEntity[i]->GetShapePosition());
 			if (_testDistance < _distance && _allAllyEntity[i]->GetComponent<EntityLifeComponent>()->NeedHealing())
@@ -262,12 +267,13 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 	}
+	//If entity is an ally entity (other that Priest) => focus enemy entity then building then construction
 	else if (_isAlly)
 	{
 		vector<Entity*> _allEnemyEntity = EnemyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyEntity.size(); i++)
 		{
-			if (_allEnemyEntity[i]->IsHidden())
+			if (_allEnemyEntity[i]->IsHidden() || _allEnemyEntity[i]->IsToRemove())
 				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyEntity[i]->GetShapePosition());
 			if (_testDistance < _distance)
@@ -280,6 +286,8 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Building*> _allEnemyBuilding = EnemyBuildingManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyBuilding.size(); i++)
 		{
+			if (_allEnemyBuilding[i]->IsToRemove())
+				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyBuilding[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
@@ -291,6 +299,8 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Construction*> _allEnemyConstruction = EnemyConstructionManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allEnemyConstruction.size(); i++)
 		{
+			if (_allEnemyConstruction[i]->IsToRemove())
+				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allEnemyConstruction[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
@@ -299,11 +309,14 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 			}
 		}
 	}
+	//If entity is an enemy entity (other that Warlock) => focus ally entity then building then construction then the player
 	else if (!_isAlly)
 	{
 		vector<Entity*> _allAllyEntity = AllyEntityManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyEntity.size(); i++)
 		{
+			if (_allAllyEntity[i]->IsHidden() || _allAllyEntity[i]->IsToRemove())
+				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allAllyEntity[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
@@ -315,6 +328,8 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Building*> _allAllyBuilding = AllyBuildingManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyBuilding.size(); i++)
 		{
+			if (_allAllyBuilding[i]->IsToRemove())
+				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allAllyBuilding[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{
@@ -326,6 +341,8 @@ void Gameplay::SelectionTarget(Entity* _entity, bool _isAlly)
 		vector<Construction*> _allAllyConstruction = AllyConstructionManager::GetInstance().GetAllValues();
 		for (size_t i = 0; i < _allAllyConstruction.size(); i++)
 		{
+			if (_allAllyConstruction[i]->IsToRemove())
+				continue;
 			_testDistance = Distance(_entity->GetShapePosition(), _allAllyConstruction[i]->GetShapePosition());
 			if (_testDistance < _distance)
 			{

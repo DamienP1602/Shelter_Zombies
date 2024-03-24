@@ -23,6 +23,14 @@ PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_own
 	collision = owner->GetComponent<CollisionComponent>();
 }
 
+PlayerMovementComponent::~PlayerMovementComponent()
+{
+	animation = nullptr;
+	collision = nullptr;
+	delete animation;
+	delete collision;
+}
+
 void PlayerMovementComponent::Update(const float _deltaTime)
 {
 	if (!canMove) return;

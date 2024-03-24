@@ -549,6 +549,9 @@
     <ClInclude Include="MultiMapMenu.h">
       <Filter>Source Files\UIs\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="StandbyToAttack.h">
+      <Filter>Source Files\IAs\Transitions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -898,6 +901,9 @@
     </ClCompile>
     <ClCompile Include="MultiMapMenu.cpp">
       <Filter>Source Files\UIs\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="StandbyToAttack.cpp">
+      <Filter>Source Files\IAs\Transitions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

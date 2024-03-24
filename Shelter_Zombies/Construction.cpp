@@ -7,6 +7,9 @@ Construction::Construction(const string& _name, const ShapeData& _shape, const b
 {
 	layer = 1;
 	isAlly = _isAlly;
+	life = new EntityLifeComponent(this);
+	attack = new EntityAttackComponent(this);
+	components.push_back(life);
 
 	Register();
 }
@@ -14,18 +17,11 @@ Construction::Construction(const string& _name, const ShapeData& _shape, const b
 Construction::~Construction()
 {
 	data = nullptr;
-}
-
-void Construction::TakeDamage(int _damage)
-{
-	data->currentLife -= _damage;
-	if (data->currentLife <= 0)
-		isDestroy = true;
-}
-
-void Construction::Repare()
-{
-	data->currentLife = data->maxLife;
+	life = nullptr;
+	attack = nullptr;
+	delete data;
+	delete life;
+	delete attack;
 }
 
 void Construction::Attack(Entity* _target)
@@ -35,4 +31,10 @@ void Construction::Attack(Entity* _target)
 void Construction::Register()
 {
 	AllyConstructionManager::GetInstance().Add(id, this);
+}
+
+void Construction::UpdateData()
+{
+	attack->SetData(data->damagePoint, data->cooldown, data->range);
+	life->SetLife(data->maxLife);
 }

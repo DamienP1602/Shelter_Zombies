@@ -10,9 +10,12 @@ State::State(Brain* _brain)
 State::~State()
 {
 	for (Transition* _transition : transitions)
-	{
 		delete _transition;
-	}
+	nextTransition = nullptr;
+	brain = nullptr;
+	delete nextTransition;
+	delete brain;
+
 }
 
 void State::Update(const float _deltaTime)

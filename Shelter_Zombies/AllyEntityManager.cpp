@@ -74,37 +74,36 @@ bool AllyEntityManager::AddCatapult(Catapult* _artillery)
 
 void AllyEntityManager::SpawnEntities(const bool _isAttack)
 {
-	//TODO need screen location
-	//Vector2f _position;
-	//if (_isAttack)
-	//	_position = 
-	//else
-	//	_position = 
+	const Vector2f& _origin = _isAttack ? Vector2f(0.0f, 1000.0f) : Vector2f(0.0f, 600.0f);
 
-	for (size_t i = 0; i < allFighters.size(); i++)
+	int _size = int(allFighters.size());
+	for (int i = 0; i < _size; i++)
 	{
-		Vector2f _position = Vector2f(400.f, 100.f * i); //Column
+		const Vector2f& _position = _origin + Vector2f(1920.f / _size * (i + 1.f), -300.f); //Column
 		allFighters[i]->SetShapePosition(_position);
 		allFighters[i]->SetActive(true);
 		allFighters[i]->SetIsHidden(false);
 	}
-	for (size_t i = 0; i < allShooters.size(); i++)
+	_size = int(allShooters.size());
+	for (int i = 0; i < _size; i++)
 	{
-		Vector2f _position = Vector2f(300.f, 100.f * i); //Column
+		const Vector2f& _position = _origin + Vector2f(1920.f / _size * (i + 1.f), -200.f);
 		allShooters[i]->SetShapePosition(_position);
 		allShooters[i]->SetActive(true);
 		allShooters[i]->SetIsHidden(false);
 	}
-	for (size_t i = 0; i < allSupports.size(); i++)
+	_size = int(allSupports.size());
+	for (int i = 0; i < _size; i++)
 	{
-		Vector2f _position = Vector2f(200.f, 100.f * i); //Column
+		const Vector2f& _position = _origin + Vector2f(1920.f / _size * (i + 1.f), -100.f);
 		allSupports[i]->SetShapePosition(_position);
 		allSupports[i]->SetActive(true);
 		allSupports[i]->SetIsHidden(false);
 	}
-	for (size_t i = 0; i < allArtilleries.size(); i++)
+	_size = int(allArtilleries.size());
+	for (int i = 0; i < _size; i++)
 	{
-		Vector2f _position = Vector2f(100.f, 100.f * i); //Column
+		const Vector2f& _position = _origin + Vector2f(1920.f / _size * (i + 1.f), 0.f);
 		allArtilleries[i]->SetShapePosition(_position);
 		allArtilleries[i]->SetActive(true);
 		allArtilleries[i]->SetIsHidden(false);

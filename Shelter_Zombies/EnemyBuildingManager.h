@@ -9,6 +9,7 @@ class EnemyBuildingManager : public Singleton<EnemyBuildingManager>, public IMan
 	Nexus* nexus;
 public:
 	EnemyBuildingManager();
+	~EnemyBuildingManager();
 
 	bool IsNexusDestroy() const
 	{

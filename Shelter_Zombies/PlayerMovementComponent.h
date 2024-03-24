@@ -78,6 +78,7 @@ public:
 
 public:
 	PlayerMovementComponent(Actor* _owner);
+	~PlayerMovementComponent();
 
 public:
 	virtual void Update(const float _deltaTime) override;

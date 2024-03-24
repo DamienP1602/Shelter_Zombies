@@ -11,6 +11,14 @@ InteractionComponent::InteractionComponent(Actor* _owner) : Component(_owner)
 	pnj = nullptr;
 }
 
+InteractionComponent::~InteractionComponent()
+{
+	inventory = nullptr;
+	pnj = nullptr;
+	delete inventory;
+	delete pnj;
+}
+
 
 void InteractionComponent::TryToInteract()
 {

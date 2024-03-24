@@ -13,5 +13,5 @@ void AttackToChase::Init(State* _nextState)
 
 bool AttackToChase::CanNext() const
 {
-    return !blackBoard->isInRange;
+    return !blackBoard->isInRange && blackBoard->hasTarget;
 }

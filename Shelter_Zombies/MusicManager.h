@@ -8,6 +8,8 @@ class MusicManager : public Singleton<MusicManager>, public IManager<string, Mus
 	MusicData* current;
 
 public:
+	~MusicManager();
+
 	void Play(const string& _path);
 	void AdjustAllVolume(const float _volume);
 	void Stop(const string& _path = "");

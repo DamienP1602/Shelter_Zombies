@@ -41,11 +41,11 @@ public:
 
 public:
 	Game();
+	~Game();
 
 public:
 	void Start();
 	void Init();
-	void InitPlayerMap();
 	void Update();
 	void UpdateWindow();
 

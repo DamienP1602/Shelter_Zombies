@@ -1,5 +1,5 @@
 #include "PlayerStat.h"
-#include "PlayerAnimationComponent.h"
+#include "AnimationComponent.h"
 #include "PlayerMovementComponent.h"
 #include "Game.h"
 #include "TextureManager.h"
@@ -29,7 +29,7 @@ PlayerStat::PlayerStat(Player* _player) : Menu("PlayerStat", nullptr)
 	geosCount = 0;
 	geosCountText = nullptr;
 
-	animation = _player->GetComponent<PlayerAnimationComponent>();
+	animation = _player->GetComponent<AnimationComponent>();
 	movement = _player->GetComponent<PlayerMovementComponent>();
 
 	numberOfDeath = 0;
@@ -78,12 +78,12 @@ void PlayerStat::UseMana(const float _factor)
 	const float _direction = Game::GetPlayer()->GetDrawable()->getScale().x;
 	if (manaBar->GetCurrentValue() - _factor <= 0.0f)
 	{
-		animation->GetCurrentAnimation()->RunAnimation("StopRight", _direction);
+		animation->RunAnimation("StopRight", _direction);
 		return;
 	}
 
 	FxManager::GetInstance().Run("FxChargingMana");
-	animation->GetCurrentAnimation()->RunAnimation("RemoveMana", _direction);
+	animation->RunAnimation("RemoveMana", _direction);
 
 	if (resetManaTimer) resetManaTimer->Stop();
 	resetManaTimer = new Timer([&]() { StopUsingMana(); }, seconds(manaUsedLifespan));

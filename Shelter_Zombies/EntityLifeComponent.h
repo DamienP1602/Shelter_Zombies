@@ -33,7 +33,7 @@ public:
 		return currentLife < maxLife;
 	}
 
-	void TakeDamages(const int _damages);
+	bool TakeDamages(const int _damages);
 	void Healing(const int _heal);
 
 private:

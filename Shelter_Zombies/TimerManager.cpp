@@ -20,7 +20,7 @@ TimerManager::TimerManager()
 
 void TimerManager::UpdateTimers()
 {
-	for (const auto& _pair : allValues)
+ 	for (const auto& _pair : allValues)
 	{
 		_pair.second->Update(deltaTime);
 	}

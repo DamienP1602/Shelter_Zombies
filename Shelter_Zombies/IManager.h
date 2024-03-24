@@ -67,6 +67,8 @@ public:
 	{
 		if (!Exist(_key)) return;
 		allValues[_key]->SetToRemove(true);
+
+		//GarbageValues();
 	}
 	void GarbageValues()
 	{

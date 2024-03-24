@@ -1,8 +1,8 @@
 #pragma once
 #include "Component.h"
-#include "PlayerAnimationComponent.h"
 #include "SoundManager.h"
 #include "CollisionComponent.h"
+#include "AnimationComponent.h"
 
 class PlayerMovementComponent : public Component
 {
@@ -45,7 +45,7 @@ class PlayerMovementComponent : public Component
 	float checkWallDistance;
 
 	// Components
-	PlayerAnimationComponent* animation;
+	AnimationComponent* animation;
 	CollisionComponent* collision;
 
 public:
@@ -74,6 +74,10 @@ public:
 	float GetDashDirection()const
 	{
 		return dashDirection;
+	}
+	void SetAnimationComponent(AnimationComponent* _animation)
+	{
+		animation = _animation;
 	}
 
 public:

@@ -13,9 +13,7 @@ InteractionComponent::InteractionComponent(Actor* _owner) : Component(_owner)
 
 InteractionComponent::~InteractionComponent()
 {
-	inventory = nullptr;
 	pnj = nullptr;
-	delete inventory;
 	delete pnj;
 }
 

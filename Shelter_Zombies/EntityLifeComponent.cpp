@@ -9,16 +9,16 @@ EntityLifeComponent::EntityLifeComponent(Actor* _owner) : Component(_owner)
 	isDead = false;
 }
 
-void EntityLifeComponent::TakeDamages(const int _damages)
+bool EntityLifeComponent::TakeDamages(const int _damages)
 {
 	currentLife -= _damages;
 	if (currentLife <= 0)
 	{
 		isDead = true;
 		owner->GetComponent<AnimationComponent>()->RunAnimation("Death", 1);
-		Destroy();
-		//new Timer([&]() { Destroy(); }, seconds(0.5f), true, false);
+		return true;
 	}
+	return false;
 }
 
 void EntityLifeComponent::Healing(const int _heal)

@@ -2,7 +2,6 @@
 #include "Actor.h"
 #include "PlayerMovementComponent.h"
 #include "PlayerAttackComponent.h"
-#include "PlayerAnimationComponent.h"
 #include "EntityLifeComponent.h"
 #include "CollisionComponent.h"
 #include "Menu.h"
@@ -17,6 +16,7 @@ using namespace std;
 
 struct PlayerData : public EntityData
 {
+	int currentHP;
 	string name;
 
 	vector<Item*> equipments;
@@ -25,6 +25,7 @@ struct PlayerData : public EntityData
 	PlayerData(const string& _name, int _hp, int _dmg, float _speed, float _range, int _level) : EntityData(_hp, _dmg, 1, _speed, _range, _level)
 	{
 		name = _name;
+		currentHP = _hp;
 		equipments = vector<Item*>();
 		InitEquipments();
 		spells = vector<Spells*>();
@@ -122,7 +123,6 @@ class Player : public Actor
 	PlayerMovementComponent* movement;
 	PlayerAttackComponent* attack;
 	EntityLifeComponent* life;
-	PlayerAnimationComponent* animation;
 	PlayerData* data;
 
 	ConstructionMode* mode;

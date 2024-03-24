@@ -1,6 +1,6 @@
 #include "PlayerMovementComponent.h"
 #include "Actor.h"
-#include "PlayerAnimationComponent.h"
+#include "AnimationComponent.h"
 #include "Game.h"
 #include "Timer.h"
 #include "Macro.h"
@@ -19,7 +19,7 @@ PlayerMovementComponent::PlayerMovementComponent(Actor* _owner) : Component(_own
 	checkWallDistance = owner->GetShapeSize().x / 2.0f;
 
 	// Components
-	animation = owner->GetComponent<PlayerAnimationComponent>();
+	animation = owner->GetComponent<AnimationComponent>();
 	collision = owner->GetComponent<CollisionComponent>();
 }
 
@@ -58,7 +58,7 @@ void PlayerMovementComponent::SetDirectionX(const float _directionX, const strin
 
 	if (_directionX == 0.0f)
 	{
-		animation->GetCurrentAnimation()->RunAnimation(_animName, dashDirection);
+		animation->RunAnimation(_animName, dashDirection);
 
 		if (directionHasChanged)
 		{
@@ -80,7 +80,7 @@ void PlayerMovementComponent::SetDirectionX(const float _directionX, const strin
 	else
 	{
 		dashDirection = _directionX;
-		animation->GetCurrentAnimation()->RunAnimation(_animName, dashDirection);
+		animation->RunAnimation(_animName, dashDirection);
 	}
 
 	direction.x = _directionX;

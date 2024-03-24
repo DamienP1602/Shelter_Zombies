@@ -1,13 +1,13 @@
 #pragma once
 #include "Component.h"
-#include "PlayerAnimationComponent.h"
+#include "AnimationComponent.h"
 #include "EntityAttackComponent.h"
 
 using namespace std;
 
 class PlayerAttackComponent : public EntityAttackComponent
 {
-	PlayerAnimationComponent* animation;
+	AnimationComponent* animation;
 
 public:
 	PlayerAttackComponent(Actor* _owner,const int _damages, const float _range);

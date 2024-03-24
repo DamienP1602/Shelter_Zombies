@@ -215,12 +215,10 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Orc.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="PlayerAnimationComponent.h" />
     <ClInclude Include="PlayerAttackComponent.h" />
     <ClInclude Include="PlayerMovementComponent.h" />
     <ClInclude Include="PlayerSound.h" />
     <ClInclude Include="PlayerSoundData.h" />
-    <ClInclude Include="PlayerStat.h" />
     <ClInclude Include="PNJ.h" />
     <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="ProgressLabel.h" />
@@ -337,11 +335,9 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Orc.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="PlayerAnimationComponent.cpp" />
     <ClCompile Include="PlayerAttackComponent.cpp" />
     <ClCompile Include="PlayerMovementComponent.cpp" />
     <ClCompile Include="PlayerSoundData.cpp" />
-    <ClCompile Include="PlayerStat.cpp" />
     <ClCompile Include="PNJ.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="ProgressLabel.cpp" />

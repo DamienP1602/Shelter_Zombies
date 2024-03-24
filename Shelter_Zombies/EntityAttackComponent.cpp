@@ -3,6 +3,7 @@
 #include "Kismet.h"
 #include "EntityLifeComponent.h"
 #include "io.h"
+#include "TimerManager.h"
 
 EntityAttackComponent::EntityAttackComponent(Actor* _owner) : Component(_owner)
 {
@@ -24,6 +25,8 @@ EntityAttackComponent::~EntityAttackComponent()
 
 bool EntityAttackComponent::IsTargetDead() const
 {
+	if (!target) return true;
+
 	if (target->IsToRemove())
 		return true;
 	return target->GetComponent<EntityLifeComponent>()->IsDead();
@@ -43,11 +46,15 @@ void EntityAttackComponent::CheckTargetInRange()
 
 void EntityAttackComponent::Attack()
 {
-	//TODO pk erreur ????
-	if (!target || target->IsToRemove() || !isInRange)
+	if (!target || !isInRange)
 		return;
 	owner->GetComponent<AnimationComponent>()->RunAnimation("Attack", 1);
-	target->GetComponent<EntityLifeComponent>()->TakeDamages(damages);
+	if (target->GetComponent<EntityLifeComponent>()->TakeDamages(damages))
+	{
+		target->GetComponent<EntityAttackComponent>()->StopAttack();
+		ActorManager::GetInstance().Remove(target);
+		target = nullptr;
+	}
 }
 
 void EntityAttackComponent::StartAttack()
@@ -59,5 +66,6 @@ void EntityAttackComponent::StartAttack()
 void EntityAttackComponent::StopAttack()
 {
 	cooldownTimer->Stop();
+	TimerManager::GetInstance().Remove(cooldownTimer);
 	cooldownTimer = nullptr;
 }

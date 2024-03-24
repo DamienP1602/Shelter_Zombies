@@ -2,7 +2,7 @@
 
 AllyBuildingManager::AllyBuildingManager()
 {
-	nexus = new Nexus(Vector2f(0.0f,0.0f));
+	nexus = nullptr;
 }
 
 AllyBuildingManager::~AllyBuildingManager()

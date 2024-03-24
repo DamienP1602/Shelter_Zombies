@@ -7,7 +7,7 @@
 
 PlayerAttackComponent::PlayerAttackComponent(Actor* _owner, const int _damages, const float _range) : EntityAttackComponent(_owner)
 {
-	animation = owner->GetComponent<PlayerAnimationComponent>();
+	animation = owner->GetComponent<AnimationComponent>();
 	SetData(_damages, 1.0f, _range);
 	StartAttack();
 }

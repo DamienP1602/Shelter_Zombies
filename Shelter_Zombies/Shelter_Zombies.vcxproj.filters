@@ -360,9 +360,6 @@
     <ClInclude Include="PlayerMovementComponent.h">
       <Filter>Source Files\Components\Movement</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerStat.h">
-      <Filter>Source Files\Components\Life</Filter>
-    </ClInclude>
     <ClInclude Include="InteractionComponent.h">
       <Filter>Source Files\Components\Interaction</Filter>
     </ClInclude>
@@ -379,9 +376,6 @@
       <Filter>Source Files\Components\Animation</Filter>
     </ClInclude>
     <ClInclude Include="AnimationComponent.h">
-      <Filter>Source Files\Components\Animation</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerAnimationComponent.h">
       <Filter>Source Files\Components\Animation</Filter>
     </ClInclude>
     <ClInclude Include="FileLoader.h">
@@ -716,9 +710,6 @@
     <ClCompile Include="PlayerMovementComponent.cpp">
       <Filter>Source Files\Components\Movement</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerStat.cpp">
-      <Filter>Source Files\Components\Life</Filter>
-    </ClCompile>
     <ClCompile Include="InteractionComponent.cpp">
       <Filter>Source Files\Components\Interaction</Filter>
     </ClCompile>
@@ -735,9 +726,6 @@
       <Filter>Source Files\Components\Animation</Filter>
     </ClCompile>
     <ClCompile Include="AnimationComponent.cpp">
-      <Filter>Source Files\Components\Animation</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerAnimationComponent.cpp">
       <Filter>Source Files\Components\Animation</Filter>
     </ClCompile>
     <ClCompile Include="FileLoader.cpp">

@@ -32,8 +32,6 @@ Game::~Game()
 {
 	player = nullptr;
 	camera = nullptr;
-	map = nullptr;
-	delete map;
 	delete player;
 	delete camera;
 }
@@ -56,14 +54,7 @@ void Game::Init()
 	Gameplay::GetInstance().Init(this);
 	camera->Init();
 
-	InitPlayerMap();
 	new VillageMenu();
-}
-
-void Game::InitPlayerMap()
-{
-	AllyBuildingManager::GetInstance().SetNexus(Vector2f(15.0f, 15.0f));
-		
 }
 
 void Game::Update()

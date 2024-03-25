@@ -35,7 +35,7 @@ void AttackMenu::Init()
 	InitText();
 
 	function<void()> _callbacks[] = {
-		[&]() {cout << "Sort 1" << endl; },
+		[&]() {MenuManager::GetInstance().SetCurrent(owner); MenuManager::GetInstance().DisableNotCurrent(); },
 		[&]() {cout << "Sort 2" << endl; },
 		[&]() {cout << "Sort 3" << endl; }
 	};

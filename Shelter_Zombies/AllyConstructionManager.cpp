@@ -2,4 +2,5 @@
 
 AllyConstructionManager::AllyConstructionManager()
 {
+	needToDelete = false;
 }

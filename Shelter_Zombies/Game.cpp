@@ -24,7 +24,7 @@ Camera* Game::camera;
 
 Game::Game()
 {
-	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(75.0f, 75.0f), PLAYER_PATH));
+	player = new Player("Player", ShapeData(Vector2f(500.0f, 500.0f), Vector2f(125.0f, 125.0f), PLAYER_PATH));
 	camera = new Camera();
 }
 
@@ -38,7 +38,7 @@ Game::~Game()
 
 void Game::Start()
 {
-	window.create(VideoMode(1920, 1080), "Shelter Game"/*, Style::Fullscreen*/);
+	window.create(VideoMode(1920, 1080), "Shelter Game", Style::Fullscreen);
 
 	TimerManager::GetInstance().SetRenderCallback(bind(&Game::UpdateWindow, this));
 	Init();

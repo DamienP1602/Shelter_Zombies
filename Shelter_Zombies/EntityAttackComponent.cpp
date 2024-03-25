@@ -4,6 +4,7 @@
 #include "EntityLifeComponent.h"
 #include "io.h"
 #include "TimerManager.h"
+#include "EnemyEntityManager.h"
 
 EntityAttackComponent::EntityAttackComponent(Actor* _owner) : Component(_owner)
 {
@@ -65,6 +66,8 @@ void EntityAttackComponent::StartAttack()
 
 void EntityAttackComponent::StopAttack()
 {
+	if (!this)
+		return;
 	cooldownTimer->Stop();
 	TimerManager::GetInstance().Remove(cooldownTimer);
 	cooldownTimer = nullptr;
